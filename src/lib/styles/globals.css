@@ -10,9 +10,14 @@ h6 {
 	margin: 0;
 	font-family: var(--font-heading);
 	font-weight: 700;
+	color: var(--color-text);
 }
 h1 {
 	font-size: clamp(2.441rem, 2vw + 2rem, 3.052rem);
 }
 h2 {
+}
+
+body {
+	color: var(--color-text);
 }
