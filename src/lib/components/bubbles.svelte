@@ -11,8 +11,7 @@
 	<div class="bubble x10" />
 
 	<div class="img-container">
-		<img src="images/favicon.png" alt="Svelte Sirens" />
-		<span>Svelte Sirens</span>
+		<img src="images/bg.png" alt="Svelte Sirens" />
 	</div>
 </div>
 
@@ -26,13 +25,6 @@
 	img {
 		width: 100%;
 		filter: drop-shadow(0px 10px 20px #213253);
-	}
-	span {
-		font-family: var(--font-heading);
-		font-size: 50px;
-		font-weight: 700;
-		color: var(--white);
-		text-shadow: 0px 4px 4px #213253;
 	}
 	/* https://codepen.io/Mark_Bowley/pen/mEtqj */
 	#background-wrap {

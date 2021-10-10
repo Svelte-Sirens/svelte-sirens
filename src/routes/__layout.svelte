@@ -1,6 +1,7 @@
 <script>
 	import '@styles/reset.css';
 	import '@styles/root.css';
+	import '@styles/globals.css';
 	import { page } from '$app/stores';
 
 	import Bubbles from '@components/bubbles.svelte';
@@ -24,9 +25,6 @@
 <Bubbles />
 
 <style>
-	:global(body) {
-		background: var(--color-bg);
-	}
 	main {
 		width: 100%;
 		height: 100%;
