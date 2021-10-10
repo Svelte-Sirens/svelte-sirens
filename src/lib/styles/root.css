@@ -1,0 +1,19 @@
+:root {
+	/* COLORS */
+	--navy: #213253;
+	--blue: #9fc0cf;
+	--silver: #b9c2c1;
+	--yellow: #fce762;
+	--red: #ff3c00;
+	--aqua: #00ffee;
+	--offwhite: #efefe1;
+	--white: #e8edf1;
+	--black: #0a090c;
+
+	--color-text: var(--white);
+	--color-bg: radial-gradient(222.14% 100% at 50.03% 100%, #213253 0%, #08847c 100%);
+	/* TYPOGRAPHY */
+	--font-heading: 'Cinzel Decorative', system-ui, sans-serif;
+	--font-body: 'Red Hat Text', system-ui, sans-serif;
+	/* SIZING */
+}
