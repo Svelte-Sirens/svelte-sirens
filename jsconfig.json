@@ -3,6 +3,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@components": ["src/lib/components"],
+			"@layout": ["src/lib/layout"],
 			"@lib": ["src/lib"],
 			"@lib/*": ["src/lib/*"],
 			"@utils": ["src/lib/utils"],

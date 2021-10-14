@@ -10,13 +10,13 @@
 	<div class="bubble x9" />
 	<div class="bubble x10" />
 
-	<div class="img-container">
+	<!-- <div class="img-container">
 		<img src="images/bg.png" alt="Svelte Sirens" />
-	</div>
+	</div> -->
 </div>
 
 <style>
-	.img-container {
+	/* .img-container {
 		display: grid;
 		place-items: center;
 		place-content: center;
@@ -25,7 +25,7 @@
 	img {
 		width: 100%;
 		filter: drop-shadow(0px 10px 20px #213253);
-	}
+	} */
 	/* https://codepen.io/Mark_Bowley/pen/mEtqj */
 	#background-wrap {
 		bottom: 0;
