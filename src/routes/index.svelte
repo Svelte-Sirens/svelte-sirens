@@ -4,7 +4,9 @@
 	<section>
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women & non-binary</h2>
-		<a href="https://discord.gg/NwKTzASz">Join the community</a>
+		<a rel="noopener noreffer" target="_blank" href="https://discord.gg/NwKTzASz"
+			>Join the community</a
+		>
 	</section>
 </article>
 

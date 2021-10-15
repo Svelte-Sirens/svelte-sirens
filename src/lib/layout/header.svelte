@@ -23,6 +23,7 @@
 			border-bottom: none;
 		}
 	}
+
 	header {
 		display: flex;
 		gap: var(--gap-2);
@@ -30,11 +31,6 @@
 		justify-content: space-between;
 		height: 100px;
 		padding-inline: var(--gap-4);
-	}
-
-	div {
-		display: flex;
-		align-items: center;
 	}
 
 	img {

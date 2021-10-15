@@ -49,7 +49,7 @@
 		}
 	}
 
-	a:hover {
+	a:hover:not(.active) {
 		color: var(--blue);
 		border-bottom: 1px solid var(--blue);
 	}
