@@ -11,12 +11,16 @@
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.21",
     "@sveltejs/kit": "next",
+    "autoprefixer": "^10.3.7",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
+    "postcss": "^8.3.9",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
-    "svelte": "^3.42.6"
+    "sass": "^1.43.2",
+    "svelte": "^3.42.6",
+    "svelte-preprocess": "^4.9.8"
   },
   "type": "module"
 }

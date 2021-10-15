@@ -1,7 +1,5 @@
 <script>
-	import '@styles/reset.css';
-	import '@styles/root.css';
-	import '@styles/globals.css';
+	import '@styles/global.scss';
 	import { page } from '$app/stores';
 
 	import Bubbles from '@components/bubbles.svelte';
