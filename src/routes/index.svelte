@@ -8,7 +8,7 @@
 	</section>
 </article>
 
-<style>
+<style lang="scss">
 	span {
 		z-index: 1;
 		font-family: var(--font-heading);
@@ -24,6 +24,7 @@
 		margin-inline: auto;
 		animation: slideUp 1s cubic-bezier(0, 1, 0.5, 1);
 	}
+	
 	article {
 		display: grid;
 		place-items: center;
@@ -59,12 +60,12 @@
 		cursor: pointer;
 		transition: var(--transition);
 		box-shadow: var(--shadow-btn);
-	}
 
-	a:hover {
+		&:hover {
 		box-shadow: var(--shadow-btn-hover);
 		background-color: var(--silver);
 		color: var(--navy);
+		}
 	}
 
 	@keyframes slideUp {
