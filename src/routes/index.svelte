@@ -57,18 +57,18 @@
 
 	a {
 		margin-top: var(--gap-4);
-		padding: 10px 20px;
-		background-color: var(--light-blue);
+		padding: var(--gap-5) var(--gap-9);
+		background-color: var(--blue);
 		border-radius: var(--gap-1);
 		color: var(--navy);
 		font-weight: 700;
 		cursor: pointer;
-		transition: var(--transition);
+		transition: var(--transition-all);
 		box-shadow: var(--shadow-btn);
 
 		&:hover {
 			box-shadow: var(--shadow-btn-hover);
-			background-color: var(--silver);
+			filter: brightness(1.1);
 			color: var(--navy);
 		}
 	}

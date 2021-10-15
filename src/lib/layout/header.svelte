@@ -41,6 +41,7 @@
 			display: inline-block;
 			font-family: var(--font-heading);
 			font-weight: 700;
+			font-size: var(--text-lg);
 		}
 	}
 </style>
