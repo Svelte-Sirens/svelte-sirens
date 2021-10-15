@@ -8,6 +8,7 @@
 
 <style>
 	header {
-		height: 100%;
+		height: 100px;
+		padding-inline: var(--gap-4);
 	}
 </style>

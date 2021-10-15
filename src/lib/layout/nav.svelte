@@ -25,8 +25,15 @@
 
 <style>
 	/* backdrop-filter: blur(40px); */
+	nav {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	ul {
 		display: flex;
+		justify-content: center;
 		gap: var(--gap-4);
 		font-size: var(--text-lg);
 		font-family: var(--font-heading);
@@ -34,7 +41,7 @@
 	}
 
 	.active {
-		background-image: url('images/underline.svg');
+		background-image: url('/images/underline.svg');
 	}
 
 	a {
@@ -45,5 +52,11 @@
 	a:hover {
 		color: var(--blue);
 		border-bottom: 1px solid var(--blue);
+	}
+
+	@media (min-width: 1024px) {
+		nav {
+			justify-content: flex-start;
+		}
 	}
 </style>

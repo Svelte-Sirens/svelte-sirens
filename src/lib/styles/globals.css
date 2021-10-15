@@ -2,6 +2,7 @@ body {
 	background: var(--color-bg);
 	color: var(--color-text);
 	min-height: 100vh;
+	font-size: var(--text-base);
 }
 
 #svelte {
@@ -23,9 +24,19 @@ h6 {
 	text-shadow: var(--shadow-text);
 }
 h1 {
-	font-size: clamp(2.441rem, 2vw + 2rem, 3.052rem);
+	font-size: var(--text-4xl);
 }
 h2 {
+	font-size: var(--text-3xl);
+}
+h3 {
+	font-size: var(--text-2xl);
+}
+h4 {
+	font-size: var(--text-xl);
+}
+h5 {
+	font-size: var(--text-lg);
 }
 
 a {

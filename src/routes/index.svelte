@@ -15,14 +15,11 @@
 		font-size: var(--text-baf);
 		font-weight: 600;
 		display: inline-block;
-		position: absolute;
-		height: 100%;
-		min-height: 0vw;
-		width: 100%;
+		position: relative;
 		text-align: center;
 		text-shadow: var(--shadow-text);
 		margin-inline: auto;
-		animation: slideUp 1s cubic-bezier(0, 1, 0.5, 1);
+		animation: fadeIn 1s cubic-bezier(0, 1, 0.5, 1);
 	}
 	article {
 		display: grid;
@@ -30,6 +27,8 @@
 		place-content: center;
 		gap: var(--gap-2);
 		height: calc(100vh - 100px);
+		max-width: 50ch;
+		margin-inline: auto;
 	}
 
 	section {
@@ -42,10 +41,16 @@
 		gap: var(--gap-2);
 	}
 
+	h1 {
+		font-size: var(--text-4xl);
+	}
+	h2 {
+		font-size: var(--text-2xl);
+	}
+
 	img {
 		width: 60%;
 		max-width: 400px;
-
 		filter: drop-shadow(0px 10px 20px #213253);
 	}
 
@@ -67,14 +72,12 @@
 		color: var(--navy);
 	}
 
-	@keyframes slideUp {
+	@keyframes fadeIn {
 		0% {
 			opacity: 0;
-			transform: translateY(100%);
 		}
 		100% {
 			opacity: 1;
-			transform: translateY(0);
 		}
 	}
 </style>

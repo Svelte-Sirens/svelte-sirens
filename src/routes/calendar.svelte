@@ -13,5 +13,7 @@
 		height: 100%;
 		place-content: center;
 		place-items: center;
+		text-align: center;
+		padding: var(--gap-4);
 	}
 </style>
