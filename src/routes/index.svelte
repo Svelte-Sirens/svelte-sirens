@@ -43,7 +43,9 @@
 	}
 
 	img {
-		max-width: 90%;
+		width: 60%;
+		max-width: 400px;
+
 		filter: drop-shadow(0px 10px 20px #213253);
 	}
 
@@ -73,12 +75,6 @@
 		100% {
 			opacity: 1;
 			transform: translateY(0);
-		}
-	}
-
-	@media (min-width: 1024px) {
-		img {
-			max-width: 100%;
 		}
 	}
 </style>
