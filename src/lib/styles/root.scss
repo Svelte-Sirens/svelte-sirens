@@ -46,6 +46,8 @@
 		stroke 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	--transition-shadow: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
 	--transition-transform: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	--fade-in: fadeIn 5s cubic-bezier(0, 1, 0.5, 1);
 	/* SHADOWS */
 	--shadow-btn: 0px 10px 20px #213253;
 	--shadow-btn-hover: 0px 2px 4px #213253;

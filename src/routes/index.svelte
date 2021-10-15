@@ -19,7 +19,7 @@
 		text-align: center;
 		text-shadow: var(--shadow-text);
 		margin-inline: auto;
-		animation: fadeIn 1s cubic-bezier(0, 1, 0.5, 1);
+		animation: var(--fade-in);
 	}
 
 	article {
@@ -46,6 +46,7 @@
 	}
 	h2 {
 		font-size: var(--text-2xl);
+		max-width: 400px;
 	}
 
 	img {
@@ -72,12 +73,10 @@
 		}
 	}
 
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-		100% {
-			opacity: 1;
+	@media (min-width: 1024px) {
+		h2 {
+			max-width: 100%;
+			word-break: none;
 		}
 	}
 </style>

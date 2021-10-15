@@ -29,6 +29,7 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+		margin-left: auto;
 	}
 	ul {
 		display: flex;

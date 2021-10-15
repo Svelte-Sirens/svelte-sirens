@@ -18,4 +18,8 @@
 		max-width: 45ch;
 		margin-inline: auto;
 	}
+
+	h1 {
+		animation: var(--fade-in);
+	}
 </style>
