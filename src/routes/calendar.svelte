@@ -2,9 +2,8 @@
 	<h1>Calendar</h1>
 
 	<p>
-		We are working on getting a calendar together for future meetups and the <a href="/talks"
-			>talks</a
-		> will be available to watch later.
+		We are working on getting a calendar together for future meetups and the
+		<a href="/talks">talks</a> will be available to watch later.
 	</p>
 </article>
 
