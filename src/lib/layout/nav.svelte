@@ -1,12 +1,49 @@
+<script>
+	import { page } from '$app/stores';
+	let clicked = false;
+	let mobile = false;
+
+	function openNav() {
+		mobile = true;
+		clicked = !clicked;
+	}
+</script>
+
 <nav>
-	<li><a sveltekit:prefetch href="/">Home</a></li>
-	<li><a sveltekit:prefetch href="/talks">Talks</a></li>
-	<li><a sveltekit:prefetch href="/schedule">Schedule</a></li>
+	<ul>
+		<li><a class={$page.path === '/' ? 'active' : ''} sveltekit:prefetch href="/">Home</a></li>
+		<li>
+			<a class={$page.path === '/talks' ? 'active' : ''} sveltekit:prefetch href="/talks">Talks</a>
+		</li>
+		<li>
+			<a class={$page.path === '/calendar' ? 'active' : ''} sveltekit:prefetch href="/calendar"
+				>Calendar</a
+			>
+		</li>
+	</ul>
 </nav>
 
 <style>
-	nav {
+	/* backdrop-filter: blur(40px); */
+	ul {
 		display: flex;
 		gap: var(--gap-4);
+		font-size: var(--text-lg);
+		font-family: var(--font-heading);
+		font-weight: 700;
+	}
+
+	.active {
+		background-image: url('images/underline.svg');
+	}
+
+	a {
+		color: var(--white);
+		border-bottom: none;
+	}
+
+	a:hover {
+		color: var(--blue);
+		border-bottom: 1px solid var(--blue);
 	}
 </style>

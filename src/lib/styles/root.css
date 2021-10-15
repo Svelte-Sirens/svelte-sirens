@@ -1,7 +1,8 @@
 :root {
 	/* COLORS */
 	--navy: #213253;
-	--blue: #9fc0cf;
+	--blue: #aefffa;
+	--light-blue: #9fc0cf;
 	--silver: #b9c2c1;
 	--yellow: #fce762;
 	--red: #ff3c00;
@@ -14,7 +15,8 @@
 	--color-bg: radial-gradient(222.14% 100% at 50.03% 100%, #213253 0%, #08847c 100%);
 	/* TYPOGRAPHY */
 	--font-heading: 'Cinzel Decorative', system-ui, sans-serif;
-	--font-body: 0.64rem;
+	--font-body: 'Red Hat Text', system-ui, sans-serif;
+	--text-xs: 0.64rem;
 	--text-sm: clamp(0.64rem, calc(0.64rem + ((1vw - 0.175rem) * 0.3441)), 0.8rem);
 	--text-base: clamp(0.9rem, calc(0.9rem + ((1vw - 0.175rem) * 0.2151)), 1rem);
 	--text-lg: clamp(1rem, calc(1rem + ((1vw - 0.175rem) * 0.5376)), 1.25rem);
@@ -47,4 +49,5 @@
 	/* SHADOWS */
 	--shadow-btn: 0px 10px 20px #213253;
 	--shadow-btn-hover: 0px 2px 4px #213253;
+	--shadow-text: 2px 2px 2px rgba(33, 50, 83, 1);
 }

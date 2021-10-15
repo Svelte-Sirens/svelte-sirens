@@ -5,6 +5,7 @@
 	import { page } from '$app/stores';
 
 	import Bubbles from '@components/bubbles.svelte';
+	import Header from '@layout/header.svelte';
 </script>
 
 <svelte:head>
@@ -19,6 +20,7 @@
 	<title>{`${$page.path === '/' ? 'Svelte Sirens' : `${$page.path} Svelte Sirens`} `}</title>
 </svelte:head>
 
+<Header />
 <main>
 	<slot />
 </main>
@@ -28,11 +30,8 @@
 	main {
 		width: 100%;
 		height: 100%;
-		max-height: 100vh;
 		color: white;
 		position: relative;
 		z-index: 2;
-		display: grid;
-		grid-template-rows: 100px 1fr;
 	}
 </style>

@@ -10,16 +10,17 @@
 
 <style>
 	span {
+		z-index: 1;
 		font-family: var(--font-heading);
 		font-size: var(--text-baf);
 		font-weight: 600;
 		display: inline-block;
-		position: fixed;
-		top: 66px;
+		position: absolute;
 		height: 100%;
 		min-height: 0vw;
 		width: 100%;
 		text-align: center;
+		text-shadow: var(--shadow-text);
 		margin-inline: auto;
 		animation: slideUp 1s cubic-bezier(0, 1, 0.5, 1);
 	}
@@ -28,8 +29,7 @@
 		place-items: center;
 		place-content: center;
 		gap: var(--gap-2);
-		height: 100vh;
-		overflow-y: hidden;
+		height: calc(100vh - 100px);
 	}
 
 	section {
@@ -44,11 +44,13 @@
 
 	img {
 		max-width: 90%;
+		filter: drop-shadow(0px 10px 20px #213253);
 	}
 
 	a {
+		margin-top: var(--gap-4);
 		padding: 10px 20px;
-		background-color: var(--blue);
+		background-color: var(--light-blue);
 		border-radius: var(--gap-1);
 		color: var(--navy);
 		font-weight: 700;
@@ -60,6 +62,7 @@
 	a:hover {
 		box-shadow: var(--shadow-btn-hover);
 		background-color: var(--silver);
+		color: var(--navy);
 	}
 
 	@keyframes slideUp {

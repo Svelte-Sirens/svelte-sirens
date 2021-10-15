@@ -14,15 +14,17 @@ dd {
 	margin: 0;
 }
 
+html,
+body,
+#svelte {
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
 body {
-	min-height: 100vh;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 	font-family: system-ui, sans-serif;
-}
-
-#svelte {
-	height: 100%;
 }
 
 h1 {
