@@ -15,5 +15,7 @@
 		place-items: center;
 		text-align: center;
 		padding: var(--gap-4);
+		max-width: 45ch;
+		margin-inline: auto;
 	}
 </style>

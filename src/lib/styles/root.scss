@@ -25,7 +25,7 @@
 	min-height: 0vw;
 	--text-3xl: clamp(1.953rem, calc(1.953rem + ((1vw - 0.175rem) * 1.0495)), 2.441rem);
 	--text-4xl: clamp(2.441rem, calc(2.441rem + ((1vw - 0.175rem) * 1.314)), 3.052rem);
-	--text-baf: clamp(50px, calc(3.125rem + ((1vw - 2.8px) * 6.7204)), 100px);
+	--text-baf: clamp(36px, calc(3.125rem + ((1vw - 2.8px) * 6.7204)), 72px);
 
 	/* SIZING */
 	--gap-1: 0.25rem;

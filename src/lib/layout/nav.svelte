@@ -29,7 +29,6 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
-		justify-content: center;
 	}
 	ul {
 		display: flex;
@@ -52,11 +51,5 @@
 	a:hover {
 		color: var(--blue);
 		border-bottom: 1px solid var(--blue);
-	}
-
-	@media (min-width: 1024px) {
-		nav {
-			justify-content: flex-start;
-		}
 	}
 </style>
