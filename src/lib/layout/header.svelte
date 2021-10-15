@@ -5,15 +5,24 @@
 
 <header>
 	{#if $page.path !== '/'}
-		<div>
+		<a href="/">
 			<img src="/images/favicon.png" alt="logo" />
 			<span>Svelte Sirens</span>
-		</div>
+		</a>
 	{/if}
 	<Nav />
 </header>
 
-<style>
+<style lang="scss">
+	a {
+		display: flex;
+		border-bottom: none;
+		align-items: center;
+		color: var(--white);
+		&:hover {
+			border-bottom: none;
+		}
+	}
 	header {
 		display: flex;
 		gap: var(--gap-2);
