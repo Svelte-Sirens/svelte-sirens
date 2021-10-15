@@ -16,14 +16,14 @@
 			<a class={$page.path === '/talks' ? 'active' : ''} sveltekit:prefetch href="/talks">Talks</a>
 		</li>
 		<li>
-			<a class={$page.path === '/calendar' ? 'active' : ''} sveltekit:prefetch href="/calendar"
-				>Calendar</a
-			>
+			<a class={$page.path === '/calendar' ? 'active' : ''} sveltekit:prefetch href="/calendar">
+				Calendar
+			</a>
 		</li>
 	</ul>
 </nav>
 
-<style>
+<style lang="scss">
 	/* backdrop-filter: blur(40px); */
 	ul {
 		display: flex;
@@ -33,13 +33,13 @@
 		font-weight: 700;
 	}
 
-	.active {
-		background-image: url('images/underline.svg');
-	}
-
 	a {
 		color: var(--white);
 		border-bottom: none;
+
+		&.active {
+			background-image: url('images/underline.svg');
+		}
 	}
 
 	a:hover {
