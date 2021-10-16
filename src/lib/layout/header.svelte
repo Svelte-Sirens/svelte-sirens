@@ -30,7 +30,7 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 100px;
-		padding-inline: var(--gap-4);
+		padding: 0 var(--gap-4);
 	}
 
 	img {

@@ -53,6 +53,17 @@ a:hover {
 	color: var(--blue);
 }
 
+.glass {
+	margin: 0 var(--gap-4) var(--gap-4);
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 hsla(220, 43%, 20%, 0.37);
+	backdrop-filter: blur(40px);
+	-webkit-backdrop-filter: blur(4px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: var(--gap-4);
+	border-radius: 10px;
+}
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;

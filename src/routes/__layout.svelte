@@ -24,7 +24,7 @@
 </main>
 <Bubbles />
 
-<style>
+<style lang="scss">
 	main {
 		width: 100%;
 		height: 100%;

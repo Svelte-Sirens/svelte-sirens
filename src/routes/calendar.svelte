@@ -1,22 +1,23 @@
 <article>
-	<h1>Calendar</h1>
+	<section class="glass">
+		<h1>Calendar</h1>
 
-	<p>
-		We are working on getting a calendar together for future meetups and the
-		<a href="/talks">talks</a> will be available to watch later.
-	</p>
+		<p>
+			We are working on getting a calendar together for future meetups and the
+			<a href="/talks">talks</a> will be available to watch later.
+		</p>
+	</section>
 </article>
 
-<style>
+<style lang="scss">
 	article {
 		display: grid;
 		height: 100%;
 		place-content: center;
 		place-items: center;
 		text-align: center;
-		padding: var(--gap-4);
 		max-width: 45ch;
-		margin-inline: auto;
+		margin: 0 auto;
 	}
 
 	h1 {

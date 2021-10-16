@@ -30,7 +30,7 @@
 	<img class="slider-img" src="images/moon.png" alt="dark-mode" style="margin-left: 0.5em;" />
 </div>
 
-<style>
+<style lang="scss">
 	.slider-img {
 		width: 25px;
 		height: 25px;

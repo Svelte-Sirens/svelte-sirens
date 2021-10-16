@@ -20,7 +20,7 @@
 		position: relative;
 		text-align: center;
 		text-shadow: var(--shadow-text);
-		margin-inline: auto;
+		margin: 0 auto;
 		animation: var(--fade-in);
 	}
 
@@ -30,7 +30,7 @@
 		place-content: center;
 		gap: var(--gap-2);
 		height: calc(100vh - 100px);
-		margin-inline: auto;
+		margin: 0 auto;
 	}
 
 	section {
@@ -45,10 +45,12 @@
 
 	h1 {
 		font-size: var(--text-4xl);
+		animation: var(--fade-in);
 	}
 	h2 {
 		font-size: var(--text-2xl);
 		max-width: 400px;
+		animation: var(--fade-in);
 	}
 
 	img {

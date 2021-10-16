@@ -45,6 +45,7 @@
 		border-bottom: none;
 
 		&.active {
+			color: var(--blue);
 			background-image: url('/images/underline.svg');
 		}
 	}
