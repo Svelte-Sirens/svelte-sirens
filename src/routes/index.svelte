@@ -59,10 +59,11 @@
 
 	a {
 		margin-top: var(--gap-4);
-		padding: var(--gap-5) var(--gap-9);
+		padding: var(--gap-4) var(--gap-8);
 		background-color: var(--blue);
 		border-radius: var(--gap-1);
 		color: var(--navy);
+		font-size: var(--text-lg);
 		font-weight: 700;
 		cursor: pointer;
 		transition: var(--transition-all);
