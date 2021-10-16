@@ -5,7 +5,8 @@ body {
 	background: var(--color-bg);
 	color: var(--color-text);
 	min-height: 100vh;
-	font-size: var(--text-base);
+	font-family: var(--font-body);
+	font-size: var(--text-lg);
 }
 
 #svelte {
