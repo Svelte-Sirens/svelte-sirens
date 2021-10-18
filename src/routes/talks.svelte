@@ -13,11 +13,14 @@
 	article {
 		display: grid;
 		height: 100%;
-		place-content: center;
-		place-items: center;
+		align-content: flex-start;
 		text-align: center;
 		max-width: 45ch;
 		margin: 0 auto;
+	}
+
+	section {
+		height: 100%;
 	}
 
 	h1 {

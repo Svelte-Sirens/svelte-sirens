@@ -26,11 +26,12 @@
 
 	article {
 		display: grid;
-		place-items: center;
-		place-content: center;
-		gap: var(--gap-2);
-		height: calc(100vh - 100px);
+		align-content: flex-start;
+		justify-content: center;
+		justify-items: center;
+		text-align: center;
 		margin: 0 auto;
+		gap: var(--gap-2);
 	}
 
 	section {

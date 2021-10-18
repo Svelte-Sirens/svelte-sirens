@@ -27,7 +27,7 @@
 <style lang="scss">
 	main {
 		width: 100%;
-		height: 100%;
+		height: calc(100vh - 100px);
 		color: white;
 		position: relative;
 		z-index: 2;
