@@ -3,7 +3,7 @@
 		<h1>Calendar</h1>
 
 		<p>
-			We are working on getting a calendar together for future meetups and the
+			We are working on some exciting events coming soon. Previous
 			<a href="/talks">talks</a> will be available to watch later.
 		</p>
 	</section>

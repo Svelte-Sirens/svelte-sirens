@@ -3,8 +3,8 @@
 		<h1>Talks</h1>
 
 		<p>
-			We are working on getting a <a href="/calendar">calendar</a> together for future meetups and the
-			talks will live here.
+			We are working on some exciting <a href="/events">events</a> coming soon and the past talks will
+			be posted here.
 		</p>
 	</section>
 </article>
