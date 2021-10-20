@@ -15,7 +15,13 @@
 		href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text:wght@300;400;700&display=swap"
 		rel="stylesheet"
 	/>
-	<title>{`${$page.path === '/' ? 'Svelte Sirens' : `${$page.path} Svelte Sirens`} `}</title>
+	<title
+		>{`${
+			$page.path === '/'
+				? 'Svelte Sirens'
+				: `${$page.path.substring(1).toUpperCase()} | Svelte Sirens`
+		} `}</title
+	>
 </svelte:head>
 
 <Header />
