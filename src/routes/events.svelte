@@ -1,6 +1,6 @@
 <article>
 	<section class="glass">
-		<h1>Calendar</h1>
+		<h1>Events</h1>
 
 		<p>
 			We are working on some exciting events coming soon. Previous
