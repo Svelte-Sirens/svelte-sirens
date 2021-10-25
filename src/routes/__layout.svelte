@@ -4,6 +4,17 @@
 
 	import Bubbles from '@components/bubbles.svelte';
 	import Header from '@layout/header.svelte';
+
+	const capitalize = (str, lower = false) =>
+		(lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
+			match.toUpperCase()
+		);
+	let title =
+		$page.path === '/'
+			? 'Svetle Sirens'
+			: `${$page.path.substring(1).replace('s/', ' | ').replace(/-/g, ' ')} | Svelte Sirens`;
+
+	console.log(title);
 </script>
 
 <svelte:head>
@@ -15,13 +26,7 @@
 		href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text:wght@300;400;700&display=swap"
 		rel="stylesheet"
 	/>
-	<title
-		>{`${
-			$page.path === '/'
-				? 'Svelte Sirens'
-				: `${$page.path.substring(1).toUpperCase()} | Svelte Sirens`
-		} `}</title
-	>
+	<title>{capitalize(title)}</title>
 </svelte:head>
 
 <Header />
@@ -37,5 +42,11 @@
 		color: white;
 		position: relative;
 		z-index: 2;
+		display: grid;
+		height: 100%;
+		align-content: flex-start;
+		text-align: center;
+		max-width: 45ch;
+		margin: 0 auto;
 	}
 </style>
