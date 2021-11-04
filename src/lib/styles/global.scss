@@ -52,6 +52,10 @@ a:hover {
 	color: var(--blue);
 }
 
+pre {
+	white-space: pre-wrap;
+}
+
 .glass {
 	margin: 0 var(--gap-4) var(--gap-4);
 	background: rgba(255, 255, 255, 0.25);

@@ -13,8 +13,6 @@
 		$page.path === '/'
 			? 'Svetle Sirens'
 			: `${$page.path.substring(1).replace('s/', ' | ').replace(/-/g, ' ')} | Svelte Sirens`;
-
-	console.log(title);
 </script>
 
 <svelte:head>

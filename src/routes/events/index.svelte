@@ -1,5 +1,19 @@
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch('/events.json');
+		const events = await res.json();
+		console.log(events);
+		return {
+			props: {
+				events
+			}
+		};
+	}
+</script>
+
 <script>
-	import { events } from './events';
+	export let events;
+	console.log(events);
 </script>
 
 <section class="title">
@@ -47,7 +61,7 @@
 		gap: var(--gap-6);
 	}
 
-	a {
+	.glass {
 		border-bottom: none;
 		padding: var(--gap-4);
 		&:hover {
