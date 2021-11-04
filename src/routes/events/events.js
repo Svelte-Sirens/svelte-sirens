@@ -27,7 +27,7 @@ export const events = [
 			new Date('December 17, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)')
 		),
 		time: new Date('December 17, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)'),
-		slug: 'building-design-systems-in-sveltekit'
+		slug: 'routes-for-svelte-with-routify'
 	},
 	{
 		id: 3,
@@ -39,6 +39,6 @@ export const events = [
 			new Date('January 14, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)')
 		),
 		time: new Date('January 14, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)'),
-		slug: 'building-design-systems-in-sveltekit'
+		slug: 'all-about-adapters'
 	}
 ];
