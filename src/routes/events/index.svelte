@@ -50,6 +50,9 @@
 	a {
 		border-bottom: none;
 		padding: var(--gap-4);
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
 
 	article {
@@ -60,10 +63,6 @@
 		gap: var(--gap-2);
 		text-align: center;
 		transition: var(--transition-transform);
-
-		&:hover {
-			transform: scale(1.05);
-		}
 
 		img {
 			border-radius: 100%;
