@@ -1,5 +1,17 @@
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch('/events.json');
+		const data = await res.json();
+		return {
+			props: {
+				events: data.events
+			}
+		};
+	}
+</script>
+
 <script>
-	import { events } from './events';
+	export let events;
 </script>
 
 <section class="title">
@@ -20,7 +32,8 @@
 					</h2>
 					<h3>
 						<time datetime={time}>{date}</time>
-						<span>{`${time.getHours() - 7}:00`}pm GMT</span>
+						<span>6pm-7pm GMT</span>
+						<!-- <span>{`${time.getHours() - 7}:00`}pm GMT</span> -->
 					</h3>
 					<small>Svelte Sirens Voice Chat - Svelte Discord</small>
 					<h4>Twitter: <span>{twitter}</span></h4>
@@ -47,7 +60,7 @@
 		gap: var(--gap-6);
 	}
 
-	a {
+	.glass {
 		border-bottom: none;
 		padding: var(--gap-4);
 		&:hover {
