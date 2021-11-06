@@ -1,11 +1,10 @@
 <script context="module">
 	export async function load({ fetch }) {
 		const res = await fetch('/events.json');
-		const events = await res.json();
-		console.log(events);
+		const data = await res.json();
 		return {
 			props: {
-				events
+				events: data.events
 			}
 		};
 	}
@@ -13,7 +12,6 @@
 
 <script>
 	export let events;
-	console.log(events);
 </script>
 
 <section class="title">
@@ -34,7 +32,8 @@
 					</h2>
 					<h3>
 						<time datetime={time}>{date}</time>
-						<span>{`${time.getHours() - 7}:00`}pm GMT</span>
+						<span>6pm-7pm GMT</span>
+						<!-- <span>{`${time.getHours() - 7}:00`}pm GMT</span> -->
 					</h3>
 					<small>Svelte Sirens Voice Chat - Svelte Discord</small>
 					<h4>Twitter: <span>{twitter}</span></h4>

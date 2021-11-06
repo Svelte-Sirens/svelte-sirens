@@ -1,19 +1,17 @@
-// import events from '@api/events';
-
 export const get = async () => {
 	try {
 		return {
 			status: 200,
-			body: {
-				events: await events
-			}
+			body: { events: events }
 		};
 	} catch (error) {
 		return {
 			status: 500,
-			body: {
-				error: error.message
-			}
+			body: [
+				{
+					error: error.message
+				}
+			]
 		};
 	}
 };
@@ -32,7 +30,7 @@ export const events = [
 		img: '/images/speakers/brittney.jpg',
 		twitter: '@brittneypostma',
 		date: new Intl.DateTimeFormat('en-US', date).format(
-			new Date('November 22, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)')
+			new Date('November 29, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)')
 		),
 		time: new Date('November 22, 2021, 13:00:00 GMT-0500 (Eastern Standard Time)'),
 		slug: 'building-design-systems-in-sveltekit'
