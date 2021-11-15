@@ -11,7 +11,7 @@
 		);
 	let title =
 		$page.path === '/'
-			? 'Svetle Sirens'
+			? 'Svelte Sirens'
 			: `${$page.path.substring(1).replace('s/', ' | ').replace(/-/g, ' ')} | Svelte Sirens`;
 </script>
 
