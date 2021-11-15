@@ -63,6 +63,8 @@
 	.glass {
 		border-bottom: none;
 		padding: var(--gap-4);
+		max-width: 300px;
+
 		&:hover {
 			transform: scale(1.05);
 		}
@@ -112,9 +114,13 @@
 		}
 	}
 
-	@media (min-width: 700px) {
+	@media (min-width: 1024px) {
 		article {
 			display: flex;
+		}
+
+		.glass {
+			max-width: 100%;
 		}
 	}
 </style>
