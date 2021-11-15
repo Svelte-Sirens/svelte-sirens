@@ -1,23 +1,23 @@
 <script context="module">
 	export async function load({ page }) {
-		const res = await fetch(`/events/${page.params.slug}`);
-		const data = await res.json();
-		// let slug = page.params.slug;
+		// const res = await fetch(`/events/${page.params.slug}`);
+		// const data = await res.json();
+		let slug = page.params.slug;
 		return {
 			props: {
-				event: data.events
+				// event: data.events
+				slug
 			}
 		};
 	}
 </script>
 
 <script>
-  export let event
-  const title =
+	export let slug;
 </script>
 
-<svelte:head>
+<!-- <svelte:head>
 	<title>{title}</title>
-</svelte:head>
+</svelte:head> -->
 
-<h1>{title}</h1>
+<h1>{slug}</h1>
