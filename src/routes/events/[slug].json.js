@@ -2,11 +2,12 @@ import { gql, GraphQLClient } from 'graphql-request';
 
 export const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_API);
 
-export const get = async () => {
+export const get = async (req) => {
+	const { slug } = req.params;
 	try {
 		const query = gql`
-			{
-				events {
+			query Events($slug: String!) {
+				events(where: { slug: $slug }) {
 					slug
 					title
 					id
@@ -22,7 +23,8 @@ export const get = async () => {
 				}
 			}
 		`;
-		const { events } = await client.request(query);
+		const variables = { slug };
+		const { events } = await client.request(query, variables);
 		return {
 			status: 200,
 			body: events

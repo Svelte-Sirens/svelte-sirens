@@ -12,10 +12,11 @@
 
 <script>
 	export let events;
-</script>
 
-<!-- 
-<pre>{JSON.stringify(events, null, 2)}</pre> -->
+	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+</script>
 
 <section class="title">
 	<h1>Events</h1>
@@ -35,8 +36,9 @@
 							{title}
 						</h2>
 						<h3>
-							<time datetime={new Date(datetime_event).toString()}>
-								{new Date(datetime_event)}
+							<time datetime={datetime_event}>
+								<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
+								<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
 							</time>
 						</h3>
 						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
@@ -80,7 +82,7 @@
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		justify-items: center;
-		gap: var(--gap-2);
+		gap: var(--gap-4);
 		text-align: center;
 		transition: var(--transition-transform);
 
@@ -95,6 +97,11 @@
 			font-family: var(--font-body);
 			font-size: var(--text-xl);
 			text-shadow: 0 1px 1px var(--navy);
+		}
+
+		time {
+			display: grid;
+			gap: var(--gap-2);
 		}
 
 		h3 {
