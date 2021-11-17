@@ -25,7 +25,7 @@
 	</p>
 </section>
 <ul>
-	{#each events as { slug, speakers, title, datetime_event, handle }}
+	{#each events as { slug, speakers, title, datetime_event }}
 		<a href="/events/{slug}" class="glass">
 			<article>
 				{#each speakers as speaker}
@@ -35,10 +35,9 @@
 							{title}
 						</h2>
 						<h3>
-							<!-- <time datetime={new Intl.DateTimeFormat('en-US', datetime_event)}>
-								{new Intl.DateTimeFormat('en-US', datetime_event)}
-							</time> -->
-							<!-- <span>6pm-7pm GMT</span> -->
+							<time datetime={new Date(datetime_event).toString()}>
+								{new Date(datetime_event)}
+							</time>
 						</h3>
 						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
 						<h4>Twitter: <span>{speaker.handle}</span></h4>
