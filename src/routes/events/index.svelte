@@ -1,10 +1,10 @@
 <script context="module">
 	export async function load({ fetch }) {
 		const res = await fetch('/events.json');
-		const data = await res.json();
+		const events = await res.json();
 		return {
 			props: {
-				events: data.events
+				events
 			}
 		};
 	}
@@ -14,6 +14,9 @@
 	export let events;
 </script>
 
+<!-- 
+<pre>{JSON.stringify(events, null, 2)}</pre> -->
+
 <section class="title">
 	<h1>Events</h1>
 
@@ -22,22 +25,25 @@
 	</p>
 </section>
 <ul>
-	{#each events as { title, slug, date, time, img, twitter, speaker }}
+	{#each events as { slug, speakers, title, datetime_event, handle }}
 		<a href="/events/{slug}" class="glass">
 			<article>
-				<img src={img} alt={speaker} />
-				<section class="event">
-					<h2>
-						{title}
-					</h2>
-					<h3>
-						<time datetime={time}>{date}</time>
-						<span>6pm-7pm GMT</span>
-						<!-- <span>{`${time.getHours() - 7}:00`}pm GMT</span> -->
-					</h3>
-					<small>Svelte Sirens Voice Chat - Svelte Discord</small>
-					<h4>Twitter: <span>{twitter}</span></h4>
-				</section>
+				{#each speakers as speaker}
+					<img src={speaker.picture.url} alt={speaker.name} />
+					<section class="event">
+						<h2>
+							{title}
+						</h2>
+						<h3>
+							<!-- <time datetime={new Intl.DateTimeFormat('en-US', datetime_event)}>
+								{new Intl.DateTimeFormat('en-US', datetime_event)}
+							</time> -->
+							<!-- <span>6pm-7pm GMT</span> -->
+						</h3>
+						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
+						<h4>Twitter: <span>{speaker.handle}</span></h4>
+					</section>
+				{/each}
 			</article>
 		</a>
 	{/each}
