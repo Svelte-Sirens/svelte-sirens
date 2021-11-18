@@ -1,7 +1,7 @@
 /** @type {import('@sveltejs/kit').Config} */
 import adapter from '@sveltejs/adapter-static';
-import preprocess from 'svelte-preprocess';
 import path from 'path';
+import preprocess from 'svelte-preprocess';
 
 const config = {
 	kit: {
@@ -20,6 +20,7 @@ const config = {
 					// these are the aliases and paths to them
 					'@api': path.resolve('./src/lib/api'),
 					'@components': path.resolve('./src/lib/components'),
+					'@gql': path.resolve('./src/lib/gql'),
 					'@layout': path.resolve('./src/lib/layout'),
 					'@lib': path.resolve('./src/lib'),
 					'@utils': path.resolve('./src/lib/utils'),

@@ -4,6 +4,7 @@
 		"paths": {
 			"@api": ["src/lib/api"],
 			"@components": ["src/lib/components"],
+			"@gql": ["src/lib/gql"],
 			"@layout": ["src/lib/layout"],
 			"@lib": ["src/lib"],
 			"@lib/*": ["src/lib/*"],
