@@ -20,11 +20,7 @@ const config = {
 					// these are the aliases and paths to them
 					'@api': path.resolve('./src/lib/api'),
 					'@components': path.resolve('./src/lib/components'),
-<<<<<<< HEAD
 					'@gql': path.resolve('./src/lib/utils/gql'),
-=======
-					'@gql': path.resolve('./src/lib/gql'),
->>>>>>> 7203b79f254d7b08bede0655b54bdf1a94f685f2
 					'@layout': path.resolve('./src/lib/layout'),
 					'@lib': path.resolve('./src/lib'),
 					'@utils': path.resolve('./src/lib/utils'),
