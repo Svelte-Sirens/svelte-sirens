@@ -2,7 +2,7 @@
 	import '@styles/global.scss';
 	import { page } from '$app/stores';
 
-	import Bubbles from '@components/bubbles.svelte';
+	import Bubbles from '@components/bubbles/Bubbles.svelte';
 	import Header from '@layout/header.svelte';
 
 	const capitalize = (str, lower = false) =>
