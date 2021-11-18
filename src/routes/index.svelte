@@ -3,8 +3,7 @@
 	<img src="images/favicon.png" alt="logo" />
 	<section>
 		<h1>Svelte Sirens</h1>
-		<h2>A Svelte Society for women & non-binary</h2>
-		<h3>Everyone is welcome</h3>
+		<h2>A Svelte Society for women, non-binary, & allies</h2>
 		<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
 			Join the community
 		</a>
@@ -47,10 +46,7 @@
 	}
 
 	h1 {
-		font-size: var(--text-4xl);
-	}
-	h2 {
-		max-width: 400px;
+		font-size: var(--text-5xl);
 	}
 
 	img {

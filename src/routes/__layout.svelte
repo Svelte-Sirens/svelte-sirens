@@ -44,7 +44,7 @@
 		height: 100%;
 		align-content: flex-start;
 		text-align: center;
-		max-width: 45ch;
+		max-width: 50ch;
 		margin: 0 auto;
 	}
 </style>
