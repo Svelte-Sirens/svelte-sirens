@@ -1,5 +1,5 @@
 import { client } from '@gql/graphql-client';
-import { queryEvent } from '@lib/gql/queries';
+import { queryEvent } from '@gql/queries';
 
 export const get = async (req) => {
 	const { slug } = req.params;
