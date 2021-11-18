@@ -4,7 +4,11 @@
 		"paths": {
 			"@api": ["src/lib/api"],
 			"@components": ["src/lib/components"],
+<<<<<<< HEAD
 			"@gql": ["src/lib/utils/gql"],
+=======
+			"@gql": ["src/lib/gql"],
+>>>>>>> 7203b79f254d7b08bede0655b54bdf1a94f685f2
 			"@layout": ["src/lib/layout"],
 			"@lib": ["src/lib"],
 			"@lib/*": ["src/lib/*"],
