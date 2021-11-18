@@ -1,28 +1,9 @@
-import { gql, GraphQLClient } from 'graphql-request';
-
-export const client = new GraphQLClient(import.meta.env.VITE_GRAPHQL_API);
+import { client } from '@gql/graphql-client';
+import { queryEvents } from '@gql/queries';
 
 export const get = async () => {
 	try {
-		const query = gql`
-			{
-				events {
-					slug
-					title
-					id
-					datetime_event
-					speakers {
-						name
-						handle
-						picture {
-							id
-							url
-						}
-					}
-				}
-			}
-		`;
-		const { events } = await client.request(query);
+		const { events } = await client.request(queryEvents);
 		return {
 			status: 200,
 			body: events
