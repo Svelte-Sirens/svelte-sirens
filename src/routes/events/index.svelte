@@ -29,8 +29,8 @@
 	{#each events as { slug, speakers, title, datetime_event }}
 		<a href="/events/{slug}" class="glass">
 			<article>
-				{#each speakers as speaker}
-					<img src={speaker.picture.url} alt={speaker.name} class="speaker" />
+				{#each speakers as { picture, name, handle }}
+					<img src={picture.url} alt={name} class="speaker" />
 					<section class="event">
 						<h2>
 							{title}
@@ -42,7 +42,7 @@
 							</time>
 						</h3>
 						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
-						<h4>Twitter: <span>{speaker.handle}</span></h4>
+						<h4>Twitter: <span>{handle}</span></h4>
 					</section>
 				{/each}
 			</article>
