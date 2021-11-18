@@ -43,15 +43,14 @@
 		justify-items: center;
 		text-align: center;
 		gap: var(--gap-2);
+		animation: var(--fade-in);
 	}
 
 	h1 {
 		font-size: var(--text-4xl);
-		animation: var(--fade-in);
 	}
 	h2 {
 		max-width: 400px;
-		animation: var(--fade-in);
 	}
 
 	img {
