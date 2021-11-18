@@ -30,7 +30,7 @@
 		<a href="/events/{slug}" class="glass">
 			<article>
 				{#each speakers as speaker}
-					<img src={speaker.picture.url} alt={speaker.name} />
+					<img src={speaker.picture.url} alt={speaker.name} class="speaker" />
 					<section class="event">
 						<h2>
 							{title}
@@ -85,13 +85,6 @@
 		gap: var(--gap-4);
 		text-align: center;
 		transition: var(--transition-transform);
-
-		img {
-			border-radius: 100%;
-			width: 200px;
-			height: 200px;
-			border: var(--gap-1) solid var(--blue);
-		}
 
 		h2 {
 			font-family: var(--font-body);

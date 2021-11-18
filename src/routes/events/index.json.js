@@ -6,7 +6,7 @@ export const get = async () => {
 	try {
 		const query = gql`
 			{
-				events {
+				events(orderBy: datetime_event_ASC) {
 					slug
 					title
 					id
