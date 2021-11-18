@@ -67,6 +67,13 @@ pre {
 	border-radius: 10px;
 }
 
+.speaker {
+	border-radius: 100%;
+	width: 200px;
+	height: 200px;
+	border: var(--gap-1) solid var(--blue);
+}
+
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
