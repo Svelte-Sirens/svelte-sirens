@@ -5,11 +5,11 @@
 </script>
 
 <div class="bubbles">
-	{#each Array(10) as _, i}
+	{#each Array(10) as _, i (i)}
 		<Bubble
 			--scale={ran(2, 4) / 10}
 			--offset="{i * ran(8, 10)}%"
-			--delay="{i * ran(1000, 5000)}ms"
+			--delay="{ran(i, i + 4) * ran(500, 4000)}ms"
 		/>
 	{/each}
 </div>
