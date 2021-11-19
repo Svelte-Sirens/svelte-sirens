@@ -2,8 +2,8 @@
 	import '@styles/global.scss';
 
 	import Head from '@layout/head.svelte';
-	import Bubbles from '@components/bubbles.svelte';
 	import Header from '@layout/header.svelte';
+	import Bubbles from '@components/bubbles/Bubbles.svelte';
 </script>
 
 <Head />
