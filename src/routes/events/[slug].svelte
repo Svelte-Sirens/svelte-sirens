@@ -23,14 +23,34 @@
 		<section class="glass">
 			<img src="/images/bg.png" alt="Svelte Sirens logo" class="logo" />
 			<section class="content">
-				{#each speakers as { picture, name }}
+				{#each speakers as { picture, name, handle, handleUrl }}
 					<img src={picture.url} alt={name} class="speaker" />
 					<h1 class="title">{title}</h1>
+					<h3>
+						With {name}
+					</h3>
+					<h4>
+						<a href={handleUrl} rel="noopener norefferer" target="_blank">
+							<span>{handle}</span>
+						</a>
+					</h4>
 					<time datetime={datetime_event}>
 						<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
 						<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
 					</time>
-					<small>Svelte Sirens Voice Chat - Svelte Discord</small>
+					<h4>
+						<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+							Svelte Discord
+						</a>
+						and
+						<a
+							href="https://www.youtube.com/SvelteSociety"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							YouTube
+						</a>
+					</h4>
 				{/each}
 			</section>
 		</section>
@@ -66,6 +86,14 @@
 				font-size: var(--text-3xl);
 				font-family: var(--font-body);
 			}
+		}
+
+		h3 {
+			font-family: var(--font-body);
+		}
+
+		h4 {
+			font-family: var(--font-body);
 		}
 	}
 

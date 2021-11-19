@@ -20,14 +20,19 @@
 
 		top: 0;
 		left: 0;
-
+		// For Bubbles blurred in front::after
+		// Take out this z-index and uncomment other styles.
 		z-index: -1;
+		// z-index: 99;
+		// pointer-events: none;
 
 		.bubble {
 			--size: 200px;
 
 			width: var(--size);
 			height: var(--size);
+			// backdrop-filter: blur(1rem);
+			// filter: blur(2px);
 
 			border-radius: 100%;
 			box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);

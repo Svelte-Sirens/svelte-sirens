@@ -3,7 +3,9 @@
 	--navy: hsl(220, 43%, 23%);
 	--blue: #aefffa;
 	--light-blue: #9fc0cf;
+	--light-teal: #68e0d0;
 	--silver: #b9c2c1;
+	--teal: #08847c;
 	--yellow: #fce762;
 	--red: #ff3c00;
 	--aqua: #00ffee;
@@ -12,7 +14,7 @@
 	--black: #0a090c;
 
 	--color-text: var(--white);
-	--color-bg: radial-gradient(222.14% 100% at 50.03% 100%, #213253 0%, #08847c 100%);
+	--color-bg: radial-gradient(222.14% 100% at 50.03% 100%, #213253 0%, var(--teal) 100%);
 	/* TYPOGRAPHY */
 	--font-heading: 'Cinzel Decorative', system-ui, sans-serif;
 	--font-body: 'Red Hat Text', system-ui, sans-serif;
@@ -50,7 +52,14 @@
 
 	--fade-in: fadeIn 5s cubic-bezier(0, 1, 0.5, 1);
 	/* SHADOWS */
-	--shadow-btn: 0px 10px 20px #213253;
-	--shadow-btn-hover: 0px 2px 4px #213253;
+	--shadow-btn-sm: 2px 4px 8px hsl(220 43% 23% / 0.5);
+	--shadow-btn: 4px 8px 16px hsl(220 43% 23% / 0.5);
+	--shadow-btn-hover: 4px 4px 0px hsl(220 43% 23%);
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+	--shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 	--shadow-text: 2px 2px 2px rgba(33, 50, 83, 1);
 }

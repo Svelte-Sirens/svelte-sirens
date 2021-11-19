@@ -45,11 +45,12 @@ h5 {
 a {
 	color: var(--blue);
 	border-bottom: 1px solid var(--blue);
-	transition: var(--transition-colors);
+	transition: var(--transition-all);
 }
 
 a:hover {
-	color: var(--blue);
+	color: var(--light-teal);
+	border-bottom: 1px solid var(--light-teal);
 }
 
 pre {
@@ -69,7 +70,7 @@ pre {
 
 	&:hover {
 		box-shadow: var(--shadow-btn-hover);
-		filter: brightness(1.1);
+		background-color: var(--light-teal);
 		color: var(--navy);
 	}
 }
