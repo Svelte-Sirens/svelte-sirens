@@ -56,6 +56,24 @@ pre {
 	white-space: pre-wrap;
 }
 
+.btn-primary {
+	padding: var(--gap-4) var(--gap-8);
+	background-color: var(--blue);
+	border-radius: var(--gap-1);
+	color: var(--navy);
+	font-size: var(--text-lg);
+	font-weight: 700;
+	cursor: pointer;
+	transition: var(--transition-all);
+	box-shadow: var(--shadow-btn);
+
+	&:hover {
+		box-shadow: var(--shadow-btn-hover);
+		filter: brightness(1.1);
+		color: var(--navy);
+	}
+}
+
 .glass {
 	margin: 0 var(--gap-4) var(--gap-4);
 	background: rgba(255, 255, 255, 0.25);

@@ -27,8 +27,8 @@
 </section>
 <ul>
 	{#each events as { slug, speakers, title, datetime_event }}
-		<a href="/events/{slug}" class="glass">
-			<article>
+		
+			<article class="glass">
 				{#each speakers as { picture, name, handle }}
 					<img src={picture.url} alt={name} class="speaker" />
 					<section class="event">
@@ -43,10 +43,12 @@
 						</h3>
 						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
 						<h4>Twitter: <span>{handle}</span></h4>
+						<a href="/events/{slug}" class="btn-primary">
+							View more details
+						</a>
 					</section>
 				{/each}
 			</article>
-		</a>
 	{/each}
 </ul>
 
@@ -71,10 +73,6 @@
 		border-bottom: none;
 		padding: var(--gap-4);
 		max-width: 300px;
-
-		&:hover {
-			transform: scale(1.05);
-		}
 	}
 
 	article {
