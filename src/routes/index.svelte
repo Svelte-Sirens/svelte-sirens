@@ -56,7 +56,7 @@
 	}
 
 	a {
-		margin-top: var(--gap-4);
+		margin: var(--gap-4) auto;
 	}
 
 	@media (min-width: 1024px) {
