@@ -15,9 +15,7 @@
 			duration: options.duration || 200,
 			delay: options.delay || 0,
 
-			css: (t, u) => {
-				return `transform: scale(${u + 1}); opacity: ${t * opacity}`;
-			}
+			css: (t, u) => `transform: scale(${u + 1}); opacity: ${t * opacity}`
 		};
 	};
 
