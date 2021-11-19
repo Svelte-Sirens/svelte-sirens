@@ -45,15 +45,34 @@ h5 {
 a {
 	color: var(--blue);
 	border-bottom: 1px solid var(--blue);
-	transition: var(--transition-colors);
+	transition: var(--transition-all);
 }
 
 a:hover {
-	color: var(--blue);
+	color: var(--light-teal);
+	border-bottom: 1px solid var(--light-teal);
 }
 
 pre {
 	white-space: pre-wrap;
+}
+
+.btn-primary {
+	padding: var(--gap-4) var(--gap-8);
+	background-color: var(--blue);
+	border-radius: var(--gap-1);
+	color: var(--navy);
+	font-size: var(--text-lg);
+	font-weight: 700;
+	cursor: pointer;
+	transition: var(--transition-all);
+	box-shadow: var(--shadow-btn);
+
+	&:hover {
+		box-shadow: var(--shadow-btn-hover);
+		background-color: var(--light-teal);
+		color: var(--navy);
+	}
 }
 
 .glass {

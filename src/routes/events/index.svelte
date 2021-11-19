@@ -27,26 +27,47 @@
 </section>
 <ul>
 	{#each events as { slug, speakers, title, datetime_event }}
-		<a href="/events/{slug}" class="glass">
-			<article>
-				{#each speakers as { picture, name, handle }}
+		<article class="glass">
+			{#each speakers as { picture, name, handle, handleUrl }}
+				<div class="wrapper">
 					<img src={picture.url} alt={name} class="speaker" />
 					<section class="event">
 						<h2>
 							{title}
 						</h2>
 						<h3>
+							With {name}
+						</h3>
+						<h4>
+							<a href={handleUrl} rel="noopener norefferer" target="_blank">
+								<span>{handle}</span>
+							</a>
+						</h4>
+						<h4>
 							<time datetime={datetime_event}>
 								<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
 								<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
 							</time>
-						</h3>
-						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
-						<h4>Twitter: <span>{handle}</span></h4>
+						</h4>
+						<h4>
+							<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+								Svelte Discord
+							</a>
+							and
+							<a
+								href="https://www.youtube.com/SvelteSociety"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								YouTube
+							</a>
+						</h4>
+
+						<a href="/events/{slug}" class="btn-primary"> More Info </a>
 					</section>
-				{/each}
-			</article>
-		</a>
+				</div>
+			{/each}
+		</article>
 	{/each}
 </ul>
 
@@ -71,13 +92,9 @@
 		border-bottom: none;
 		padding: var(--gap-4);
 		max-width: 300px;
-
-		&:hover {
-			transform: scale(1.05);
-		}
 	}
 
-	article {
+	.wrapper {
 		max-width: 500px;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
@@ -85,11 +102,11 @@
 		gap: var(--gap-4);
 		text-align: center;
 		transition: var(--transition-transform);
+		text-shadow: var(--shadow-text);
 
 		h2 {
 			font-family: var(--font-body);
 			font-size: var(--text-xl);
-			text-shadow: 0 1px 1px var(--navy);
 		}
 
 		time {
@@ -99,17 +116,12 @@
 
 		h3 {
 			font-family: var(--font-body);
-			font-size: var(--text-base);
-			text-shadow: 0 1px 1px var(--navy);
+			font-size: var(--text-lg);
 		}
 
 		h4 {
 			font-family: var(--font-body);
 			font-size: var(--text-base);
-			text-shadow: 0 1px 1px var(--navy);
-			& > span {
-				font-family: var(--font-body);
-			}
 		}
 
 		.event {
@@ -119,8 +131,19 @@
 		}
 	}
 
+	.btn-primary {
+		margin-top: var(--gap-2);
+		padding: 2px var(--gap-2);
+		justify-self: center;
+		text-shadow: none;
+		box-shadow: var(--shadow-btn-sm);
+		&:hover {
+			box-shadow: var(--shadow-btn-hover);
+		}
+	}
+
 	@media (min-width: 1024px) {
-		article {
+		.wrapper {
 			display: flex;
 		}
 

@@ -4,7 +4,7 @@
 	<section>
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary, & allies</h2>
-		<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+		<a class="btn-primary" rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
 			Join the community
 		</a>
 	</section>
@@ -56,22 +56,7 @@
 	}
 
 	a {
-		margin-top: var(--gap-4);
-		padding: var(--gap-4) var(--gap-8);
-		background-color: var(--blue);
-		border-radius: var(--gap-1);
-		color: var(--navy);
-		font-size: var(--text-lg);
-		font-weight: 700;
-		cursor: pointer;
-		transition: var(--transition-all);
-		box-shadow: var(--shadow-btn);
-
-		&:hover {
-			box-shadow: var(--shadow-btn-hover);
-			filter: brightness(1.1);
-			color: var(--navy);
-		}
+		margin: var(--gap-4) auto;
 	}
 
 	@media (min-width: 1024px) {
