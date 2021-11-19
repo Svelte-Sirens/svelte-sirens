@@ -26,7 +26,7 @@
 
 	@keyframes bubble {
 		from {
-			bottom: calc(var(--size) * -2);
+			bottom: calc(-1 * var(--size));
 		}
 
 		to {
