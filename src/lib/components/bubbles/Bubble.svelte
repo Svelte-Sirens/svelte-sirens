@@ -20,11 +20,8 @@
 
 		transform: scale(var(--scale));
 
-		/* background: radial-gradient(
-				ellipse at center,
-				rgba(255, 255, 255, 0.5) 0%,
-				rgba(255, 255, 255, 0) 70%
-			); */
+		backdrop-filter: blur(1rem);
+		filter: blur(2px);
 	}
 
 	@keyframes bubble {
