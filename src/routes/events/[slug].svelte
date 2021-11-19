@@ -72,7 +72,6 @@
 		justify-content: center;
 
 		& .logo {
-			max-width: 400px;
 			grid-area: 2/-1;
 		}
 
@@ -105,6 +104,7 @@
 			gap: var(--gap-8);
 
 			& .logo {
+				max-width: 400px;
 				grid-area: unset;
 			}
 
