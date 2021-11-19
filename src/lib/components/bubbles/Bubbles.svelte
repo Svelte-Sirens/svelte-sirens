@@ -3,7 +3,7 @@
 	import Bubble from './Bubble.svelte';
 </script>
 
-<div class="bubbles">
+<div>
 	{#each Array(12) as _, i (i)}
 		<Bubble
 			--scale={ran(2, 3.5) / 10}
@@ -13,17 +13,3 @@
 		/>
 	{/each}
 </div>
-
-<style lang="scss">
-	.bubbles {
-		position: fixed;
-		height: 100vh;
-		width: 100%;
-
-		top: 0;
-		left: 0;
-
-		z-index: -1;
-		pointer-events: none;
-	}
-</style>

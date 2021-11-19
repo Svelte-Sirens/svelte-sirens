@@ -1,38 +1,79 @@
-<div class="bubble" />
+<script>
+	import { fade } from 'svelte/transition';
+	import { ran } from '@utils/random.js';
+	import { linear, quintIn } from 'svelte/easing';
+	import { onDestroy } from 'svelte';
+
+	let timeout,
+		popped = false;
+
+	onDestroy(() => clearTimeout(timeout));
+
+	const popTransition = (node, options) => {
+		const opacity = getComputedStyle(node).opacity;
+
+		return {
+			easing: quintIn,
+			duration: options.duration || 200,
+			delay: options.delay || 0,
+
+			css: (t, u) => {
+				return `transform: scale(${u + 1}); opacity: ${t * opacity}`;
+			}
+		};
+	};
+
+	function pop() {
+		popped = true;
+
+		if (!timeout)
+			timeout = setTimeout(() => {
+				popped = false;
+				timeout = null;
+			}, 12000);
+	}
+</script>
+
+<div class="positioner">
+	{#if !popped}
+		<div class="bubble" on:click={pop} transition:popTransition />
+	{/if}
+</div>
 
 <style lang="scss">
-	.bubble {
-		--size: 200px;
+	.positioner {
+		--bubble-size: calc(200px * var(--scale));
 
-		width: var(--size);
-		height: var(--size);
-
-		border-radius: 100%;
-		box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
-
-		animation: bubble var(--speed) linear infinite forwards,
+		animation: position var(--speed) linear infinite forwards,
 			wobble 2s ease-in-out alternate infinite;
 
-		animation-delay: var(--delay, 0ms);
+		animation-delay: var(--delay);
 
-		position: absolute;
+		position: fixed;
+		z-index: var(--zindex, 99);
 
-		bottom: calc(var(--size) * -2);
+		bottom: calc(var(--bubble-size) * -2);
 		left: var(--offset);
 
-		transform: scale(var(--scale));
+		.bubble {
+			width: var(--bubble-size);
+			height: var(--bubble-size);
 
-		backdrop-filter: blur(1rem);
-		filter: blur(2px);
+			border-radius: 100%;
+			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0px 5px 15px 2px rgba(255, 255, 255, 1);
+
+			backdrop-filter: blur(6px);
+			filter: blur(2px);
+		}
 	}
 
-	@keyframes bubble {
+	@keyframes position {
 		from {
-			bottom: calc(-1 * var(--size));
+			bottom: calc(-1 * var(--bubble-size));
 		}
 
 		to {
-			bottom: calc(var(--size) + 100vh);
+			bottom: calc(var(--bubble-size) + 100vh);
 		}
 	}
 
