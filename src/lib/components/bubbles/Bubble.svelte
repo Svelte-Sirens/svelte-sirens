@@ -36,7 +36,7 @@
 
 <div class="positioner">
 	{#if !popped}
-		<div class="bubble" on:click={pop} transition:popTransition />
+		<div class="bubble" on:click={pop} transition:popTransition|local />
 	{/if}
 </div>
 
