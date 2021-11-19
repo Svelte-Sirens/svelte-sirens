@@ -10,6 +10,7 @@ export const queryEvents = gql`
 			speakers {
 				name
 				handle
+				handleUrl
 				picture {
 					id
 					url
@@ -29,6 +30,7 @@ export const queryEvent = gql`
 			speakers {
 				name
 				handle
+				handleUrl
 				picture {
 					id
 					url
