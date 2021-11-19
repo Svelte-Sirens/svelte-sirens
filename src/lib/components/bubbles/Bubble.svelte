@@ -40,7 +40,7 @@
 		}
 
 		to {
-			margin-left: 52px;
+			margin-left: 42px;
 		}
 	}
 </style>
