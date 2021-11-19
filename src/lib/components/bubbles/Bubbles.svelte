@@ -7,7 +7,7 @@
 <div class="bubbles">
 	{#each Array(12) as _, i (i)}
 		<Bubble
-			--scale={ran(2, 4) / 10}
+			--scale={ran(2, 3.5) / 10}
 			--offset="{i * ran(8, 10)}%"
 			--delay="{ran(i, Math.min(i + 4, 5)) * ran(100, 3000)}ms"
 			--speed="{ran(12, 22)}s"
