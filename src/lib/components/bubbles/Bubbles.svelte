@@ -1,7 +1,6 @@
 <script>
+	import { ran } from '@utils/random.js';
 	import Bubble from './Bubble.svelte';
-
-	const ran = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 </script>
 
 <div class="bubbles">
