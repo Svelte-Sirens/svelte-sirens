@@ -10,7 +10,7 @@
 	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary, & allies.';
 	let title =
 		$page.path === '/'
-			? 'Svetle Sirens'
+			? 'Svelte Sirens'
 			: `${$page.path.substring(1).replace('s/', ' | ').replace(/-/g, ' ')} | Svelte Sirens`;
 </script>
 
