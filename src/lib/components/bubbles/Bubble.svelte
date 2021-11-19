@@ -1,7 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { ran } from '@utils/random.js';
-	import { linear, quintIn } from 'svelte/easing';
+	import { quintIn } from 'svelte/easing';
 	import { onDestroy } from 'svelte';
 
 	let timeout,
