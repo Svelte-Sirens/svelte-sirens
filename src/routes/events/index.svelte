@@ -30,23 +30,25 @@
 		
 			<article class="glass">
 				{#each speakers as { picture, name, handle }}
-					<img src={picture.url} alt={name} class="speaker" />
-					<section class="event">
-						<h2>
-							{title}
-						</h2>
-						<h3>
-							<time datetime={datetime_event}>
-								<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
-								<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
-							</time>
-						</h3>
-						<small>Svelte Sirens Voice Chat - Svelte Discord</small>
-						<h4>Twitter: <span>{handle}</span></h4>
-						<a href="/events/{slug}" class="btn-primary">
-							View more details
-						</a>
-					</section>
+					<div class="wrapper">
+						<img src={picture.url} alt={name} class="speaker" />
+						<section class="event">
+							<h2>
+								{title}
+							</h2>
+							<h3>
+								<time datetime={datetime_event}>
+									<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
+									<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
+								</time>
+							</h3>
+							<small>Svelte Sirens Voice Chat - Svelte Discord</small>
+							<h4>Twitter: <span>{handle}</span></h4>
+							<a href="/events/{slug}" class="btn-primary">
+								View more details
+							</a>
+						</section>
+					</div>
 				{/each}
 			</article>
 	{/each}
@@ -75,7 +77,7 @@
 		max-width: 300px;
 	}
 
-	article {
+	.wrapper {
 		max-width: 500px;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
@@ -118,7 +120,7 @@
 	}
 
 	@media (min-width: 1024px) {
-		article {
+		.wrapper {
 			display: flex;
 		}
 
