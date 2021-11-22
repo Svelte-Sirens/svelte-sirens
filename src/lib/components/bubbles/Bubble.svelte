@@ -63,6 +63,12 @@
 		}
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		.positioner {
+			animation: none;
+		}
+	}
+
 	@keyframes position {
 		from {
 			bottom: calc(-1 * var(--bubble-size));
