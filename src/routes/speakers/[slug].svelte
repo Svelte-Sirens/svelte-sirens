@@ -19,7 +19,9 @@
 	{#each speakers as { name, picture, biography }}
 		<img src={picture.url} alt={name} />
 		<article>
-			{@html marked(biography)}
+			{#if biography}
+				{@html marked(biography)}
+			{/if}
 		</article>
 	{/each}
 </section>
