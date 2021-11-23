@@ -4,7 +4,7 @@
 </script>
 
 <div>
-	{#each Array(12) as _, i (i)}
+	{#each Array(10) as _, i (i)}
 		<Bubble
 			--scale={ran(2, 3.5) / 10}
 			--offset="{i * ran(8, 10)}%"
