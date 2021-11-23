@@ -52,8 +52,6 @@
 		bottom: calc(var(--bubble-size) * -2);
 		left: var(--offset);
 
-		transform: translate3d(var(--tx), var(--ty), 0);
-
 		.positioner-inner {
 			animation: wobble 2s ease-in-out alternate infinite;
 			animation-delay: inherit;
