@@ -63,6 +63,10 @@
 {/each}
 
 <style lang="scss">
+	article {
+		padding: 8px 0px;
+	}
+
 	.glass {
 		padding: var(--gap-8);
 		max-width: 40ch;
