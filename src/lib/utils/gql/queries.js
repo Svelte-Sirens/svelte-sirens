@@ -11,6 +11,7 @@ export const queryEvents = gql`
 				name
 				handle
 				handleUrl
+				slug
 				picture {
 					id
 					url
@@ -31,6 +32,7 @@ export const queryEvent = gql`
 				name
 				handle
 				handleUrl
+				slug
 				picture {
 					id
 					url

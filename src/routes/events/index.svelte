@@ -28,7 +28,7 @@
 <ul>
 	{#each events as { slug, speakers, title, datetime_event }}
 		<article class="glass">
-			{#each speakers as { picture, name, handle, handleUrl }}
+			{#each speakers as { picture, name, handle, handleUrl, slug }}
 				<div class="wrapper">
 					<img src={picture.url} alt={name} class="speaker" />
 					<section class="event">
@@ -36,7 +36,7 @@
 							{title}
 						</h2>
 						<h3>
-							With {name}
+							With <a href={`/speakers/${slug}`}>{name}</a>
 						</h3>
 						<h4>
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
