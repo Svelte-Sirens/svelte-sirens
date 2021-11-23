@@ -31,17 +31,18 @@
 </script>
 
 <div class="positioner">
-	{#if !popped}
-		<div class="bubble" on:click={pop} transition:popTransition|local />
-	{/if}
+	<div class="positioner-inner">
+		{#if !popped}
+			<div class="bubble" on:click={pop} transition:popTransition|local />
+		{/if}
+	</div>
 </div>
 
 <style lang="scss">
 	.positioner {
 		--bubble-size: calc(200px * var(--scale));
 
-		animation: position var(--speed) linear infinite forwards,
-			wobble 2s ease-in-out alternate infinite;
+		animation: position var(--speed) linear infinite forwards;
 
 		animation-delay: var(--delay);
 
@@ -50,6 +51,11 @@
 
 		bottom: calc(var(--bubble-size) * -2);
 		left: var(--offset);
+
+		.positioner-inner {
+			animation: wobble 2s ease-in-out alternate infinite;
+			animation-delay: inherit;
+		}
 
 		.bubble {
 			width: var(--bubble-size);
@@ -71,21 +77,21 @@
 
 	@keyframes position {
 		from {
-			bottom: calc(-1 * var(--bubble-size));
+			transform: translate3d(0, 0, 0);
 		}
 
 		to {
-			bottom: calc(var(--bubble-size) + 100vh);
+			transform: translate3d(0, calc((-2.5 * var(--bubble-size)) - 100vh), 0);
 		}
 	}
 
 	@keyframes wobble {
 		from {
-			margin-left: 0;
+			transform: translate3d(0, 0, 0);
 		}
 
 		to {
-			margin-left: 42px;
+			transform: translate3d(42px, 0, 0);
 		}
 	}
 </style>
