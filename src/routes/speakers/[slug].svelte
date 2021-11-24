@@ -2,11 +2,13 @@
 	export async function load({ fetch, page: { params } }) {
 		const res = await fetch(`/speakers/${params.slug}.json`);
 		const speakers = await res.json();
-		return {
-			props: {
-				speakers
-			}
-		};
+		if (res.ok && speakers.length > 0) {
+			return {
+				props: {
+					speakers
+				}
+			};
+		}
 	}
 </script>
 
