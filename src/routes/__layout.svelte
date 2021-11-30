@@ -25,7 +25,7 @@
 		height: 100%;
 		align-content: flex-start;
 		text-align: center;
-		max-width: 50ch;
-		margin: 0 auto;
+		max-width: 1200px;
+		margin: 0 auto var(--gap-4);
 	}
 </style>

@@ -4,7 +4,12 @@
 	<section>
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary, & allies</h2>
-		<a class="btn-primary" rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+		<a
+			class="btn-primary"
+			rel="noopener noreffer"
+			target="_blank"
+			href="https://discord.gg/4TVdc4RRps"
+		>
 			Join the community
 		</a>
 	</section>
@@ -42,6 +47,7 @@
 		justify-items: center;
 		text-align: center;
 		gap: var(--gap-2);
+		max-width: 50ch;
 		animation: var(--fade-in);
 	}
 
