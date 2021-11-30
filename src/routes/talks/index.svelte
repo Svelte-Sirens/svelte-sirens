@@ -21,7 +21,7 @@
 			{#if talkUrl}
 				<iframe
 					width="100%"
-					height="315"
+					height="350"
 					src={talkUrl}
 					title="YouTube video player"
 					frameborder="0"
