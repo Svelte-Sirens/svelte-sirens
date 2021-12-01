@@ -39,3 +39,24 @@ export const queryEvent = gql`
 		}
 	}
 `;
+
+export const queryTalks = gql`
+	query Talks {
+		events(orderBy: datetime_event_ASC) {
+			slug
+			title
+			id
+			datetime_event
+			talkUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+				}
+			}
+		}
+	}
+`;
