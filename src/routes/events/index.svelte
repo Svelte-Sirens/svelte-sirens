@@ -26,7 +26,7 @@
 	</p>
 </section>
 <ul>
-	{#each events as { speakers, title, datetime_event }, index}
+	{#each events as { slug: eventSlug, speakers, title, datetime_event }, index}
 		<article class="glass">
 			{#each speakers as { picture, name, handle, handleUrl, slug }}
 				<div class="wrapper">
@@ -63,7 +63,7 @@
 							</a>
 						</h4>
 
-						<a href="/events/{events[index].slug}" class="btn-primary"> More Info </a>
+						<a href="/events/{eventSlug}" class="btn-primary"> More Info </a>
 					</section>
 				</div>
 			{/each}
