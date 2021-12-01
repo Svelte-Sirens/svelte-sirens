@@ -4,9 +4,11 @@
 		const res = await fetch(`/events/${slug}.json`);
 		if (res.ok) {
 			const event = await res.json();
-			return {
-				props: { event }
-			};
+			if (event.length > 0) {
+				return {
+					props: { event }
+				};
+			}
 		}
 	};
 </script>

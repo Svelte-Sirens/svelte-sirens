@@ -15,6 +15,7 @@ export const queryEvents = gql`
 				picture {
 					id
 					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
 			}
 		}
