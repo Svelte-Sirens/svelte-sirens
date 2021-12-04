@@ -1,7 +1,10 @@
 <script>
+	import AnimationToggle from './animationToggle.svelte';
 	import { page } from '$app/stores';
 	let clicked = false;
 	let mobile = false;
+	let bubbles = true;
+	$: label = bubbles ? 'Bubbles: ON' : 'Bubbles: OFF';
 
 	function openNav() {
 		mobile = true;
@@ -10,6 +13,7 @@
 </script>
 
 <nav>
+	<AnimationToggle {label} on:check={() => (bubbles = !bubbles)} />
 	<ul>
 		<li><a class={$page.path === '/' ? 'active' : ''} sveltekit:prefetch href="/">Home</a></li>
 		<li>
@@ -34,7 +38,6 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
-		margin-left: auto;
 	}
 	ul {
 		display: flex;

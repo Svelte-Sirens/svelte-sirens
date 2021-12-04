@@ -4,12 +4,14 @@
 </script>
 
 <header>
-	{#if $page.path !== '/'}
-		<a href="/">
-			<img src="/images/favicon.png" alt="logo" />
-			<span>Svelte Sirens</span>
-		</a>
-	{/if}
+	<section>
+		{#if $page.path !== '/'}
+			<a href="/">
+				<img src="/images/favicon.png" alt="logo" />
+				<span>Svelte Sirens</span>
+			</a>
+		{/if}
+	</section>
 	<Nav />
 </header>
 
@@ -30,6 +32,7 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 100px;
+		width: 100%;
 		padding: 0 var(--gap-4);
 	}
 

@@ -3,7 +3,7 @@
 	import Bubble from './Bubble.svelte';
 </script>
 
-<div>
+<div id="bubbles">
 	{#each Array(10) as _, i (i)}
 		<Bubble
 			--scale={ran(2, 3.5) / 10}
