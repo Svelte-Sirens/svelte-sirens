@@ -7,7 +7,7 @@
 		);
 
 	const img = 'https://www.sveltesirens.dev/images/android-chrome-192x192.png';
-	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary, & allies.';
+	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary people, & allies.';
 	let title =
 		$page.path === '/'
 			? 'Svelte Sirens'

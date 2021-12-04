@@ -3,7 +3,7 @@
 	<img src="images/favicon.png" alt="logo" />
 	<section>
 		<h1>Svelte Sirens</h1>
-		<h2>A Svelte Society for women, non-binary, & allies</h2>
+		<h2>A Svelte Society for women, non-binary people, & allies</h2>
 		<a
 			class="btn-primary"
 			rel="noopener noreffer"
@@ -47,7 +47,7 @@
 		justify-items: center;
 		text-align: center;
 		gap: var(--gap-2);
-		max-width: 50ch;
+		max-width: 55ch;
 		animation: var(--fade-in);
 	}
 
