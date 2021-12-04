@@ -15,19 +15,19 @@
 <nav>
 	<AnimationToggle {label} on:check={() => (bubbles = !bubbles)} />
 	<ul>
-		<li><a class={$page.path === '/' ? 'active' : ''} sveltekit:prefetch href="/">Home</a></li>
+		<li><a class:active={$page.path == '/'} sveltekit:prefetch href="/">Home</a></li>
+		<li />
 		<li>
-			<a class={$page.path === '/talks' ? 'active' : ''} sveltekit:prefetch href="/talks">Talks</a>
+			<a class:active={$page.path == '/about'} sveltekit:prefetch href="/about">About</a>
 		</li>
 		<li>
-			<a class={$page.path === '/events' ? 'active' : ''} sveltekit:prefetch href="/events">
-				Events
-			</a>
+			<a class:active={$page.path == '/talks'} sveltekit:prefetch href="/talks">Talks</a>
 		</li>
 		<li>
-			<a class={$page.path === '/speakers' ? 'active' : ''} sveltekit:prefetch href="/speakers">
-				Speakers
-			</a>
+			<a class:active={$page.path == '/events'} sveltekit:prefetch href="/events"> Events </a>
+		</li>
+		<li>
+			<a class:active={$page.path == '/speakers'} sveltekit:prefetch href="/speakers"> Speakers </a>
 		</li>
 	</ul>
 </nav>
