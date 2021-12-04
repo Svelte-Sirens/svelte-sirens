@@ -15,7 +15,7 @@
 </script>
 
 <h1>Talks</h1>
-<article>
+<article class="grid">
 	<section class="glass">
 		{#each talks as { talkUrl, title }}
 			{#if talkUrl}
@@ -42,17 +42,6 @@
 <style lang="scss">
 	section {
 		height: 100%;
-	}
-
-	h1 {
-		animation: var(--fade-in);
-		margin-bottom: var(--gap-4);
-	}
-
-	article {
-		display: grid;
-		gap: var(--gap-4);
-		grid-template-columns: minmax(0, 1fr);
 	}
 
 	.glass {

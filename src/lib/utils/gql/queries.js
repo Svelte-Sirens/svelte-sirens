@@ -11,9 +11,11 @@ export const queryEvents = gql`
 				name
 				handle
 				handleUrl
+				slug
 				picture {
 					id
 					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
 			}
 		}
@@ -31,10 +33,39 @@ export const queryEvent = gql`
 				name
 				handle
 				handleUrl
+				slug
 				picture {
 					id
 					url
 				}
+			}
+		}
+	}
+`;
+
+export const querySpeakers = gql`
+	query Speakers {
+		speakers {
+			name
+			slug
+			biography
+			picture {
+				id
+				url
+			}
+		}
+	}
+`;
+
+export const querySpeaker = gql`
+	query Speaker($slug: String!) {
+		speakers(where: { slug: $slug }) {
+			name
+			slug
+			biography
+			picture {
+				id
+				url
 			}
 		}
 	}
