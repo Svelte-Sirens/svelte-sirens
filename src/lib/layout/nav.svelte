@@ -20,6 +20,11 @@
 				Events
 			</a>
 		</li>
+		<li>
+			<a class={$page.path === '/speakers' ? 'active' : ''} sveltekit:prefetch href="/speakers">
+				Speakers
+			</a>
+		</li>
 	</ul>
 </nav>
 

@@ -14,8 +14,8 @@
 	export let speakers;
 </script>
 
-<section>
-	<h1>Speakers</h1>
+<h1>Speakers</h1>
+<section class="glass">
 	{#each speakers as { name, slug, picture }}
 		<article>
 			<img src={picture.url} alt={name} />
@@ -28,17 +28,21 @@
 
 <style>
 	section {
-		display: grid;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
 		gap: var(--gap-8);
-		grid-template-columns: minmax(0, 1fr);
+		max-width: 80ch;
+		place-content: center;
 	}
 
 	img {
-		width: 100px;
+		width: 200px;
 	}
+
 	article {
-		display: flex;
-		align-items: center;
+		display: grid;
+		place-items: center;
 		gap: var(--gap-4);
 	}
 </style>

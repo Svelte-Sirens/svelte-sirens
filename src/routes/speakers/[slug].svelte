@@ -17,19 +17,22 @@
 	export let speakers;
 </script>
 
-<section>
+<article class="glass">
 	{#each speakers as { name, picture, biography }}
+		<h1>{name}</h1>
 		<img src={picture.url} alt={name} />
-		<article>
+		<section>
 			{#if biography}
 				{@html marked(biography)}
 			{/if}
-		</article>
+		</section>
 	{/each}
-</section>
+</article>
 
 <style>
-	section {
+	article {
+		margin: 0 auto;
+		max-width: 50ch;
 		display: grid;
 		gap: var(--gap-4);
 		grid-template-columns: minmax(0, 1fr);
