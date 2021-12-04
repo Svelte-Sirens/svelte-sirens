@@ -1,0 +1,81 @@
+html {
+	scrollbar-width: thick;
+	scrollbar-color: var(--blue) var(--navy);
+}
+
+/* *Chrome Scrollbar* */
+*::-webkit-scrollbar {
+	width: 14px;
+	height: 14px;
+}
+*::-webkit-scrollbar-track {
+	background: var(--navy);
+}
+*::-webkit-scrollbar-thumb {
+	background: var(--blue);
+}
+*::-webkit-scrollbar-thumb:hover {
+	background: var(--silver);
+}
+::-webkit-scrollbar-button {
+	border-style: solid;
+	background-color: var(--navy);
+	height: 16px;
+	width: 16px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	border-top: solid 2px rgba(33, 33, 33, 0.5);
+	border-bottom: solid 2px rgba(33, 33, 33, 0.5);
+}
+::-webkit-scrollbar-thumb:horizontal {
+	border-right: solid 2px rgba(33, 33, 33, 0.5);
+	border-left: solid 2px rgba(33, 33, 33, 0.5);
+}
+::-webkit-scrollbar-thumb:vertical {
+	border-top: solid 2px rgba(33, 33, 33, 0.5);
+	border-bottom: solid 2px rgba(33, 33, 33, 0.5);
+}
+::-webkit-scrollbar-thumb:active {
+	background: var(--blue);
+}
+
+/* Up */
+::-webkit-scrollbar-button:vertical:decrement {
+	border-width: 0 7px 14px 7px;
+	border-color: transparent transparent var(--blue) transparent;
+}
+
+::-webkit-scrollbar-button:vertical:decrement:hover {
+	border-color: transparent transparent var(--blue) transparent;
+}
+
+/* Down */
+::-webkit-scrollbar-button:vertical:increment {
+	border-width: 14px 7px 0 7px;
+	border-color: var(--blue) transparent transparent transparent;
+}
+
+::-webkit-scrollbar-button:vertical:increment:hover {
+	border-color: var(--blue) transparent transparent transparent;
+}
+
+/* Left */
+::-webkit-scrollbar-button:horizontal:decrement {
+	border-width: 7px 14px 7px 0;
+	border-color: transparent var(--blue) transparent transparent;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:hover {
+	border-color: transparent var(--blue) transparent transparent;
+}
+
+/* Right */
+::-webkit-scrollbar-button:horizontal:increment {
+	border-width: 7px 0 7px 14px;
+	border-color: transparent transparent transparent var(--blue);
+}
+
+::-webkit-scrollbar-button:horizontal:increment:hover {
+	border-color: transparent transparent transparent var(--blue);
+}

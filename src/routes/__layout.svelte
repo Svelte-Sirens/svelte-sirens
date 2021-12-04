@@ -1,5 +1,5 @@
 <script>
-	import '@styles/global.scss';
+	import '@styles/styles.css';
 
 	import Head from '@layout/head.svelte';
 	import Header from '@layout/header.svelte';

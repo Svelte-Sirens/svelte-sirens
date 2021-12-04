@@ -41,6 +41,7 @@
 	}
 
 	article {
+		padding: var(--gap-8);
 		display: grid;
 		place-items: center;
 		gap: var(--gap-4);

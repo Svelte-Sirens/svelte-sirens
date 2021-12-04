@@ -70,12 +70,12 @@ pre {
 	cursor: pointer;
 	transition: var(--transition-all);
 	box-shadow: var(--shadow-btn);
+}
 
-	&:hover {
-		box-shadow: var(--shadow-btn-hover);
-		background-color: var(--light-teal);
-		color: var(--navy);
-	}
+.btn-primary:hover {
+	box-shadow: var(--shadow-btn-hover);
+	background-color: var(--light-teal);
+	color: var(--navy);
 }
 
 .glass {

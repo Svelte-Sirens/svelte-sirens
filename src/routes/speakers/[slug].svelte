@@ -17,27 +17,26 @@
 	export let speakers;
 </script>
 
-<article class="glass">
-	{#each speakers as { name, picture, biography }}
-		<h1>{name}</h1>
+{#each speakers as { name, picture, biography }}
+	<h1>{name}</h1>
+	<article class="glass">
 		<img src={picture.url} alt={name} />
 		<section>
 			{#if biography}
 				{@html marked(biography)}
 			{/if}
 		</section>
-	{/each}
-</article>
+	</article>
+{/each}
 
 <style>
 	article {
+		padding: var(--gap-8);
 		margin: 0 auto;
 		max-width: 50ch;
 		display: grid;
 		gap: var(--gap-4);
 		grid-template-columns: minmax(0, 1fr);
 		place-items: center;
-		place-content: center;
-		height: 90vh;
 	}
 </style>
