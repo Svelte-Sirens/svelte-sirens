@@ -1,46 +1,115 @@
 <script>
-	import AnimationToggle from './animationToggle.svelte';
 	import { page } from '$app/stores';
-	let clicked = false;
-	let mobile = false;
+	import AnimationToggle from './animationToggle.svelte';
+
 	let bubbles = true;
+
 	$: label = bubbles ? 'Bubbles: ON' : 'Bubbles: OFF';
 
-	function openNav() {
-		mobile = true;
-		clicked = !clicked;
-	}
+	let checked = false;
+
+	const handleKeydown = (e) => {
+		if (e.key === 'Escape') checked = false;
+	};
+
+	const handleNavClose = () => (checked = false);
 </script>
 
-<nav>
-	<AnimationToggle {label} on:check={() => (bubbles = !bubbles)} />
+<svelte:window on:keydown={handleKeydown} />
+
+<input type="checkbox" id="nav-check" bind:checked on:click={() => (checked = !checked)} />
+
+<div class="hamburger-wrapper">
+	<label for="nav-check">
+		<img src="/images/hamburger.svg" alt="nav menu" class="hamburger" />
+	</label>
+</div>
+
+<nav class:checked>
 	<ul>
-		<li><a class:active={$page.path == '/'} sveltekit:prefetch href="/">Home</a></li>
-		<li />
 		<li>
-			<a class:active={$page.path == '/about'} sveltekit:prefetch href="/about">About</a>
+			<a class:active={$page.path == '/'} sveltekit:prefetch href="/" on:click={handleNavClose}
+				>Home</a
+			>
 		</li>
 		<li>
-			<a class:active={$page.path == '/talks'} sveltekit:prefetch href="/talks">Talks</a>
+			<a
+				class:active={$page.path == '/about'}
+				sveltekit:prefetch
+				href="/about"
+				on:click={handleNavClose}>About</a
+			>
 		</li>
 		<li>
-			<a class:active={$page.path == '/events'} sveltekit:prefetch href="/events"> Events </a>
+			<a
+				class:active={$page.path == '/talks'}
+				sveltekit:prefetch
+				href="/talks"
+				on:click={handleNavClose}>Talks</a
+			>
 		</li>
 		<li>
-			<a class:active={$page.path == '/speakers'} sveltekit:prefetch href="/speakers"> Speakers </a>
+			<a
+				class:active={$page.path == '/events'}
+				sveltekit:prefetch
+				href="/events"
+				on:click={handleNavClose}
+			>
+				Events
+			</a>
+		</li>
+		<li>
+			<a
+				class:active={$page.path == '/speakers'}
+				sveltekit:prefetch
+				href="/speakers"
+				on:click={handleNavClose}
+			>
+				Speakers
+			</a>
 		</li>
 	</ul>
 </nav>
+<AnimationToggle {label} on:check={() => (bubbles = !bubbles)} />
 
 <style lang="scss">
-	/* backdrop-filter: blur(40px); */
-	nav {
-		height: 100%;
-		display: flex;
-		align-items: center;
+	input[type='checkbox'] {
+		display: none;
+	}
+	.hamburger-wrapper {
+		position: absolute;
+		z-index: 100;
+		right: 1rem;
+		top: 1.5rem;
+	}
+	nav:not(.checked) {
+		display: none;
+	}
+	.checked {
+		z-index: 99;
+		position: fixed;
+		top: 0;
+		right: 0;
+		box-shadow: var(--shadow-lg);
+		padding: 2rem 4rem 2rem 2rem;
+		background-color: var(--teal);
+		border-radius: 0 0 0 1rem;
+	}
+	#nav-check:checked ~ nav {
+		animation: slide 0.3s linear;
+	}
+	@keyframes slide {
+		from {
+			opacity: 0;
+			right: -200px;
+		}
+		to {
+			opacity: 1;
+			right: 0;
+		}
 	}
 	ul {
-		display: flex;
+		display: grid;
 		justify-content: center;
 		gap: var(--gap-4);
 		font-size: var(--text-lg);
@@ -61,5 +130,26 @@
 	a:hover:not(.active) {
 		color: var(--blue);
 		border-bottom: 1px solid var(--blue);
+	}
+
+	@media (min-width: 1024px) {
+		nav:not(.checked) {
+			display: flex;
+		}
+		nav {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			align-items: center;
+			height: auto;
+			box-shadow: none;
+			background-color: transparent;
+		}
+		ul {
+			display: flex;
+		}
+		.hamburger-wrapper {
+			display: none;
+		}
 	}
 </style>

@@ -1,7 +1,7 @@
-<article>
+<article class="grid">
 	<span>Welcome</span>
 	<img src="images/favicon.png" alt="logo" />
-	<section>
+	<section class="grid">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
 		<a
@@ -30,7 +30,6 @@
 	}
 
 	article {
-		display: grid;
 		align-content: flex-start;
 		justify-content: center;
 		justify-items: center;
@@ -42,7 +41,6 @@
 	section {
 		position: relative;
 		z-index: 2;
-		display: grid;
 		justify-content: center;
 		justify-items: center;
 		text-align: center;
@@ -53,6 +51,12 @@
 
 	h1 {
 		font-size: var(--text-5xl);
+		margin-bottom: 0;
+		animation: none;
+	}
+
+	h2 {
+		font-size: var(--text-2xl);
 	}
 
 	img {
@@ -67,6 +71,7 @@
 
 	@media (min-width: 1024px) {
 		h2 {
+			font-size: var(--text-3xl);
 			max-width: 100%;
 			word-break: none;
 		}

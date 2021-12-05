@@ -4,14 +4,12 @@
 </script>
 
 <header>
-	<section>
-		{#if $page.path !== '/'}
-			<a href="/">
-				<img src="/images/favicon.png" alt="logo" />
-				<span>Svelte Sirens</span>
-			</a>
-		{/if}
-	</section>
+	{#if $page.path !== '/'}
+		<a href="/">
+			<img src="/images/favicon.png" alt="logo" />
+			<span>Svelte Sirens</span>
+		</a>
+	{/if}
 	<Nav />
 </header>
 

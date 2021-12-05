@@ -18,7 +18,7 @@
 	export { checked, color, label };
 </script>
 
-<div class="grid">
+<div>
 	<label class="switch">
 		<input type="checkbox" bind:checked on:change={handleCheck} {color} />
 		<span class="slider" />
@@ -28,17 +28,18 @@
 
 <style>
 	div {
-		position: relative;
-		gap: var(--gap-2);
-		place-items: center;
-		margin-right: var(--gap-10);
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		height: 100px;
+		width: 125px;
 	}
 	.switch {
 		position: absolute;
-		display: inline-block;
-		top: -20px;
 		width: 50px;
 		height: 20px;
+		left: 25px;
+		top: 25px;
 	}
 
 	.switch input {
@@ -49,9 +50,9 @@
 
 	.text {
 		position: absolute;
-		left: -35px;
+		left: -25px;
 		top: 20px;
-		width: 150px;
+		width: 125px;
 	}
 
 	.slider {
@@ -91,5 +92,16 @@
 		-ms-transform: translateX(26px);
 		transform: translateX(26px);
 		background-color: var(--blue);
+	}
+
+	@media (min-width: 1024px) {
+		.text {
+			left: -30px;
+		}
+		div {
+			position: relative;
+			left: 0;
+			transform: none;
+		}
 	}
 </style>

@@ -12,6 +12,8 @@ body {
 #svelte {
 	display: grid;
 	grid-template-rows: auto 1fr;
+	max-width: 2000px;
+	margin: 0 auto;
 }
 
 h1,

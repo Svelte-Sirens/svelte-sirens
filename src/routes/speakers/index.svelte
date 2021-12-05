@@ -15,9 +15,9 @@
 </script>
 
 <h1>Speakers</h1>
-<section class="glass">
+<section>
 	{#each speakers as { name, slug, picture }}
-		<article>
+		<article class="grid glass">
 			<img src={picture.url} alt={name} />
 			<h2>
 				<a href={`/speakers/${slug}`}>{name} </a>
@@ -32,7 +32,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--gap-8);
-		max-width: 80ch;
+		max-width: 50ch;
 		place-content: center;
 	}
 
@@ -41,8 +41,8 @@
 	}
 
 	article {
+		max-width: 20ch;
 		padding: var(--gap-8);
-		display: grid;
 		place-items: center;
 		gap: var(--gap-4);
 	}
