@@ -9,20 +9,18 @@
 <Head />
 
 <Header />
-<main>
+<main class="grid">
 	<slot />
 </main>
 <Bubbles />
 
 <style lang="scss">
 	main {
+		height: 100%;
 		width: 100%;
-		height: calc(100vh - 100px);
-		color: white;
+		color: var(--white);
 		position: relative;
 		z-index: 2;
-		display: grid;
-		height: 100%;
 		align-content: flex-start;
 		text-align: center;
 		max-width: 1200px;

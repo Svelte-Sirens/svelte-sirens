@@ -38,5 +38,6 @@
 		gap: var(--gap-4);
 		grid-template-columns: minmax(0, 1fr);
 		place-items: center;
+		text-align: left;
 	}
 </style>

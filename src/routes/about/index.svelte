@@ -42,14 +42,18 @@
 		align-content: flex-start;
 		justify-content: center;
 		justify-items: center;
-		text-align: center;
+		text-align: left;
 		margin: 0 auto;
 		gap: var(--gap-2);
 	}
 
 	.content {
 		max-width: 66ch;
-		padding: var(--gap-8);
+		padding: var(--gap-6);
 		display: grid;
+	}
+
+	.btn-primary {
+		text-align: center;
 	}
 </style>
