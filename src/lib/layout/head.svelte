@@ -20,18 +20,18 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://www.sveltesirens.dev" />
-	<meta property="og:title" content={title} />
+	<meta property="og:url" content="https://www.sveltesirens.dev/${page.path}" />
+	<meta property="og:title" content={capitalize(title)} />
 	<meta property="og:description" content={desc} />
 	<meta property="og:image" content={img} />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:url" content="https://twitter.com/SvelteSirens" />
-	<meta property="twitter:title" content={title} />
+	<meta property="twitter:title" content={capitalize(title)} />
 	<meta property="twitter:description" content={desc} />
 	<meta property="twitter:image" content={img} />
-	<meta name="twitter:image:alt" content="Svelte Sirens Logo" />
+	<meta name="twitter:image:alt" content="Svelte Sirens" />
 	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

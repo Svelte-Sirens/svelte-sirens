@@ -28,6 +28,7 @@
 
 <style>
 	div {
+		margin-left: auto;
 		position: absolute;
 		left: 50%;
 		transform: translate(-50%, 0);
