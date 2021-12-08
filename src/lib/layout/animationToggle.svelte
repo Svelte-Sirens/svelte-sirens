@@ -57,7 +57,7 @@
 	}
 
 	.slider {
-		box-shadow: 0px -2px 20px rgba(33, 50, 84, 0.5) inset;
+		box-shadow: 0px -2px 20px rgba(33, 50, 84, 0.8) inset;
 		position: absolute;
 		cursor: pointer;
 		top: 0;
@@ -77,7 +77,7 @@
 		height: 14px;
 		width: 14px;
 		left: 4px;
-		bottom: 4px;
+		bottom: 3px;
 		background-color: var(--silver);
 		-webkit-transition: 0.4s;
 		transition: 0.4s;
