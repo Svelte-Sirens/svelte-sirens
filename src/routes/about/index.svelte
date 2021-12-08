@@ -33,7 +33,7 @@
 				Shawn Wang (aka Swyx)
 			</a>
 			realizing there was a need to support the women and non-binary people inside the Svelte community
-			akin groups like the Vue Vixens and Frontend Foxes.
+			akin groups like the Vue Vixens, Frontend Foxes, and React Robins.
 			<a href="/speakers/brittney-postma">Brittney Postma</a> stepped up to found the Svelte Sirens
 			in September of 2021, designing and working on the site while reaching out to others to join.
 			<a href="/speakers/willow-ghost">Willow</a>, who also does open source with
