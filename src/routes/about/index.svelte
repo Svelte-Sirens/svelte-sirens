@@ -24,7 +24,7 @@
 		</a>
 	</section>
 </article>
-<article>
+<article class="glass">
 	<h2>Founders</h2>
 	<p>
 		Svelte Sirens was founded by <a href="/speakers/brittney-postma">Brittney Postma</a> in
