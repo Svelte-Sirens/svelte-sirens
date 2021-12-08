@@ -19,7 +19,13 @@
 		};
 	};
 
+	const sounds = ['/sounds/pop1.mp3', '/sounds/pop2.mp3'];
+
+	const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+
 	function pop() {
+		const pop = new Audio(randomSound);
+		pop.play();
 		popped = true;
 
 		if (!timeout)
