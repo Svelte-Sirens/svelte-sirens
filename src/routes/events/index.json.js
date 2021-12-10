@@ -3,7 +3,7 @@ import { queryEvents } from '@gql/queries';
 
 export const get = async () => {
 	try {
-		const { events } = await client.request(queryEvents);
+		const { events } = await client.request(queryEvents, { todaysDate: new Date().toISOString() });
 		return {
 			status: 200,
 			body: events
