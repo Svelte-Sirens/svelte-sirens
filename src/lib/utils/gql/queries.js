@@ -1,8 +1,8 @@
 import { gql } from 'graphql-request';
 
 export const queryEvents = gql`
-	query Events {
-		events(orderBy: datetime_event_ASC) {
+	query Events($todaysDate: DateTime!) {
+		events(orderBy: datetime_event_ASC, where: { datetime_event_gt: $todaysDate }) {
 			slug
 			title
 			id
