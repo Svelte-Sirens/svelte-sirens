@@ -9,7 +9,7 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'build/error/index.html'
+			fallback: null
 		}),
 
 		target: '#svelte',
