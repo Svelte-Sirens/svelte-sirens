@@ -11,11 +11,17 @@
 </script>
 
 <svelte:head>
-	<title>{status}</title>
+	<title>{`Error | ${status}`}</title>
 </svelte:head>
 
-<h1>Uh oh!</h1>
+<h1>Uh oh, something went wrong!</h1>
 
 <p>It looks like this page doesn't exist.</p>
 
 <h2>{status}: {error.message}</h2>
+
+<style>
+	h1 {
+		margin: 0;
+	}
+</style>
