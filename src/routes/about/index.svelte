@@ -24,9 +24,9 @@
 		</a>
 	</section>
 </article>
-<article class="glass founders">
+<article class="founders">
 	<h2>Founders</h2>
-	<section class="grid content">
+	<section class="glass grid content">
 		<p>
 			The original idea for the Svelte Sirens came from
 			<a rel="noopener noreffer" target="_blank" href="https://www.swyx.io/">
@@ -66,6 +66,7 @@
 	img {
 		width: 150px;
 	}
+
 	article {
 		max-width: 55ch;
 		display: grid;

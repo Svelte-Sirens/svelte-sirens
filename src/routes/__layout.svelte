@@ -7,7 +7,6 @@
 </script>
 
 <Head />
-
 <Header />
 <main class="grid">
 	<slot />
@@ -24,6 +23,6 @@
 		align-content: flex-start;
 		text-align: center;
 		max-width: 1200px;
-		margin: 0 auto var(--gap-4);
+		margin: 0 auto var(--size-3);
 	}
 </style>
