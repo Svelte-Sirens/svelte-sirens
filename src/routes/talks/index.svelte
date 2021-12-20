@@ -16,9 +16,9 @@
 
 <h1>Talks</h1>
 <article class="grid">
-	<section class="glass">
-		{#each talks as { talkUrl, title }}
-			{#if talkUrl}
+	{#each talks as { talkUrl, title }}
+		{#if talkUrl}
+			<section class="glass">
 				<h2>{title}</h2>
 				<div class="video-wrapper">
 					<iframe
@@ -29,9 +29,9 @@
 						allowfullscreen
 					/>
 				</div>
-			{/if}
-		{/each}
-	</section>
+			</section>
+		{/if}
+	{/each}
 	<section>
 		<p>
 			We are working on more exciting <a href="/events">events</a> coming soon.
