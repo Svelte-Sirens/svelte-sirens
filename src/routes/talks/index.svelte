@@ -51,6 +51,7 @@
 
 		h2 {
 			font-family: var(--font-body);
+			max-inline-size: 100%;
 		}
 
 		.video-wrapper {

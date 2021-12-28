@@ -17,7 +17,7 @@
 
 <style lang="scss">
 	span {
-		font-size: var(--text-4xl);
+		font-size: var(--font-size-fluid-2);
 		z-index: 1;
 		font-family: var(--font-heading);
 		font-weight: 600;
@@ -27,6 +27,9 @@
 		text-shadow: var(--shadow-text);
 		margin: 0 auto;
 		animation: var(--fade-in);
+		// animation: var(--animation-shake-y), var(--animation-fade-in), var(--animation-slide-in-left);
+		// animation-timing-function: var(--ease-squish-3);
+		// animation-duration: 5s;
 	}
 
 	article {
@@ -35,28 +38,28 @@
 		justify-items: center;
 		text-align: center;
 		margin: 0 auto;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 	}
 
 	section {
 		position: relative;
-		z-index: 2;
+		z-index: var(--layer-2);
 		justify-content: center;
 		justify-items: center;
 		text-align: center;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 		max-width: 55ch;
 		animation: var(--fade-in);
 	}
 
 	h1 {
-		font-size: var(--text-5xl);
+		font-size: var(--font-size-fluid-3);
 		margin-bottom: 0;
 		animation: none;
 	}
 
 	h2 {
-		font-size: var(--text-2xl);
+		font-size: var(--font-size-fluid-1);
 	}
 
 	img {
@@ -66,12 +69,11 @@
 	}
 
 	a {
-		margin: var(--gap-4) auto;
+		margin: var(--size-4) auto;
 	}
 
 	@media (min-width: 1024px) {
 		h2 {
-			font-size: var(--text-3xl);
 			max-width: 100%;
 			word-break: none;
 		}
