@@ -7,6 +7,7 @@ export const queryEvents = gql`
 			title
 			id
 			datetime_event
+			eventUrl
 			speakers {
 				name
 				handle
@@ -29,6 +30,7 @@ export const queryEvent = gql`
 			title
 			id
 			datetime_event
+			eventUrl
 			speakers {
 				name
 				handle

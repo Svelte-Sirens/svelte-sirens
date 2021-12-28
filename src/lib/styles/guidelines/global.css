@@ -32,7 +32,7 @@ h6 {
 h1 {
 	font-size: var(--text-4xl);
 	text-align: center;
-	margin: 0 auto var(--gap-8);
+	margin: var(--gap-4) auto var(--gap-8);
 	animation: var(--fade-in);
 }
 h2 {

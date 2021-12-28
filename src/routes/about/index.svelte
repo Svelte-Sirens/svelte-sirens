@@ -7,7 +7,11 @@
 		<p>
 			The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 			people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone
-			who is an <strong>ally</strong> to those people to attend our events and be active participants.
+			who follows the
+			<a href="https://github.com/sveltejs/community/blob/main/CODE_OF_CONDUCT.md">
+				code of conduct
+			</a>
+			and is an <strong>ally</strong> to those people to attend our events and be active participants.
 			Being an ally means that you are kind and respectful to the community. Every day, in every country
 			in the world, women and non-binary are confronted by discrimination and inequality. It can be tough
 			for women and nonbinary people to constantly educate or be subjected to questions, so one of the
@@ -48,7 +52,11 @@
 			<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">Discord</a>,
 			and support all of the women and non-binary people in the Svelte community. Please reach out
 			to any of us directly or email
-			<a href="mailto:sveltesirens@gmail.com">SvelteSirens@gmail.com</a> if you ever encounter a problem
+			<a href="mailto:sveltesirens@gmail.com">SvelteSirens@gmail.com</a> if you ever encounter a
+			problem or issue against the
+			<a href="https://github.com/sveltejs/community/blob/main/CODE_OF_CONDUCT.md">
+				code of conduct
+			</a>
 			in our community. Welcome!
 		</p>
 	</section>
@@ -58,13 +66,11 @@
 	.title {
 		display: grid;
 		place-items: center;
-		& h1 {
-			margin-bottom: 0;
-		}
 	}
 
 	img {
 		width: 150px;
+		margin-bottom: var(--gap-8);
 	}
 
 	article {

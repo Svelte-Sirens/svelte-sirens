@@ -25,46 +25,52 @@
 		All <a href="/talks">talks</a> will be available to watch later.
 	</p>
 	<ul>
-		{#each events as { slug: eventSlug, speakers, title, datetime_event }, index}
+		{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }, index}
 			<article class="glass">
 				{#each speakers as { picture, name, handle, handleUrl, slug }}
-					<div class="wrapper">
+					<section class="event">
 						<img src={picture.small} alt={name} class="speaker" />
-						<section class="event">
-							<h2>
-								{title}
-							</h2>
-							<h3>
-								With <a href={`/speakers/${slug}`}>{name}</a>
-							</h3>
-							<h4>
-								<a href={handleUrl} rel="noopener norefferer" target="_blank">
-									<span>{handle}</span>
-								</a>
-							</h4>
-							<h4>
-								<time datetime={datetime_event}>
-									<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
-									<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
-								</time>
-							</h4>
-							<h4>
-								<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
-									Svelte Discord
-								</a>
-								and
-								<a
-									href="https://www.youtube.com/SvelteSociety"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									YouTube
-								</a>
-							</h4>
+						<p>
+							With <a href={`/speakers/${slug}`}>{name}</a>
+						</p>
+						<div class="lg">
+							<a href={handleUrl} rel="noopener norefferer" target="_blank">
+								<span>{handle}</span>
+							</a>
+						</div>
+					</section>
+					<section class="event">
+						<h2>
+							{title}
+						</h2>
+						<div class="base">
+							<time datetime={datetime_event}>
+								<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
+								<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
+							</time>
+						</div>
 
-							<a href="/events/{eventSlug}" class="btn-primary"> More Info </a>
-						</section>
-					</div>
+						{#if eventUrl}
+							<em class="lg"><a href={eventUrl}>YouTube Live Event</a></em>
+						{/if}
+
+						<div class="base">
+							Hosted on
+							<a
+								href="https://www.youtube.com/SvelteSociety"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Svelte Society YouTube
+							</a>
+							and
+							<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+								Svelte Discord
+							</a>
+						</div>
+
+						<a href="/events/{eventSlug}" class="btn-primary"> More Info </a>
+					</section>
 				{/each}
 			</article>
 		{/each}
@@ -81,45 +87,38 @@
 
 	.glass {
 		border-bottom: none;
-		padding: var(--gap-4);
-		max-width: 300px;
-	}
-
-	.wrapper {
-		max-width: 500px;
-		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		justify-items: center;
-		gap: var(--gap-4);
-		text-align: center;
+		padding: var(--gap-6) var(--gap-4);
+		max-width: 550px;
 		transition: var(--transition-transform);
 		text-shadow: var(--shadow-text);
+		font-family: var(--font-body);
+		gap: var(--gap-2) var(--gap-6);
+	}
 
-		h2 {
-			font-family: var(--font-body);
-			font-size: var(--text-xl);
-		}
+	h2 {
+		font-family: var(--font-body);
+		font-size: var(--text-xl);
+	}
 
-		time {
-			display: grid;
-			gap: var(--gap-2);
-		}
+	time {
+		display: flex;
+		gap: var(--gap-2);
+	}
 
-		h3 {
-			font-family: var(--font-body);
-			font-size: var(--text-lg);
-		}
+	.lg {
+		font-size: var(--text-lg);
+	}
 
-		h4 {
-			font-family: var(--font-body);
-			font-size: var(--text-base);
-		}
+	.base {
+		font-size: var(--text-base);
+	}
 
-		.event {
-			display: grid;
-			grid-template-columns: minmax(0, 1fr);
-			gap: var(--gap-2);
-		}
+	.event {
+		display: grid;
+		grid-template-columns: minmax(200px, 1fr);
+		gap: var(--gap-2);
+		justify-content: center;
+		justify-items: center;
 	}
 
 	.btn-primary {
@@ -134,12 +133,9 @@
 	}
 
 	@media (min-width: 1024px) {
-		.wrapper {
-			display: flex;
-		}
-
 		.glass {
-			max-width: 100%;
+			display: flex;
+			align-items: flex-start;
 		}
 	}
 </style>
