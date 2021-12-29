@@ -1,5 +1,5 @@
 <article class="grid">
-	<span>Welcome</span>
+	<span class="float-in">Welcome</span>
 	<img src="images/favicon.png" alt="logo" />
 	<section class="grid">
 		<h1>Svelte Sirens</h1>
@@ -26,10 +26,6 @@
 		text-align: center;
 		text-shadow: var(--shadow-text);
 		margin: 0 auto;
-		animation: var(--fade-in);
-		// animation: var(--animation-shake-y), var(--animation-fade-in), var(--animation-slide-in-left);
-		// animation-timing-function: var(--ease-squish-3);
-		// animation-duration: 5s;
 	}
 
 	article {

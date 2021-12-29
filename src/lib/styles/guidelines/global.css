@@ -3,7 +3,7 @@ body {
 	color: var(--color-text);
 	min-height: 100vh;
 	font-family: var(--font-body);
-	font-size: var(--text-lg);
+	font-size: var(--font-size-1);
 	cursor: auto;
 }
 
@@ -29,20 +29,20 @@ h6 {
 h1 {
 	font-size: var(--font-size-fluid-3);
 	text-align: center;
-	margin: var(--gap-4) auto var(--gap-8);
+	margin: var(--size-4) auto var(--size-8);
 	animation: var(--fade-in);
 }
 h2 {
-	font-size: var(--text-3xl);
+	font-size: var(--font-size-fluid-2);
 }
 h3 {
-	font-size: var(--text-2xl);
+	font-size: var(--font-size-3);
 }
 h4 {
-	font-size: var(--text-xl);
+	font-size: var(--font-size-2);
 }
 h5 {
-	font-size: var(--text-lg);
+	font-size: var(--font-size - 1);
 }
 
 a {
@@ -56,16 +56,23 @@ a:hover {
 	border-bottom: 1px solid var(--light-teal);
 }
 
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
 pre {
 	white-space: pre-wrap;
 }
 
 .btn-primary {
-	padding: var(--gap-4) var(--gap-8);
+	padding: var(--size-4) var(--size-8);
 	background-color: var(--blue);
-	border-radius: var(--gap-1);
+	border-radius: var(--size-1);
 	color: var(--navy);
-	font-size: var(--text-lg);
+	font-size: var(--font-size-2);
 	font-weight: 700;
 	cursor: pointer;
 	transition: var(--transition-all);
@@ -79,19 +86,19 @@ pre {
 }
 
 .glass {
-	margin: 0 var(--gap-4) var(--gap-4);
+	margin: 0 var(--size-4) var(--size-4);
 	background: rgba(255, 255, 255, 0.25);
 	box-shadow: 0 8px 32px 0 hsla(220, 43%, 20%, 0.37);
 	backdrop-filter: blur(40px);
 	-webkit-backdrop-filter: blur(4px);
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	padding: var(--gap-4);
+	padding: var(--size-4);
 	border-radius: 10px;
 }
 
 .grid {
 	display: grid;
-	gap: var(--gap-8);
+	gap: var(--size-8);
 	grid-template-columns: minmax(0, 1fr);
 }
 
@@ -99,14 +106,13 @@ pre {
 	border-radius: 100%;
 	width: 200px;
 	height: 200px;
-	border: var(--gap-1) solid var(--blue);
+	border: var(--size-1) solid var(--blue);
 }
 
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+.float-in {
+	/* animation: var(--fade-in); */
+	/* animation: fade-in 0.5s var(--ease-3); */
+	animation: var(--animation-fade-in) forwards;
+	/* animation-timing-function: var(--ease-squish-3);
+	animation-duration: 5s; */
 }

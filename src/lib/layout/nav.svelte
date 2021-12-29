@@ -90,7 +90,7 @@
 		position: fixed;
 		top: 0;
 		right: 0;
-		box-shadow: var(--shadow-lg);
+		box-shadow: var(--shadow-3);
 		padding: 2rem 4rem 2rem 2rem;
 		background-color: var(--teal);
 		border-radius: 0 0 0 1rem;
@@ -111,19 +111,20 @@
 	ul {
 		display: grid;
 		justify-content: center;
-		gap: var(--gap-4);
-		font-size: var(--text-lg);
+		gap: var(--size-4);
+		font-size: var(--font-size-2);
 		font-family: var(--font-heading);
 		font-weight: 700;
 	}
 
 	a {
+		text-decoration: none;
 		color: var(--white);
 		border-bottom: none;
 
 		&.active {
 			color: var(--blue);
-			background-image: url('/images/underline.svg');
+			background: repeat url('/images/underline.svg') center;
 		}
 	}
 
