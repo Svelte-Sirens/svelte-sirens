@@ -8,7 +8,7 @@
 
 <Head />
 <Header />
-<main class="grid">
+<main class="grid fade-in">
 	<slot />
 </main>
 <Bubbles />

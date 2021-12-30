@@ -1,4 +1,4 @@
-<article class="grid  fade-in">
+<article class="grid">
 	<span>Welcome</span>
 	<img src="images/favicon.png" alt="logo" class="float-in" />
 	<section class="grid">

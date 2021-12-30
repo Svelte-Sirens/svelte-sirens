@@ -1,9 +1,9 @@
 <article>
 	<section class="title">
 		<h1>About Svelte Sirens</h1>
-		<img src="images/favicon.png" alt="logo" />
 	</section>
 	<section class="glass grid content">
+		<img src="images/favicon.png" alt="logo" class="float-in" />
 		<p>
 			The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 			people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone
@@ -70,7 +70,6 @@
 
 	img {
 		width: 150px;
-		margin-bottom: var(--gap-8);
 	}
 
 	article {
