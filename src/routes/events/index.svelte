@@ -82,17 +82,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: var(--gap-6);
+		gap: var(--size-6);
 	}
 
 	.glass {
 		border-bottom: none;
-		padding: var(--gap-6) var(--gap-4);
+		padding: var(--size-6) var(--size-4);
 		max-width: 550px;
 		transition: var(--transition-transform);
 		text-shadow: var(--shadow-text);
 		font-family: var(--font-body);
-		gap: var(--gap-2) var(--gap-6);
+		gap: var(--size-2) var(--size-6);
 	}
 
 	h2 {
@@ -102,7 +102,7 @@
 
 	time {
 		display: flex;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 	}
 
 	.lg {
@@ -116,19 +116,20 @@
 	.event {
 		display: grid;
 		grid-template-columns: minmax(200px, 1fr);
-		gap: var(--gap-2);
+		gap: var(--size-2);
 		justify-content: center;
 		justify-items: center;
 	}
 
 	.btn-primary {
-		margin-top: var(--gap-2);
-		padding: 2px var(--gap-2);
+		margin-top: var(--size-2);
+		padding: 2px var(--size-2);
 		justify-self: center;
 		text-shadow: none;
-		box-shadow: var(--shadow-btn-sm);
+		box-shadow: var(--shadow-4);
+		transition: var(--transition-all);
 		&:hover {
-			box-shadow: var(--shadow-btn-hover);
+			box-shadow: var(--shadow-1);
 		}
 	}
 

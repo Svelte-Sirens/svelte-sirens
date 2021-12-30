@@ -81,12 +81,12 @@
 		justify-items: center;
 		text-align: left;
 		margin: 0 auto;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 	}
 
 	.content {
-		padding: var(--gap-6);
-		display: grid;
+		padding: var(--size-6);
+		justify-items: center;
 	}
 
 	.btn-primary {
@@ -94,6 +94,6 @@
 	}
 
 	.founders {
-		padding-top: var(--gap-6);
+		padding-top: var(--size-6);
 	}
 </style>

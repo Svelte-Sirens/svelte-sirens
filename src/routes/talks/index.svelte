@@ -46,7 +46,7 @@
 
 	.glass {
 		display: grid;
-		gap: var(--gap-4);
+		gap: var(--size-4);
 		grid-template-columns: minmax(0, 1fr);
 
 		h2 {

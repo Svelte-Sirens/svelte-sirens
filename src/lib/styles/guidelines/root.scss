@@ -1,0 +1,32 @@
+:root {
+	/* COLORS */
+	--navy: hsl(220, 43%, 23%);
+	--blue: #aefffa;
+	--light-blue: #9fc0cf;
+	--light-teal: #68e0d0;
+	--silver: #b9c2c1;
+	--teal: #08847c;
+	--yellow: #fce762;
+	--red: #ff3c00;
+	--aqua: #00ffee;
+	--offwhite: #efefe1;
+	--white: #e8edf1;
+	--black: #0a090c;
+
+	--color-text: var(--white);
+	--color-bg: radial-gradient(222.14% 100% at 50.03% 100%, #213253 0%, var(--teal) 100%);
+
+	/* TYPOGRAPHY */
+	--font-heading: 'Cinzel Decorative', system-ui, sans-serif;
+	--font-body: 'Red Hat Text', system-ui, sans-serif;
+	--shadow-text: 2px 2px 2px rgba(33, 50, 83, 1);
+	--fade-in: fadeIn 5s cubic-bezier(0, 1, 0.5, 1);
+
+	/* TRANSITIONS */
+	--transition-all: all 300ms var(--ease-squish-5);
+	--transition: background-color, border-color, color, fill, strike, opacity, box-shadow, transform,
+		filter, backdrop-filter 300ms var(--ease-squish-5);
+	--transition-colors: background-color, border-color, fill, color, stroke 300ms var(--ease-squish);
+	--transition-shadow: box-shadow 300ms var(--ease-squish-5);
+	--transition-transform: transform 300ms var(--ease-squish-5);
+}

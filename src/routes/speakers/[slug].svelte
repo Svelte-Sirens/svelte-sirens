@@ -31,11 +31,11 @@
 
 <style>
 	article {
-		padding: var(--gap-8);
+		padding: var(--size-8);
 		margin: 0 auto;
-		max-width: 50ch;
+		max-width: 80ch;
 		display: grid;
-		gap: var(--gap-4);
+		gap: var(--size-4);
 		grid-template-columns: minmax(0, 1fr);
 		place-items: center;
 		text-align: left;

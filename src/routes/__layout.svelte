@@ -1,5 +1,5 @@
 <script>
-	import '@styles/styles.css';
+	import '@styles/styles.scss';
 
 	import Head from '@layout/head.svelte';
 	import Header from '@layout/header.svelte';
@@ -19,7 +19,7 @@
 		width: 100%;
 		color: var(--white);
 		position: relative;
-		z-index: 2;
+		z-index: var(--layer-2);
 		align-content: flex-start;
 		text-align: center;
 		max-width: 1200px;

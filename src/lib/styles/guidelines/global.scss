@@ -76,13 +76,14 @@ pre {
 	font-weight: 700;
 	cursor: pointer;
 	transition: var(--transition-all);
-	box-shadow: var(--shadow-btn);
-}
+	box-shadow: var(--shadow-4);
+	justify-self: center;
 
-.btn-primary:hover {
-	box-shadow: var(--shadow-btn-hover);
-	background-color: var(--light-teal);
-	color: var(--navy);
+	&:hover {
+		box-shadow: var(--inner-shadow-4);
+		background-color: var(--light-teal);
+		color: var(--navy);
+	}
 }
 
 .glass {
@@ -109,10 +110,15 @@ pre {
 	border: var(--size-1) solid var(--blue);
 }
 
+.fade-in {
+	animation: var(--animation-fade-out) reverse;
+	animation-timing-function: var(--ease-out);
+	animation-duration: 2s;
+}
+
 .float-in {
-	/* animation: var(--fade-in); */
-	/* animation: fade-in 0.5s var(--ease-3); */
-	animation: var(--animation-fade-in) forwards;
-	/* animation-timing-function: var(--ease-squish-3);
-	animation-duration: 5s; */
+	animation: var(--animation-fade-out) reverse, var(--animation-float);
+	animation-timing-function: var(--ease-squish);
+	animation-duration: 2s, 3s;
+	animation-iteration-count: 1, 1;
 }

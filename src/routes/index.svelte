@@ -1,6 +1,6 @@
-<article class="grid">
-	<span class="float-in">Welcome</span>
-	<img src="images/favicon.png" alt="logo" />
+<article class="grid  fade-in">
+	<span>Welcome</span>
+	<img src="images/favicon.png" alt="logo" class="float-in" />
 	<section class="grid">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
@@ -45,7 +45,6 @@
 		text-align: center;
 		gap: var(--size-2);
 		max-width: 55ch;
-		animation: var(--fade-in);
 	}
 
 	h1 {
