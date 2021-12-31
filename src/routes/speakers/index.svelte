@@ -40,7 +40,7 @@
 	}
 
 	article {
-		width: 50ch;
+		max-width: 50ch;
 		padding: var(--size-8);
 		place-items: center;
 		gap: var(--size-4);
