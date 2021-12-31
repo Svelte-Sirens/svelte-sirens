@@ -4,7 +4,7 @@
 </script>
 
 <header>
-	{#if $page.path !== '/'}
+	{#if $page.url.pathname !== '/'}
 		<a href="/">
 			<img src="/images/favicon.png" alt="logo" />
 			<span>Svelte Sirens</span>
