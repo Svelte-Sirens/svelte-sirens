@@ -28,13 +28,13 @@
 <nav class:checked>
 	<ul>
 		<li>
-			<a class:active={$page.path == '/'} sveltekit:prefetch href="/" on:click={handleNavClose}
+			<a class:active={$page.url.pathname == '/'} sveltekit:prefetch href="/" on:click={handleNavClose}
 				>Home</a
 			>
 		</li>
 		<li>
 			<a
-				class:active={$page.path.startsWith('/about')}
+				class:active={$page.url.pathname.startsWith('/about')}
 				sveltekit:prefetch
 				href="/about"
 				on:click={handleNavClose}>About</a
@@ -42,7 +42,7 @@
 		</li>
 		<li>
 			<a
-				class:active={$page.path.startsWith('/talks')}
+				class:active={$page.url.pathname.startsWith('/talks')}
 				sveltekit:prefetch
 				href="/talks"
 				on:click={handleNavClose}>Talks</a
@@ -50,7 +50,7 @@
 		</li>
 		<li>
 			<a
-				class:active={$page.path.startsWith('/events')}
+				class:active={$page.url.pathname.startsWith('/events')}
 				sveltekit:prefetch
 				href="/events"
 				on:click={handleNavClose}
@@ -60,7 +60,7 @@
 		</li>
 		<li>
 			<a
-				class:active={$page.path.startsWith('/speakers')}
+				class:active={$page.url.pathname.startsWith('/speakers')}
 				sveltekit:prefetch
 				href="/speakers"
 				on:click={handleNavClose}

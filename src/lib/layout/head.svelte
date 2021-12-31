@@ -9,10 +9,10 @@
 	const img = 'https://www.sveltesirens.dev/images/android-chrome-192x192.png';
 	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary people, & allies.';
 	$: title =
-		$page.path === '/'
+		$page.url.pathname === '/'
 			? 'Svelte Sirens'
 			: `${capitalize(
-					$page.path.substring(1).replace('s/', ' | ').replace(/-/g, ' ')
+					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' ')
 			  )} | Svelte Sirens`;
 </script>
 
@@ -22,7 +22,7 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={`https://www.sveltesirens.dev${$page.path}`} />
+	<meta property="og:url" content={`https://www.sveltesirens.dev${$page.url.pathname}`} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
 	<meta property="og:image" content={img} />
