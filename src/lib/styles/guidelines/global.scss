@@ -1,5 +1,6 @@
 body {
-	background: var(--color-bg);
+	background-image: var(--color-bg);
+	background-attachment: fixed;
 	color: var(--color-text);
 	min-height: 100vh;
 	font-family: var(--font-body);
