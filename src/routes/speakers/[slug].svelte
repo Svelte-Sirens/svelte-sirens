@@ -1,5 +1,5 @@
 <script context="module">
-	export async function load({ fetch, page: { params } }) {
+	export async function load({ fetch,  params }) {
 		const res = await fetch(`/speakers/${params.slug}.json`);
 		const speakers = await res.json();
 		if (res.ok && speakers.length > 0) {
