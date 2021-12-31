@@ -84,16 +84,17 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: var(--size-6);
+		max-width: var(--max-width);
 	}
 
 	.glass {
 		border-bottom: none;
 		padding: var(--size-6) var(--size-4);
-		max-width: 550px;
+		max-width: 575px;
 		transition: var(--transition-transform);
-		text-shadow: var(--shadow-text);
 		font-family: var(--font-body);
 		gap: var(--size-2) var(--size-6);
+		text-shadow: none;
 	}
 
 	h2 {
@@ -103,7 +104,7 @@
 	}
 
 	time {
-		display: grid;
+		display: flex;
 		gap: var(--size-2);
 	}
 
@@ -113,14 +114,14 @@
 
 	.base {
 		font-size: var(--font-size-1);
+		font-weight: var(--font-weight-4);
 	}
 
 	.event {
 		text-align: left;
-		max-width: 25ch;
 		display: grid;
 		grid-template-columns: minmax(200px, 1fr);
-		gap: var(--size-2);
+		gap: var(--size-4);
 		justify-content: center;
 		justify-items: center;
 	}
@@ -132,6 +133,11 @@
 		& a {
 			width: 100%;
 			text-align: center;
+			text-shadow: var(--shadow-text);
+
+			&.btn-primary {
+				text-shadow: none;
+			}
 		}
 	}
 

@@ -65,6 +65,7 @@
 
 	a {
 		margin: var(--size-4) auto;
+		text-shadow: none;
 	}
 
 	@media (min-width: 1024px) {

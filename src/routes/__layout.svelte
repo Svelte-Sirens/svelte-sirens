@@ -22,7 +22,7 @@
 		z-index: var(--layer-2);
 		align-content: flex-start;
 		text-align: center;
-		max-width: 1200px;
+		max-width: var(--max-width);
 		margin: 0 auto var(--size-3);
 	}
 </style>

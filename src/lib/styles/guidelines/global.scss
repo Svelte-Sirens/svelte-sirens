@@ -4,7 +4,8 @@ body {
 	color: var(--color-text);
 	min-height: 100vh;
 	font-family: var(--font-body);
-	font-size: var(--font-size-1);
+	font-size: var(--font-size-2);
+	font-weight: var(--font-weight-6);
 	cursor: auto;
 }
 
@@ -46,14 +47,16 @@ h5 {
 }
 
 a {
-	color: var(--blue);
-	border-bottom: 1px solid var(--blue);
+	color: var(--white);
+	border-bottom: 1px solid transparent;
+	text-shadow: 2px 2px 2px var(--navy);
 	transition: var(--transition-all);
+	font-weight: var(--font-weight-8);
 }
 
 a:hover {
-	color: var(--light-teal);
-	border-bottom: 1px solid var(--light-teal);
+	color: var(--teal-4);
+	border-bottom: 1px solid var(--teal-4);
 }
 
 ul,
@@ -88,7 +91,7 @@ pre {
 
 .glass {
 	margin: 0 var(--size-4) var(--size-4);
-	background: rgba(255, 255, 255, 0.25);
+	background: rgba(255, 255, 255, 0.15);
 	box-shadow: 0 8px 32px 0 hsla(220, 43%, 20%, 0.37);
 	backdrop-filter: blur(40px);
 	-webkit-backdrop-filter: blur(4px);

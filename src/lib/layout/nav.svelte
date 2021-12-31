@@ -21,7 +21,7 @@
 
 <div class="hamburger-wrapper">
 	<label for="nav-check">
-		<img src="/images/hamburger.svg" alt="nav menu" class="hamburger" />
+		<img src="/images/hamburger.svg" alt="nav menu" class="hamburger" width="50px" height="50px" />
 	</label>
 </div>
 
