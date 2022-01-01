@@ -133,16 +133,14 @@
 
 	.event-details {
 		justify-items: start;
-		justify-content: stretch;
-
 		& a {
+			text-shadow: var(--shadow-text);
+		}
+
+		& .btn-primary {
 			width: 100%;
 			text-align: center;
-			text-shadow: var(--shadow-text);
-
-			&.btn-primary {
-				text-shadow: none;
-			}
+			text-shadow: none;
 		}
 	}
 
