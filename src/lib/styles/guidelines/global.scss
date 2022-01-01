@@ -5,7 +5,7 @@ body {
 	min-height: 100vh;
 	font-family: var(--font-body);
 	font-size: var(--font-size-2);
-	font-weight: var(--font-weight-6);
+	font-weight: var(--font-weight-5);
 	cursor: auto;
 }
 
@@ -47,7 +47,7 @@ h5 {
 }
 
 a {
-	color: var(--white);
+	color: var(--blue);
 	border-bottom: 1px solid transparent;
 	text-shadow: 2px 2px 2px var(--navy);
 	transition: var(--transition-all);
@@ -81,6 +81,7 @@ pre {
 	transition: var(--transition-all);
 	box-shadow: var(--shadow-4);
 	justify-self: center;
+	text-shadow: none;
 
 	&:hover {
 		box-shadow: var(--inner-shadow-4);

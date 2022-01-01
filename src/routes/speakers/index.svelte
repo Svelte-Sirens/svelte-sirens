@@ -28,6 +28,7 @@
 
 <style>
 	section {
+		max-width: 80ch;
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -41,7 +42,7 @@
 
 	article {
 		max-width: 25ch;
-		padding: var(--size-8);
+		padding: var(--size-4);
 		place-items: center;
 		gap: var(--size-4);
 	}
