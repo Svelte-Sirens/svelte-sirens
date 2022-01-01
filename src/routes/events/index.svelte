@@ -31,7 +31,7 @@
 					<section class="event">
 						<img src={picture.small} alt={name} class="speaker" />
 						<p>
-							With <a href={`/speakers/${slug}`}>{name}</a>
+							With <a class="speaker-name" href={`/speakers/${slug}`}>{name}</a>
 						</p>
 						<div class="lg">
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -108,7 +108,13 @@
 		gap: var(--size-2);
 	}
 
+	.speaker-name {
+		display: inline;
+		width: 100%;
+	}
+
 	.lg {
+		display: inline-block;
 		font-size: var(--font-size-2);
 	}
 

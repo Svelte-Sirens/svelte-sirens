@@ -46,7 +46,8 @@ h5 {
 	font-size: var(--font-size - 1);
 }
 
-a {
+a,
+a:visited {
 	color: var(--blue);
 	border-bottom: 1px solid transparent;
 	text-shadow: 2px 2px 2px var(--navy);
@@ -70,7 +71,8 @@ pre {
 	white-space: pre-wrap;
 }
 
-.btn-primary {
+.btn-primary,
+a:visited.btn-primary {
 	padding: var(--size-4) var(--size-8);
 	background-color: var(--blue);
 	border-radius: var(--size-1);
