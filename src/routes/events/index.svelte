@@ -22,7 +22,8 @@
 
 <section class="grid">
 	<p>
-		All <a href="/talks">talks</a> will be available to watch later.
+		All <a href="/talks">talks</a> will be available to watch later.<br />Join our other speakers,
+		by submitting your own <a href="https://sessionize.com/sveltesirens/"> talk </a>.
 	</p>
 	<ul>
 		{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }, index}

@@ -15,6 +15,11 @@
 </script>
 
 <h1>Speakers</h1>
+<p>
+	Join our other speakers, by submitting your own <a href="https://sessionize.com/sveltesirens/">
+		talk
+	</a>.
+</p>
 <section>
 	{#each speakers as { name, slug, picture }}
 		<article class="grid glass">
