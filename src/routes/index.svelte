@@ -50,7 +50,6 @@
 	h1 {
 		font-size: var(--font-size-fluid-3);
 		margin-bottom: 0;
-		animation: none;
 	}
 
 	h2 {
