@@ -118,13 +118,13 @@ a:visited.btn-primary {
 
 .fade-in {
 	animation: var(--animation-fade-out) reverse;
-	animation-timing-function: var(--ease-out);
+	animation-timing-function: var(--ease-out-1);
 	animation-duration: 2s;
 }
 
 .float-in {
 	animation: var(--animation-fade-out) reverse, var(--animation-float);
-	animation-timing-function: var(--ease-squish);
+	animation-timing-function: var(--ease-out-1);
 	animation-duration: 2s, 3s;
 	animation-iteration-count: 1, 1;
 }
