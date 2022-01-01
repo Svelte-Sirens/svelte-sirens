@@ -30,8 +30,8 @@
 				{#each speakers as { picture, name, handle, handleUrl, slug }}
 					<section class="event">
 						<img src={picture.small} alt={name} class="speaker" />
-						<p>
-							With <a class="speaker-name" href={`/speakers/${slug}`}>{name}</a>
+						<p class="speaker-name">
+							With <a href={`/speakers/${slug}`}>{name}</a>
 						</p>
 						<div class="lg">
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -109,8 +109,8 @@
 	}
 
 	.speaker-name {
-		display: inline;
-		width: 100%;
+		display: flex;
+		gap: var(--size-2);
 	}
 
 	.lg {
