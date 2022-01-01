@@ -29,6 +29,9 @@ h6 {
 	text-shadow: var(--shadow-text);
 }
 h1 {
+	animation: var(--animation-fade-out) reverse;
+	animation-timing-function: var(--ease-out-1);
+	animation-duration: 1.5s;
 	font-size: var(--font-size-fluid-3);
 	text-align: center;
 	margin: var(--size-4) auto 0;

@@ -8,7 +8,7 @@
 
 <Head />
 <Header />
-<main class="grid fade-in">
+<main class="grid">
 	<slot />
 </main>
 <Bubbles />
@@ -21,6 +21,7 @@
 		position: relative;
 		z-index: var(--layer-2);
 		align-content: flex-start;
+		text-align: center;
 		max-width: var(--max-width);
 		margin: 0 auto var(--size-3);
 	}
