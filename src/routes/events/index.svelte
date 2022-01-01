@@ -84,13 +84,12 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: var(--size-6);
-		max-width: var(--max-width);
 	}
 
 	.glass {
 		border-bottom: none;
 		padding: var(--size-6) var(--size-4);
-		max-width: 575px;
+		max-width: 48ch;
 		transition: var(--transition-transform);
 		font-family: var(--font-body);
 		gap: var(--size-2) var(--size-6);
@@ -104,7 +103,7 @@
 	}
 
 	time {
-		display: flex;
+		display: grid;
 		gap: var(--size-2);
 	}
 
@@ -114,7 +113,7 @@
 	}
 
 	.lg {
-		display: inline-block;
+		display: flex;
 		font-size: var(--font-size-2);
 	}
 
