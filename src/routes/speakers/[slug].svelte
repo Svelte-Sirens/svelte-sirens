@@ -1,5 +1,5 @@
 <script context="module">
-	export async function load({ fetch,  params }) {
+	export async function load({ fetch, params }) {
 		const res = await fetch(`/speakers/${params.slug}.json`);
 		const speakers = await res.json();
 		if (res.ok && speakers.length > 0) {
@@ -18,9 +18,8 @@
 </script>
 
 {#each speakers as { name, picture, biography }}
-	<h1>{name}</h1>
 	<article class="glass">
-		<img src={picture.url} alt={name} />
+		<img src={picture.url} alt={name} class="speaker" />
 		<section>
 			{#if biography}
 				{@html marked(biography)}
@@ -31,11 +30,11 @@
 
 <style>
 	article {
-		padding: var(--gap-8);
+		padding: var(--size-8);
 		margin: 0 auto;
-		max-width: 50ch;
+		max-width: 55ch;
 		display: grid;
-		gap: var(--gap-4);
+		gap: var(--size-4);
 		grid-template-columns: minmax(0, 1fr);
 		place-items: center;
 		text-align: left;

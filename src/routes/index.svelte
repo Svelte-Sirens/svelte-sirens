@@ -1,6 +1,6 @@
 <article class="grid">
 	<span>Welcome</span>
-	<img src="images/favicon.png" alt="logo" />
+	<img src="images/favicon.png" alt="logo" class="float-in" />
 	<section class="grid">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
@@ -17,7 +17,7 @@
 
 <style lang="scss">
 	span {
-		font-size: var(--text-4xl);
+		font-size: var(--font-size-fluid-2);
 		z-index: 1;
 		font-family: var(--font-heading);
 		font-weight: 600;
@@ -26,7 +26,6 @@
 		text-align: center;
 		text-shadow: var(--shadow-text);
 		margin: 0 auto;
-		animation: var(--fade-in);
 	}
 
 	article {
@@ -35,28 +34,27 @@
 		justify-items: center;
 		text-align: center;
 		margin: 0 auto;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 	}
 
 	section {
 		position: relative;
-		z-index: 2;
+		z-index: var(--layer-2);
 		justify-content: center;
 		justify-items: center;
 		text-align: center;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 		max-width: 55ch;
-		animation: var(--fade-in);
 	}
 
 	h1 {
-		font-size: var(--text-5xl);
+		font-size: var(--font-size-fluid-3);
 		margin-bottom: 0;
 		animation: none;
 	}
 
 	h2 {
-		font-size: var(--text-2xl);
+		font-size: var(--font-size-fluid-1);
 	}
 
 	img {
@@ -66,12 +64,12 @@
 	}
 
 	a {
-		margin: var(--gap-4) auto;
+		margin: var(--size-4) auto;
+		text-shadow: none;
 	}
 
 	@media (min-width: 1024px) {
 		h2 {
-			font-size: var(--text-3xl);
 			max-width: 100%;
 			word-break: none;
 		}

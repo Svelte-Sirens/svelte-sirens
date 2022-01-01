@@ -68,12 +68,12 @@
 	}
 
 	.glass {
-		padding: var(--gap-8);
+		padding: var(--size-8);
 		max-width: 40ch;
-		margin: var(--gap-4) auto;
+		margin: var(--size-4) auto;
 		text-align: center;
 		display: grid;
-		gap: var(--gap-4);
+		gap: var(--size-4);
 		place-items: center;
 		justify-content: center;
 
@@ -84,13 +84,17 @@
 		& .content {
 			display: grid;
 			place-items: center;
-			gap: var(--gap-4);
+			gap: var(--size-4);
 
 			& .title {
 				margin: 0;
-				font-size: var(--text-3xl);
+				font-size: var(--font-size-4);
 				font-family: var(--font-body);
 			}
+		}
+
+		h1 {
+			text-align: left;
 		}
 
 		h3 {
@@ -107,7 +111,7 @@
 			text-align: left;
 			display: flex;
 			max-width: 80ch;
-			gap: var(--gap-8);
+			gap: var(--size-8);
 
 			& .logo {
 				max-width: 400px;

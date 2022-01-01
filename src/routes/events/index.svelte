@@ -39,13 +39,14 @@
 							</a>
 						</div>
 					</section>
-					<section class="event">
+					<section class="event event-details">
 						<h2>
 							{title}
 						</h2>
 						<div class="base">
 							<time datetime={datetime_event}>
 								<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
+
 								<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
 							</time>
 						</div>
@@ -66,7 +67,7 @@
 							and
 							<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
 								Svelte Discord
-							</a>
+							</a> to chat with the community.
 						</div>
 
 						<a href="/events/{eventSlug}" class="btn-primary"> More Info </a>
@@ -82,53 +83,73 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: var(--gap-6);
+		gap: var(--size-6);
+		max-width: var(--max-width);
 	}
 
 	.glass {
 		border-bottom: none;
-		padding: var(--gap-6) var(--gap-4);
-		max-width: 550px;
+		padding: var(--size-6) var(--size-4);
+		max-width: 575px;
 		transition: var(--transition-transform);
-		text-shadow: var(--shadow-text);
 		font-family: var(--font-body);
-		gap: var(--gap-2) var(--gap-6);
+		gap: var(--size-2) var(--size-6);
+		text-shadow: none;
 	}
 
 	h2 {
+		margin-top: var(--size-4);
 		font-family: var(--font-body);
-		font-size: var(--text-xl);
+		font-size: var(--font-size-fluid-1);
 	}
 
 	time {
 		display: flex;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 	}
 
 	.lg {
-		font-size: var(--text-lg);
+		font-size: var(--font-size-2);
 	}
 
 	.base {
-		font-size: var(--text-base);
+		font-size: var(--font-size-1);
+		font-weight: var(--font-weight-4);
 	}
 
 	.event {
+		text-align: left;
 		display: grid;
 		grid-template-columns: minmax(200px, 1fr);
-		gap: var(--gap-2);
+		gap: var(--size-4);
 		justify-content: center;
 		justify-items: center;
 	}
 
+	.event-details {
+		justify-items: start;
+		justify-content: stretch;
+
+		& a {
+			width: 100%;
+			text-align: center;
+			text-shadow: var(--shadow-text);
+
+			&.btn-primary {
+				text-shadow: none;
+			}
+		}
+	}
+
 	.btn-primary {
-		margin-top: var(--gap-2);
-		padding: 2px var(--gap-2);
+		margin-top: var(--size-2);
+		padding: 2px var(--size-2);
 		justify-self: center;
 		text-shadow: none;
-		box-shadow: var(--shadow-btn-sm);
+		box-shadow: var(--shadow-4);
+		transition: var(--transition-all);
 		&:hover {
-			box-shadow: var(--shadow-btn-hover);
+			box-shadow: var(--shadow-1);
 		}
 	}
 
@@ -136,6 +157,10 @@
 		.glass {
 			display: flex;
 			align-items: flex-start;
+		}
+
+		h2 {
+			margin-top: 0;
 		}
 	}
 </style>

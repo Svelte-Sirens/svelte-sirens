@@ -26,16 +26,17 @@
 
 	header {
 		display: flex;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 		align-items: center;
 		justify-content: space-between;
 		height: 100px;
 		width: 100%;
-		padding: 0 var(--gap-4);
+		padding: 0 var(--size-4);
 	}
 
 	img {
 		width: 50px;
+		height: 50px;
 		margin-right: 10px;
 	}
 	span {
@@ -47,7 +48,7 @@
 			display: inline-block;
 			font-family: var(--font-heading);
 			font-weight: 700;
-			font-size: var(--text-lg);
+			font-size: var(--font-size-2);
 		}
 	}
 </style>

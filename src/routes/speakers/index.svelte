@@ -18,7 +18,7 @@
 <section>
 	{#each speakers as { name, slug, picture }}
 		<article class="grid glass">
-			<img src={picture.url} alt={name} />
+			<img src={picture.url} alt={name} class="speaker" />
 			<h2>
 				<a href={`/speakers/${slug}`}>{name} </a>
 			</h2>
@@ -28,22 +28,22 @@
 
 <style>
 	section {
+		max-width: 80ch;
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--gap-8);
-		max-width: 50ch;
+		gap: var(--size-8);
 		place-content: center;
 	}
 
-	img {
-		width: 200px;
+	a {
+		border: none;
 	}
 
 	article {
-		max-width: 20ch;
-		padding: var(--gap-8);
+		max-width: 25ch;
+		padding: var(--size-4);
 		place-items: center;
-		gap: var(--gap-4);
+		gap: var(--size-4);
 	}
 </style>

@@ -1,5 +1,5 @@
 <script>
-	import '@styles/styles.css';
+	import '@styles/styles.scss';
 
 	import Head from '@layout/head.svelte';
 	import Header from '@layout/header.svelte';
@@ -7,9 +7,8 @@
 </script>
 
 <Head />
-
 <Header />
-<main class="grid">
+<main class="grid fade-in">
 	<slot />
 </main>
 <Bubbles />
@@ -20,10 +19,10 @@
 		width: 100%;
 		color: var(--white);
 		position: relative;
-		z-index: 2;
+		z-index: var(--layer-2);
 		align-content: flex-start;
 		text-align: center;
-		max-width: 1200px;
-		margin: 0 auto var(--gap-4);
+		max-width: var(--max-width);
+		margin: 0 auto var(--size-3);
 	}
 </style>

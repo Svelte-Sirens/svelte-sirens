@@ -1,9 +1,9 @@
 <article>
 	<section class="title">
 		<h1>About Svelte Sirens</h1>
-		<img src="images/favicon.png" alt="logo" />
 	</section>
 	<section class="glass grid content">
+		<img src="images/favicon.png" alt="logo" class="float-in" />
 		<p>
 			The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 			people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone
@@ -28,9 +28,9 @@
 		</a>
 	</section>
 </article>
-<article class="glass founders">
+<article class="founders">
 	<h2>Founders</h2>
-	<section class="grid content">
+	<section class="glass grid content">
 		<p>
 			The original idea for the Svelte Sirens came from
 			<a rel="noopener noreffer" target="_blank" href="https://www.swyx.io/">
@@ -70,8 +70,8 @@
 
 	img {
 		width: 150px;
-		margin-bottom: var(--gap-8);
 	}
+
 	article {
 		max-width: 55ch;
 		display: grid;
@@ -80,12 +80,12 @@
 		justify-items: center;
 		text-align: left;
 		margin: 0 auto;
-		gap: var(--gap-2);
+		gap: var(--size-2);
 	}
 
 	.content {
-		padding: var(--gap-6);
-		display: grid;
+		padding: var(--size-6);
+		justify-items: center;
 	}
 
 	.btn-primary {
@@ -93,6 +93,6 @@
 	}
 
 	.founders {
-		padding-top: var(--gap-6);
+		padding-top: var(--size-6);
 	}
 </style>
