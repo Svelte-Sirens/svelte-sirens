@@ -95,6 +95,22 @@ a:visited.btn-primary {
 	}
 }
 
+.calendar {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--size-2);
+	& .calendar-link {
+		display: flex;
+		align-items: center;
+		& img {
+			margin-right: var(--size-2);
+			width: 50px;
+		}
+	}
+}
+
 .glass {
 	margin: 0 var(--size-4) var(--size-4);
 	background: rgba(255, 255, 255, 0.15);

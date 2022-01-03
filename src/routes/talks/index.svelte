@@ -12,6 +12,7 @@
 
 <script>
 	export let talks;
+	console.log(talks);
 </script>
 
 <h1>Talks</h1>
@@ -21,22 +22,16 @@
 	</a>.
 </p>
 <article class="grid">
-	{#each talks as { talkUrl, title }}
-		{#if talkUrl}
-			<section class="glass">
-				<h2>{title}</h2>
-				<div class="video-wrapper">
-					<iframe
-						src={talkUrl}
-						title="YouTube video player"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen
-					/>
-				</div>
-			</section>
-		{/if}
-	{/each}
+	<section>
+		{#each talks as { talkUrl, title, slug, coverImage }}
+			{#if talkUrl}
+				<a href={`/talks/${slug}`} class="glass">
+					<h2>{title}</h2>
+					<img src={coverImage.url} alt="" />
+				</a>
+			{/if}
+		{/each}
+	</section>
 	<section>
 		<p>
 			We are working on more exciting <a href="/events">events</a> coming soon.
@@ -45,32 +40,25 @@
 </article>
 
 <style lang="scss">
-	section {
-		height: 100%;
-	}
+	article {
+		justify-content: center;
+		justify-items: center;
 
-	.glass {
-		display: grid;
-		gap: var(--size-4);
-		grid-template-columns: minmax(0, 1fr);
-
-		h2 {
-			font-family: var(--font-body);
-			max-inline-size: 100%;
+		& section {
+			display: flex;
 		}
 
-		.video-wrapper {
-			position: relative;
-			padding-bottom: 56.25%;
-			height: 0;
-		}
+		& .glass {
+			border-bottom: none;
+			transition: var(--transition-transform);
 
-		iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			& h2 {
+				font-size: var(--font-size-fluid-1);
+			}
 		}
 	}
 </style>
