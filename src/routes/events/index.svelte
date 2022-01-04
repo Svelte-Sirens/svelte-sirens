@@ -21,10 +21,13 @@
 <h1>Events</h1>
 
 <section class="grid">
-	<p>
-		All <a href="/talks">talks</a> will be available to watch later.<br />Join our other speakers,
-		by submitting your own <a href="https://sessionize.com/sveltesirens/"> talk </a>.
-	</p>
+	<section class="calendar">
+		<p>Never miss an event,</p>
+		<a rel="external" href="/calendar" class="calendar-link">
+			<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
+		</a>
+	</section>
+
 	<ul>
 		{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }, index}
 			<article class="glass">
@@ -77,6 +80,11 @@
 			</article>
 		{/each}
 	</ul>
+
+	<p>
+		All <a href="/talks">talks</a> will be available to watch later.<br />Join our other speakers,
+		by submitting your own <a href="https://sessionize.com/sveltesirens/"> talk </a>.
+	</p>
 </section>
 
 <style lang="scss">

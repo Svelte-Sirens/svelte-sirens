@@ -81,6 +81,31 @@ export const queryTalks = gql`
 			id
 			datetime_event
 			talkUrl
+			coverImage {
+				id
+				url
+			}
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+				}
+			}
+		}
+	}
+`;
+
+export const queryTalk = gql`
+	query Talk($slug: String!) {
+		events(where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_event
+			talkUrl
 			speakers {
 				name
 				handle

@@ -23,6 +23,6 @@
 		align-content: flex-start;
 		text-align: center;
 		max-width: var(--max-width);
-		margin: 0 auto var(--size-3);
+		margin: 0 auto var(--size-8);
 	}
 </style>
