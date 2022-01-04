@@ -8,14 +8,13 @@
 
 	const img = 'https://www.sveltesirens.dev/images/android-chrome-192x192.png';
 	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary people, & allies.';
+	console.log($page.url.pathname);
 	$: title =
 		$page.url.pathname === '/'
 			? 'Svelte Sirens'
-			: $page.url.pathname !== '/'
-			? `${capitalize(
+			: `${capitalize(
 					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' ')
-			  )} | Svelte Sirens`
-			: `Svelte Sirens`;
+			  )} | Svelte Sirens`;
 </script>
 
 <svelte:head>
