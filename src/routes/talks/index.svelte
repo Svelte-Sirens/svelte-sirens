@@ -21,7 +21,7 @@
 	</a>.
 </p>
 <article class="grid">
-	<section>
+	<section class="talks">
 		{#each talks as { talkUrl, title, slug, coverImage }}
 			{#if talkUrl}
 				<a href={`/talks/${slug}`} class="glass">
@@ -31,10 +31,13 @@
 			{/if}
 		{/each}
 	</section>
-	<section>
+	<section class="calendar">
 		<p>
-			We are working on more exciting <a href="/events">events</a> coming soon.
+			Never miss an <a href="/events" sveltekit:prefetch>event</a>,
 		</p>
+		<a rel="external" href="/calendar" class="calendar-link">
+			<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
+		</a>
 	</section>
 </article>
 
@@ -43,7 +46,7 @@
 		justify-content: center;
 		justify-items: center;
 
-		& section {
+		& .talks {
 			display: flex;
 		}
 

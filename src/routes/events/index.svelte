@@ -22,10 +22,8 @@
 
 <section class="grid">
 	<section class="calendar">
-		<p>
-			Never miss an <a href="/event" sveltekit:prefetch>event</a>,
-		</p>
-		<a href="/calendar" class="calendar-link">
+		<p>Never miss an event,</p>
+		<a rel="external" href="/calendar" class="calendar-link">
 			<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
 		</a>
 	</section>
