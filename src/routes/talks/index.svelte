@@ -12,7 +12,6 @@
 
 <script>
 	export let talks;
-	console.log(talks);
 </script>
 
 <h1>Talks</h1>
