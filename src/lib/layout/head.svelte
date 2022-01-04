@@ -11,9 +11,11 @@
 	$: title =
 		$page.url.pathname === '/'
 			? 'Svelte Sirens'
-			: `${capitalize(
+			: $page.url.pathname !== '/'
+			? `${capitalize(
 					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' ')
-			  )} | Svelte Sirens`;
+			  )} | Svelte Sirens`
+			: `Svelte Sirens`;
 </script>
 
 <svelte:head>
