@@ -3,7 +3,7 @@
 		<h1>About Svelte Sirens</h1>
 	</section>
 	<section class="glass grid content">
-		<img src="images/favicon.png" alt="logo" class="float-in" />
+		<img src="/images/favicon.png" alt="logo" class="float-in" />
 		<p>
 			The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 			people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone
