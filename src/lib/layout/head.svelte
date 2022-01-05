@@ -13,7 +13,10 @@
 		$page.url.pathname === '/' || $page.url.pathname === '//prerender/'
 			? 'Svelte Sirens'
 			: `${capitalize(
-					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' ')
+					$page.url.pathname
+						.substring(1)
+						.replace('s/', ' | ')
+						.replace(/-\/\/prerender\//g, ' ')
 			  )} | Svelte Sirens`;
 </script>
 
