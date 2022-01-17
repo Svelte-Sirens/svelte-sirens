@@ -8,7 +8,7 @@
 
 	const img = 'https://www.sveltesirens.dev/images/android-chrome-192x192.png';
 	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary people, & allies.';
-	console.log($page.url.pathname);
+
 	$: title =
 		$page.url.pathname === '/' || $page.url.pathname.includes('//prerender/')
 			? 'Svelte Sirens'
