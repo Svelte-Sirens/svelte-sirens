@@ -81,6 +81,12 @@
 		{/each}
 	</ul>
 
+	<section>
+		<h3>Upcoming Speakers</h3>
+		<p><a href="https://twitter.com/stolinski">Scott Tolinski</a> - March</p>
+		<p><a href="https://twitter.com/selfteachme">Amy Dutton</a> - April</p>
+		<p><a href="https://twitter.com/wattenberger">Amelia Wattenberger</a> - June</p>
+	</section>
 	<p>
 		All <a href="/talks">talks</a> will be available to watch later.<br />Join our other speakers,
 		by submitting your own <a href="https://sessionize.com/sveltesirens/"> talk </a>.
