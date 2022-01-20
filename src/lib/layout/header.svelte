@@ -25,6 +25,13 @@
 	}
 
 	header {
+		position: sticky;
+		top: 0;
+		background: var(--color-bg);
+		border-bottom: 2px solid var(--blue);
+		box-shadow: var(--shadow-4);
+		z-index: var(--layer-5);
+		margin-bottom: var(--size-8);
 		display: flex;
 		gap: var(--size-2);
 		align-items: center;

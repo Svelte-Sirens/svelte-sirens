@@ -38,9 +38,11 @@
 	.switch {
 		position: absolute;
 		width: 50px;
-		height: 20px;
+		height: 25px;
 		left: 25px;
 		top: 25px;
+		border: 2px solid var(--blue);
+		border-radius: 40%;
 	}
 
 	.switch input {
@@ -77,7 +79,7 @@
 		height: 14px;
 		width: 14px;
 		left: 4px;
-		bottom: 3px;
+		bottom: 4px;
 		background-color: var(--silver);
 		-webkit-transition: 0.4s;
 		transition: 0.4s;
