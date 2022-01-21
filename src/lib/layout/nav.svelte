@@ -50,6 +50,14 @@
 		</li>
 		<li>
 			<a
+				class:active={$page.url.pathname.startsWith('/streams')}
+				sveltekit:prefetch
+				href="/streams"
+				on:click={handleNavClose}>Streams</a
+			>
+		</li>
+		<li>
+			<a
 				class:active={$page.url.pathname.startsWith('/events')}
 				sveltekit:prefetch
 				href="/events"
@@ -138,9 +146,9 @@
 			display: flex;
 		}
 		nav {
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0);
+			width: 100%;
+			display: flex;
+			justify-content: center;
 			align-items: center;
 			height: auto;
 			box-shadow: none;

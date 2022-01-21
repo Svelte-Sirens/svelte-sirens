@@ -24,7 +24,7 @@
 	<section class="talks">
 		{#each talks as { talkUrl, title, slug, coverImage }}
 			{#if talkUrl}
-				<a href={`/talks/${slug}`} class="glass">
+				<a href={`/talks/${slug}`} class="glass grid">
 					<h2>{title}</h2>
 					<img src={coverImage.url} alt="" />
 				</a>
@@ -48,9 +48,16 @@
 
 		& .talks {
 			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: var(--size-6);
 		}
 
 		& .glass {
+			min-width: 250px;
+			max-width: 500px;
+			gap: var(--size-4);
+			align-content: start;
 			border-bottom: none;
 			transition: var(--transition-transform);
 
