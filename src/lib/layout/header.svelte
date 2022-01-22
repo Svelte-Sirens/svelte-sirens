@@ -28,7 +28,9 @@
 		position: sticky;
 		top: 0;
 		background: var(--color-bg);
-		border-bottom: 2px solid var(--blue);
+		border: 2px solid var(--blue);
+		border-top: none;
+		border-radius: 0 0 var(--size-4) var(--size-4);
 		box-shadow: var(--shadow-4);
 		z-index: var(--layer-5);
 		margin-bottom: var(--size-8);
