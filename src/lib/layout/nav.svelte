@@ -28,8 +28,11 @@
 <nav class:checked>
 	<ul>
 		<li>
-			<a class:active={$page.url.pathname == '/'} sveltekit:prefetch href="/" on:click={handleNavClose}
-				>Home</a
+			<a
+				class:active={$page.url.pathname == '/'}
+				sveltekit:prefetch
+				href="/"
+				on:click={handleNavClose}>Home</a
 			>
 		</li>
 		<li>
@@ -146,9 +149,9 @@
 			display: flex;
 		}
 		nav {
-			width: 100%;
-			display: flex;
-			justify-content: center;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
 			align-items: center;
 			height: auto;
 			box-shadow: none;
