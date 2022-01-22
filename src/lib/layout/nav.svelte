@@ -28,8 +28,11 @@
 <nav class:checked>
 	<ul>
 		<li>
-			<a class:active={$page.url.pathname == '/'} sveltekit:prefetch href="/" on:click={handleNavClose}
-				>Home</a
+			<a
+				class:active={$page.url.pathname == '/'}
+				sveltekit:prefetch
+				href="/"
+				on:click={handleNavClose}>Home</a
 			>
 		</li>
 		<li>
@@ -46,6 +49,14 @@
 				sveltekit:prefetch
 				href="/talks"
 				on:click={handleNavClose}>Talks</a
+			>
+		</li>
+		<li>
+			<a
+				class:active={$page.url.pathname.startsWith('/streams')}
+				sveltekit:prefetch
+				href="/streams"
+				on:click={handleNavClose}>Streams</a
 			>
 		</li>
 		<li>

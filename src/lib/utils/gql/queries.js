@@ -118,3 +118,35 @@ export const queryTalk = gql`
 		}
 	}
 `;
+
+export const queryStreams = gql`
+	query Stream($todaysDate: DateTime!) {
+		streams(orderBy: datetime_stream_ASC, where: { datetime_stream_gt: $todaysDate }) {
+			slug
+			title
+			datetime_stream
+			streamUrl
+			description
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+`;
