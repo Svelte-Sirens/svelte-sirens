@@ -103,7 +103,7 @@
 		}
 		div {
 			position: relative;
-			left: 0;
+			left: -1rem;
 			transform: none;
 		}
 	}
