@@ -159,7 +159,6 @@
 	.event {
 		& .hosts {
 			gap: var(--size-6);
-			justify-items: center;
 			position: relative;
 			align-content: space-between;
 

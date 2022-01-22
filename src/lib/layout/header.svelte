@@ -28,9 +28,7 @@
 		position: sticky;
 		top: 0;
 		background: var(--color-bg);
-		border: 2px solid var(--blue);
-		border-top: none;
-		border-radius: 0 0 var(--size-4) var(--size-4);
+		border-bottom: 2px solid var(--blue);
 		box-shadow: var(--shadow-4);
 		z-index: var(--layer-5);
 		margin-bottom: var(--size-8);
@@ -58,6 +56,14 @@
 			font-family: var(--font-heading);
 			font-weight: 700;
 			font-size: var(--font-size-2);
+		}
+	}
+
+	@media (min-width: 2000px) {
+		header {
+			border: 2px solid var(--blue);
+			border-top: none;
+			border-radius: 0 0 var(--size-4) var(--size-4);
 		}
 	}
 </style>
