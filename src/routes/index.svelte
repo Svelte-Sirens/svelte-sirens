@@ -1,3 +1,25 @@
+<script context="module">
+	export async function load({ fetch }) {
+		const latestRes = await fetch('/latest.json');
+		const upcomingRes = await fetch('/upcoming.json');
+		const latest = await latestRes.json();
+		const upcoming = await upcomingRes.json();
+		return {
+			props: {
+				latest,
+				upcoming
+			}
+		};
+	}
+</script>
+
+<script>
+	import Latest from '@components/sections/latest.svelte';
+	export let latest;
+	export let upcoming;
+	console.log({ upcoming });
+</script>
+
 <article class="grid">
 	<span>Welcome</span>
 	<img src="images/favicon.png" alt="logo" class="float-in" />
@@ -23,6 +45,9 @@
 	</section>
 </article>
 
+<!-- <article>
+	<Latest talks={latest.talks} events={latest.events} />
+</article> -->
 <style lang="scss">
 	span {
 		font-size: var(--font-size-fluid-2);

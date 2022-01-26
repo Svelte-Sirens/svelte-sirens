@@ -150,3 +150,64 @@ export const queryStreams = gql`
 		}
 	}
 `;
+
+export const queryLatest = gql`
+	query Latest($todaysDate: DateTime!) {
+		events(orderBy: datetime_event_DESC, where: { datetime_event_gt: $todaysDate }) {
+			slug
+			title
+			id
+			datetime_event
+			eventUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+				}
+			}
+		}
+		streams(orderBy: datetime_stream_DESC, where: { datetime_stream_gt: $todaysDate }) {
+			slug
+			title
+			datetime_stream
+			streamUrl
+			description
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+				}
+			}
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+				}
+			}
+		}
+	}
+`;
+
+export const queryUpcoming = gql`
+query Upcoming {
+  events(orderBy: datetime_event_DESC) {
+			datetime_event
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+				}
+			}
+`;
