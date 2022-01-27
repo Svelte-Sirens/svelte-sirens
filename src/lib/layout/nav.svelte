@@ -53,14 +53,6 @@
 		</li>
 		<li>
 			<a
-				class:active={$page.url.pathname.startsWith('/streams')}
-				sveltekit:prefetch
-				href="/streams"
-				on:click={handleNavClose}>Streams</a
-			>
-		</li>
-		<li>
-			<a
 				class:active={$page.url.pathname.startsWith('/events')}
 				sveltekit:prefetch
 				href="/events"
@@ -78,6 +70,14 @@
 			>
 				Speakers
 			</a>
+		</li>
+		<li>
+			<a
+				class:active={$page.url.pathname.startsWith('/streams')}
+				sveltekit:prefetch
+				href="/streams"
+				on:click={handleNavClose}>Streams</a
+			>
 		</li>
 	</ul>
 </nav>
