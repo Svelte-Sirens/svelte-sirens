@@ -1,8 +1,6 @@
 <script>
 	export let streams;
 	export let events;
-
-	// only 4 events
 </script>
 
 <section>
@@ -30,20 +28,22 @@
 
 <style lang="scss">
 	section {
+		margin: 0 auto;
 		display: flex;
-		overflow-x: auto;
-		padding: var(--size-8) 0 0;
-		width: 100vw;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--size-8);
 	}
-
 	.glass {
-		width: 30ch;
+		max-width: 30ch;
 		padding: var(--size-4);
+		margin: var(--size-2);
 		border-bottom: none;
-		transition: var(--transition-transform);
+		transition: var(--transition-colors);
+		flex-shrink: 0;
 
 		&:hover {
-			transform: scale(1.1);
+			border: 1px solid var(--aqua);
 		}
 	}
 
@@ -56,5 +56,20 @@
 
 	img {
 		border-radius: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		section {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
+			justify-content: start;
+			width: 100vw;
+		}
+
+		.glass {
+			margin: 0;
+			width: 30ch;
+		}
 	}
 </style>

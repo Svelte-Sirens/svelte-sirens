@@ -34,24 +34,30 @@
 		>
 			Join the community
 		</a>
-		<section class="calendar">
-			<p>
-				Never miss an <a href="/events" sveltekit:prefetch>event</a>,
-			</p>
-			<a rel="external" href="/calendar" class="calendar-link">
-				<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
-			</a>
-		</section>
 	</section>
 </article>
 
+<section class="calendar">
+	<p>
+		Never miss an <a href="/events" sveltekit:prefetch>event</a>,
+	</p>
+	<a rel="external" href="/calendar" class="calendar-link">
+		<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
+	</a>
+</section>
+
+<h3>Upcoming Speakers</h3>
+<p>
+	Join our other amazing speakers, by submitting your own
+	<a href="https://sessionize.com/sveltesirens/"> talk </a>.
+</p>
 <section class="grid events">
-	<h3>Upcoming Speakers</h3>
 	<Upcoming speakers={upcoming} />
 </section>
 
+<h3>Latest Events</h3>
+
 <section class="grid events">
-	<h3>Latest Events</h3>
 	<Latest streams={latest.streams} events={latest.events} />
 </section>
 
@@ -102,7 +108,6 @@
 
 	.events {
 		gap: var(--size-2);
-		overflow-x: auto;
 	}
 
 	img {

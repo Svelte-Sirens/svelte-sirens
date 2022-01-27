@@ -15,6 +15,7 @@
 
 <style lang="scss">
 	main {
+		overflow-x: hidden;
 		height: 100%;
 		width: 100%;
 		color: var(--white);

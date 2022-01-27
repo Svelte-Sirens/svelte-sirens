@@ -1,11 +1,8 @@
 <script>
 	export let speakers;
+	speakers = speakers.slice(0, 4).reverse();
 </script>
 
-<p>
-	Join our other amazing speakers, by submitting your own
-	<a href="https://sessionize.com/sveltesirens/"> talk </a>.
-</p>
 <section>
 	{#each speakers as { name, slug, picture }}
 		<a href={`/speakers/${slug}`} class="glass">
@@ -18,24 +15,25 @@
 </section>
 
 <style lang="scss">
-	p {
-		font-size: var(--font-size-fluid-1);
-	}
 	section {
+		margin: 0 auto;
 		display: flex;
-		overflow-x: auto;
-		padding: var(--size-8) 0 0;
-		width: 100vw;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--size-8);
 	}
 
 	.glass {
-		width: 30ch;
+		height: 310px;
+		max-width: 25ch;
 		padding: var(--size-4);
+		margin: var(--size-2);
 		border-bottom: none;
-		transition: var(--transition-transform);
+		transform: var(--transition-colors);
+		flex-shrink: 0;
 
 		&:hover {
-			transform: scale(1.1);
+			border: 1px solid var(--aqua);
 		}
 	}
 
@@ -47,6 +45,22 @@
 	}
 
 	img {
+		height: 200px;
+		width: 200px;
 		border-radius: 100%;
+		object-fit: cover;
+	}
+	@media (min-width: 1024px) {
+		section {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			justify-content: start;
+			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
+			width: 100vw;
+		}
+
+		.glass {
+			margin: 0;
+		}
 	}
 </style>
