@@ -47,7 +47,7 @@ export const queryEvent = gql`
 
 export const querySpeakers = gql`
 	query Speakers {
-		speakers {
+		speakers(orderBy: createdAt_DESC) {
 			name
 			slug
 			biography
@@ -151,9 +151,11 @@ export const queryStreams = gql`
 	}
 `;
 
+// query events before todaysDate
+
 export const queryLatest = gql`
 	query Latest($todaysDate: DateTime!) {
-		events(orderBy: datetime_event_DESC, where: { datetime_event_gt: $todaysDate }) {
+		events(orderBy: datetime_event_DESC, where: { datetime_event_lt: $todaysDate }) {
 			slug
 			title
 			id
@@ -166,10 +168,11 @@ export const queryLatest = gql`
 				picture {
 					id
 					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
 			}
 		}
-		streams(orderBy: datetime_stream_DESC, where: { datetime_stream_gt: $todaysDate }) {
+		streams(orderBy: datetime_stream_DESC, where: { datetime_stream_lt: $todaysDate }) {
 			slug
 			title
 			datetime_stream
@@ -182,6 +185,7 @@ export const queryLatest = gql`
 				picture {
 					id
 					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
 			}
 			guests {
@@ -191,6 +195,7 @@ export const queryLatest = gql`
 				picture {
 					id
 					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
 			}
 		}
@@ -198,16 +203,17 @@ export const queryLatest = gql`
 `;
 
 export const queryUpcoming = gql`
-query Upcoming {
-  events(orderBy: datetime_event_DESC) {
-			datetime_event
-			speakers {
-				name
-				handle
-				handleUrl
-				picture {
-					id
-					url
-				}
+	query Upcoming {
+		speakers(orderBy: datetime_event_DESC) {
+			name
+			handle
+			handleUrl
+			slug
+			biography
+			picture {
+				id
+				url
 			}
+		}
+	}
 `;

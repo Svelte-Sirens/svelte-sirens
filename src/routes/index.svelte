@@ -1,7 +1,7 @@
 <script context="module">
 	export async function load({ fetch }) {
 		const latestRes = await fetch('/latest.json');
-		const upcomingRes = await fetch('/upcoming.json');
+		const upcomingRes = await fetch('/speakers.json');
 		const latest = await latestRes.json();
 		const upcoming = await upcomingRes.json();
 		return {
@@ -15,15 +15,15 @@
 
 <script>
 	import Latest from '@components/sections/latest.svelte';
+	import Upcoming from '@components/sections/upcoming.svelte';
 	export let latest;
 	export let upcoming;
-	console.log({ upcoming });
 </script>
 
-<article class="grid">
+<article class="grid hero">
 	<span>Welcome</span>
 	<img src="images/favicon.png" alt="logo" class="float-in" />
-	<section class="grid">
+	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
 		<a
@@ -45,9 +45,16 @@
 	</section>
 </article>
 
-<!-- <article>
-	<Latest talks={latest.talks} events={latest.events} />
-</article> -->
+<section class="grid events">
+	<h3>Upcoming Speakers</h3>
+	<Upcoming speakers={upcoming} />
+</section>
+
+<section class="grid events">
+	<h3>Latest Events</h3>
+	<Latest streams={latest.streams} events={latest.events} />
+</section>
+
 <style lang="scss">
 	span {
 		font-size: var(--font-size-fluid-2);
@@ -61,7 +68,7 @@
 		margin: 0 auto;
 	}
 
-	article {
+	.hero {
 		align-content: flex-start;
 		justify-content: center;
 		justify-items: center;
@@ -70,7 +77,7 @@
 		gap: var(--size-2);
 	}
 
-	section {
+	.hero-text {
 		position: relative;
 		z-index: var(--layer-2);
 		justify-content: center;
@@ -87,6 +94,15 @@
 
 	h2 {
 		font-size: var(--font-size-fluid-1);
+	}
+
+	h3 {
+		font-size: var(--font-size-fluid-2);
+	}
+
+	.events {
+		gap: var(--size-2);
+		overflow-x: auto;
 	}
 
 	img {
