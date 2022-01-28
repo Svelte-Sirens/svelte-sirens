@@ -1,15 +1,20 @@
 <script>
 	import { page } from '$app/stores';
 	import Nav from './nav.svelte';
+
+	let scrollY;
 </script>
 
-<header>
+<svelte:window bind:scrollY />
+
+<header class:scrolled={scrollY > 0}>
 	{#if $page.url.pathname !== '/'}
 		<a href="/">
 			<img src="/images/favicon.png" alt="logo" />
 			<span>Svelte Sirens</span>
 		</a>
 	{/if}
+
 	<Nav />
 </header>
 
@@ -27,10 +32,8 @@
 	header {
 		position: sticky;
 		top: 0;
-		background: var(--color-bg);
-		border-bottom: 2px solid var(--blue);
-		box-shadow: var(--shadow-4);
-		z-index: var(--layer-5);
+		/* Just above bubbles */
+		z-index: 100;
 		margin-bottom: var(--size-8);
 		display: flex;
 		gap: var(--size-2);
@@ -39,6 +42,13 @@
 		height: 100px;
 		width: 100%;
 		padding: 0 var(--size-4);
+
+		transition: background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
+
+		&.scrolled {
+			background-color: var(--teal);
+			border-bottom: 2px solid var(--white);
+		}
 	}
 
 	img {
