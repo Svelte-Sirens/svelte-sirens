@@ -108,6 +108,7 @@
 
 	.events {
 		gap: var(--size-2);
+		overflow-x: auto;
 	}
 
 	img {

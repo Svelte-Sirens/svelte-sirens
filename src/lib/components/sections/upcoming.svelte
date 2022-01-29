@@ -7,7 +7,7 @@
 	{#each speakers as { name, slug, picture }}
 		<a href={`/speakers/${slug}`} class="glass">
 			<article class="grid">
-				<h4>{name}</h4>
+				<h3>{name}</h3>
 				<img src={picture.url} alt={name} />
 			</article>
 		</a>
@@ -25,7 +25,7 @@
 
 	.glass {
 		height: 310px;
-		max-width: 25ch;
+		width: 30ch;
 		padding: var(--size-4);
 		margin: var(--size-2);
 		border-bottom: none;
@@ -50,10 +50,9 @@
 		border-radius: 100%;
 		object-fit: cover;
 	}
-	@media (min-width: 1024px) {
+	@media (min-width: 800px) {
 		section {
 			flex-wrap: nowrap;
-			overflow-x: auto;
 			justify-content: start;
 			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
 			width: 100vw;

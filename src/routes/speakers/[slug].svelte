@@ -19,12 +19,13 @@
 
 {#each speakers as { name, picture, biography }}
 	<article class="glass">
+		<h1>{name}</h1>
 		<img src={picture.url} alt={name} class="speaker" />
-		<section>
 			{#if biography}
-				{@html marked(biography)}
+				<p>
+					{@html marked(biography)}
+				</p>
 			{/if}
-		</section>
 	</article>
 {/each}
 
@@ -32,11 +33,20 @@
 	article {
 		padding: var(--size-8);
 		margin: 0 auto;
-		max-width: 55ch;
+		max-width: 60ch;
 		display: grid;
-		gap: var(--size-4);
+		gap: var(--size-6);
 		grid-template-columns: minmax(0, 1fr);
 		place-items: center;
 		text-align: left;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	p {
+		font-size: var(--font-size-fluid-1);
 	}
 </style>

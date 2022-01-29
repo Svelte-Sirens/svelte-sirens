@@ -35,7 +35,7 @@
 		gap: var(--size-8);
 	}
 	.glass {
-		max-width: 30ch;
+		width: 30ch;
 		padding: var(--size-4);
 		margin: var(--size-2);
 		border-bottom: none;
@@ -58,10 +58,9 @@
 		border-radius: 100%;
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 800px) {
 		section {
 			flex-wrap: nowrap;
-			overflow-x: auto;
 			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
 			justify-content: start;
 			width: 100vw;
