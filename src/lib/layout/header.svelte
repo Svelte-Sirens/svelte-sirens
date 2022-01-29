@@ -43,11 +43,24 @@
 		width: 100%;
 		padding: 0 var(--size-4);
 
-		transition: background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+		border-radius: 0 0 var(--size-4) var(--size-4);
+
+		border: 2px solid rgba(0, 0, 0, 0);
+		border-top: none;
 
 		&.scrolled {
 			background-color: var(--teal);
-			border-bottom: 2px solid var(--white);
+			border-color: var(--white);
+		}
+	}
+
+	@media (max-width: 2000px) {
+		header {
+			border-left: none;
+			border-right: none;
+			border-radius: 0;
 		}
 	}
 
@@ -66,14 +79,6 @@
 			font-family: var(--font-heading);
 			font-weight: 700;
 			font-size: var(--font-size-2);
-		}
-	}
-
-	@media (min-width: 2000px) {
-		header {
-			border: 2px solid var(--blue);
-			border-top: none;
-			border-radius: 0 0 var(--size-4) var(--size-4);
 		}
 	}
 </style>
