@@ -22,18 +22,19 @@
 </p>
 <section>
 	{#each speakers as { name, slug, picture }}
-		<article class="grid glass">
-			<img src={picture.url} alt={name} class="speaker" />
-			<h2>
-				<a href={`/speakers/${slug}`}>{name} </a>
-			</h2>
-		</article>
+		<a href={`/speakers/${slug}`} class="grid glass">
+			<article class="grid">
+				<img src={picture.url} alt={name} class="speaker" />
+				<h2>
+					{name}
+				</h2>
+			</article>
+		</a>
 	{/each}
 </section>
 
-<style>
+<style lang="scss">
 	section {
-		max-width: 80ch;
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -41,14 +42,28 @@
 		place-content: center;
 	}
 
-	a {
-		border: none;
+	p {
+		font-size: var(--font-size-fluid-1);
+	}
+
+	.glass {
+		width: 25ch;
+		padding: var(--size-4);
+		border-bottom: none;
+		transition: var(--transition-transform);
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
 	article {
-		max-width: 25ch;
-		padding: var(--size-4);
 		place-items: center;
 		gap: var(--size-4);
+		align-content: start;
+	}
+
+	h2 {
+		font-size: var(--font-size-4);
 	}
 </style>

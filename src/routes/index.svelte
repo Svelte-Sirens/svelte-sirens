@@ -1,7 +1,29 @@
-<article class="grid">
+<script context="module">
+	export async function load({ fetch }) {
+		const latestRes = await fetch('/latest.json');
+		const upcomingRes = await fetch('/speakers.json');
+		const latest = await latestRes.json();
+		const upcoming = await upcomingRes.json();
+		return {
+			props: {
+				latest,
+				upcoming
+			}
+		};
+	}
+</script>
+
+<script>
+	import Latest from '@components/sections/latest.svelte';
+	import Upcoming from '@components/sections/upcoming.svelte';
+	export let latest;
+	export let upcoming;
+</script>
+
+<article class="grid hero">
 	<span>Welcome</span>
 	<img src="images/favicon.png" alt="logo" class="float-in" />
-	<section class="grid">
+	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
 		<a
@@ -12,16 +34,32 @@
 		>
 			Join the community
 		</a>
-		<section class="calendar">
-			<p>
-				Never miss an <a href="/events" sveltekit:prefetch>event</a>,
-			</p>
-			<a rel="external" href="/calendar" class="calendar-link">
-				<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
-			</a>
-		</section>
 	</section>
 </article>
+
+<section class="calendar">
+	<p>
+		Never miss an <a href="/events" sveltekit:prefetch>event</a>,
+	</p>
+	<a rel="external" href="/calendar" class="calendar-link">
+		<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
+	</a>
+</section>
+
+<h3>Upcoming Speakers</h3>
+<p>
+	Join our other amazing speakers, by submitting your own
+	<a href="https://sessionize.com/sveltesirens/"> talk </a>.
+</p>
+<section class="grid events">
+	<Upcoming speakers={upcoming} />
+</section>
+
+<h3>Latest Events</h3>
+
+<section class="grid events">
+	<Latest streams={latest.streams} events={latest.events} />
+</section>
 
 <style lang="scss">
 	span {
@@ -36,7 +74,7 @@
 		margin: 0 auto;
 	}
 
-	article {
+	.hero {
 		align-content: flex-start;
 		justify-content: center;
 		justify-items: center;
@@ -45,7 +83,7 @@
 		gap: var(--size-2);
 	}
 
-	section {
+	.hero-text {
 		position: relative;
 		z-index: var(--layer-2);
 		justify-content: center;
@@ -62,6 +100,15 @@
 
 	h2 {
 		font-size: var(--font-size-fluid-1);
+	}
+
+	h3 {
+		font-size: var(--font-size-fluid-2);
+	}
+
+	.events {
+		gap: var(--size-2);
+		overflow-x: auto;
 	}
 
 	img {
