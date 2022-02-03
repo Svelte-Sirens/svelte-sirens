@@ -52,10 +52,6 @@
 	</section>
 </article>
 
-<!-- <p>
-		Never miss an <a href="/events" sveltekit:prefetch>event</a>,
-	</p> -->
-
 <h3>Upcoming Speakers</h3>
 <section class="grid events">
 	<Upcoming speakers={upcoming} />
@@ -73,7 +69,7 @@
 		justify-content: center;
 		justify-items: center;
 		text-align: center;
-		margin: 0 auto;
+		margin: 0 auto var(--size-8);
 		gap: var(--size-4);
 	}
 
@@ -129,7 +125,10 @@
 	@media (min-width: 1024px) {
 		.hero {
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
+			align-items: center;
+			gap: var(--size-8);
+			height: calc(80vh - var(--header-height));
 			width: 100%;
 		}
 
