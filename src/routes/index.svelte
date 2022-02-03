@@ -21,7 +21,7 @@
 </script>
 
 <article class="grid hero">
-	<img src="images/favicon.png" alt="logo" class="float-in" />
+	<img src="images/favicon.png" alt="logo" class="float-in siren" />
 	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
@@ -46,7 +46,7 @@
 
 		<div class="calendar">
 			<a rel="external" href="/calendar" class="calendar-link">
-				<img src="/images/calendar.svg" alt="" /> Add Events to Google Calendar
+				<img src="/images/calendar.svg" alt="" class="cal-img" /> Add Events to Google Calendar
 			</a>
 		</div>
 	</section>
@@ -111,10 +111,15 @@
 		overflow-x: auto;
 	}
 
-	img {
-		width: 60%;
+	.siren {
+		padding: var(--size-4);
+		width: 100%;
 		max-width: 400px;
 		filter: drop-shadow(0px 10px 20px #213253);
+	}
+
+	.cal-img {
+		width: 50px;
 	}
 
 	a {
