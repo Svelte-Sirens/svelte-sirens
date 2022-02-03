@@ -74,27 +74,44 @@ pre {
 	white-space: pre-wrap;
 }
 
-.btn-primary,
-a:visited.btn-primary {
+button,
+a.btn-primary,
+a.btn-secondary,
+a:visited {
+	margin: 0;
 	padding: var(--size-4) var(--size-8);
-	background-color: var(--blue);
 	border-radius: var(--size-1);
-	color: var(--navy);
 	font-size: var(--font-size-2);
 	font-weight: 700;
+	width: 100%;
 	cursor: pointer;
 	transition: var(--transition-all);
 	box-shadow: var(--shadow-4);
 	justify-self: center;
 	text-shadow: none;
 
-	&:hover {
-		box-shadow: var(--inner-shadow-4);
-		background-color: var(--light-teal);
+	&.btn-primary,
+	a:visited.btn-primary {
 		color: var(--navy);
+		background-color: var(--blue);
+
+		&:hover {
+			box-shadow: var(--inner-shadow-4);
+			background-color: var(--light-teal);
+			color: var(--navy);
+		}
+	}
+
+	&.btn-secondary,
+	a:visited.btn-secondary {
+		background-color: var(--navy);
+		color: var(--white);
+
+		&:hover {
+			background-color: var(--teal);
+		}
 	}
 }
-
 .calendar {
 	display: grid;
 	justify-content: center;

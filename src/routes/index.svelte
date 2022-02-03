@@ -21,36 +21,38 @@
 </script>
 
 <article class="grid hero">
-	<span>Welcome</span>
-	<img src="images/favicon.png" alt="logo" class="float-in" />
+	<img src="images/favicon.png" alt="logo" class="float-in siren" />
 	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
-		<a
-			class="btn-primary"
-			rel="noopener noreffer"
-			target="_blank"
-			href="https://discord.gg/4TVdc4RRps"
-		>
-			Join the community
-		</a>
+		<div class="btns">
+			<a
+				class="btn-primary"
+				rel="noopener noreffer"
+				target="_blank"
+				href="https://discord.gg/4TVdc4RRps"
+			>
+				Join the community
+			</a>
+			<a
+				class="btn-secondary"
+				rel="noopener noreffer"
+				target="_blank"
+				href="https://sessionize.com/sveltesirens/"
+			>
+				Become a Speaker
+			</a>
+		</div>
+
+		<div class="calendar">
+			<a rel="external" href="/calendar" class="calendar-link">
+				<img src="/images/calendar.svg" alt="" class="cal-img" /> Add Events to Google Calendar
+			</a>
+		</div>
 	</section>
 </article>
 
-<section class="calendar">
-	<p>
-		Never miss an <a href="/events" sveltekit:prefetch>event</a>,
-	</p>
-	<a rel="external" href="/calendar" class="calendar-link">
-		<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
-	</a>
-</section>
-
 <h3>Upcoming Speakers</h3>
-<p>
-	Join our other amazing speakers, by submitting your own
-	<a href="https://sessionize.com/sveltesirens/"> talk </a>.
-</p>
 <section class="grid events">
 	<Upcoming speakers={upcoming} />
 </section>
@@ -62,40 +64,38 @@
 </section>
 
 <style lang="scss">
-	span {
-		font-size: var(--font-size-fluid-2);
-		z-index: 1;
-		font-family: var(--font-heading);
-		font-weight: 600;
-		display: inline-block;
-		position: relative;
-		text-align: center;
-		text-shadow: var(--shadow-text);
-		margin: 0 auto;
-	}
-
 	.hero {
 		align-content: flex-start;
 		justify-content: center;
 		justify-items: center;
 		text-align: center;
-		margin: 0 auto;
-		gap: var(--size-2);
+		margin: 0 auto var(--size-8);
+		gap: var(--size-4);
 	}
 
 	.hero-text {
+		padding: var(--size-4);
 		position: relative;
 		z-index: var(--layer-2);
 		justify-content: center;
 		justify-items: center;
 		text-align: center;
-		gap: var(--size-2);
+		gap: var(--size-4);
 		max-width: 55ch;
+	}
+
+	.btns {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr);
+		gap: var(--size-4);
+		& > a {
+			margin: 0;
+		}
 	}
 
 	h1 {
 		font-size: var(--font-size-fluid-3);
-		margin-bottom: 0;
+		margin: 0;
 	}
 
 	h2 {
@@ -111,10 +111,15 @@
 		overflow-x: auto;
 	}
 
-	img {
-		width: 60%;
+	.siren {
+		padding: var(--size-4);
+		width: 100%;
 		max-width: 400px;
 		filter: drop-shadow(0px 10px 20px #213253);
+	}
+
+	.cal-img {
+		width: 50px;
 	}
 
 	a {
@@ -123,6 +128,29 @@
 	}
 
 	@media (min-width: 1024px) {
+		.hero {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: var(--size-8);
+			height: calc(80vh - var(--header-height));
+			width: 100%;
+		}
+
+		.hero-text {
+			justify-items: flex-start;
+			text-align: left;
+			align-content: center;
+		}
+
+		.btns {
+			display: flex;
+			align-items: flex-start;
+
+			& > a {
+				width: auto;
+			}
+		}
 		h2 {
 			max-width: 100%;
 			word-break: none;
