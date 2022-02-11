@@ -39,7 +39,7 @@
 		gap: var(--size-2);
 		align-items: center;
 		justify-content: space-between;
-		height: 100px;
+		height: var(--header-height);
 		width: 100%;
 		padding: 0 var(--size-4);
 
