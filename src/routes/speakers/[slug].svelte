@@ -21,11 +21,11 @@
 	<article class="glass">
 		<h1>{name}</h1>
 		<img src={picture.url} alt={name} class="speaker" />
-			{#if biography}
-				<p>
-					{@html marked(biography)}
-				</p>
-			{/if}
+		{#if biography}
+			<p>
+				{@html marked(biography)}
+			</p>
+		{/if}
 	</article>
 {/each}
 
@@ -43,7 +43,7 @@
 
 	img {
 		width: 100%;
-		height: 100%;
+		height: auto;
 	}
 
 	p {
