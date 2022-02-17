@@ -42,7 +42,7 @@
 		left: 25px;
 		top: 25px;
 		border: 2px solid var(--blue);
-		border-radius: 40%;
+		border-radius: 50px;
 	}
 
 	.switch input {
