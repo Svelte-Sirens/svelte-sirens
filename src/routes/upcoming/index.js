@@ -1,12 +1,12 @@
 import { client } from '@gql/graphql-client';
-import { queryTalks } from '@gql/queries';
+import { queryUpcomingEvents } from '@gql/queries';
 
 export const get = async () => {
 	try {
-		const { events } = await client.request(queryTalks);
+		const upcoming = await client.request(queryUpcomingEvents);
 		return {
 			status: 200,
-			body: events
+			body: { upcoming }
 		};
 	} catch (error) {
 		return {

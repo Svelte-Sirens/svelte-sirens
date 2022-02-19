@@ -6,7 +6,6 @@ export const get = async () => {
 		const latest = await client.request(queryLatest, {
 			todaysDate: new Date().toISOString()
 		});
-		console.log(latest);
 		return {
 			status: 200,
 			body: { latest }

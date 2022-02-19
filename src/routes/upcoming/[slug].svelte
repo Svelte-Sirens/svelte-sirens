@@ -1,28 +1,17 @@
-<script context="module">
-	export async function load({ fetch, params }) {
-		const { slug } = params;
-		const res = await fetch(`/talks/${slug}.json`);
-		const talk = await res.json();
-
-		return {
-			props: {
-				talk
-			}
-		};
-	}
-</script>
-
 <script>
-	export let talk;
+	export let upcoming;
+	let events = upcoming.events;
+	let streams = upcoming.streams;
+	console.log(events, streams);
 </script>
 
-{#each talk as { talkUrl, title, slug }}
-	{#if talkUrl}
+{#if events}
+	{#each events as { eventUrl, title, slug }}
 		<section>
 			<h1>{title}</h1>
 			<div class="video-wrapper">
 				<iframe
-					src={talkUrl}
+					src={eventUrl}
 					title="YouTube video player"
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -30,8 +19,23 @@
 				/>
 			</div>
 		</section>
-	{/if}
-{/each}
+	{/each}
+{:else if streams}
+	{#each streams as { streamUrl, title, slug }}
+		<section>
+			<h1>{title}</h1>
+			<div class="video-wrapper">
+				<iframe
+					src={streamUrl}
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen
+				/>
+			</div>
+		</section>
+	{/each}
+{/if}
 
 <style lang="scss">
 	section {

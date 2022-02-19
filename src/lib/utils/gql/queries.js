@@ -181,7 +181,7 @@ export const queryLatest = gql`
 
 export const queryUpcoming = gql`
 	query Upcoming {
-		speakers(orderBy: datetime_event_DESC) {
+		speakers(orderBy: datetime_event_ASC) {
 			name
 			handle
 			handleUrl
@@ -190,6 +190,116 @@ export const queryUpcoming = gql`
 			picture {
 				id
 				url
+			}
+		}
+	}
+`;
+
+export const queryUpcomingSlug = gql`
+	query Event($slug: String!) {
+		events(orderBy: datetime_event_ASC, where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_event
+			eventUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				slug
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+	query Stream($slug: String!) {
+		streams(orderBy: datetime_stream_ASC, where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_stream
+			streamUrl
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+			speakers {
+				name
+				handle
+				handleUrl
+				slug
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+`;
+
+export const queryUpcomingEvents = gql`
+	query Upcoming {
+		events(orderBy: datetime_event_DESC) {
+			slug
+			title
+			id
+			datetime_event
+			talkUrl
+			coverImage {
+				id
+				url
+			}
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+		streams(orderBy: datetime_stream_DESC) {
+			slug
+			title
+			id
+			datetime_stream
+			streamUrl
+			coverImage {
+				id
+				url
+			}
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
 			}
 		}
 	}

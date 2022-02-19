@@ -10,13 +10,6 @@
 <h1>Latest Events</h1>
 
 <section class="grid">
-	<section class="calendar">
-		<p>Never miss an event,</p>
-		<a rel="external" href="/calendar" class="calendar-link">
-			<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
-		</a>
-	</section>
-
 	<ul>
 		{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }}
 			<article class="glass">
@@ -81,7 +74,7 @@
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
-									<span>{handle}</span>
+									<span>@{handle}</span>
 								</a>
 							</div>
 						</section>
@@ -134,17 +127,6 @@
 			</article>
 		{/each}
 	</ul>
-
-	<!-- <section>
-		<h3>Upcoming Speakers</h3>
-		<p><a href="https://twitter.com/stolinski">Scott Tolinski</a> - March</p>
-		<p><a href="https://twitter.com/selfteachme">Amy Dutton</a> - April</p>
-		<p><a href="https://twitter.com/wattenberger">Amelia Wattenberger</a> - June</p>
-	</section>
-	<p>
-		All <a href="/talks">talks</a> will be available to watch later.<br />Join our other speakers,
-		by submitting your own <a href="https://sessionize.com/sveltesirens/"> talk </a>.
-	</p> -->
 </section>
 
 <style lang="scss">
