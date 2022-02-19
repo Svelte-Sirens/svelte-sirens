@@ -52,16 +52,18 @@
 	</section>
 </article>
 
-<h3>Upcoming Speakers</h3>
-<section class="grid events">
-	<Upcoming speakers={upcoming} />
-</section>
-
-<h3>Latest Events</h3>
-
-<section class="grid events">
-	<Latest streams={latest.streams} events={latest.events} />
-</section>
+<article class="grid lists">
+	<h3>Upcoming Speakers</h3>
+	<div class="grid events">
+		<Upcoming speakers={upcoming} />
+	</div>
+</article>
+<article class="grid lists">
+	<h3>Latest Events</h3>
+	<div class="grid events">
+		<Latest streams={latest.streams} events={latest.events} />
+	</div>
+</article>
 
 <style lang="scss">
 	.hero {
@@ -125,6 +127,13 @@
 	a {
 		margin: var(--size-4) auto;
 		text-shadow: none;
+	}
+
+	.lists {
+		gap: var(--size-2);
+		&* + * {
+			margin-top: var(--size-10);
+		}
 	}
 
 	@media (min-width: 1024px) {

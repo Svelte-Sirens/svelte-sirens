@@ -1,18 +1,3 @@
-<script context="module">
-	export const load = async ({ fetch,  params }) => {
-		const { slug } = params;
-		const res = await fetch(`/events/${slug}.json`);
-		if (res.ok) {
-			const event = await res.json();
-			if (event.length > 0) {
-				return {
-					props: { event }
-				};
-			}
-		}
-	};
-</script>
-
 <script>
 	export let event;
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };

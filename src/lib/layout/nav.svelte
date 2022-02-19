@@ -53,12 +53,12 @@
 		</li>
 		<li>
 			<a
-				class:active={$page.url.pathname.startsWith('/events')}
+				class:active={$page.url.pathname.startsWith('/latest')}
 				sveltekit:prefetch
-				href="/events"
+				href="/latest"
 				on:click={handleNavClose}
 			>
-				Events
+				Latest
 			</a>
 		</li>
 		<li>

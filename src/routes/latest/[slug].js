@@ -6,9 +6,10 @@ export const get = async (req) => {
 	try {
 		const variables = { slug };
 		const { events } = await client.request(queryEvent, variables);
+		const event = events.map((event) => event);
 		return {
 			status: 200,
-			body: events
+			body: { event }
 		};
 	} catch (error) {
 		return {

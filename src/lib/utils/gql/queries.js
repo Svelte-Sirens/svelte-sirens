@@ -1,28 +1,5 @@
 import { gql } from 'graphql-request';
 
-export const queryEvents = gql`
-	query Events($todaysDate: DateTime!) {
-		events(orderBy: datetime_event_ASC, where: { datetime_event_gt: $todaysDate }) {
-			slug
-			title
-			id
-			datetime_event
-			eventUrl
-			speakers {
-				name
-				handle
-				handleUrl
-				slug
-				picture {
-					id
-					url
-					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
-				}
-			}
-		}
-	}
-`;
-
 export const queryEvent = gql`
 	query Event($slug: String!) {
 		events(where: { slug: $slug }) {
