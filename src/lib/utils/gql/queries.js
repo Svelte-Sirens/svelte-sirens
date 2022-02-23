@@ -249,17 +249,13 @@ export const queryUpcomingSlug = gql`
 `;
 
 export const queryUpcomingEvents = gql`
-	query Upcoming {
-		events(orderBy: datetime_event_DESC) {
+	query Upcoming($todaysDate: DateTime!) {
+		events(orderBy: datetime_event_DESC, where: { datetime_event_gt: $todaysDate }) {
 			slug
 			title
 			id
 			datetime_event
-			talkUrl
-			coverImage {
-				id
-				url
-			}
+			eventUrl
 			speakers {
 				name
 				handle
@@ -271,16 +267,12 @@ export const queryUpcomingEvents = gql`
 				}
 			}
 		}
-		streams(orderBy: datetime_stream_DESC) {
+		streams(orderBy: datetime_stream_DESC, where: { datetime_stream_gt: $todaysDate }) {
 			slug
 			title
-			id
 			datetime_stream
 			streamUrl
-			coverImage {
-				id
-				url
-			}
+			description
 			speakers {
 				name
 				handle
