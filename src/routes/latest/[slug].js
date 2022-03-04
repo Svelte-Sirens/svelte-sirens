@@ -1,14 +1,15 @@
 import { client } from '@gql/graphql-client';
-import { queryTalk } from '@gql/queries';
+import { queryEvent } from '@gql/queries';
 
 export const get = async (req) => {
 	const { slug } = req.params;
 	try {
 		const variables = { slug };
-		const { events } = await client.request(queryTalk, variables);
+		const { events } = await client.request(queryEvent, variables);
+		const event = events.map((event) => event);
 		return {
 			status: 200,
-			body: events
+			body: { event }
 		};
 	} catch (error) {
 		return {

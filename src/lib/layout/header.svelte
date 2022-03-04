@@ -8,13 +8,15 @@
 <svelte:window bind:scrollY />
 
 <header class:scrolled={scrollY > 0}>
-	{#if $page.url.pathname !== '/'}
+	<section>
 		<a href="/">
-			<img src="/images/favicon.png" alt="logo" />
+			<img src="/images/favicon.png" alt="logo" class="logo" />
 			<span>Svelte Sirens</span>
 		</a>
-	{/if}
-
+		<a href="https://crisisrelief.un.org/ukraine-crisis">
+			<img class="flag" src="/images/stopwar.png" alt="stop war - Ukranian flag" />
+		</a>
+	</section>
 	<Nav />
 </header>
 
@@ -27,6 +29,11 @@
 		&:hover {
 			border-bottom: none;
 		}
+	}
+
+	section {
+		display: flex;
+		align-items: center;
 	}
 
 	header {
@@ -64,11 +71,20 @@
 		}
 	}
 
-	img {
+	.logo {
 		width: 50px;
 		height: 50px;
 		margin-right: 10px;
 	}
+
+	.flag {
+		position: relative;
+		z-index: -1;
+		top: -3px;
+		left: -60%;
+		width: 80px;
+	}
+
 	span {
 		display: none;
 	}

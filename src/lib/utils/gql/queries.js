@@ -1,28 +1,5 @@
 import { gql } from 'graphql-request';
 
-export const queryEvents = gql`
-	query Events($todaysDate: DateTime!) {
-		events(orderBy: datetime_event_ASC, where: { datetime_event_gt: $todaysDate }) {
-			slug
-			title
-			id
-			datetime_event
-			eventUrl
-			speakers {
-				name
-				handle
-				handleUrl
-				slug
-				picture {
-					id
-					url
-					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
-				}
-			}
-		}
-	}
-`;
-
 export const queryEvent = gql`
 	query Event($slug: String!) {
 		events(where: { slug: $slug }) {
@@ -204,7 +181,7 @@ export const queryLatest = gql`
 
 export const queryUpcoming = gql`
 	query Upcoming {
-		speakers(orderBy: datetime_event_DESC) {
+		speakers(orderBy: datetime_event_ASC) {
 			name
 			handle
 			handleUrl
@@ -213,6 +190,108 @@ export const queryUpcoming = gql`
 			picture {
 				id
 				url
+			}
+		}
+	}
+`;
+
+export const queryUpcomingSlug = gql`
+	query Event($slug: String!) {
+		events(orderBy: datetime_event_ASC, where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_event
+			eventUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				slug
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+	query Stream($slug: String!) {
+		streams(orderBy: datetime_stream_ASC, where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_stream
+			streamUrl
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+			speakers {
+				name
+				handle
+				handleUrl
+				slug
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+`;
+
+export const queryUpcomingEvents = gql`
+	query Upcoming($todaysDate: DateTime!) {
+		events(orderBy: datetime_event_DESC, where: { datetime_event_gt: $todaysDate }) {
+			slug
+			title
+			id
+			datetime_event
+			eventUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+		streams(orderBy: datetime_stream_DESC, where: { datetime_stream_gt: $todaysDate }) {
+			slug
+			title
+			datetime_stream
+			streamUrl
+			description
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
 			}
 		}
 	}

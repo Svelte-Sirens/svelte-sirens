@@ -1,12 +1,14 @@
 import { client } from '@gql/graphql-client';
-import { queryTalks } from '@gql/queries';
+import { queryLatest } from '@gql/queries';
 
 export const get = async () => {
 	try {
-		const { events } = await client.request(queryTalks);
+		const latest = await client.request(queryLatest, {
+			todaysDate: new Date().toISOString()
+		});
 		return {
 			status: 200,
-			body: events
+			body: { latest }
 		};
 	} catch (error) {
 		return {
