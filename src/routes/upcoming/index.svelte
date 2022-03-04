@@ -17,55 +17,6 @@
 	</a>
 </section>
 <ul>
-	{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }}
-		<article class="glass">
-			{#if speakers}
-				{#each speakers as { picture, name, handle, handleUrl, slug }}
-					<section class="event">
-						<img src={picture.small} alt={name} class="speaker" />
-						<p class="speaker-name">
-							With <a href={`/upcoming/${slug}`}>{name}</a>
-						</p>
-						<div class="lg">
-							<a href={handleUrl} rel="noopener norefferer" target="_blank">
-								<span>{handle}</span>
-							</a>
-						</div>
-					</section>
-				{/each}
-			{/if}
-			<section class="event event-details">
-				<h2>
-					{title}
-				</h2>
-				<div class="base">
-					<time datetime={datetime_event}>
-						<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
-
-						<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
-					</time>
-				</div>
-
-				{#if eventUrl}
-					<em class="lg"><a href={eventUrl}>YouTube Replay</a></em>
-				{/if}
-
-				<div class="base">
-					Hosted on
-					<a href="https://www.youtube.com/SvelteSociety" target="_blank" rel="noopener noreferrer">
-						Svelte Society YouTube
-					</a>
-					and
-					<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
-						Svelte Discord
-					</a> to chat with the community.
-				</div>
-
-				<a href="/upcoming/{eventSlug}" class="btn-primary"> More Info </a>
-			</section>
-		</article>
-	{/each}
-
 	{#each streams as { slug: streamSlug, speakers, guests, title, datetime_stream, streamUrl }}
 		<article class="glass">
 			{#if guests.length > 0}
@@ -122,6 +73,55 @@
 				</div>
 
 				<a href="/upcoming/{streamSlug}" class="btn-primary"> More Info </a>
+			</section>
+		</article>
+	{/each}
+
+	{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }}
+		<article class="glass">
+			{#if speakers}
+				{#each speakers as { picture, name, handle, handleUrl, slug }}
+					<section class="event">
+						<img src={picture.small} alt={name} class="speaker" />
+						<p class="speaker-name">
+							With <a href={`/upcoming/${slug}`}>{name}</a>
+						</p>
+						<div class="lg">
+							<a href={handleUrl} rel="noopener norefferer" target="_blank">
+								<span>{handle}</span>
+							</a>
+						</div>
+					</section>
+				{/each}
+			{/if}
+			<section class="event event-details">
+				<h2>
+					{title}
+				</h2>
+				<div class="base">
+					<time datetime={datetime_event}>
+						<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
+
+						<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
+					</time>
+				</div>
+
+				{#if eventUrl}
+					<em class="lg"><a href={eventUrl}>YouTube Replay</a></em>
+				{/if}
+
+				<div class="base">
+					Hosted on
+					<a href="https://www.youtube.com/SvelteSociety" target="_blank" rel="noopener noreferrer">
+						Svelte Society YouTube
+					</a>
+					and
+					<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+						Svelte Discord
+					</a> to chat with the community.
+				</div>
+
+				<a href="/upcoming/{eventSlug}" class="btn-primary"> More Info </a>
 			</section>
 		</article>
 	{/each}
