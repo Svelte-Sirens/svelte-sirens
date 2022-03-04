@@ -16,7 +16,7 @@
 	{/each}
 	{#each events as { slug: eventSlug, title: eventTitle, speakers }}
 		{#each speakers as { name: speakerName, handleUrl: speakerURL, picture: speakerImage }}
-			<a href={`/events/${eventSlug}`} class="glass">
+			<a href={`/latest/${eventSlug}`} class="glass">
 				<article class="grid">
 					<h3>{eventTitle}</h3>
 					<img src={speakerImage.small} alt={eventTitle} />

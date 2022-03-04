@@ -24,7 +24,7 @@
 					<section class="event">
 						<img src={picture.small} alt={name} class="speaker" />
 						<p class="speaker-name">
-							With <a href={`/upcoming/${slug}`}>{name}</a>
+							With <a href={handleUrl}>{name}</a>
 						</p>
 						<div class="lg">
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -38,7 +38,7 @@
 					<section class="event">
 						<img src={picture.small} alt={name} class="speaker" />
 						<p class="speaker-name">
-							With <a href={`/upcoming/${slug}`}>{name}</a>
+							With <a href={handleUrl}>{name}</a>
 						</p>
 						<div class="lg">
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -59,7 +59,7 @@
 						<span>{new Date(datetime_stream).toLocaleTimeString('en-GB', time)} GMT </span>
 					</time>
 				</div>
-				<em class="lg"><a href={streamUrl}>YouTube Replay</a></em>
+				<em class="lg"><a href={streamUrl}>YouTube Live Event</a></em>
 
 				<div class="base">
 					Hosted on
@@ -71,8 +71,6 @@
 						Svelte Discord
 					</a> to chat with the community.
 				</div>
-
-				<a href="/upcoming/{streamSlug}" class="btn-primary"> More Info </a>
 			</section>
 		</article>
 	{/each}
@@ -80,11 +78,11 @@
 	{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }}
 		<article class="glass">
 			{#if speakers}
-				{#each speakers as { picture, name, handle, handleUrl, slug }}
+				{#each speakers as { picture, name, handle, handleUrl, slug: speakerSlug }}
 					<section class="event">
 						<img src={picture.small} alt={name} class="speaker" />
 						<p class="speaker-name">
-							With <a href={`/upcoming/${slug}`}>{name}</a>
+							With <a href={handleUrl}>{name}</a>
 						</p>
 						<div class="lg">
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -107,7 +105,7 @@
 				</div>
 
 				{#if eventUrl}
-					<em class="lg"><a href={eventUrl}>YouTube Replay</a></em>
+					<em class="lg"><a href={eventUrl}>YouTube Live Event</a></em>
 				{/if}
 
 				<div class="base">
@@ -120,8 +118,6 @@
 						Svelte Discord
 					</a> to chat with the community.
 				</div>
-
-				<a href="/upcoming/{eventSlug}" class="btn-primary"> More Info </a>
 			</section>
 		</article>
 	{/each}

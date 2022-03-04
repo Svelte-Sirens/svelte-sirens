@@ -48,7 +48,7 @@
 			<a href="/speakers/gen-ashley">Gen Ashley</a>
 			expressed interest in joining the Sirens and with tons of previous experience running women and
 			non-binary groups in tech, we thought it was a great fit. The 4 of us organize all of the
-			<a href="/events">Events</a>, help out in the
+			<a href="/upcoming">Events</a>, help out in the
 			<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">Discord</a>,
 			and support all of the women and non-binary people in the Svelte community. Please reach out
 			to any of us directly or email

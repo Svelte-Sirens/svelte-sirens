@@ -18,7 +18,7 @@
 						<section class="event">
 							<img src={picture.small} alt={name} class="speaker" />
 							<p class="speaker-name">
-								With <a href={`/speakers/${slug}`}>{name}</a>
+								With <a href={handleUrl}>{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -58,8 +58,6 @@
 							Svelte Discord
 						</a> to chat with the community.
 					</div>
-
-					<a href="/events/{eventSlug}" class="btn-primary"> More Info </a>
 				</section>
 			</article>
 		{/each}
@@ -70,7 +68,7 @@
 						<section class="event">
 							<img src={picture.small} alt={name} class="speaker" />
 							<p class="speaker-name">
-								With <a href={`/speakers/${slug}`}>{name}</a>
+								With <a href={handleUrl}>{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -84,7 +82,7 @@
 						<section class="event">
 							<img src={picture.small} alt={name} class="speaker" />
 							<p class="speaker-name">
-								With <a href={`/speakers/${slug}`}>{name}</a>
+								With <a href={handleUrl}>{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -121,8 +119,6 @@
 							Svelte Discord
 						</a> to chat with the community.
 					</div>
-
-					<a href="/events/{streamSlug}" class="btn-primary"> More Info </a>
 				</section>
 			</article>
 		{/each}

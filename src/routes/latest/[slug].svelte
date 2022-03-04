@@ -42,7 +42,7 @@
 			</section>
 		</section>
 		<p>
-			All <a href="/talks">talks</a> will be available to watch later.
+			All <a href="/latest">talks</a> will be available to watch later.
 		</p>
 	</article>
 {/each}
