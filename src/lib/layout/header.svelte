@@ -14,7 +14,7 @@
 			<span>Svelte Sirens</span>
 		</a>
 		<a href="https://crisisrelief.un.org/ukraine-crisis">
-			<img class="flag" src="/images/stopwar.svg" alt="stop war - Ukranian flag" />
+			<img class="flag" src="/images/stopwar.png" alt="stop war - Ukranian flag" />
 		</a>
 	</section>
 	<Nav />
