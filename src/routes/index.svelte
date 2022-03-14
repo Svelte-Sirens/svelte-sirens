@@ -1,9 +1,10 @@
 <script context="module">
 	export async function load({ fetch }) {
-		const latestRes = await fetch('/latest.json');
-		const upcomingRes = await fetch('/speakers.json');
-		const latest = await latestRes.json();
-		const upcoming = await upcomingRes.json();
+		const eventsRes = await fetch('/events.json');
+		const events = await eventsRes.json();
+		const latest = events.latest;
+		const upcoming = events.upcoming;
+		console.log(upcoming);
 		return {
 			props: {
 				latest,
@@ -55,7 +56,7 @@
 <article class="grid lists">
 	<h3>Upcoming Speakers</h3>
 	<div class="grid events">
-		<Upcoming speakers={upcoming} />
+		<Upcoming {upcoming} />
 	</div>
 </article>
 <article class="grid lists">

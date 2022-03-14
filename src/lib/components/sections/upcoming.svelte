@@ -1,16 +1,27 @@
 <script>
-	export let speakers;
-	speakers = speakers.slice(0, 4).reverse();
+	export let upcoming;
+	let streams = upcoming.streams;
+	let speakers = upcoming.speakers;
 </script>
 
 <section>
-	{#each speakers as { name, slug, picture }}
-		<a href={`/speakers/${slug}`} class="glass">
+	{#each speakers as { name: speakerName, handleUrl: speakerURL, picture: speakerImage }}
+		<a href={`/latest/${speakerURL}`} class="glass">
 			<article class="grid">
-				<h3>{name}</h3>
-				<img src={picture.url} alt={name} />
+				<h3>{speakerName}</h3>
+				<img src={speakerImage.small} alt={speakerName} />
 			</article>
 		</a>
+	{/each}
+	{#each streams as { streamUrl, title: streamTitle, guests }}
+		{#each guests as { name: guestName, handleUrl: guestURL, picture: guestImage }}
+			<a href={streamUrl} class="glass">
+				<article class="grid">
+					<h3>{streamTitle}</h3>
+					<img src={guestImage.small} alt={streamTitle} />
+				</article>
+			</a>
+		{/each}
 	{/each}
 </section>
 
@@ -22,14 +33,12 @@
 		justify-content: center;
 		gap: var(--size-8);
 	}
-
 	.glass {
-		height: 310px;
 		width: 30ch;
 		padding: var(--size-4);
 		margin: var(--size-2);
 		border-bottom: none;
-		transform: var(--transition-colors);
+		transition: var(--transition-colors);
 		flex-shrink: 0;
 
 		&:hover {
@@ -45,21 +54,20 @@
 	}
 
 	img {
-		height: 200px;
-		width: 200px;
 		border-radius: 100%;
-		object-fit: cover;
 	}
+
 	@media (min-width: 800px) {
 		section {
 			flex-wrap: nowrap;
-			justify-content: start;
 			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
+			justify-content: start;
 			width: 100vw;
 		}
 
 		.glass {
 			margin: 0;
+			width: 30ch;
 		}
 	}
 </style>
