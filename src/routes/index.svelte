@@ -4,7 +4,6 @@
 		const events = await eventsRes.json();
 		const latest = events.latest;
 		const upcoming = events.upcoming;
-		console.log(upcoming);
 		return {
 			props: {
 				latest,

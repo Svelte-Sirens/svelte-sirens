@@ -195,8 +195,78 @@ export const queryUpcoming = gql`
 	}
 `;
 
+export const queryUpcomingSlug = gql`
+	query Event($slug: String!) {
+		events(orderBy: datetime_event_ASC, where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_event
+			eventUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				slug
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+	query Stream($slug: String!) {
+		streams(orderBy: datetime_stream_ASC, where: { slug: $slug }) {
+			slug
+			title
+			id
+			datetime_stream
+			streamUrl
+			guests {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+			speakers {
+				name
+				handle
+				handleUrl
+				slug
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+	}
+`;
+
 export const queryUpcomingEvents = gql`
-	query Upcoming($tentativeDate: Date!, $todaysDate: DateTime!) {
+	query Upcoming($tentativeDate: Date, $todaysDate: DateTime!) {
+		events(orderBy: datetime_event_ASC, where: { datetime_event_gt: $todaysDate }) {
+			slug
+			title
+			datetime_event
+			eventUrl
+			speakers {
+				name
+				handle
+				handleUrl
+				picture {
+					id
+					url
+					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
+				}
+			}
+		}
+
 		speakers(orderBy: tentativeDate_ASC, where: { tentativeDate_gt: $tentativeDate }) {
 			name
 			handle
@@ -208,7 +278,6 @@ export const queryUpcomingEvents = gql`
 				small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 			}
 		}
-
 		streams(orderBy: datetime_stream_ASC, where: { datetime_stream_gt: $todaysDate }) {
 			slug
 			title

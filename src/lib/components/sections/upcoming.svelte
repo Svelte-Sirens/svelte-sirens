@@ -6,7 +6,7 @@
 
 <section>
 	{#each speakers as { name: speakerName, handleUrl: speakerURL, picture: speakerImage }}
-		<a href={`/latest/${speakerURL}`} class="glass">
+		<a href={speakerURL} class="glass">
 			<article class="grid">
 				<h3>{speakerName}</h3>
 				<img src={speakerImage.small} alt={speakerName} />

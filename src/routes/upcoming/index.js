@@ -4,6 +4,7 @@ import { queryUpcomingEvents } from '@gql/queries';
 export const get = async () => {
 	try {
 		const upcoming = await client.request(queryUpcomingEvents, {
+			tentativeDate: new Date().toISOString().slice(0, 10),
 			todaysDate: new Date().toISOString()
 		});
 
