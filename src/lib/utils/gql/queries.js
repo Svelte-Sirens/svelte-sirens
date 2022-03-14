@@ -179,21 +179,21 @@ export const queryLatest = gql`
 	}
 `;
 
-// export const queryUpcoming = gql`
-// 	query Upcoming($todaysDate: Datetime!) {
-// 		speakers(orderBy: datetime_event_ASC, where: { datetime_event_lt: $todaysDate }) {
-// 			name
-// 			handle
-// 			handleUrl
-// 			slug
-// 			biography
-// 			picture {
-// 				id
-// 				url
-// 			}
-// 		}
-// 	}
-// `;
+export const queryUpcoming = gql`
+	query Upcoming($todaysDate: Datetime!) {
+		speakers(orderBy: datetime_event_ASC, where: { datetime_event_lt: $todaysDate }) {
+			name
+			handle
+			handleUrl
+			slug
+			biography
+			picture {
+				id
+				url
+			}
+		}
+	}
+`;
 
 export const queryUpcomingEvents = gql`
 	query Upcoming($tentativeDate: Date!, $todaysDate: DateTime!) {
