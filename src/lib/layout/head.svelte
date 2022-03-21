@@ -6,7 +6,7 @@
 			match.toUpperCase()
 		);
 
-	const img = 'https://www.sveltesirens.dev/images/android-chrome-192x192.png';
+	const img = 'https://www.sveltesirens.dev/og.png';
 	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary people, & allies.';
 
 	$: title =
