@@ -6,8 +6,8 @@ Svelte Sirens is a Svelte Society for women, non-binary people, and allies! You 
 
 ```
 git clone https://github.com/Svelte-Sirens/svelte-sirens
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 # Wanna contribute?
