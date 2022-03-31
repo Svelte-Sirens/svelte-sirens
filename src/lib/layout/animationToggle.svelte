@@ -26,7 +26,7 @@
 	</label>
 </div>
 
-<style>
+<style lang="scss">
 	div {
 		margin-left: auto;
 		position: absolute;
@@ -36,13 +36,17 @@
 		width: 125px;
 	}
 	.switch {
+		box-sizing: border-box;
 		position: absolute;
 		width: 50px;
 		height: 25px;
 		left: 25px;
 		top: 25px;
-		border: 2px solid var(--blue);
 		border-radius: 50px;
+
+		&:focus-within {
+			outline: 2px solid var(--blue);
+		}
 	}
 
 	.switch input {
@@ -54,7 +58,7 @@
 	.text {
 		position: absolute;
 		left: -25px;
-		top: 20px;
+		top: 25px;
 		width: 125px;
 	}
 
@@ -72,14 +76,15 @@
 		border-radius: 34px;
 	}
 
+	// circle indicator
 	.slider:before {
 		box-shadow: 0 4px 8px rgba(33, 50, 84, 0.3);
 		position: absolute;
 		content: '';
 		height: 14px;
 		width: 14px;
-		left: 4px;
-		bottom: 4px;
+		left: 5px;
+		bottom: 5px;
 		background-color: var(--silver);
 		-webkit-transition: 0.4s;
 		transition: 0.4s;
