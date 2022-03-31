@@ -19,35 +19,32 @@
 <ul>
 	{#each streams as { slug: streamSlug, speakers, guests, title, datetime_stream, streamUrl }}
 		<article class="glass">
-			{#if guests.length > 0}
-				{#each guests as { picture, name, handle, handleUrl, slug }}
-					<section class="event">
-						<img src={picture.small} alt={name} class="speaker" />
-						<p class="speaker-name">
-							With <a href={handleUrl}>{name}</a>
-						</p>
-						<div class="lg">
-							<a href={handleUrl} rel="noopener norefferer" target="_blank">
-								<span>@{handle}</span>
-							</a>
-						</div>
-					</section>
-				{/each}
-			{:else}
-				{#each speakers as { picture, name, handleUrl, slug, handle }}
-					<section class="event">
-						<img src={picture.small} alt={name} class="speaker" />
-						<p class="speaker-name">
-							With <a href={handleUrl}>{name}</a>
-						</p>
-						<div class="lg">
-							<a href={handleUrl} rel="noopener norefferer" target="_blank">
-								<span>{handle}</span>
-							</a>
-						</div>
-					</section>
-				{/each}
-			{/if}
+			{#each speakers as { picture, name, handleUrl, slug, handle }}
+				<section class="event">
+					<img src={picture.small} alt={name} class="speaker" />
+					<p class="speaker-name">
+						With <a href={handleUrl}>{name}</a>
+					</p>
+					<div class="lg">
+						<a href={handleUrl} rel="noopener norefferer" target="_blank">
+							<span>{handle}</span>
+						</a>
+					</div>
+				</section>
+			{/each}
+			{#each guests as { picture, name, handle, handleUrl, slug }}
+				<section class="event">
+					<img src={picture.small} alt={name} class="speaker" />
+					<p class="speaker-name">
+						With <a href={handleUrl}>{name}</a>
+					</p>
+					<div class="lg">
+						<a href={handleUrl} rel="noopener norefferer" target="_blank">
+							<span>@{handle}</span>
+						</a>
+					</div>
+				</section>
+			{/each}
 			<section class="event event-details">
 				<h2>
 					{title}
@@ -180,24 +177,6 @@
 		justify-items: start;
 		& a {
 			text-shadow: var(--shadow-text);
-		}
-
-		& .btn-primary {
-			width: 100%;
-			text-align: center;
-			text-shadow: none;
-		}
-	}
-
-	.btn-primary {
-		margin-top: var(--size-2);
-		padding: 2px var(--size-2);
-		justify-self: center;
-		text-shadow: none;
-		box-shadow: var(--shadow-4);
-		transition: var(--transition-all);
-		&:hover {
-			box-shadow: var(--shadow-1);
 		}
 	}
 

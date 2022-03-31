@@ -98,12 +98,12 @@ export const queryTalk = gql`
 
 export const queryStreams = gql`
 	query Stream($todaysDate: DateTime!) {
-		streams(orderBy: datetime_stream_ASC, where: { datetime_stream_gt: $todaysDate }) {
+    streams(orderBy: datetime_stream_ASC, where: {datetime_stream_lt: $todaysDate}) {
 			slug
 			title
+			id
 			datetime_stream
-			streamUrl
-			description
+    	streamUrl
 			speakers {
 				name
 				handle
@@ -114,16 +114,16 @@ export const queryStreams = gql`
 					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
 			}
-			guests {
-				name
-				handle
-				handleUrl
-				picture {
+      guests {
+        name
+        handle
+        handleUrl
+        picture {
 					id
 					url
 					small: url(transformation: { image: { resize: { width: 200, height: 200, fit: clip } } })
 				}
-			}
+      }
 		}
 	}
 `;

@@ -2,7 +2,6 @@
 	export let upcoming;
 	let events = upcoming.events;
 	let streams = upcoming.streams;
-	console.log(events, streams);
 </script>
 
 {#if events}

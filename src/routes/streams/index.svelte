@@ -1,18 +1,6 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const res = await fetch('/streams.json');
-		const streams = await res.json();
-		return {
-			props: {
-				streams
-			}
-		};
-	}
-</script>
-
 <script>
 	export let streams;
-
+	streams = streams.reverse();
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
@@ -21,10 +9,7 @@
 <article class="grid">
 	<h1>Sirens Streams</h1>
 
-	<h2>
-		Sirens Streams are a bi-monthly livestream featuring a technology that we integrate with
-		SvelteKit.
-	</h2>
+	<h2>Sirens Streams are livestreams featuring a technology that we integrate with SvelteKit.</h2>
 	<section class="grid">
 		<section class="calendar">
 			<p>Never miss an event,</p>
@@ -32,27 +17,39 @@
 				<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
 			</a>
 		</section>
-		<ul>
-			{#each streams as { slug: streamSlug, title, speakers, guests, datetime_stream, streamUrl }}
-				<article class="glass">
-					{#each speakers as { picture: speakerImg, name: speakerName, handle: speakerHandle, handleUrl: speakerUrl }}
-						<section class="event">
-							{#each guests as { picture: guestImg, name: guestName, handleUrl: guestHandleUrl, slug }}
-								<section class="hosts grid">
-									<img src={guestImg.small} alt={guestName} class="guest speaker" />
-
-									<img src={speakerImg.small} alt={speakerName} class="speaker small" />
+		<section class="grid">
+			<ul>
+				{#each streams as { slug, speakers, guests, title, datetime_stream, streamUrl }}
+					<article class="glass">
+						{#if guests.length > 0}
+							{#each guests as { picture, name, handle, handleUrl, slug: guestSlug }}
+								<section class="event">
+									<img src={picture.small} alt={name} class="speaker" />
 									<p class="speaker-name">
-										<span>With <a href={guestHandleUrl}>{guestName}</a> </span>
-										<span>
-											and
-											<a href={speakerUrl}>{speakerName}</a>
-										</span>
+										With <a href={handleUrl}>{name}</a>
 									</p>
+									<div class="lg">
+										<a href={handleUrl} rel="noopener norefferer" target="_blank">
+											<span>@{handle}</span>
+										</a>
+									</div>
 								</section>
 							{/each}
-						</section>
-
+						{:else}
+							{#each speakers as { picture, name, handleUrl, slug: speakerSlug, handle }}
+								<section class="event">
+									<img src={picture.small} alt={name} class="speaker" />
+									<p class="speaker-name">
+										With <a href={handleUrl}>{name}</a>
+									</p>
+									<div class="lg">
+										<a href={handleUrl} rel="noopener norefferer" target="_blank">
+											<span>{handle}</span>
+										</a>
+									</div>
+								</section>
+							{/each}
+						{/if}
 						<section class="event event-details">
 							<h2>
 								{title}
@@ -64,10 +61,7 @@
 									<span>{new Date(datetime_stream).toLocaleTimeString('en-GB', time)} GMT </span>
 								</time>
 							</div>
-
-							{#if streamUrl}
-								<em class="lg"><a href={streamUrl}>YouTube Live Event</a></em>
-							{/if}
+							<em class="lg"><a href={streamUrl}>YouTube Replay</a></em>
 
 							<div class="base">
 								Hosted on
@@ -84,10 +78,10 @@
 								</a> to chat with the community.
 							</div>
 						</section>
-					{/each}
-				</article>
-			{/each}
-		</ul>
+					</article>
+				{/each}
+			</ul>
+		</section>
 	</section>
 </article>
 
@@ -110,14 +104,18 @@
 	}
 
 	h2 {
-		max-width: 40ch;
-		margin: var(--size-4) auto 0;
+		margin-top: var(--size-4);
 		font-family: var(--font-body);
 		font-size: var(--font-size-fluid-1);
 	}
 
 	time {
 		display: grid;
+		gap: var(--size-2);
+	}
+
+	.speaker-name {
+		display: flex;
 		gap: var(--size-2);
 	}
 
@@ -131,14 +129,6 @@
 		font-weight: var(--font-weight-4);
 	}
 
-	.speaker-name {
-		display: grid;
-
-		& span {
-			text-align: center;
-		}
-	}
-
 	.event {
 		text-align: left;
 		display: grid;
@@ -150,25 +140,8 @@
 
 	.event-details {
 		justify-items: start;
-		gap: var(--size-2);
 		& a {
 			text-shadow: var(--shadow-text);
-		}
-	}
-
-	.event {
-		& .hosts {
-			gap: var(--size-6);
-			position: relative;
-			align-content: space-between;
-
-			& .small {
-				width: 75px;
-				height: 75px;
-				position: absolute;
-				top: 125px;
-				right: -1rem;
-			}
 		}
 	}
 
@@ -180,16 +153,6 @@
 
 		h2 {
 			margin-top: 0;
-		}
-
-		.event {
-			height: 100%;
-			& .hosts {
-				& .small {
-					top: 150px;
-					right: 0;
-				}
-			}
 		}
 	}
 </style>

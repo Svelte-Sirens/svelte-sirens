@@ -183,24 +183,6 @@
 		& a {
 			text-shadow: var(--shadow-text);
 		}
-
-		& .btn-primary {
-			width: 100%;
-			text-align: center;
-			text-shadow: none;
-		}
-	}
-
-	.btn-primary {
-		margin-top: var(--size-2);
-		padding: 2px var(--size-2);
-		justify-self: center;
-		text-shadow: none;
-		box-shadow: var(--shadow-4);
-		transition: var(--transition-all);
-		&:hover {
-			box-shadow: var(--shadow-1);
-		}
 	}
 
 	@media (min-width: 1024px) {
