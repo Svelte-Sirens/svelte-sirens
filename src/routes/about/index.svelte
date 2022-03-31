@@ -1,9 +1,34 @@
+<script>
+	const founders = [
+		{
+			name: 'Brittney Postma',
+			handle: '@brittneypostma',
+			img: '/images/speakers/brittney.jpg'
+		},
+		{
+			name: 'Willow AKA Ghost',
+			handle: '@onlyspaceghost',
+			img: '/images/speakers/ghost.jpg'
+		},
+		{
+			name: 'Steph Dietz',
+			handle: '@steph_dietz_',
+			img: '/images/speakers/steph.jpg'
+		},
+		{
+			name: 'Gen Ashley',
+			handle: '@coderinheels',
+			img: '/images/speakers/gen.jpg'
+		}
+	];
+</script>
+
 <article>
 	<section class="title">
 		<h1>About Svelte Sirens</h1>
 	</section>
 	<section class="glass grid content">
-		<img src="/images/favicon.png" alt="logo" class="float-in" />
+		<img src="/images/favicon.png" alt="logo" class="float-in siren" />
 		<p>
 			The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 			people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone
@@ -60,6 +85,15 @@
 			in our community. Welcome!
 		</p>
 	</section>
+	<section class="founder-details">
+		{#each founders as { name, handle, img }}
+			<section class="founder glass">
+				<img src={img} alt={name} />
+				<h3>{name}</h3>
+				<p>Twitter: <a href={`https://twitter.com/${handle}`}>{handle}</a></p>
+			</section>
+		{/each}
+	</section>
 </article>
 
 <style lang="scss">
@@ -68,7 +102,7 @@
 		place-items: center;
 	}
 
-	img {
+	.siren {
 		width: 150px;
 	}
 
@@ -94,5 +128,23 @@
 
 	.founders {
 		padding-top: var(--size-6);
+	}
+
+	.founder-details {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--size-4);
+		justify-content: center;
+
+		& .founder {
+			display: grid;
+			gap: var(--size-2);
+			justify-items: center;
+
+			& img {
+				width: 200px;
+				border-radius: 100%;
+			}
+		}
 	}
 </style>
