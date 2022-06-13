@@ -5,11 +5,7 @@ import path from 'path';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null
-		}),
+		adapter: adapter(),
 
 		alias: {
 			'@api': path.resolve('./src/lib/api'),
@@ -20,6 +16,10 @@ const config = {
 			'@utils': path.resolve('./src/lib/utils'),
 			'@styles': path.resolve('./src/lib/styles'),
 			'@stores': path.resolve('./src/lib/stores')			
+		},
+
+		prerender: {
+			default: true
 		}
 	},
 
