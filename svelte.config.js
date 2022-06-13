@@ -16,6 +16,10 @@ const config = {
 			'@utils': path.resolve('./src/lib/utils'),
 			'@styles': path.resolve('./src/lib/styles'),
 			'@stores': path.resolve('./src/lib/stores')			
+		},
+
+		prerender: {
+			default: true
 		}
 	},
 
