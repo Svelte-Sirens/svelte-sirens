@@ -1,23 +1,11 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const eventsRes = await fetch('/events.json');
-		const events = await eventsRes.json();
-		const latest = events.latest;
-		const upcoming = events.upcoming;
-		return {
-			props: {
-				latest,
-				upcoming
-			}
-		};
-	}
-</script>
-
 <script>
+	import { events } from '$lib/data/events';
+
 	import Latest from '@components/sections/latest.svelte';
 	import Upcoming from '@components/sections/upcoming.svelte';
-	export let latest;
-	export let upcoming;
+
+	let latest = events.filter((event) => event.datetime_event < new Date());
+	let upcoming = events.filter((event) => event.datetime_event > new Date());
 </script>
 
 <article class="grid hero">
