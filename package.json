@@ -13,28 +13,28 @@
 		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.34",
-		"@sveltejs/kit": "^1.0.0-next.350",
+		"@sveltejs/adapter-static": "1.0.0-next.35",
+		"@sveltejs/kit": "1.0.0-next.367",
 		"autoprefixer": "^10.4.7",
-		"cssnano": "^5.1.11",
-		"eslint": "^7.32.0",
+		"cssnano": "^5.1.12",
+		"eslint": "^8.19.0",
 		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte3": "^3.4.1",
-		"graphql": "^15.8.0",
-		"graphql-request": "^3.7.0",
-		"marked": "^4.0.16",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"graphql": "^16.5.0",
+		"graphql-request": "^4.3.0",
+		"marked": "^4.0.17",
 		"postcss": "^8.4.14",
-		"postcss-load-config": "^3.1.4",
-		"prettier": "^2.6.2",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"sass": "^1.52.3",
+		"sass": "^1.53.0",
 		"svelte": "^3.49.0",
 		"svelte-preprocess": "^4.10.7",
 		"vite": "^2.9.14"
 	},
 	"type": "module",
 	"dependencies": {
-		"open-props": "^1.3.16",
+		"open-props": "^1.4.1",
 		"postcss-jit-props": "^1.0.7"
 	}
 }
