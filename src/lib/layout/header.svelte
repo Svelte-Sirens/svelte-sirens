@@ -1,5 +1,4 @@
 <script>
-	import { page } from '$app/stores';
 	import Nav from './nav.svelte';
 
 	let scrollY;

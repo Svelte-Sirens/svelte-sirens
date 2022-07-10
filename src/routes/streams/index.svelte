@@ -1,9 +1,9 @@
 <script>
-	import { streams } from '$lib/data/streams';
+	import { streams as streamData } from '$lib/data/streams';
 
-	streams = streams.reverse();
+	const streams = streamData.reverse();
+
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
 	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
 </script>
 

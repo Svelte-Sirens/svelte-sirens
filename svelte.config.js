@@ -15,7 +15,7 @@ const config = {
 			'@lib': path.resolve('./src/lib'),
 			'@utils': path.resolve('./src/lib/utils'),
 			'@styles': path.resolve('./src/lib/styles'),
-			'@stores': path.resolve('./src/lib/stores')			
+			'@stores': path.resolve('./src/lib/stores')
 		},
 
 		prerender: {

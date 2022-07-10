@@ -1,10 +1,7 @@
 <script>
-import { events } from "$lib/data/events";
+	import { events } from '$lib/data/events';
 
-import { streams } from "$lib/data/streams";
-
-
-
+	import { streams } from '$lib/data/streams';
 
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 

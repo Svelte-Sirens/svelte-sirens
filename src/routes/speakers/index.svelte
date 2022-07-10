@@ -2,7 +2,6 @@
 	import { speakers } from '$lib/data/speakers';
 </script>
 
-
 <h1>Speakers</h1>
 <p>
 	Join our other speakers, by submitting your own <a href="https://sessionize.com/sveltesirens/">
