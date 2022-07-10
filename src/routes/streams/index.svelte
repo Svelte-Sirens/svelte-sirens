@@ -1,5 +1,6 @@
 <script>
-	export let streams;
+	import { streams } from '$lib/data/streams';
+
 	streams = streams.reverse();
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 

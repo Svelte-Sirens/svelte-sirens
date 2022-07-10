@@ -1,7 +1,7 @@
 <script>
-	export let latest;
-	const events = latest.events;
-	const streams = latest.streams;
+	import { events } from '$lib/data/events';
+	import { streams } from '$lib/data/streams';
+
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };

@@ -1,7 +1,6 @@
 <script>
-	export let upcoming;
-	let events = upcoming.events;
-	let streams = upcoming.streams;
+	import { events } from '$lib/data/events';
+	import { streams } from '$lib/data/streams';
 </script>
 
 {#if events}

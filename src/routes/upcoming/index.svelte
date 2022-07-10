@@ -1,7 +1,10 @@
 <script>
-	export let upcoming;
-	const events = upcoming.events;
-	const streams = upcoming.streams;
+import { events } from "$lib/data/events";
+
+import { streams } from "$lib/data/streams";
+
+
+
 
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 

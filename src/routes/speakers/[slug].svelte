@@ -1,23 +1,22 @@
 <script context="module">
-	export async function load({ fetch, params }) {
-		const res = await fetch(`/speakers/${params.slug}.json`);
-		const speakers = await res.json();
-		if (res.ok && speakers.length > 0) {
-			return {
-				props: {
-					speakers
-				}
-			};
-		}
-	}
+	export const load = async ({ params }) => {
+		const { slug } = params;
+		return {
+			props: { slug }
+		};
+	};
 </script>
 
 <script>
+	import { speakers } from '$lib/data/speakers';
 	import { marked } from 'marked';
-	export let speakers;
+
+	export let slug;
+
+	let speaker = speakers.filter((speaker) => speaker.slug === slug);
 </script>
 
-{#each speakers as { name, picture, biography }}
+{#each speaker as { name, picture, biography }}
 	<article class="glass">
 		<h1>{name}</h1>
 		<img src={picture.url} alt={name} class="speaker" />

@@ -1,18 +1,7 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const res = await fetch('/speakers.json');
-		const speakers = await res.json();
-		return {
-			props: {
-				speakers
-			}
-		};
-	}
+<script>
+	import { speakers } from '$lib/data/speakers';
 </script>
 
-<script>
-	export let speakers;
-</script>
 
 <h1>Speakers</h1>
 <p>
