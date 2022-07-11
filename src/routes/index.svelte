@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
 	export async function load({ fetch }) {
 		const eventsRes = await fetch('/events.json');
 		const events = await eventsRes.json();
@@ -11,8 +11,7 @@
 			}
 		};
 	}
-</script>
-
+</script> -->
 <script>
 	import Latest from '@components/sections/latest.svelte';
 	import Upcoming from '@components/sections/upcoming.svelte';
@@ -52,7 +51,7 @@
 	</section>
 </article>
 
-<article class="grid lists">
+<!-- <article class="grid lists">
 	<h3>Upcoming Speakers</h3>
 	<div class="grid events">
 		<Upcoming {upcoming} />
@@ -63,8 +62,7 @@
 	<div class="grid events">
 		<Latest streams={latest.streams} events={latest.events} />
 	</div>
-</article>
-
+</article> -->
 <style lang="scss">
 	.hero {
 		align-content: flex-start;
