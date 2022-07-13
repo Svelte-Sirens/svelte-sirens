@@ -21,8 +21,6 @@
 		//prettier-ignore
 		...events.map(event => ({ title: event.title, url: `/event/${event.slug}`, people: event.speakers, date: event.date }))
 	]);
-
-	$: console.log(items)
 </script>
 
 <section>
