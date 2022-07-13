@@ -1,10 +1,8 @@
-<script>
-	import { events } from '$lib/data/events';
-
-	import { streams } from '$lib/data/streams';
+<script lang="ts">
+	import { streams } from '@data/streams';
+	import { events } from '@data/events';
 
 	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
 	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
 </script>
 
@@ -17,9 +15,9 @@
 	</a>
 </section>
 <ul>
-	{#each streams as { slug: streamSlug, speakers, guests, title, datetime_stream, streamUrl }}
+	{#each streams as { speakers, guests, title, date, streamUrl, slug, picture }}
 		<article class="glass">
-			{#each speakers as { picture, name, handleUrl, slug, handle }}
+			{#each speakers as { picture, name, handleUrl, handle }}
 				<section class="event">
 					<img src={picture.small} alt={name} class="speaker" />
 					<p class="speaker-name">

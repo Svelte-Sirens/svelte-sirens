@@ -1,18 +1,20 @@
-<script>
-	import { events } from '$lib/data/events';
-
-	import Latest from '@components/sections/latest.svelte';
+<script lang="ts">
 	import Upcoming from '@components/sections/upcoming.svelte';
+	import Latest from '$lib/components/sections/Latest.svelte';
+	import type { Event, Speaker, Stream } from '@data/data.d';
 
-	let latest = events.filter((event) => event.datetime_event < new Date());
-	let upcoming = events.filter((event) => event.datetime_event > new Date());
+	export let upcomingSpeakers: Speaker[];
+	export let latestStreams: Stream[];
+	export let latestEvents: Event[];
 </script>
 
 <article class="grid hero">
 	<img src="images/favicon.png" alt="logo" class="float-in siren" />
+
 	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
+
 		<div class="btns">
 			<a
 				class="btn-primary"
@@ -42,14 +44,17 @@
 
 <article class="grid lists">
 	<h3>Upcoming Speakers</h3>
+
 	<div class="grid events">
-		<Upcoming {upcoming} />
+		<Upcoming speakers={upcomingSpeakers} />
 	</div>
 </article>
+
 <article class="grid lists">
 	<h3>Latest Events</h3>
+
 	<div class="grid events">
-		<Latest streams={latest.streams} events={latest.events} />
+		<Latest streams={latestStreams} events={latestEvents} />
 	</div>
 </article>
 

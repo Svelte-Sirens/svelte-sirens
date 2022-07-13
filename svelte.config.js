@@ -8,14 +8,13 @@ const config = {
 		adapter: adapter(),
 
 		alias: {
-			'@api': path.resolve('./src/lib/api'),
 			'@components': path.resolve('./src/lib/components'),
-			'@gql': path.resolve('./src/lib/utils/gql'),
 			'@layout': path.resolve('./src/lib/layout'),
 			'@lib': path.resolve('./src/lib'),
 			'@utils': path.resolve('./src/lib/utils'),
 			'@styles': path.resolve('./src/lib/styles'),
-			'@stores': path.resolve('./src/lib/stores')
+			'@stores': path.resolve('./src/lib/stores'),
+			'@data': './src/data',
 		},
 
 		prerender: {

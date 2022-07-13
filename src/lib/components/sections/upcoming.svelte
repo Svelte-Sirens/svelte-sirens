@@ -1,27 +1,17 @@
-<script>
-	export let upcoming;
-	let streams = upcoming.streams;
-	let speakers = upcoming.speakers;
+<script lang="ts">
+	import type { Speaker } from "@data/data";
+
+	export let speakers: Speaker[];
 </script>
 
 <section>
-	{#each speakers as { name: speakerName, handleUrl: speakerURL, picture: speakerImage }}
-		<a href={speakerURL} class="glass">
+	{#each speakers as { name, picture, handleUrl }}
+		<a href={handleUrl} class="glass">
 			<article class="grid">
-				<h3>{speakerName}</h3>
-				<img src={speakerImage.small} alt={speakerName} />
+				<h3>{name}</h3>
+				<img src={picture} alt={name} />
 			</article>
 		</a>
-	{/each}
-	{#each streams as { streamUrl, title: streamTitle, guests }}
-		{#each guests as { name: guestName, handleUrl: guestURL, picture: guestImage }}
-			<a href={streamUrl} class="glass">
-				<article class="grid">
-					<h3>{streamTitle}</h3>
-					<img src={guestImage.small} alt={streamTitle} />
-				</article>
-			</a>
-		{/each}
 	{/each}
 </section>
 

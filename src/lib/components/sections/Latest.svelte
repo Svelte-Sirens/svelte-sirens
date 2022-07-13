@@ -1,25 +1,27 @@
-<script>
-	export let streams;
-	export let events;
+<script lang="ts">
+	import type { Event, Stream } from '@data/data.d';
+
+	export let streams: Stream[];
+	export let events: Event[];
 </script>
 
 <section>
-	{#each streams as { streamUrl, title: streamTitle, guests }}
-		{#each guests as { name: guestName, handleUrl: guestURL, picture: guestImage }}
+	{#each streams as { streamUrl, title, guests }}
+		{#each guests as guest}
 			<a href={streamUrl} class="glass">
 				<article class="grid">
-					<h3>{streamTitle}</h3>
-					<img src={guestImage.small} alt={streamTitle} />
+					<h3>{title}</h3>
+					<img src={guest.picture} alt={title} />
 				</article>
 			</a>
 		{/each}
 	{/each}
-	{#each events as { slug: eventSlug, title: eventTitle, speakers }}
-		{#each speakers as { name: speakerName, handleUrl: speakerURL, picture: speakerImage }}
-			<a href={`/latest/${eventSlug}`} class="glass">
+	{#each events as { slug, title, speakers }}
+		{#each speakers as speaker}
+			<a href={`/latest/${slug}`} class="glass">
 				<article class="grid">
-					<h3>{eventTitle}</h3>
-					<img src={speakerImage.small} alt={eventTitle} />
+					<h3>{title}</h3>
+					<img src={speaker.picture} alt={title} />
 				</article>
 			</a>
 		{/each}
