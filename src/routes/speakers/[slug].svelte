@@ -1,32 +1,21 @@
-<script context="module">
-	export const load = async ({ params }) => {
-		const { slug } = params;
-		return {
-			props: { slug }
-		};
-	};
+<script lang="ts">
+	import type { Speaker } from '@data/data';
+
+	export let speaker: Speaker;
+	export let biography: string | undefined;
 </script>
 
-<script>
-	import { speakers } from '$lib/data/speakers';
-	import { marked } from 'marked';
+<article class="glass">
+	<h1>{speaker.name}</h1>
+	<img src={speaker.picture} alt={speaker.name} class="speaker" />
 
-	export let slug;
-
-	let speaker = speakers.filter((speaker) => speaker.slug === slug);
-</script>
-
-{#each speaker as { name, picture, biography }}
-	<article class="glass">
-		<h1>{name}</h1>
-		<img src={picture.url} alt={name} class="speaker" />
-		{#if biography}
-			<p>
-				{@html marked(biography)}
-			</p>
-		{/if}
-	</article>
-{/each}
+	{#if biography}
+		<p>
+			<!-- TODO sanitise -->
+			{@html speaker.biography}
+		</p>
+	{/if}
+</article>
 
 <style>
 	article {

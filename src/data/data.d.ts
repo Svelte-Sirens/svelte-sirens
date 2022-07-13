@@ -1,7 +1,7 @@
 export interface Speaker {
 	name: string;
 	handle: string;
-	biography: string;
+	biography?: string;
 	handleUrl: string;
 	picture: string;
 }
@@ -20,5 +20,5 @@ export interface Stream {
 	date: number;
 	streamUrl: string;
 	speakers: Speaker[];
-	guests: Omit<Speaker, 'biography'>[];
+	guests: Speaker[];
 }

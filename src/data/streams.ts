@@ -20,12 +20,7 @@ export const streams: Stream[] = [
 			speakers['brittney-postma']
 		],
 		guests: [
-			{
-				name: 'Shadid Haque',
-				handle: 'HaqueShadid',
-				handleUrl: 'https://twitter.com/HaqueShadid',
-				picture: '/images/speakers/shadid-haque.jpg'
-			}
+			speakers['shadid-haque']
 		],
 		date: 1642608000000
 	},
@@ -37,12 +32,7 @@ export const streams: Stream[] = [
 			speakers['brittney-postma']
 		],
 		guests: [
-			{
-				name: 'm4dz',
-				handle: 'm4d_z',
-				handleUrl: 'https://twitter.com/m4d_z',
-				picture: '/images/speakers/m4dz.jpg'
-			}
+			speakers['m4dz']
 		],
 		date: 1643990400000
 	},
@@ -54,12 +44,7 @@ export const streams: Stream[] = [
 			speakers['brittney-postma']
 		],
 		guests: [
-			{
-				name: 'James Q. Quick',
-				handle: 'jamesqquick',
-				handleUrl: 'https://twitter.com/jamesqquick',
-				picture: '/images/speakers/jamesqquick.jpg'
-			}
+			speakers['jamesqquick']
 		],
 		date: 1645027200000
 	},
@@ -71,12 +56,7 @@ export const streams: Stream[] = [
 			speakers['brittney-postma']
 		],
 		guests: [
-			{
-				name: 'Kellen Mace',
-				handle: 'KellenMace',
-				handleUrl: 'https://twitter.com/KellenMace',
-				picture: '/images/speakers/kellen-mace.jpg'
-			}
+			speakers['kellen-mace']
 		],
 		date: 1647442800000
 	},
@@ -88,12 +68,7 @@ export const streams: Stream[] = [
 			speakers['brittney-postma']
 		],
 		guests: [
-			{
-				name: 'Luke Edwards',
-				handle: 'lukeed05',
-				handleUrl: 'https://twitter.com/lukeed05',
-				picture: '/images/speakers/luke-edwards.jpg'
-			}
+			speakers['luke-edwards']
 		],
 		date: 1648652400000
 	},
@@ -103,12 +78,7 @@ export const streams: Stream[] = [
 		streamUrl: 'https://www.youtube.com/watch?v=DGi7FtBr2DE',
 		speakers: [],
 		guests: [
-			{
-				name: 'Tamas Piros',
-				handle: '@tpiros',
-				handleUrl: 'https://twitter.com/tpiros',
-				picture: '/images/speakers/tamas-piros.jpg'
-			}
+			speakers['tamas-piros']
 		],
 		date: 1652454000000
 	},
@@ -119,12 +89,7 @@ export const streams: Stream[] = [
 			'https://www.youtube.com/watch?v=FUbHwwMALkkhttps://www.youtube.com/watch?v=FUbHwwMALkk',
 		speakers: [],
 		guests: [
-			{
-				name: 'Sam Littlefair',
-				handle: 'samlfair',
-				handleUrl: 'https://twitter.com/samlfair/photo',
-				picture: '/images/speakers/sam-littlefair.jpg'
-			}
+			speakers['sam-littlefair']
 		],
 		date: 1653062400000
 	},
@@ -134,12 +99,7 @@ export const streams: Stream[] = [
 		streamUrl: 'https://www.youtube.com/watch?v=SnV_hMLVyqs',
 		speakers: [],
 		guests: [
-			{
-				name: 'Eric Liu',
-				handle: '@ericliuus',
-				handleUrl: 'https://twitter.com/ericliuus',
-				picture: '/images/speakers/eric-liu.jpg'
-			}
+			speakers['eric-liu']
 		],
 		date: 1653411600000
 	}

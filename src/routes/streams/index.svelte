@@ -1,16 +1,26 @@
-<script>
-	import { streams as streamData } from '$lib/data/streams';
+<script lang="ts">
+	import { streams } from '@data/streams';
 
-	const streams = streamData.reverse();
+	const orderedStreams = streams.sort((a, b) => b.date - a.date);
 
-	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+	const dateFormat: Intl.DateTimeFormatOptions = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
+
+	const timeFormat: Intl.DateTimeFormatOptions = {
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'UTC'
+	};
 </script>
 
 <article class="grid">
 	<h1>Sirens Streams</h1>
+	<h2>Sirens Streams are livestreams featuring a technology that we integrate with Svelte.</h2>
 
-	<h2>Sirens Streams are livestreams featuring a technology that we integrate with SvelteKit.</h2>
 	<section class="grid">
 		<section class="calendar">
 			<p>Never miss an event,</p>
@@ -20,12 +30,12 @@
 		</section>
 		<section class="grid">
 			<ul>
-				{#each streams as { slug, speakers, guests, title, datetime_stream, streamUrl }}
+				{#each orderedStreams as { speakers, guests, title, date, streamUrl }}
 					<article class="glass">
 						{#if guests.length > 0}
-							{#each guests as { picture, name, handle, handleUrl, slug: guestSlug }}
+							{#each guests as { picture, name, handle, handleUrl }}
 								<section class="event">
-									<img src={picture.small} alt={name} class="speaker" />
+									<img src={picture} alt={name} class="speaker" />
 									<p class="speaker-name">
 										With <a href={handleUrl}>{name}</a>
 									</p>
@@ -37,9 +47,9 @@
 								</section>
 							{/each}
 						{:else}
-							{#each speakers as { picture, name, handleUrl, slug: speakerSlug, handle }}
+							{#each speakers as { picture, name, handleUrl, handle }}
 								<section class="event">
-									<img src={picture.small} alt={name} class="speaker" />
+									<img src={picture} alt={name} class="speaker" />
 									<p class="speaker-name">
 										With <a href={handleUrl}>{name}</a>
 									</p>
@@ -56,10 +66,10 @@
 								{title}
 							</h2>
 							<div class="base">
-								<time datetime={datetime_stream}>
-									<span>{new Date(datetime_stream).toLocaleDateString('en-US', date)}</span>
+								<time datetime={new Date(date).toISOString()}>
+									<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
 
-									<span>{new Date(datetime_stream).toLocaleTimeString('en-GB', time)} GMT </span>
+									<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
 								</time>
 							</div>
 							<em class="lg"><a href={streamUrl}>YouTube Replay</a></em>

@@ -1,5 +1,5 @@
 <script>
-	import { speakers } from '$lib/data/speakers';
+	import { speakers } from '@data/speakers';
 </script>
 
 <h1>Speakers</h1>
@@ -9,10 +9,10 @@
 	</a>.
 </p>
 <section>
-	{#each speakers as { name, slug, picture }}
-		<a href={`/speakers/${slug}`} class="grid glass">
+	{#each Object.entries(speakers) as [slug, { name, picture }]}
+		<a href="/speakers/{slug}" class="grid glass">
 			<article class="grid">
-				<img src={picture.url} alt={name} class="speaker" />
+				<img src={picture} alt={name} class="speaker" />
 				<h2>
 					{name}
 				</h2>

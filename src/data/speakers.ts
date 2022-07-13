@@ -88,5 +88,61 @@ export const speakers: Record<string, Speaker> = {
 		picture: '/images/speakers/josefine-schaefer.jpg',
 		handle: '@JsfnSchfr',
 		handleUrl: 'https://twitter.com/JsfnSchfr'
+	},
+
+	'shadid-haque': {
+		name: 'Shadid Haque',
+		handle: 'HaqueShadid',
+		handleUrl: 'https://twitter.com/HaqueShadid',
+		picture: '/images/speakers/shadid-haque.jpg'
+	},
+
+	'm4dz': {
+		name: 'm4dz',
+		handle: 'm4d_z',
+		handleUrl: 'https://twitter.com/m4d_z',
+		picture: '/images/speakers/m4dz.jpg'
+	},
+
+	'jamesqquick': {
+		name: 'James Q. Quick',
+		handle: 'jamesqquick',
+		handleUrl: 'https://twitter.com/jamesqquick',
+		picture: '/images/speakers/jamesqquick.jpg'
+	},
+
+	'kellen-mace': {
+		name: 'Kellen Mace',
+		handle: 'KellenMace',
+		handleUrl: 'https://twitter.com/KellenMace',
+		picture: '/images/speakers/kellen-mace.png'
+	},
+
+	'luke-edwards': {
+		name: 'Luke Edwards',
+		handle: 'lukeed05',
+		handleUrl: 'https://twitter.com/lukeed05',
+		picture: '/images/speakers/luke-edwards.png'
+	},
+
+	'tamas-piros': 			{
+		name: 'Tamas Piros',
+		handle: '@tpiros',
+		handleUrl: 'https://twitter.com/tpiros',
+		picture: '/images/speakers/tamas-piros.png'
+	},
+
+	'sam-littlefair': 	{
+		name: 'Sam Littlefair',
+		handle: 'samlfair',
+		handleUrl: 'https://twitter.com/samlfair/photo',
+		picture: '/images/speakers/sam-littlefair.jpg'
+	},
+
+	'eric-liu': {
+		name: 'Eric Liu',
+		handle: '@ericliuus',
+		handleUrl: 'https://twitter.com/ericliuus',
+		picture: '/images/speakers/eric-liu.jpg'
 	}
 } as const;
