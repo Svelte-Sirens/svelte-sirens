@@ -19,7 +19,8 @@ const config = {
 		},
 
 		prerender: {
-			default: true
+			default: true,
+			crawl: true
 		}
 	},
 

@@ -1,27 +1,37 @@
 <script lang="ts">
-	import type { Event, Stream } from '@data/data.d';
+	import type { Event, Speaker, Stream } from '@data/data.d';
+	import { dateSort } from '@data/utils/time';
 
 	export let streams: Stream[];
 	export let events: Event[];
+
+	interface Item {
+		url: string;
+		title: string;
+		people: Speaker[];
+		date: number;
+	}
+
+	let items: Item[];
+
+	$: items = dateSort([
+		// prettier-ignore
+		...streams.map(stream => ({ title: stream.title, url: stream.streamUrl, people: stream.guests, date: stream.date })),
+
+		//prettier-ignore
+		...events.map(event => ({ title: event.title, url: `/event/${event.slug}`, people: event.speakers, date: event.date }))
+	]);
+
+	$: console.log(items)
 </script>
 
 <section>
-	{#each streams as { streamUrl, title, guests }}
-		{#each guests as guest}
-			<a href={streamUrl} class="glass">
+	{#each items as { title, url, people }}
+		{#each people as guest}
+			<a href={url} class="glass">
 				<article class="grid">
 					<h3>{title}</h3>
 					<img src={guest.picture} alt={title} />
-				</article>
-			</a>
-		{/each}
-	{/each}
-	{#each events as { slug, title, speakers }}
-		{#each speakers as speaker}
-			<a href={`/latest/${slug}`} class="glass">
-				<article class="grid">
-					<h3>{title}</h3>
-					<img src={speaker.picture} alt={title} />
 				</article>
 			</a>
 		{/each}

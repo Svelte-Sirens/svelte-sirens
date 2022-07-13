@@ -1,7 +1,6 @@
 <script lang="ts">
+	import { dateSort } from '@data/utils/time';
 	import { streams } from '@data/streams';
-
-	const orderedStreams = streams.sort((a, b) => b.date - a.date);
 
 	const dateFormat: Intl.DateTimeFormatOptions = {
 		weekday: 'long',
@@ -30,7 +29,7 @@
 		</section>
 		<section class="grid">
 			<ul>
-				{#each orderedStreams as { speakers, guests, title, date, streamUrl }}
+				{#each dateSort(streams) as { speakers, guests, title, date, streamUrl }}
 					<article class="glass">
 						{#if guests.length > 0}
 							{#each guests as { picture, name, handle, handleUrl }}
