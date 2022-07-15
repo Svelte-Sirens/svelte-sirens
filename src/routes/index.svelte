@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Upcoming from '@components/sections/upcoming.svelte';
 	import Latest from '$lib/components/sections/latest.svelte';
-	import type { Event, Speaker, Stream } from '@data/data.d';
+	import type { Event, Speaker, Stream } from '@lib/data/data';
 
 	export let upcomingSpeakers: Speaker[];
 	export let latestStreams: Stream[];
