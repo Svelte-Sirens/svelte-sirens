@@ -16,10 +16,10 @@
 
 	$: items = dateSort([
 		// prettier-ignore
-		...streams.map(stream => ({ title: stream.title, url: stream.streamUrl, people: stream.guests, date: stream.date })),
+		...streams.slice(0,3).map(stream => ({ title: stream.title, url: `event/${stream.slug}`, people: stream.guests, date: stream.date })),
 
 		//prettier-ignore
-		...events.map(event => ({ title: event.title, url: event.eventUrl, people: event.speakers, date: event.date }))
+		...events.slice(0,3).map(event => ({ title: event.title, url: `event/${event.slug}`, people: event.speakers, date: event.date }))
 	]);
 </script>
 
@@ -73,7 +73,6 @@
 			flex-wrap: nowrap;
 			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
 			justify-content: start;
-			width: 100vw;
 		}
 
 		.glass {
