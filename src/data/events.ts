@@ -2,6 +2,16 @@ import type { Event } from './data.d';
 import { speakers } from './speakers';
 
 export const events: Event[] = [
+  {
+		slug: 'testing-in-svelte',
+		title: 'Testing in Svelte',
+    // new date('2022-07-01T00:00:00.000Z')
+		date: new Date('2022-07-20T17:00:00.000Z').getTime(),
+		eventUrl: '',
+		speakers: [
+			speakers['jess-sachs']
+		]
+  },
 	{
 		slug: 'the-story-behind-the-unofficial-svelte-newsletter',
 		title: 'The story behind the (unofficial) Svelte newsletter',

@@ -4,7 +4,7 @@ import type { Stream } from './data';
 export const streams: Stream[] = [
 	{
 		slug: 'storybook-with-sveltekit',
-		title: 'Intergrating Storybook with SvelteKit',
+		title: 'Integrating Storybook with SvelteKit',
 		streamUrl: 'https://www.youtube.com/embed/Kc1ULlfyUcw',
 		speakers: [
 			speakers['brittney-postma']
@@ -14,7 +14,7 @@ export const streams: Stream[] = [
 	},
 	{
 		slug: 'faunadb',
-		title: 'Intergrating FaunaDB with Svelte',
+		title: 'Integrating FaunaDB with Svelte',
 		streamUrl: 'https://www.youtube.com/embed/zaoLZc76uZM',
 		speakers: [
 			speakers['brittney-postma']
