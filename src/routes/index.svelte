@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Upcoming from '@components/sections/upcoming.svelte';
-	import Latest from '$lib/components/sections/Latest.svelte';
+	import Latest from '$lib/components/sections/latest.svelte';
 	import type { Event, Speaker, Stream } from '@data/data.d';
 
 	export let upcomingSpeakers: Speaker[];
@@ -14,7 +14,6 @@
 	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
-
 		<div class="btns">
 			<a
 				class="btn-primary"

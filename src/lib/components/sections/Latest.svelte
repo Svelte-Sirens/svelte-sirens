@@ -19,7 +19,7 @@
 		...streams.map(stream => ({ title: stream.title, url: stream.streamUrl, people: stream.guests, date: stream.date })),
 
 		//prettier-ignore
-		...events.map(event => ({ title: event.title, url: `/event/${event.slug}`, people: event.speakers, date: event.date }))
+		...events.map(event => ({ title: event.title, url: event.eventUrl, people: event.speakers, date: event.date }))
 	]);
 </script>
 

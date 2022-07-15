@@ -1,5 +1,6 @@
 export interface Speaker {
 	name: string;
+  slug: string;
 	handle: string;
 	biography?: string;
 	handleUrl: string;
