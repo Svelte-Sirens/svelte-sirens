@@ -1,4 +1,4 @@
-import type { Event } from './data.d';
+import type { Event } from './data';
 import { speakers } from './speakers';
 
 export const events: Event[] = [

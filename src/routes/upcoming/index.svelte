@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Event, Stream } from '@data/data';
+	import type { Event, Stream } from '@lib/data/data';
 
 	export let upcomingStreams: Stream[];
 	export let upcomingEvents: Event[];

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { dateSort } from '@data/utils/time';
-	import { streams } from '@data/streams';
+	import { dateSort } from '@lib/data/utils/time';
+	import { streams } from '@lib/data/streams';
 
 	const dateFormat: Intl.DateTimeFormatOptions = {
 		weekday: 'long',

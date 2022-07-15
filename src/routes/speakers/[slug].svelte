@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Speaker } from '@data/data';
+	import type { Speaker } from '$lib/data/data';
 
 	export let speaker: Speaker;
 	export let biography: string | undefined;

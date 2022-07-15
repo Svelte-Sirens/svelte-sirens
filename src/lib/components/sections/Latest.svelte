@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Event, Speaker, Stream } from '@data/data.d';
-	import { dateSort } from '@data/utils/time';
+	import type { Event, Speaker, Stream } from '$lib/data/data';
+	import { dateSort } from '@lib/data/utils/time';
 
 	export let streams: Stream[];
 	export let events: Event[];

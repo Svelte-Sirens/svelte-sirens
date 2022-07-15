@@ -1,5 +1,5 @@
 <script>
-	import { speakers } from '@data/speakers';
+	import { speakers } from '@lib/data/speakers';
 </script>
 
 <h1>Speakers</h1>
