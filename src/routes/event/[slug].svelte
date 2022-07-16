@@ -1,14 +1,14 @@
 <script lang="ts">
 	export let title: string;
-	export let url: string;
+	export let embed: string;
 </script>
 
 <section>
 	<h1>{title}</h1>
-    
+
 	<div class="video-wrapper">
 		<iframe
-			src={url}
+			src={embed}
 			title="YouTube video player"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
