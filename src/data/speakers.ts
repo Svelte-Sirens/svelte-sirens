@@ -3,6 +3,14 @@ import type { Speaker } from './data';
 const typeSpeakers = <T extends Record<string, Speaker>>(data: T): Record<keyof T, Speaker> => Object.freeze(data);
 
 export const speakers = typeSpeakers({
+  'jess-sachs': {
+    name: 'Jess Sachs',
+		handle: '@_jessicasachs',
+		handleUrl: 'https://twitter.com/jessicasachs',
+		picture: '/images/speakers/jessica-sachs.jpg',
+		biography:
+			"Jess is a Staff Software Engineer at Path AI. She’s been coding for more than 11 years and now works professionally within the Open Source community. She is a Core Team Member of both Cypress and Faker and a contributor to Vue and Vitest. She’s also an educator at Vue Mastery."
+  },
 	'dani-sandoval': {
 		name: 'Dani Sandoval',
 		handle: '@d3sandoval',
