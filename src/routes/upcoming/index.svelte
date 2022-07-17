@@ -1,11 +1,21 @@
-<script>
-	export let upcoming;
-	const events = upcoming.events;
-	const streams = upcoming.streams;
+<script lang="ts">
+	import type { Event, Stream } from '@data/data';
 
-	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	export let upcomingStreams: Stream[];
+	export let upcomingEvents: Event[];
 
-	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+	const dateFormat: Intl.DateTimeFormatOptions = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
+	
+	const timeFormat: Intl.DateTimeFormatOptions = {
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'UTC'
+	};
 </script>
 
 <h1>Upcoming Events</h1>
@@ -16,15 +26,18 @@
 		<img src="/images/calendar.svg" alt="" /> Add to Google Calendar
 	</a>
 </section>
+
 <ul>
-	{#each streams as { slug: streamSlug, speakers, guests, title, datetime_stream, streamUrl }}
+	{#each upcomingStreams as { speakers, guests, title, date, streamUrl }}
 		<article class="glass">
-			{#each speakers as { picture, name, handleUrl, slug, handle }}
+			{#each speakers as { picture, name, handleUrl, handle }}
 				<section class="event">
-					<img src={picture.small} alt={name} class="speaker" />
+					<img src={picture} alt={name} class="speaker" />
+
 					<p class="speaker-name">
 						With <a href={handleUrl}>{name}</a>
 					</p>
+
 					<div class="lg">
 						<a href={handleUrl} rel="noopener norefferer" target="_blank">
 							<span>{handle}</span>
@@ -32,12 +45,15 @@
 					</div>
 				</section>
 			{/each}
-			{#each guests as { picture, name, handle, handleUrl, slug }}
+
+			{#each guests as { picture, name, handle, handleUrl }}
 				<section class="event">
-					<img src={picture.small} alt={name} class="speaker" />
+					<img src={picture} alt={name} class="speaker" />
+
 					<p class="speaker-name">
 						With <a href={handleUrl}>{name}</a>
 					</p>
+
 					<div class="lg">
 						<a href={handleUrl} rel="noopener norefferer" target="_blank">
 							<span>@{handle}</span>
@@ -45,15 +61,15 @@
 					</div>
 				</section>
 			{/each}
+
 			<section class="event event-details">
 				<h2>
 					{title}
 				</h2>
 				<div class="base">
-					<time datetime={datetime_stream}>
-						<span>{new Date(datetime_stream).toLocaleDateString('en-US', date)}</span>
-
-						<span>{new Date(datetime_stream).toLocaleTimeString('en-GB', time)} GMT </span>
+					<time datetime={new Date(date).toISOString()}>
+						<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
+						<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
 					</time>
 				</div>
 				<em class="lg"><a href={streamUrl}>YouTube Live Event</a></em>
@@ -72,15 +88,17 @@
 		</article>
 	{/each}
 
-	{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }}
+	{#each upcomingEvents as { speakers, title, date, eventUrl }}
 		<article class="glass">
 			{#if speakers}
-				{#each speakers as { picture, name, handle, handleUrl, slug: speakerSlug }}
+				{#each speakers as { picture, name, handle, handleUrl }}
 					<section class="event">
-						<img src={picture.small} alt={name} class="speaker" />
+						<img src={picture} alt={name} class="speaker" />
+
 						<p class="speaker-name">
 							With <a href={handleUrl}>{name}</a>
 						</p>
+
 						<div class="lg">
 							<a href={handleUrl} rel="noopener norefferer" target="_blank">
 								<span>{handle}</span>
@@ -89,15 +107,15 @@
 					</section>
 				{/each}
 			{/if}
+
 			<section class="event event-details">
 				<h2>
 					{title}
 				</h2>
 				<div class="base">
-					<time datetime={datetime_event}>
-						<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
-
-						<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
+					<time datetime={new Date(date).toISOString()}>
+						<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
+						<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
 					</time>
 				</div>
 

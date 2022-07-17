@@ -1,22 +1,33 @@
-<script>
-	export let latest;
-	const events = latest.events;
-	const streams = latest.streams;
-	const date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+<script lang="ts">
+	import type { Event, Stream } from '@data/data'
 
-	const time = { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' };
+	export let latestStreams: Stream[];
+	export let latestEvents: Event[];
+
+	const dateFormat: Intl.DateTimeFormatOptions = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
+
+	const timeFormat: Intl.DateTimeFormatOptions = {
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'UTC'
+	};
 </script>
 
 <h1>Latest Events</h1>
 
 <section class="grid">
 	<ul>
-		{#each events as { slug: eventSlug, speakers, title, datetime_event, eventUrl }}
+		{#each latestEvents as { speakers, title, date, eventUrl }}
 			<article class="glass">
 				{#if speakers}
-					{#each speakers as { picture, name, handle, handleUrl, slug }}
+					{#each speakers as { picture, name, handle, handleUrl }}
 						<section class="event">
-							<img src={picture.small} alt={name} class="speaker" />
+							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
 								With <a href={handleUrl}>{name}</a>
 							</p>
@@ -33,10 +44,10 @@
 						{title}
 					</h2>
 					<div class="base">
-						<time datetime={datetime_event}>
-							<span>{new Date(datetime_event).toLocaleDateString('en-US', date)}</span>
+						<time datetime={new Date(date).toISOString()}>
+							<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
 
-							<span>{new Date(datetime_event).toLocaleTimeString('en-GB', time)} GMT </span>
+							<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
 						</time>
 					</div>
 
@@ -61,12 +72,12 @@
 				</section>
 			</article>
 		{/each}
-		{#each streams as { slug: streamSlug, speakers, guests, title, datetime_stream, streamUrl }}
+		{#each latestStreams as { speakers, guests, title, date, streamUrl }}
 			<article class="glass">
 				{#if guests.length > 0}
-					{#each guests as { picture, name, handle, handleUrl, slug }}
+					{#each guests as { picture, name, handle, handleUrl }}
 						<section class="event">
-							<img src={picture.small} alt={name} class="speaker" />
+							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
 								With <a href={handleUrl}>{name}</a>
 							</p>
@@ -78,9 +89,9 @@
 						</section>
 					{/each}
 				{:else}
-					{#each speakers as { picture, name, handleUrl, slug, handle }}
+					{#each speakers as { picture, name, handleUrl, handle }}
 						<section class="event">
-							<img src={picture.small} alt={name} class="speaker" />
+							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
 								With <a href={handleUrl}>{name}</a>
 							</p>
@@ -97,10 +108,10 @@
 						{title}
 					</h2>
 					<div class="base">
-						<time datetime={datetime_stream}>
-							<span>{new Date(datetime_stream).toLocaleDateString('en-US', date)}</span>
+						<time datetime={new Date(date).toISOString()}>
+							<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
 
-							<span>{new Date(datetime_stream).toLocaleTimeString('en-GB', time)} GMT </span>
+							<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
 						</time>
 					</div>
 					<em class="lg"><a href={streamUrl}>YouTube Replay</a></em>

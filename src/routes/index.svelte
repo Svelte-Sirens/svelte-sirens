@@ -1,30 +1,20 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const eventsRes = await fetch('/events.json');
-		const events = await eventsRes.json();
-		const latest = events.latest;
-		const upcoming = events.upcoming;
-		return {
-			props: {
-				latest,
-				upcoming
-			}
-		};
-	}
-</script>
-
-<script>
-	import Latest from '@components/sections/latest.svelte';
+<script lang="ts">
 	import Upcoming from '@components/sections/upcoming.svelte';
-	export let latest;
-	export let upcoming;
+	import Latest from '$lib/components/sections/latest.svelte';
+	import type { Event, Speaker, Stream } from '@data/data.d';
+
+	export let upcomingSpeakers: Speaker[];
+	export let latestStreams: Stream[];
+	export let latestEvents: Event[];
 </script>
 
 <article class="grid hero">
 	<img src="images/favicon.png" alt="logo" class="float-in siren" />
+
 	<section class="grid hero-text">
 		<h1>Svelte Sirens</h1>
 		<h2>A Svelte Society for women, non-binary people, & allies</h2>
+
 		<div class="btns">
 			<a
 				class="btn-primary"
@@ -54,14 +44,17 @@
 
 <article class="grid lists">
 	<h3>Upcoming Speakers</h3>
+
 	<div class="grid events">
-		<Upcoming {upcoming} />
+		<Upcoming speakers={upcomingSpeakers} />
 	</div>
 </article>
+
 <article class="grid lists">
 	<h3>Latest Events</h3>
+
 	<div class="grid events">
-		<Latest streams={latest.streams} events={latest.events} />
+		<Latest streams={latestStreams} events={latestEvents} />
 	</div>
 </article>
 

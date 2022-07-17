@@ -1,5 +1,4 @@
 <script>
-	import { page } from '$app/stores';
 	import Nav from './nav.svelte';
 
 	let scrollY;
@@ -27,7 +26,7 @@
 		align-items: center;
 		color: var(--white);
 		&:hover {
-			border-bottom: none;
+			color: inherit;
 		}
 	}
 

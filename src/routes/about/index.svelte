@@ -65,7 +65,7 @@
 			akin groups like the Vue Vixens, Frontend Foxes, and React Robins.
 			<a href="/speakers/brittney-postma">Brittney Postma</a> stepped up to found the Svelte Sirens
 			in September of 2021, designing and working on the site while reaching out to others to join.
-			<a href="/speakers/willow-ghost">Willow</a>, who also does open source with
+			<a href="/speakers/ghost">Willow</a>, who also does open source with
 			<a rel="noopener noreffer" target="_blank" href="https://www.routify.dev/">Routify</a>, came
 			on to help soon after the group was formed.
 			<a href="/speakers/steph-dietz">Steph Dietz</a>

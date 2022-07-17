@@ -1,33 +1,21 @@
-<script context="module">
-	export async function load({ fetch, params }) {
-		const res = await fetch(`/speakers/${params.slug}.json`);
-		const speakers = await res.json();
-		if (res.ok && speakers.length > 0) {
-			return {
-				props: {
-					speakers
-				}
-			};
-		}
-	}
+<script lang="ts">
+	import type { Speaker } from '@data/data';
+
+	export let speaker: Speaker;
+	export let biography: string | undefined;
 </script>
 
-<script>
-	import { marked } from 'marked';
-	export let speakers;
-</script>
+<article class="glass">
+	<h1>{speaker.name}</h1>
+	<img src={speaker.picture} alt={speaker.name} class="speaker" />
 
-{#each speakers as { name, picture, biography }}
-	<article class="glass">
-		<h1>{name}</h1>
-		<img src={picture.url} alt={name} class="speaker" />
-		{#if biography}
-			<p>
-				{@html marked(biography)}
-			</p>
-		{/if}
-	</article>
-{/each}
+	{#if biography}
+		<p>
+			<!-- TODO sanitise -->
+			{@html speaker.biography}
+		</p>
+	{/if}
+</article>
 
 <style>
 	article {

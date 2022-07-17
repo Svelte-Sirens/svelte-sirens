@@ -1,25 +1,35 @@
-<script>
-	export let streams;
-	export let events;
+<script lang="ts">
+	import type { Event, Speaker, Stream } from '@data/data.d';
+	import { dateSort } from '@data/utils/time';
+
+	export let streams: Stream[];
+	export let events: Event[];
+
+	interface Item {
+		url: string;
+		title: string;
+		people: Speaker[];
+		date: number;
+	}
+
+	let items: Item[];
+
+	$: items = dateSort([
+		// prettier-ignore
+		...streams.slice(0,3).map(stream => ({ title: stream.title, url: stream.streamUrl, people: stream.guests, date: stream.date })),
+
+		//prettier-ignore
+		...events.slice(0,3).map(event => ({ title: event.title, url: `/event/${event.slug}`, people: event.speakers, date: event.date }))
+	]);
 </script>
 
 <section>
-	{#each streams as { streamUrl, title: streamTitle, guests }}
-		{#each guests as { name: guestName, handleUrl: guestURL, picture: guestImage }}
-			<a href={streamUrl} class="glass">
+	{#each items as { title, url, people }}
+		{#each people as guest}
+			<a href={url} class="glass">
 				<article class="grid">
-					<h3>{streamTitle}</h3>
-					<img src={guestImage.small} alt={streamTitle} />
-				</article>
-			</a>
-		{/each}
-	{/each}
-	{#each events as { slug: eventSlug, title: eventTitle, speakers }}
-		{#each speakers as { name: speakerName, handleUrl: speakerURL, picture: speakerImage }}
-			<a href={`/latest/${eventSlug}`} class="glass">
-				<article class="grid">
-					<h3>{eventTitle}</h3>
-					<img src={speakerImage.small} alt={eventTitle} />
+					<h3>{title}</h3>
+					<img src={guest.picture} alt={title} />
 				</article>
 			</a>
 		{/each}
@@ -63,7 +73,6 @@
 			flex-wrap: nowrap;
 			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
 			justify-content: start;
-			width: 100vw;
 		}
 
 		.glass {
