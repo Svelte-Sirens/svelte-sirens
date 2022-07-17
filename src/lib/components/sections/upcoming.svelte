@@ -52,7 +52,6 @@
 			flex-wrap: nowrap;
 			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
 			justify-content: start;
-			width: 100vw;
 		}
 
 		.glass {
