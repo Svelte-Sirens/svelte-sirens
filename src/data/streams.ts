@@ -4,8 +4,9 @@ import type { Stream } from './data';
 export const streams: Stream[] = [
 	{
 		slug: 'storybook-with-sveltekit',
-		title: 'Intergrating Storybook with SvelteKit',
-		streamUrl: 'https://www.youtube.com/embed/Kc1ULlfyUcw',
+		title: 'Integrating Storybook with SvelteKit',
+		embed: 'https://www.youtube.com/embed/Kc1ULlfyUcw',
+    	streamUrl: 'https://www.youtube.com/watch?v=Kc1ULlfyUcw',
 		speakers: [
 			speakers['brittney-postma']
 		],
@@ -14,8 +15,9 @@ export const streams: Stream[] = [
 	},
 	{
 		slug: 'faunadb',
-		title: 'Intergrating FaunaDB with Svelte',
-		streamUrl: 'https://www.youtube.com/embed/zaoLZc76uZM',
+		title: 'Integrating FaunaDB with Svelte',
+		embed: 'https://www.youtube.com/embed/zaoLZc76uZM',
+    	streamUrl: 'https://www.youtube.com/watch?v=zaoLZc76uZM',
 		speakers: [
 			speakers['brittney-postma']
 		],
@@ -27,7 +29,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'backlight',
 		title: 'Backlight.dev with SvelteKit',
-		streamUrl: 'https://www.youtube.com/embed/S9BxYHBwYvo',
+		embed: 'https://www.youtube.com/embed/S9BxYHBwYvo',
+    	streamUrl: 'https://www.youtube.com/watch?v=S9BxYHBwYvo',
 		speakers: [
 			speakers['brittney-postma']
 		],
@@ -39,7 +42,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'planetscale',
 		title: 'Planetscale with SvelteKit',
-		streamUrl: 'https://www.youtube.com/embed/iFhDwmI6OL0',
+		embed: 'https://www.youtube.com/embed/iFhDwmI6OL0',
+    	streamUrl: 'https://www.youtube.com/watch?v=iFhDwmI6OL0',
 		speakers: [
 			speakers['brittney-postma']
 		],
@@ -51,7 +55,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'headless-wordpress-with-sveltekit',
 		title: 'Headless WordPress with SvelteKit',
-		streamUrl: 'https://www.youtube.com/watch?v=3DbRHeEll3A',
+		embed: 'https://www.youtube.com/embed/3DbRHeEll3A',
+    	streamUrl: 'https://www.youtube.com/watch?v=3DbRHeEll3A',
 		speakers: [
 			speakers['brittney-postma']
 		],
@@ -63,7 +68,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'sveltekit-on-cloudflare',
 		title: 'SvelteKit on Cloudflare',
-		streamUrl: 'https://www.youtube.com/watch?v=rZaHTFjggCU',
+		embed: 'https://www.youtube.com/embed/rZaHTFjggCU',
+    	streamUrl: 'https://www.youtube.com/watch?v=rZaHTFjggCU',
 		speakers: [
 			speakers['brittney-postma']
 		],
@@ -75,7 +81,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'empowering-your-images-with-cloudinary',
 		title: 'Empowering your images with Cloudinary',
-		streamUrl: 'https://www.youtube.com/watch?v=DGi7FtBr2DE',
+		embed: 'https://www.youtube.com/embed/DGi7FtBr2DE',
+    	streamUrl: 'https://www.youtube.com/watch?v=DGi7FtBr2DE',
 		speakers: [],
 		guests: [
 			speakers['tamas-piros']
@@ -85,8 +92,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'slicing-up-your-svelte-site-with-prismic',
 		title: 'Slicing up your Svelte Site with Prismic',
-		streamUrl:
-			'https://www.youtube.com/watch?v=FUbHwwMALkkhttps://www.youtube.com/watch?v=FUbHwwMALkk',
+		embed: 'https://www.youtube.com/embed/FUbHwwMALkk',
+    	streamUrl: 'https://www.youtube.com/watch?v=FUbHwwMALkk',
 		speakers: [],
 		guests: [
 			speakers['sam-littlefair']
@@ -96,7 +103,8 @@ export const streams: Stream[] = [
 	{
 		slug: 'rendering-your-svelte-app-on-render',
 		title: 'Rendering your Svelte app on Render',
-		streamUrl: 'https://www.youtube.com/watch?v=SnV_hMLVyqs',
+		embed: 'https://www.youtube.com/embed/SnV_hMLVyqs',
+    	streamUrl: 'https://www.youtube.com/watch?v=SnV_hMLVyqs',
 		speakers: [],
 		guests: [
 			speakers['eric-liu']

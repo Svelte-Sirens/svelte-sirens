@@ -26,7 +26,7 @@
 		align-items: center;
 		color: var(--white);
 		&:hover {
-			border-bottom: none;
+			color: inherit;
 		}
 	}
 

@@ -1,6 +1,8 @@
 <script lang="ts">
-	import { streams } from '@data/streams';
-	import { events } from '@data/events';
+	import type { Event, Stream } from '@data/data'
+
+	export let latestStreams: Stream[];
+	export let latestEvents: Event[];
 
 	const dateFormat: Intl.DateTimeFormatOptions = {
 		weekday: 'long',
@@ -20,7 +22,7 @@
 
 <section class="grid">
 	<ul>
-		{#each events as { speakers, title, date, eventUrl }}
+		{#each latestEvents as { speakers, title, date, eventUrl }}
 			<article class="glass">
 				{#if speakers}
 					{#each speakers as { picture, name, handle, handleUrl }}
@@ -70,7 +72,7 @@
 				</section>
 			</article>
 		{/each}
-		{#each streams as { speakers, guests, title, date, streamUrl }}
+		{#each latestStreams as { speakers, guests, title, date, streamUrl }}
 			<article class="glass">
 				{#if guests.length > 0}
 					{#each guests as { picture, name, handle, handleUrl }}

@@ -10,7 +10,7 @@ export const get: RequestHandler = ({ params }) => {
 			status: 200,
 			body: {
 				title: stream.title,
-				url: stream.streamUrl
+				embed: stream.embed
 			}
 		};
 
@@ -21,7 +21,7 @@ export const get: RequestHandler = ({ params }) => {
 			status: 200,
 			body: {
 				title: event.title,
-				url: event.eventUrl
+				embed: event.embed
 			}
 		};
 
