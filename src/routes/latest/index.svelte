@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Event, Stream } from '@data/data'
+	import type { Event, Stream } from '@data/data';
 
 	export let latestStreams: Stream[];
 	export let latestEvents: Event[];
@@ -29,7 +29,7 @@
 						<section class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
-								With <a href={handleUrl}>{name}</a>
+								<a href={handleUrl}>{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -79,11 +79,11 @@
 						<section class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
-								With <a href={handleUrl}>{name}</a>
+								<a href={handleUrl}>{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
-									<span>@{handle}</span>
+									<span>{handle}</span>
 								</a>
 							</div>
 						</section>
@@ -93,7 +93,7 @@
 						<section class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
-								With <a href={handleUrl}>{name}</a>
+								<a href={handleUrl}>{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">

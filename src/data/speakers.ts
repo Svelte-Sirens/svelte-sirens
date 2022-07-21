@@ -36,7 +36,7 @@ export const speakers = typeSpeakers({
 	'amy-dutton': {
 		name: 'Amy Dutton',
 		slug: 'amy-dutton',
-		handle: 'selfteachme',
+		handle: '@selfteachme',
 		handleUrl: 'https://twitter.com/selfteachme',
 		picture: '/images/speakers/amy-dutton.jpg',
 		biography:
@@ -70,7 +70,7 @@ export const speakers = typeSpeakers({
 		handleUrl: 'https://twitter.com/onlyspaceghost',
 		picture: '/images/speakers/ghost.jpg',
 		biography:
-			"# Willow (GHOST)\n\nI'm Willow, also known as GHOST online! I am a self-taught fullstack developer working in opensource and freelance development. I work on a bunch of svelte related packages such as Routify or svelte-hamburgers, I love the svelte community and am so happy to be involved with Svelte Sirens "
+			"I'm Willow, also known as GHOST online! I am a self-taught fullstack developer working in opensource and freelance development. I work on a bunch of svelte related packages such as Routify or svelte-hamburgers, I love the svelte community and am so happy to be involved with Svelte Sirens "
 	},
 
 	'brittney-postma': {
@@ -105,7 +105,7 @@ export const speakers = typeSpeakers({
 	'shadid-haque': {
 		name: 'Shadid Haque',
 		slug: 'shadid-haque',
-		handle: 'HaqueShadid',
+		handle: '@HaqueShadid',
 		handleUrl: 'https://twitter.com/HaqueShadid',
 		picture: '/images/speakers/shadid-haque.jpg'
 	},
@@ -113,7 +113,7 @@ export const speakers = typeSpeakers({
 	m4dz: {
 		name: 'm4dz',
 		slug: 'm4dz',
-		handle: 'm4d_z',
+		handle: '@m4d_z',
 		handleUrl: 'https://twitter.com/m4d_z',
 		picture: '/images/speakers/m4dz.jpg'
 	},
@@ -121,7 +121,7 @@ export const speakers = typeSpeakers({
 	jamesqquick: {
 		name: 'James Q. Quick',
 		slug: 'jamesqquick',
-		handle: 'jamesqquick',
+		handle: '@jamesqquick',
 		handleUrl: 'https://twitter.com/jamesqquick',
 		picture: '/images/speakers/jamesqquick.jpg'
 	},
@@ -129,7 +129,7 @@ export const speakers = typeSpeakers({
 	'kellen-mace': {
 		name: 'Kellen Mace',
 		slug: 'kellen-mace',
-		handle: 'KellenMace',
+		handle: '@KellenMace',
 		handleUrl: 'https://twitter.com/KellenMace',
 		picture: '/images/speakers/kellen-mace.png'
 	},
@@ -137,7 +137,7 @@ export const speakers = typeSpeakers({
 	'luke-edwards': {
 		name: 'Luke Edwards',
 		slug: 'luke-edwards',
-		handle: 'lukeed05',
+		handle: '@lukeed05',
 		handleUrl: 'https://twitter.com/lukeed05',
 		picture: '/images/speakers/luke-edwards.png'
 	},
@@ -153,7 +153,7 @@ export const speakers = typeSpeakers({
 	'sam-littlefair': {
 		name: 'Sam Littlefair',
 		slug: 'sam-littlefair',
-		handle: 'samlfair',
+		handle: '@samlfair',
 		handleUrl: 'https://twitter.com/samlfair/photo',
 		picture: '/images/speakers/sam-littlefair.jpg'
 	},

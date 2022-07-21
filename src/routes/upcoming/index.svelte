@@ -10,7 +10,7 @@
 		month: 'long',
 		day: 'numeric'
 	};
-	
+
 	const timeFormat: Intl.DateTimeFormatOptions = {
 		hour: '2-digit',
 		minute: '2-digit',
@@ -35,7 +35,7 @@
 					<img src={picture} alt={name} class="speaker" />
 
 					<p class="speaker-name">
-						With <a href={handleUrl}>{name}</a>
+						<a href={handleUrl}>{name}</a>
 					</p>
 
 					<div class="lg">
@@ -51,7 +51,7 @@
 					<img src={picture} alt={name} class="speaker" />
 
 					<p class="speaker-name">
-						With <a href={handleUrl}>{name}</a>
+						<a href={handleUrl}>{name}</a>
 					</p>
 
 					<div class="lg">
@@ -96,7 +96,7 @@
 						<img src={picture} alt={name} class="speaker" />
 
 						<p class="speaker-name">
-							With <a href={handleUrl}>{name}</a>
+							<a href={handleUrl}>{name}</a>
 						</p>
 
 						<div class="lg">
