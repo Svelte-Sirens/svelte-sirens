@@ -3,6 +3,16 @@ import { speakers } from './speakers';
 
 export const events: Event[] = [
   {
+		slug: 'storyblok-with-sveltekit',
+		title: 'Storyblok with SvelteKit',
+		date: new Date('2022-08-17T17:30:00.000Z').getTime(),
+    embed: '',
+		eventUrl: '',
+		speakers: [
+			speakers['josefine-schaefer']
+		]
+  },
+  {
 		slug: 'testing-in-svelte',
 		title: 'Testing in Svelte',
 		date: new Date('2022-07-20T17:00:00.000Z').getTime(),
