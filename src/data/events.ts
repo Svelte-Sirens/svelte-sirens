@@ -5,10 +5,9 @@ export const events: Event[] = [
   {
 		slug: 'testing-in-svelte',
 		title: 'Testing in Svelte',
-    // new date('2022-07-01T00:00:00.000Z')
 		date: new Date('2022-07-20T17:00:00.000Z').getTime(),
-    embed: '',
-		eventUrl: '',
+    embed: 'https://www.youtube.com/embed/-GKRH0KQ_j0',
+		eventUrl: 'https://www.youtube.com/watch?v=-GKRH0KQ_j0',
 		speakers: [
 			speakers['jess-sachs']
 		]
