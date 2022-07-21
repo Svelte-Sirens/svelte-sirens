@@ -1,20 +1,21 @@
 import type { Speaker } from './data';
 
-const typeSpeakers = <T extends Record<string, Speaker>>(data: T): Record<keyof T, Speaker> => Object.freeze(data);
+const typeSpeakers = <T extends Record<string, Speaker>>(data: T): Record<keyof T, Speaker> =>
+	Object.freeze(data);
 
 export const speakers = typeSpeakers({
-   'jess-sachs': {
-    	name: 'Jess Sachs',
-    	slug: 'jess-sachs',
+	'jess-sachs': {
+		name: 'Jess Sachs',
+		slug: 'jess-sachs',
 		handle: '@_jessicasachs',
 		handleUrl: 'https://twitter.com/_jessicasachs',
 		picture: 'https://pbs.twimg.com/profile_images/1546530621534658560/2k1pAZlw_400x400.jpg',
 		biography:
-			"Jess is a Staff Software Engineer at Path AI. She’s been coding for more than 11 years and now works professionally within the Open Source community. She is a Core Team Member of both Cypress and Faker and a contributor to Vue and Vitest. She’s also an educator at Vue Mastery."
-  },
+			'Jess is a Staff Software Engineer at Path AI. She’s been coding for more than 11 years and now works professionally within the Open Source community. She is a Core Team Member of both Cypress and Faker and a contributor to Vue and Vitest. She’s also an educator at Vue Mastery.'
+	},
 	'dani-sandoval': {
 		name: 'Dani Sandoval',
-    	slug: 'dani-sandoval',
+		slug: 'dani-sandoval',
 		handle: '@d3sandoval',
 		handleUrl: 'https://twitter.com/d3sandoval',
 		picture: '/images/speakers/d3sandoval.jpg',
@@ -24,7 +25,7 @@ export const speakers = typeSpeakers({
 
 	'jacob-stordahl': {
 		name: 'Jacob Størdahl',
-    	slug: 'jacob-stordahl',
+		slug: 'jacob-stordahl',
 		handle: '@stordahl_',
 		handleUrl: 'https://twitter.com/stordahl_',
 		picture: '/images/speakers/jacob-stordahl.jpg',
@@ -34,7 +35,7 @@ export const speakers = typeSpeakers({
 
 	'amy-dutton': {
 		name: 'Amy Dutton',
-    	slug: 'amy-dutton',
+		slug: 'amy-dutton',
 		handle: 'selfteachme',
 		handleUrl: 'https://twitter.com/selfteachme',
 		picture: '/images/speakers/amy-dutton.jpg',
@@ -44,7 +45,7 @@ export const speakers = typeSpeakers({
 
 	'scott-tolinski': {
 		name: 'Scott Tolinski',
-    	slug: 'scott-tolinski',
+		slug: 'scott-tolinski',
 		handle: '@stolinski',
 		handleUrl: 'https://twitter.com/stolinski',
 		picture: '/images/speakers/scott-tolinski.jpg',
@@ -54,7 +55,7 @@ export const speakers = typeSpeakers({
 
 	'steph-dietz': {
 		name: 'Steph Dietz',
-    	slug: 'steph-dietz',
+		slug: 'steph-dietz',
 		handle: '@steph_dietz_',
 		handleUrl: 'https://twitter.com/steph_dietz_',
 		picture: '/images/speakers/steph.jpg',
@@ -64,7 +65,7 @@ export const speakers = typeSpeakers({
 
 	ghost: {
 		name: 'Willow (GHOST)',
-    	slug: 'ghost',
+		slug: 'ghost',
 		handle: '@onlyspaceghost',
 		handleUrl: 'https://twitter.com/onlyspaceghost',
 		picture: '/images/speakers/ghost.jpg',
@@ -74,17 +75,17 @@ export const speakers = typeSpeakers({
 
 	'brittney-postma': {
 		name: 'Brittney Postma',
-    	slug: 'brittney-postma',
+		slug: 'brittney-postma',
 		handle: '@brittneypostma',
 		handleUrl: 'https://twitter.com/BrittneyPostma',
 		picture: '/images/speakers/brittney.jpg',
 		biography:
-			"# Brittney Postma\n\nI am the frontend designer & developer at CodingCat.dev and the co-host of the Purrfect.dev podcast. I'm a self-taught developer with a background in Graphic Design. I am passionate about CSS and responsive design principles and love to work with new technologies, especially on the Jamstack. My day job is building components for a design system in SvelteKit at Grainger. I also volunteer as a mentor in several discord communities and love helping others achieve their goals."
+			'I am a self-taught developer and mom of three. I work for Netlify as a Developer Experience Engineer which basically that I create a lot of content. I am the co-founder of the Svelte Sirens. I also co-host the Svelte Radio, Remotely Interesting, and Purrfect.Dev podcasts. I work closely with CodingCat.Dev to create content on and around the Jamstack. I love helping people in the community and empowering people with the learn, build, and teach philosophy to make their dreams happen.'
 	},
 
 	// 'amelia-wattenberger': {
 	// 	name: 'Amelia Wattenberger',
-  //   slug: 'amelia-wattenberger',
+	//   slug: 'amelia-wattenberger',
 	// 	biography:
 	// 		'I write code, think about data, and create digital experiences. Currently Staff Research Engineer doing R&D on developer experience on the Github Office of the CTO team.',
 	// 	picture: '/images/speakers/amelia-wattenberger.jpg',
@@ -94,7 +95,7 @@ export const speakers = typeSpeakers({
 
 	'josefine-schaefer': {
 		name: 'Josefine Schaefer',
-    	slug: 'josefine-schaefer',
+		slug: 'josefine-schaefer',
 		biography: 'DevRel Engineer @storyblok\n 🎈 @GirlCodeRec\n ambassador | she/her',
 		picture: '/images/speakers/josefine-schaefer.jpg',
 		handle: '@JsfnSchfr',
@@ -103,23 +104,23 @@ export const speakers = typeSpeakers({
 
 	'shadid-haque': {
 		name: 'Shadid Haque',
-    	slug: 'shadid-haque',
+		slug: 'shadid-haque',
 		handle: 'HaqueShadid',
 		handleUrl: 'https://twitter.com/HaqueShadid',
 		picture: '/images/speakers/shadid-haque.jpg'
 	},
 
-	'm4dz': {
+	m4dz: {
 		name: 'm4dz',
-    	slug: 'm4dz',
+		slug: 'm4dz',
 		handle: 'm4d_z',
 		handleUrl: 'https://twitter.com/m4d_z',
 		picture: '/images/speakers/m4dz.jpg'
 	},
 
-	'jamesqquick': {
+	jamesqquick: {
 		name: 'James Q. Quick',
-    	slug: 'jamesqquick',
+		slug: 'jamesqquick',
 		handle: 'jamesqquick',
 		handleUrl: 'https://twitter.com/jamesqquick',
 		picture: '/images/speakers/jamesqquick.jpg'
@@ -127,7 +128,7 @@ export const speakers = typeSpeakers({
 
 	'kellen-mace': {
 		name: 'Kellen Mace',
-    	slug: 'kellen-mace',
+		slug: 'kellen-mace',
 		handle: 'KellenMace',
 		handleUrl: 'https://twitter.com/KellenMace',
 		picture: '/images/speakers/kellen-mace.png'
@@ -135,23 +136,23 @@ export const speakers = typeSpeakers({
 
 	'luke-edwards': {
 		name: 'Luke Edwards',
-    	slug: 'luke-edwards',
+		slug: 'luke-edwards',
 		handle: 'lukeed05',
 		handleUrl: 'https://twitter.com/lukeed05',
 		picture: '/images/speakers/luke-edwards.png'
 	},
 
-	'tamas-piros': 			{
+	'tamas-piros': {
 		name: 'Tamas Piros',
-    	slug: 'tamas-piros',
+		slug: 'tamas-piros',
 		handle: '@tpiros',
 		handleUrl: 'https://twitter.com/tpiros',
 		picture: '/images/speakers/tamas-piros.png'
 	},
 
-	'sam-littlefair': 	{
+	'sam-littlefair': {
 		name: 'Sam Littlefair',
-    	slug: 'sam-littlefair',
+		slug: 'sam-littlefair',
 		handle: 'samlfair',
 		handleUrl: 'https://twitter.com/samlfair/photo',
 		picture: '/images/speakers/sam-littlefair.jpg'
@@ -159,18 +160,19 @@ export const speakers = typeSpeakers({
 
 	'eric-liu': {
 		name: 'Eric Liu',
-    	slug: 'eric-liu',
+		slug: 'eric-liu',
 		handle: '@ericliuus',
 		handleUrl: 'https://twitter.com/ericliuus',
 		picture: '/images/speakers/eric-liu.jpg'
 	},
-	
+
 	'gen-ashley': {
 		name: 'Gen Ashley',
-    	slug: 'gen-ashley',
+		slug: 'gen-ashley',
 		handle: '@coderinheels',
 		handleUrl: 'https://twitter.com/coderinheels',
-		biography: 'Gen is the Founder of TECH(K)NOW Day - a conference focused on Women in Technology.  She is a very active leader in the Tech community in London and is an Ambassador for Google Women Techmakers.  She is also a lead for NASA Space Apps Challenge London, Twitter Developer Community, Google Developer Groups London and Huawei Developer Group UK.  She is also part of the leadership committee for Ada’s List (a network for women in technology). She is co-organiser of COED:CODE, OpenTechSchool London and London Game Developers.\n\nShe was the Head of Developer Outreach at Skills Matter and a former VP / Business Development Manager / Project Manager at Citigroup. Gen helped lead Anita Borg Institute London and was actively instrumental in delivering the very first 1-Day Grace Hopper Conference in Europe (GHC/1 which is now called HopperX1) which was held in London. As Director of Women Who Code London for 5 years, she built up a community of around 6000 women in tech.',
+		biography:
+			'Gen is the Founder of TECH(K)NOW Day - a conference focused on Women in Technology.  She is a very active leader in the Tech community in London and is an Ambassador for Google Women Techmakers.  She is also a lead for NASA Space Apps Challenge London, Twitter Developer Community, Google Developer Groups London and Huawei Developer Group UK.  She is also part of the leadership committee for Ada’s List (a network for women in technology). She is co-organiser of COED:CODE, OpenTechSchool London and London Game Developers.\n\nShe was the Head of Developer Outreach at Skills Matter and a former VP / Business Development Manager / Project Manager at Citigroup. Gen helped lead Anita Borg Institute London and was actively instrumental in delivering the very first 1-Day Grace Hopper Conference in Europe (GHC/1 which is now called HopperX1) which was held in London. As Director of Women Who Code London for 5 years, she built up a community of around 6000 women in tech.',
 		picture: '/images/speakers/gen.jpg'
 	}
 });
