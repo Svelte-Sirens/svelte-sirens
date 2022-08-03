@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { streams } from '@data/streams';
 import { events } from '@data/events';
 
-export const get: RequestHandler = ({ params }) => {
+export const GET: RequestHandler = ({ params }) => {
 	const stream = streams.find((stream) => stream.slug == params.slug);
 
 	if (stream)

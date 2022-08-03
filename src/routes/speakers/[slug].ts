@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { speakers } from '@data/speakers';
 import { marked } from 'marked';
 
-export const get: RequestHandler = ({ params }) => {
+export const GET: RequestHandler = ({ params }) => {
 	const speaker = speakers[params.slug];
 
 	if (!speaker)
