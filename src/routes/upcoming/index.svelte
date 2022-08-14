@@ -56,7 +56,7 @@
 
 					<div class="lg">
 						<a href={handleUrl} rel="noopener norefferer" target="_blank">
-							<span>@{handle}</span>
+							<span>{handle}</span>
 						</a>
 					</div>
 				</section>
