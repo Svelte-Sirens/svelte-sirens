@@ -6,8 +6,8 @@ export const events: Event[] = [
 		slug: 'storyblok-with-sveltekit',
 		title: 'Storyblok with SvelteKit',
 		date: new Date('2022-08-17T17:30:00.000Z').getTime(),
-		embed: '',
-		eventUrl: '',
+		embed: 'https://www.youtube.com/embed/xXHFRzqUxoE',
+		eventUrl: 'https://www.youtube.com/watch?v=xXHFRzqUxoE',
 		speakers: [speakers['josefine-schaefer']]
 	},
 	{
