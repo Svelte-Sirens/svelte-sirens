@@ -3,6 +3,14 @@ import { speakers } from './speakers';
 
 export const events: Event[] = [
 	{
+		slug: 'upgrading-sveltekit',
+		title: 'Upgrading SvelteKit',
+		date: new Date('2022-09-27T13:00:00.000Z').getTime(),
+		embed: 'https://www.youtube.com/embed/vzeZskhjoeQ',
+		eventUrl: 'https://www.youtube.com/watch?v=vzeZskhjoeQ',
+		speakers: [speakers['kev-a-k']]
+	},
+	{
 		slug: 'storyblok-with-sveltekit',
 		title: 'Storyblok with SvelteKit',
 		date: new Date('2022-08-17T17:30:00.000Z').getTime(),
