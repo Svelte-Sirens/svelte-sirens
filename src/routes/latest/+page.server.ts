@@ -1,17 +1,14 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { PageServerLoad } from '@sveltejs/kit';
 import { getLatest } from '@data/utils/time';
 import { streams } from '@data/streams';
 import { events } from '@data/events';
 
-export const GET: RequestHandler = () => {
+export const load: PageServerLoad = () => {
 	const latestStreams = getLatest(streams);
 	const latestEvents = getLatest(events);
 
 	return {
-		status: 200,
-		body: {
-            latestEvents,
-            latestStreams
-		} as any
-	};
+latestEvents,
+latestStreams
+		} as any;
 };

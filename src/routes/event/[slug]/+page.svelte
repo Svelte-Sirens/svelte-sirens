@@ -1,14 +1,14 @@
 <script lang="ts">
-	export let title: string;
-	export let embed: string;
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
 <section>
-	<h1>{title}</h1>
-    
+	<h1>{data.title}</h1>
+
 	<div class="video-wrapper">
 		<iframe
-			src={embed}
+			src={data.embed}
 			title="YouTube video player"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

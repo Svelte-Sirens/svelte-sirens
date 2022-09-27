@@ -1,11 +1,9 @@
 <script lang="ts">
 	import Upcoming from '@components/sections/upcoming.svelte';
 	import Latest from '$lib/components/sections/latest.svelte';
-	import type { Event, Speaker, Stream } from '@data/data.d';
+	import type { PageData } from './$types';
 
-	export let upcomingSpeakers: Speaker[];
-	export let latestStreams: Stream[];
-	export let latestEvents: Event[];
+	export let data: PageData;
 </script>
 
 <article class="grid hero">
@@ -46,7 +44,7 @@
 	<h3>Upcoming Speakers</h3>
 
 	<div class="grid events">
-		<Upcoming speakers={upcomingSpeakers} />
+		<Upcoming speakers={data.upcomingSpeakers} />
 	</div>
 </article>
 
@@ -54,7 +52,7 @@
 	<h3>Latest Events</h3>
 
 	<div class="grid events">
-		<Latest streams={latestStreams} events={latestEvents} />
+		<Latest streams={data.latestStreams} events={data.latestEvents} />
 	</div>
 </article>
 
