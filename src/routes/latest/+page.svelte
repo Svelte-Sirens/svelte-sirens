@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { Event, Stream } from '@data/data';
-
-	export let latestStreams: Stream[];
-	export let latestEvents: Event[];
+	import type { PageData } from './$types';
+	export let data: PageData;
 
 	const dateFormat: Intl.DateTimeFormatOptions = {
 		weekday: 'long',
@@ -22,7 +21,7 @@
 
 <section class="grid">
 	<ul>
-		{#each latestEvents as { speakers, title, date, eventUrl }}
+		{#each data.latestEvents as { speakers, title, date, eventUrl }}
 			<article class="glass">
 				{#if speakers}
 					{#each speakers as { picture, name, handle, handleUrl }}
@@ -72,7 +71,7 @@
 				</section>
 			</article>
 		{/each}
-		{#each latestStreams as { speakers, guests, title, date, streamUrl }}
+		{#each data.latestStreams as { speakers, guests, title, date, streamUrl }}
 			<article class="glass">
 				{#if guests.length > 0}
 					{#each guests as { picture, name, handle, handleUrl }}

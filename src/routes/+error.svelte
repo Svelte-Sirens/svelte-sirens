@@ -1,13 +1,6 @@
-<script context="module">
-	export const load = ({ error, status }) => {
-		return {
-			props: { error, status }
-		};
-	};
-</script>
-
 <script>
-	export let error, status;
+	import { page } from '$app/stores';
+	const status = $page.status;
 </script>
 
 <svelte:head>
@@ -18,7 +11,7 @@
 
 <p>It looks like this page doesn't exist.</p>
 
-<h2>{status}: {error.message}</h2>
+<h2>{status}: {$page.error.message}</h2>
 
 <style>
 	h1 {

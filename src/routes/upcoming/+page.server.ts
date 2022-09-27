@@ -1,17 +1,14 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 import { getUpcoming } from '@data/utils/time';
 import { streams } from '@data/streams';
 import { events } from '@data/events';
 
-export const GET: RequestHandler = () => {
+export const load: PageServerLoad = () => {
 	const upcomingStreams = getUpcoming(streams);
 	const upcomingEvents = getUpcoming(events);
 
 	return {
-		status: 200,
-		body: {
-            upcomingEvents,
-            upcomingStreams
-		} as any
+		upcomingEvents,
+		upcomingStreams
 	};
 };
