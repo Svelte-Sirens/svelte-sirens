@@ -27,7 +27,18 @@ const config = {
     preprocess({
       postcss: true
     })
-  ]
+  ],
+
+  vitePlugin: {
+    experimental: {
+      inspector: {
+        toggleKeyCombo: 'shift',
+        holdMode: false,
+        showToggleButton: 'always',
+        toggleButtonPos: 'bottom-right',
+      }
+    }
+  }
 }
 
 export default config
