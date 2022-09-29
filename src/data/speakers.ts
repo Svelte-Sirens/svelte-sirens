@@ -10,8 +10,11 @@ export const speakers = typeSpeakers({
 		handle: '@LaceyPevey',
 		handleUrl: 'https://twitter.com/LaceyPevey',
 		picture: 'https://www.falconriskservices.com/hubfs/Lacey%20Pevey%20Headshot%20(2)-1.jpg',
-		biography:
-			'Insurance geek, tech nerd, Louisiana native, former NYC transplant, SvelteKit enthusiast'
+		biography: `Lacey joined Falcon Risk Services as Head of Technology and Operations. She has over 20 years of insurance experience and has held a variety of positions in the industry including Chief Underwriting Officer of Financial Institutions at AIG, and her most recent position, VP of Underwriting Analytics at Friss. Lacey received her Bachelor in Science from Tulane University, as well as her MBA from Columbia University. She is a CFA charterholder and holds several additional certifications.
+    <br/><br/>
+      During her free time, Lacey enjoys reading, gardening, and spending time with her two underwriters in training, who are aged 2 and 6.
+    <br/><br/>
+      Fun Fact: Lacey enjoys coffee so much that she owns her own coffee roasting business in her hometown Shreveport, Louisiana, where she relocated from NYC a few years ago.`
 	},
 	'kev-a-k': {
 		name: 'Kevin A. K.',
