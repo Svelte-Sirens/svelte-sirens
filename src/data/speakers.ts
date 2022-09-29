@@ -4,10 +4,19 @@ const typeSpeakers = <T extends Record<string, Speaker>>(data: T): Record<keyof 
 	Object.freeze(data);
 
 export const speakers = typeSpeakers({
+	'lacey-pevey': {
+		name: 'Lacey Pevey',
+		slug: 'lacey-pevey',
+		handle: '@LaceyPevey',
+		handleUrl: 'https://twitter.com/LaceyPevey',
+		picture: 'https://www.falconriskservices.com/hubfs/Lacey%20Pevey%20Headshot%20(2)-1.jpg',
+		biography:
+			'Insurance geek, tech nerd, Louisiana native, former NYC transplant, SvelteKit enthusiast'
+	},
 	'kev-a-k': {
 		name: 'Kevin A. K.',
 		slug: 'kev-a-k',
-		handle: 'kevmodrome',
+		handle: '@kevmodrome',
 		handleUrl: 'https://twitter.com/kevmodrome',
 		picture: 'https://pbs.twimg.com/profile_images/1534604667790970881/oq51WaOM_400x400.jpg',
 		biography:

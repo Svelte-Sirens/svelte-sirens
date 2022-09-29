@@ -1,4 +1,26 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+p,
+dl,
+dd {
+	margin: 0;
+}
+
+html,
+body,
+#svelte {
+	min-height: 100%;
+}
+
 body {
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	font-family: system-ui, sans-serif;
 	background-image: var(--color-bg);
 	background-attachment: fixed;
 	color: var(--color-text);
@@ -51,7 +73,33 @@ h4 {
 }
 
 h5 {
-	font-size: var(--font-size - 1);
+	font-size: var(--font-size-1);
+}
+
+img,
+picture {
+  object-fit: cover;
+	max-width: 100%;
+	display: block;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
 }
 
 a,
@@ -166,4 +214,30 @@ a:visited {
 	animation-timing-function: var(--ease-out-1);
 	animation-duration: 2s, 2s;
 	animation-iteration-count: 1, 1;
+}
+
+
+.no-animation {
+	animation: none;
+	animation-duration: 0.01ms !important;
+	animation-iteration-count: 1 !important;
+	transition-duration: 0.01ms !important;
+	scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+	.positioner {
+		animation: none;
+	}
 }
