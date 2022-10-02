@@ -28,12 +28,12 @@
 <ul>
 	{#each data.upcomingStreams as { speakers, guests, title, date, streamUrl }}
 		<article class="glass">
-			{#each speakers as { picture, name, handleUrl, handle }}
+			{#each speakers as { picture, name, handleUrl, handle, slug }}
 				<section class="event">
 					<img src={picture} alt={name} class="speaker" />
 
 					<p class="speaker-name">
-						<a href={handleUrl}>{name}</a>
+						<a href={`/speakers/${slug}`}>{name}</a>
 					</p>
 
 					<div class="lg">
@@ -44,12 +44,12 @@
 				</section>
 			{/each}
 
-			{#each guests as { picture, name, handle, handleUrl }}
+			{#each guests as { picture, name, handle, handleUrl, slug }}
 				<section class="event">
 					<img src={picture} alt={name} class="speaker" />
 
 					<p class="speaker-name">
-						<a href={handleUrl}>{name}</a>
+						<a href={`/speakers/${slug}`}>{name}</a>
 					</p>
 
 					<div class="lg">
@@ -89,12 +89,12 @@
 	{#each data.upcomingEvents as { speakers, title, date, eventUrl }}
 		<article class="glass">
 			{#if speakers}
-				{#each speakers as { picture, name, handle, handleUrl }}
+				{#each speakers as { picture, name, handle, handleUrl, slug }}
 					<section class="event">
 						<img src={picture} alt={name} class="speaker" />
 
 						<p class="speaker-name">
-							<a href={handleUrl}>{name}</a>
+							<a href={`/speakers/${slug}`}>{name}</a>
 						</p>
 
 						<div class="lg">
