@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Upcoming from '@components/sections/upcoming.svelte';
-	import Latest from '$lib/components/sections/latest.svelte';
+	import Upcoming from '@components/sections/Upcoming.svelte';
+	import Latest from '@components/sections/Latest.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
