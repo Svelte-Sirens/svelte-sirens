@@ -1,4 +1,4 @@
-import type { PageServerLoad } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 import { getLatest } from '@data/utils/time';
 import { streams } from '@data/streams';
 import { events } from '@data/events';
@@ -8,7 +8,7 @@ export const load: PageServerLoad = () => {
 	const latestEvents = getLatest(events);
 
 	return {
-latestEvents,
-latestStreams
-		} as any;
+		latestEvents,
+		latestStreams
+	};
 };
