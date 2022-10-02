@@ -6,6 +6,9 @@
 <article class="glass">
 	<h1>{data.speaker.name}</h1>
 	<img src={data.speaker.picture} alt={data.speaker.name} class="speaker" />
+	<a href={data.speaker.handleUrl} rel="noopener norefferer" target="_blank">
+		<span>{data.speaker.handle}</span>
+	</a>
 
 	{#if data.biography}
 		<p>
@@ -30,6 +33,10 @@
 	img {
 		width: 100%;
 		height: auto;
+	}
+
+	a {
+		font-size: var(--font-size-fluid-2);
 	}
 
 	p {

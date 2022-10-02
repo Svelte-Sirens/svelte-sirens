@@ -32,11 +32,11 @@
 				{#each dateSort(streams) as { speakers, guests, title, date, streamUrl }}
 					<article class="glass">
 						{#if guests.length > 0}
-							{#each guests as { picture, name, handle, handleUrl }}
+							{#each guests as { picture, name, handle, handleUrl, slug }}
 								<section class="event">
 									<img src={picture} alt={name} class="speaker" />
 									<p class="speaker-name">
-										With <a href={handleUrl}>{name}</a>
+										With <a href="/speakers/{slug}">{name}</a>
 									</p>
 									<div class="lg">
 										<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -46,11 +46,11 @@
 								</section>
 							{/each}
 						{:else}
-							{#each speakers as { picture, name, handleUrl, handle }}
+							{#each speakers as { picture, name, handleUrl, handle, slug }}
 								<section class="event">
 									<img src={picture} alt={name} class="speaker" />
 									<p class="speaker-name">
-										With <a href={handleUrl}>{name}</a>
+										With <a href="/speakers/{slug}">{name}</a>
 									</p>
 									<div class="lg">
 										<a href={handleUrl} rel="noopener norefferer" target="_blank">
