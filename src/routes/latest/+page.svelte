@@ -24,11 +24,11 @@
 		{#each data.latestEvents as { speakers, title, date, eventUrl }}
 			<article class="glass">
 				{#if speakers}
-					{#each speakers as { picture, name, handle, handleUrl }}
+					{#each speakers as { picture, name, handle, handleUrl, slug }}
 						<section class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
-								<a href={handleUrl}>{name}</a>
+								<a href="/speakers/{slug}">{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -74,11 +74,11 @@
 		{#each data.latestStreams as { speakers, guests, title, date, streamUrl }}
 			<article class="glass">
 				{#if guests.length > 0}
-					{#each guests as { picture, name, handle, handleUrl }}
+					{#each guests as { picture, name, handle, handleUrl, slug }}
 						<section class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
-								<a href={handleUrl}>{name}</a>
+								<a href="/speakers/{slug}">{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">
@@ -88,11 +88,11 @@
 						</section>
 					{/each}
 				{:else}
-					{#each speakers as { picture, name, handleUrl, handle }}
+					{#each speakers as { picture, name, handleUrl, handle, slug }}
 						<section class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
-								<a href={handleUrl}>{name}</a>
+								<a href="/speakers/{slug}">{name}</a>
 							</p>
 							<div class="lg">
 								<a href={handleUrl} rel="noopener norefferer" target="_blank">

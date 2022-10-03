@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Speaker } from "@data/data";
+	import type { Speaker } from '@data/data';
 
 	export let speakers: Speaker[];
 </script>
 
 <section>
-	{#each speakers as { name, picture, handleUrl }}
-		<a href={handleUrl} class="glass">
+	{#each speakers as { name, picture, slug }}
+		<a href={`/speakers/${slug}`} class="glass">
 			<article class="grid">
 				<h3>{name}</h3>
 				<img src={picture} alt={name} />
