@@ -1,8 +1,7 @@
 <script lang="ts">
-	import type { Event, Speaker, Stream } from '@data/data.d';
+	import type { Event, Speaker } from '@data/data.d';
 	import { dateSort } from '@data/utils/time';
 
-	export let streams: Stream[];
 	export let events: Event[];
 
 	interface Item {
@@ -15,9 +14,6 @@
 	let items: Item[];
 
 	$: items = dateSort([
-		// prettier-ignore
-		...streams.slice(0,3).map(stream => ({ title: stream.title, url: stream.streamUrl, people: stream.guests, date: stream.date })),
-
 		//prettier-ignore
 		...events.slice(0,3).map(event => ({ title: event.title, url: `/event/${event.slug}`, people: event.speakers, date: event.date }))
 	]);

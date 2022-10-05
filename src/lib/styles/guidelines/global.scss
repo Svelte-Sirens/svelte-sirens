@@ -111,9 +111,9 @@ a:visited {
 	font-weight: var(--font-weight-8);
 }
 
-a:hover {
+a:hover, a:visited:hover {
 	color: var(--teal-4);
-	border-bottom: 1px solid var(--teal-4);
+	border-bottom: 1px solid var(--aqua);
 }
 
 ul,
@@ -130,7 +130,8 @@ pre {
 button,
 a.btn-primary,
 a.btn-secondary,
-a:visited {
+a.btn-primary:visited,
+a.btn-secondary:visited {
 	margin: 0;
 	padding: var(--size-4) var(--size-8);
 	border-radius: var(--size-1);
@@ -147,17 +148,22 @@ a:visited {
 	a:visited.btn-primary {
 		color: var(--navy);
 		background-color: var(--blue);
+
+    &:hover {
+      filter: brightness(1.1);
+      border-bottom: 1px solid var(--aqua);
+    }
 	}
 
 	&.btn-secondary,
 	a:visited.btn-secondary {
 		background-color: var(--navy);
 		color: var(--white);
-	}
 
-	&:hover {
-		background-color: var(--light-teal);
-		color: var(--navy);
+    &:hover {
+      filter: brightness(1.2);
+      border-bottom: 1px solid var(--aqua);
+    }
 	}
 }
 
