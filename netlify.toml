@@ -3,3 +3,13 @@
   to = "https://calendar.google.com/calendar/u/3?cid=c3ZlbHRlc2lyZW5zQGdtYWlsLmNvbQ"
   status = 200
   force = true
+
+[dev]
+  framework="svelte-kit"
+  targetPort="5173"
+
+[[plugins]]
+  package = "@sveltejs/adapter-static"package = "@netlify/plugin-lighthouse"
+  
+  [plugins.inputs.audits]
+    path = "latest"
