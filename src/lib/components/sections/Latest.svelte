@@ -15,7 +15,7 @@
 
 	$: items = dateSort([
 		//prettier-ignore
-		...events.slice(0,3).map(event => ({ title: event.title, url: `/event/${event.slug}`, people: event.speakers, date: event.date }))
+		...events.slice(0,3).map(event => ({ title: event.title, url: `/latest/${event.slug}`, people: event.speakers, date: event.date }))
 	]);
 </script>
 
