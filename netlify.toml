@@ -9,7 +9,7 @@
   targetPort="5173"
 
 [[plugins]]
-  package = "@sveltejs/adapter-static"package = "@netlify/plugin-lighthouse"
+  package = "@netlify/plugin-lighthouse"
   
   [plugins.inputs.audits]
     path = "latest"
