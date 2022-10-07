@@ -87,55 +87,6 @@
 			</section>
 		</article>
 	{/each}
-
-	<!-- {#each data.upcomingEvents as { speakers, title, date, eventUrl }}
-		<article class="glass">
-			{#if speakers}
-				{#each speakers as { picture, name, handle, handleUrl, slug }}
-					<section class="event">
-						<img src={picture} alt={name} class="speaker" />
-
-						<p class="speaker-name">
-							<a href={`/speakers/${slug}`}>{name}</a>
-						</p>
-
-						<div class="lg">
-							<a href={handleUrl} rel="noopener norefferer" target="_blank">
-								<span>{handle}</span>
-							</a>
-						</div>
-					</section>
-				{/each}
-			{/if}
-
-			<section class="event event-details">
-				<h2>
-					{title}
-				</h2>
-				<div class="base">
-					<time datetime={new Date(date).toISOString()}>
-						<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
-						<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
-					</time>
-				</div>
-
-				{#if eventUrl}
-					<em class="lg"><a href={eventUrl}>YouTube Live Event</a></em>
-				{/if}
-
-				<div class="base">
-					Hosted on
-					<a href="https://www.youtube.com/SvelteSociety" target="_blank" rel="noopener noreferrer">
-						Svelte Society YouTube
-					</a>
-					and
-					<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
-						Svelte Discord
-					</a> to chat with the community.
-				</div>
-			</section>
-		</article>
-	{/each} -->
 </ul>
 
 <style lang="scss">
