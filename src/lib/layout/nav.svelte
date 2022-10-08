@@ -1,18 +1,8 @@
 <script>
-	import { get } from 'svelte/store';
-	import { bubblesToggle } from '../stores/stores';
 	import { page } from '$app/stores';
 	import AnimationToggle from './animationToggle.svelte';
 
 	let bubbles = true;
-
-	$: handleBubbles = () => {
-		if (get(bubblesToggle) === 'off') {
-			bubbles = false;
-		} else {
-			bubbles = true;
-		}
-	};
 
 	$: label = bubbles ? 'Bubbles: ON' : 'Bubbles: OFF';
 
@@ -83,7 +73,7 @@
 		</li>
 	</ul>
 </nav>
-<AnimationToggle {label} on:check={handleBubbles} />
+<AnimationToggle {label} on:check={() => (bubbles = !bubbles)} />
 
 <style lang="scss">
 	input[type='checkbox'] {
