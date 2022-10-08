@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Event, Stream } from '@data/data';
 	import type { PageData } from './$types';
 	export let data: PageData;
 
@@ -21,11 +20,11 @@
 
 <section class="grid">
 	<ul>
-		{#each data.latestEvents as { speakers, title, date, eventUrl }}
+		{#each data.latestEvents as { speakers, guests, title, date, eventUrl, slug }}
 			<article class="glass">
-				{#if speakers}
-					{#each speakers as { picture, name, handle, handleUrl, slug }}
-						<section class="event">
+				{#if guests}
+					{#each guests as { picture, name, handle, handleUrl, slug }}
+						<li class="event">
 							<img src={picture} alt={name} class="speaker" />
 							<p class="speaker-name">
 								<a href="/speakers/{slug}">{name}</a>
@@ -35,12 +34,28 @@
 									<span>{handle}</span>
 								</a>
 							</div>
-						</section>
+						</li>
+					{/each}
+				{:else}
+					{#each speakers as { picture, name, handleUrl, handle, slug }}
+						<li class="event">
+							<img src={picture} alt={name} class="speaker" />
+							<p class="speaker-name">
+								<a href="/speakers/{slug}">{name}</a>
+							</p>
+							<div class="lg">
+								<a href={handleUrl} rel="noopener norefferer" target="_blank">
+									<span>{handle}</span>
+								</a>
+							</div>
+						</li>
 					{/each}
 				{/if}
 				<section class="event event-details">
 					<h2>
-						{title}
+						<a data-sveltekit-prefetch href={`/latest/${slug}`}>
+							{title}
+						</a>
 					</h2>
 					<div class="base">
 						<time datetime={new Date(date).toISOString()}>
@@ -53,67 +68,6 @@
 					{#if eventUrl}
 						<em class="lg"><a href={eventUrl}>YouTube Replay</a></em>
 					{/if}
-
-					<div class="base">
-						Hosted on
-						<a
-							href="https://www.youtube.com/SvelteSociety"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Svelte Society YouTube
-						</a>
-						and
-						<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
-							Svelte Discord
-						</a> to chat with the community.
-					</div>
-				</section>
-			</article>
-		{/each}
-		{#each data.latestStreams as { speakers, guests, title, date, streamUrl }}
-			<article class="glass">
-				{#if guests.length > 0}
-					{#each guests as { picture, name, handle, handleUrl, slug }}
-						<section class="event">
-							<img src={picture} alt={name} class="speaker" />
-							<p class="speaker-name">
-								<a href="/speakers/{slug}">{name}</a>
-							</p>
-							<div class="lg">
-								<a href={handleUrl} rel="noopener norefferer" target="_blank">
-									<span>{handle}</span>
-								</a>
-							</div>
-						</section>
-					{/each}
-				{:else}
-					{#each speakers as { picture, name, handleUrl, handle, slug }}
-						<section class="event">
-							<img src={picture} alt={name} class="speaker" />
-							<p class="speaker-name">
-								<a href="/speakers/{slug}">{name}</a>
-							</p>
-							<div class="lg">
-								<a href={handleUrl} rel="noopener norefferer" target="_blank">
-									<span>{handle}</span>
-								</a>
-							</div>
-						</section>
-					{/each}
-				{/if}
-				<section class="event event-details">
-					<h2>
-						{title}
-					</h2>
-					<div class="base">
-						<time datetime={new Date(date).toISOString()}>
-							<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
-
-							<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
-						</time>
-					</div>
-					<em class="lg"><a href={streamUrl}>YouTube Replay</a></em>
 
 					<div class="base">
 						Hosted on

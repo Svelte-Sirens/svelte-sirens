@@ -6,6 +6,14 @@ export interface Speaker {
 	handleUrl: string;
 	picture: string;
 }
+export interface Guest {
+	name: string;
+	slug: string;
+	handle: string;
+	biography?: string;
+	handleUrl: string;
+	picture: string;
+}
 
 export interface Event {
 	slug: string;
@@ -13,7 +21,8 @@ export interface Event {
 	date: number;
 	embed: string;
 	eventUrl: string;
-	speakers: Speaker[];
+	speakers?: Speaker[];
+	guests?: Guest[];
 }
 
 export interface Stream {
