@@ -1,20 +1,24 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
+	import { bubblesToggle } from '../stores/stores';
 	let checked = true;
 	let color = 'var(--blue)';
 	let label = null;
+
+	$: dispatch('check', checked);
 
 	$: handleCheck = () => {
 		const bubbles = document.getElementById('bubbles');
 		if (!checked) {
 			bubbles.style.display = 'none';
+			bubblesToggle.set('off');
 		} else {
 			bubbles.style.display = 'block';
+			bubblesToggle.set('on');
 		}
 	};
 
-	$: dispatch('check', checked);
 	export { checked, color, label };
 </script>
 
