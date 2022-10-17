@@ -52,7 +52,7 @@
 	<h3>Latest Events</h3>
 
 	<div class="grid events">
-		<Latest streams={data.latestStreams} events={data.latestEvents} />
+		<Latest events={data.latestEvents} />
 	</div>
 </article>
 

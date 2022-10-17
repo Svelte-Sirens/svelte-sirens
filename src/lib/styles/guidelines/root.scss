@@ -25,12 +25,12 @@
 	--fade-in: fadeIn 5s cubic-bezier(0, 1, 0.5, 1);
 
 	/* TRANSITIONS */
-	--transition-all: all 300ms var(--ease-squish-5);
+	--transition-all: all 500ms var(--ease-squish-5);
 	--transition: background-color, border-color, color, fill, strike, opacity, box-shadow, transform,
-		filter, backdrop-filter 300ms var(--ease-squish-5);
-	--transition-colors: background-color, border-color, fill, color, stroke 300ms var(--ease-squish);
-	--transition-shadow: box-shadow 300ms var(--ease-squish-5);
-	--transition-transform: transform 300ms var(--ease-squish-5);
+		filter, backdrop-filter 500ms var(--ease-squish-5);
+	--transition-colors: background-color, border-color, fill, color, stroke 500ms var(--ease-squish);
+	--transition-shadow: box-shadow 500ms var(--ease-squish-5);
+	--transition-transform: transform 500ms var(--ease-squish-5);
 
 	--header-height: 100px;
 }
