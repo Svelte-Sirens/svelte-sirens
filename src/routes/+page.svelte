@@ -16,7 +16,7 @@
 		<div class="btns">
 			<a
 				class="btn-primary"
-				rel="noopener noreffer"
+				rel="noopener noreferrer"
 				target="_blank"
 				href="https://discord.gg/4TVdc4RRps"
 			>
@@ -24,7 +24,7 @@
 			</a>
 			<a
 				class="btn-secondary"
-				rel="noopener noreffer"
+				rel="noopener noreferrer"
 				target="_blank"
 				href="https://sessionize.com/sveltesirens/"
 			>
