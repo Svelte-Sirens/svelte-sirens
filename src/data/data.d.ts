@@ -11,6 +11,7 @@ export interface Event {
 	slug: string;
 	title: string;
 	date: number;
+	id?: string;
 	embed: string;
 	eventUrl: string;
 	speakers: Speaker[];

@@ -29,7 +29,10 @@
 			<a href={url} class="glass">
 				<article class="grid">
 					<h3>{title}</h3>
-					<img src={guest.picture} alt={title} />
+					<figure>
+						<img src={guest.picture} alt={title} />
+						<figcaption>{guest.name}</figcaption>
+					</figure>
 				</article>
 			</a>
 		{/each}
@@ -51,6 +54,7 @@
 		border-bottom: none;
 		transition: var(--transition-colors);
 		flex-shrink: 0;
+		border: 1px solid transparent;
 
 		&:hover {
 			border: 1px solid var(--aqua);
@@ -58,14 +62,23 @@
 	}
 
 	article {
+		display: grid;
 		justify-items: center;
 		align-items: space-between;
 		gap: var(--size-4);
-		align-content: start;
+		height: 100%;
+		align-content: space-between;
 	}
 
 	img {
 		border-radius: 100%;
+		width: 250px;
+		height: 250px;
+	}
+
+	figure {
+		display: grid;
+		gap: var(--size-2);
 	}
 
 	@media (min-width: 800px) {

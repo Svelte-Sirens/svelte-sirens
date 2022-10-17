@@ -30,6 +30,7 @@
 		border-bottom: none;
 		transition: var(--transition-colors);
 		flex-shrink: 0;
+		border: 1px solid transparent;
 
 		&:hover {
 			border: 1px solid var(--aqua);
@@ -45,6 +46,8 @@
 
 	img {
 		border-radius: 100%;
+		width: 250px;
+		height: 250px;
 	}
 
 	@media (min-width: 800px) {
