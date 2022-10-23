@@ -71,6 +71,16 @@
 				Speakers
 			</a>
 		</li>
+		<li>
+			<a
+				class:active={$page.url.pathname.startsWith('/bubble')}
+				data-sveltekit-prefetch
+				href="/bubble-pop"
+				on:click={handleNavClose}
+			>
+				Game
+			</a>
+		</li>
 	</ul>
 </nav>
 <AnimationToggle {label} on:check={() => (bubbles = !bubbles)} />
