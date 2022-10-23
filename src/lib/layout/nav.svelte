@@ -74,7 +74,7 @@
 		<li>
 			<a
 				class:active={$page.url.pathname.startsWith('/bubble')}
-				data-sveltekit-prefetch
+				data-sveltekit-reload
 				href="/bubble-pop"
 				on:click={handleNavClose}
 			>
