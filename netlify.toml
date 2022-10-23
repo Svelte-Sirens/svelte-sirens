@@ -3,6 +3,12 @@
   to = "https://calendar.google.com/calendar/u/3?cid=c3ZlbHRlc2lyZW5zQGdtYWlsLmNvbQ"
   status = 200
   force = true
+  
+[[redirects]]
+  from = "/bubble-pop"
+  to = "https://bubble-pop-svelte.netlify.app/"
+  status = 200
+  force = true
 
 [dev]
   framework="svelte-kit"
