@@ -3,6 +3,7 @@ node_modules
 /build
 /.svelte-kit
 /package
+package-lock.json
 .env
 pnpm-lock.yaml
 .netlify

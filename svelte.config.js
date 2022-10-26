@@ -9,13 +9,13 @@ const config = {
     adapter: adapter(),
 
     alias: {
-      '@components': path.resolve('./src/lib/components'),
-      '@layout': path.resolve('./src/lib/layout'),
-      '@lib': path.resolve('./src/lib'),
-      '@utils': path.resolve('./src/lib/utils'),
-      '@styles': path.resolve('./src/lib/styles'),
-      '@stores': path.resolve('./src/lib/stores'),
-      '@data': './src/data',
+      '$components': path.resolve('./src/lib/components'),
+      '$layout': path.resolve('./src/lib/layout'),
+      '$lib': path.resolve('./src/lib'),
+      '$utils': path.resolve('./src/lib/utils'),
+      '$styles': path.resolve('./src/lib/styles'),
+      '$stores': path.resolve('./src/lib/stores'),
+      '$data': './src/data',
     },
 
     prerender: {
