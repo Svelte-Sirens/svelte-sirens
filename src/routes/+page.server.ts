@@ -1,6 +1,6 @@
-import { getLatest, getUpcoming } from '@data/utils/time';
+import { getLatest, getUpcoming } from '$data/utils/time';
 import type { PageServerLoad } from './$types';
-import { events } from '@data/events';
+import { events } from '$data/events';
 
 export const load: PageServerLoad = () => {
 	const upcomingEvents = getUpcoming(events);

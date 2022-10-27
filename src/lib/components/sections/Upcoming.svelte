@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Speaker } from '@data/data';
+	import type { Speaker } from '$data/data';
 
 	export let speakers: Speaker[];
 </script>

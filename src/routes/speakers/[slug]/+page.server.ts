@@ -1,8 +1,8 @@
 import type { PageServerLoad } from './$types';
-import { speakers } from '@data/speakers';
+import { speakers } from '$data/speakers';
 import { marked } from 'marked';
 import { error } from '@sveltejs/kit';
-import type { Speaker } from '@data/data';
+import type { Speaker } from '$data/data';
 
 export const load: PageServerLoad = ({ params }) => {
 	const speaker = speakers[params.slug] as Speaker | undefined;

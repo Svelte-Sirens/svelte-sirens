@@ -1,5 +1,5 @@
 <script>
-	import { ran } from '@utils/random.js';
+	import { ran } from '$utils/random.js';
 	import Bubble from './Bubble.svelte';
 </script>
 

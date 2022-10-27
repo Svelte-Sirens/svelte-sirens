@@ -1,9 +1,9 @@
 <script>
-	import '@styles/styles.scss';
+	import '$styles/styles.scss';
 
-	import Head from '@layout/head.svelte';
-	import Header from '@layout/header.svelte';
-	import Bubbles from '@components/bubbles/Bubbles.svelte';
+	import Head from '$layout/head.svelte';
+	import Header from '$layout/header.svelte';
+	import Bubbles from '$components/bubbles/Bubbles.svelte';
 </script>
 
 <Head />

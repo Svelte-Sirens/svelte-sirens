@@ -4,6 +4,5 @@ node_modules
 /.svelte-kit
 /package
 .env
-pnpm-lock.yaml
 .netlify
 .netlify/*
