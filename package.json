@@ -1,6 +1,7 @@
 {
   "name": "svelte-sirens",
   "license": "GNU General Public License v3.0",
+  "private": true,
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",
