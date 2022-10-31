@@ -14,7 +14,7 @@
     "build:lib": "npm run lib:js"
   },
   "devDependencies": {
-    "@netlify/plugin-lighthouse": "^3.7.1",
+    "@netlify/plugin-lighthouse": "^4.0.2",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.8",
