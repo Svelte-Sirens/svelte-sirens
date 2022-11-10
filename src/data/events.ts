@@ -14,7 +14,7 @@ export const events: Event[] = [
 	{
 		slug: 'sveltekit-for-enterprise',
 		title: 'SvelteKit for Enterprise',
-		date: new Date('2022-11-09T14:00:00.000Z').getTime(),
+		date: new Date('2022-11-21T19:45:00.000Z').getTime(),
 		embed: 'https://www.youtube.com/embed/_0ijqV0DmNQ',
 		eventUrl: 'https://www.youtube.com/watch?v=_0ijqV0DmNQ',
 		speakers: [speakers['lacey-pevey']]
