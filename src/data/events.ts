@@ -188,5 +188,13 @@ export const events: Event[] = [
 		speakers: [speakers['ghost']],
 		guests: [speakers['fred-k-schott']],
 		date: 1660676400000
+	},
+	{
+		slug: 'threlte',
+		title: 'Threlte: Declarative Threejs for Svelte',
+		embed: 'https://www.youtube.com/watch?v=dnclxsoRO_E',
+		eventUrl: 'https://www.youtube.com/embed/tdnclxsoRO_E',
+		speakers: [speakers['alex-warnes']],
+		date: 1668456000000
 	}
 ];

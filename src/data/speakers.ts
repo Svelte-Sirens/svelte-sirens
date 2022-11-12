@@ -203,5 +203,13 @@ export const speakers = typeSpeakers({
 		handle: '@fredkschott',
 		handleUrl: 'https://twitter.com/fredkschott',
 		picture: '/images/speakers/fredkschott.jpg'
+	},
+
+	'alex-warnes': {
+		name: 'Alex Warnes',
+		slug: 'alex-warnes',
+		handle: '@a_warnes',
+		handleUrl: 'https://twitter.com/a_warnes',
+		picture: '/images/speakers/awarnes.jpeg'
 	}
 });
