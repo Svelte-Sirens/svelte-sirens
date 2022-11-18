@@ -30,7 +30,7 @@ export const speakers = typeSpeakers({
 		slug: 'jess-sachs',
 		handle: '@_jessicasachs',
 		handleUrl: 'https://twitter.com/_jessicasachs',
-		picture: 'https://pbs.twimg.com/profile_images/1546530621534658560/2k1pAZlw_400x400.jpg',
+		picture: '/images/speakers/jess-sachs.jpeg',
 		biography:
 			'Jess is a Staff Software Engineer at Path AI. She’s been coding for more than 11 years and now works professionally within the Open Source community. She is a Core Team Member of both Cypress and Faker and a contributor to Vue and Vitest. She’s also an educator at Vue Mastery.'
 	},
