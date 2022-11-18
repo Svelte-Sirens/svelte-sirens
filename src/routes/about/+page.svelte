@@ -14,11 +14,6 @@
 			name: 'Steph Dietz',
 			handle: '@steph_dietz_',
 			img: '/images/speakers/steph.jpg'
-		},
-		{
-			name: 'Gen Ashley',
-			handle: '@coderinheels',
-			img: '/images/speakers/gen.jpg'
 		}
 	];
 </script>
@@ -63,16 +58,14 @@
 			</a>
 			realizing there was a need to support the women and non-binary people inside the Svelte community
 			akin groups like the Vue Vixens, Frontend Foxes, and React Robins.
-			<a href="/speakers/brittney-postma">Brittney Postma</a> stepped up to found the Svelte Sirens
+			<a href="/speakers/brittney-postma">Brittney Postma</a>, a Developer Experience Engineer at Netlify, stepped up to found the Svelte Sirens.
 			in September of 2021, designing and working on the site while reaching out to others to join.
 			<a href="/speakers/ghost">Willow</a>, who also does open source with
 			<a rel="noopener noreffer" target="_blank" href="https://www.routify.dev/">Routify</a>, came
 			on to help soon after the group was formed.
 			<a href="/speakers/steph-dietz">Steph Dietz</a>
 			is a dev rel at Vercel for Svelte and wants to be more involved with the Svelte community.
-			<a href="/speakers/gen-ashley">Gen Ashley</a>
-			expressed interest in joining the Sirens and with tons of previous experience running women and
-			non-binary groups in tech, we thought it was a great fit. The 4 of us organize all of the
+			 The 3 of us organize all of the
 			<a href="/upcoming">Events</a>, help out in the
 			<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">Discord</a>,
 			and support all of the women and non-binary people in the Svelte community. Please reach out

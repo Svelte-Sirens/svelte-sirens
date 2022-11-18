@@ -186,17 +186,6 @@ export const speakers = typeSpeakers({
 		handleUrl: 'https://twitter.com/ericliuus',
 		picture: '/images/speakers/eric-liu.jpg'
 	},
-
-	'gen-ashley': {
-		name: 'Gen Ashley',
-		slug: 'gen-ashley',
-		handle: '@coderinheels',
-		handleUrl: 'https://twitter.com/coderinheels',
-		biography:
-			'Gen is the Founder of TECH(K)NOW Day - a conference focused on Women in Technology.  She is a very active leader in the Tech community in London and is an Ambassador for Google Women Techmakers.  She is also a lead for NASA Space Apps Challenge London, Twitter Developer Community, Google Developer Groups London and Huawei Developer Group UK.  She is also part of the leadership committee for Ada’s List (a network for women in technology). She is co-organiser of COED:CODE, OpenTechSchool London and London Game Developers.\n\nShe was the Head of Developer Outreach at Skills Matter and a former VP / Business Development Manager / Project Manager at Citigroup. Gen helped lead Anita Borg Institute London and was actively instrumental in delivering the very first 1-Day Grace Hopper Conference in Europe (GHC/1 which is now called HopperX1) which was held in London. As Director of Women Who Code London for 5 years, she built up a community of around 6000 women in tech.',
-		picture: '/images/speakers/gen.jpg'
-	},
-
 	'fred-k-schott': {
 		name: 'Fred K Schott',
 		slug: 'fred-k-schott',
