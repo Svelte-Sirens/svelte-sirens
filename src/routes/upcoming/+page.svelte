@@ -37,7 +37,7 @@
 					</p>
 
 					<div class="lg">
-						<a href={handleUrl} rel="noopener norefferer" target="_blank">
+						<a href={handleUrl} rel="noopener noreferrer" target="_blank">
 							<span>{handle}</span>
 						</a>
 					</div>
@@ -53,7 +53,7 @@
 						</p>
 
 						<div class="lg">
-							<a href={handleUrl} rel="noopener norefferer" target="_blank">
+							<a href={handleUrl} rel="noopener noreferrer" target="_blank">
 								<span>{handle}</span>
 							</a>
 						</div>
@@ -80,7 +80,7 @@
 						Svelte Society YouTube
 					</a>
 					and
-					<a rel="noopener noreffer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+					<a rel="noopener noreferrer" target="_blank" href="https://discord.gg/4TVdc4RRps">
 						Svelte Discord
 					</a> to chat with the community.
 				</div>
