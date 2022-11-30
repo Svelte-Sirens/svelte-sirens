@@ -18,7 +18,7 @@ const config = {
     },
 
     csrf: {
-      checkOrigin: false
+      checkOrigin: import.meta?.env?.MODE == 'dev',
     },
 
     prerender: {
