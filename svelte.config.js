@@ -2,7 +2,6 @@ import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
 import path from 'path'
 
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
@@ -16,6 +15,10 @@ const config = {
       '$styles': path.resolve('./src/lib/styles'),
       '$stores': path.resolve('./src/lib/stores'),
       '$data': './src/data',
+    },
+
+    csrf: {
+      checkOrigin: false
     },
 
     prerender: {
@@ -38,7 +41,8 @@ const config = {
         toggleButtonPos: 'bottom-right',
       }
     }
-  }
+  },
+
 }
 
 export default config
