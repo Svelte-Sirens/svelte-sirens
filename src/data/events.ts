@@ -196,5 +196,13 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=tdnclxsoRO_E',
 		speakers: [speakers['alex-warnes']],
 		date: 1668456000000
+	},
+	{
+		slug: 'sveltekit-form-actions',
+		title: 'Form Actions',
+		embed: 'https://www.youtube.com/embed/2OISk5-EHek',
+		eventUrl: 'https://www.youtube.com/watch?v=2OISk5-EHek',
+		speakers: [speakers['kev-a-k']],
+		date: 1669822200000,
 	}
 ];
