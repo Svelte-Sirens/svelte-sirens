@@ -94,6 +94,7 @@
 	textarea::placeholder {
 		color: #4b5150;
 		outline: none;
+		font-weight: 400;
 	}
 
 	input:focus,
