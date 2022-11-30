@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-lighthouse": "^4.0.2",
-    "@sveltejs/adapter-static": "next",
+    "@sveltejs/adapter-netlify": "next",
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.12",
