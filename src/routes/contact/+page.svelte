@@ -89,21 +89,37 @@
 
 <style>
 	section {
-		background: var(--color-bg);
+		position: relative;
+		z-index: 2;
+
 		display: grid;
 		justify-self: center;
 		justify-content: center;
-		padding: var(--size-5);
+		
 		max-width: 80ch;
+		padding: var(--size-5);
+
+		background: var(--color-bg);
 		border: var(--border-size-1) solid var(--light-teal);
 		border-radius: var(--radius-conditional-3);
 	}
 
 	.error-text {
+		position: relative;
+		z-index: -1;
+		
+		padding: 2px 5px 1px 5px;
+		
 		color: var(--red);
+		background: #f5f5f5BB;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+
 		text-align: left;
 		font-size: var(--font-size-1);
-		font-weight: 500;
+		font-weight: 400;
+
+		transform: translate(1px, -5px);
 	}
 
 	.success-text {
@@ -130,14 +146,16 @@
 	input,
 	textarea {
 		width: 100%;
-		padding: var(--size-2);
 		min-height: 40px;
+		padding: var(--size-2);
+		
 		background: var(--white);
 		color: var(--black);
-		font-family: var(--font-body);
-		font-weight: var(--font-weight-1);
 		border-radius: var(--radius-conditional-2);
 		border: var(--size-1) solid transparent;
+		
+		font-family: var(--font-body);
+		font-weight: var(--font-weight-1);
 	}
 
 	input.error,
