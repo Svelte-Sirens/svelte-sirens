@@ -192,8 +192,8 @@ export const events: Event[] = [
 	{
 		slug: 'threlte',
 		title: 'Threlte: Declarative Threejs for Svelte',
-		embed: 'https://www.youtube.com/embed/tdnclxsoRO_E',
-		eventUrl: 'https://www.youtube.com/watch?v=tdnclxsoRO_E',
+		embed: 'https://www.youtube.com/embed/dnclxsoRO_E',
+		eventUrl: 'https://www.youtube.com/watch?v=dnclxsoRO_E',
 		speakers: [speakers['alex-warnes']],
 		date: 1668456000000
 	},
