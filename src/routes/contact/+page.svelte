@@ -9,11 +9,13 @@
 	<h1>Get in Touch</h1>
 	<form method="POST" use:enhance>
 		<label>
-			Name
+			Name *
 			<input required value={form?.name || ''} name="name" type="text" placeholder="John Doe" />
 		</label>
+
 		<label>
-			Email
+			Email *
+
 			<input
 				required
 				value={form?.email || ''}
@@ -22,18 +24,18 @@
 				placeholder="hello@example.com"
 			/>
 		</label>
+
 		<label>
-			Discord User ID
+			Discord
 			<input value={form?.discord || ''} name="discord" type="text" placeholder="GHOST#7524" />
 		</label>
 
 		<label>
-			Message
+			Message *
 			<textarea required value={form?.idea || ''} name="idea" placeholder="Tell us your ideas!" />
 		</label>
-		<label>
-			<button class="btn-primary">Submit!</button>
-		</label>
+
+		<button class="btn-primary">Submit!</button>
 	</form>
 </section>
 {#if form?.success}
@@ -68,7 +70,9 @@
 	label {
 		display: grid;
 		justify-items: start;
+		gap: 2px;
 	}
+
 	input,
 	textarea {
 		width: 100%;
@@ -79,6 +83,7 @@
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-1);
 		border-radius: var(--radius-conditional-2);
+		border: var(--size-1) solid transparent;
 	}
 
 	textarea {
@@ -93,7 +98,8 @@
 
 	input:focus,
 	textarea:focus {
-		border: var(--size-1) solid var(--light-teal);
+		outline: none;
+		border-color: var(--light-teal);
 	}
 
 	button {
