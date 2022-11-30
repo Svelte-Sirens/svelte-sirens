@@ -13,10 +13,9 @@
 
 	let items: Item[];
 
-	$: items = dateSort([
-		//prettier-ignore
-		...events.slice(0,3).map(event => ({ title: event.title, url: `/latest/${event.slug}`, people: event.speakers, date: event.date }))
-	]);
+	$: items = dateSort(
+		events.slice(0,3).map(event => ({ title: event.title, url: `/latest/${event.slug}`, people: event.speakers, date: event.date }))
+	);
 </script>
 
 <section>
