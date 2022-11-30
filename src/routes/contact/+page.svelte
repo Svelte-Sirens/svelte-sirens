@@ -20,7 +20,7 @@
 				required
 				name="name"
 				type="text"
-				placeholder="John Doe"
+				placeholder="Your Name"
 			/>
 
 			{#if form?.errors?.name}
@@ -53,7 +53,7 @@
 				value={form?.data?.discord || ''}
 				name="discord"
 				type="text"
-				placeholder="GHOST#7524"
+				placeholder="Example#0000"
 			/>
 
 			{#if form?.errors?.discord}
