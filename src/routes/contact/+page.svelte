@@ -53,7 +53,6 @@
 				value={form?.data?.discord || ''}
 				name="discord"
 				type="text"
-				required
 				placeholder="GHOST#7524"
 			/>
 
