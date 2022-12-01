@@ -73,7 +73,7 @@ export const actions: Actions = {
 
 		return {
 			success: true,
-			data
+			data: {}
 		};
 	}
 };
