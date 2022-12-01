@@ -23,10 +23,11 @@
 				Join the community
 			</a>
 			<a
+				data-sveltekit-preload-code
 				class="btn-secondary"
 				rel="noopener noreferrer"
 				target="_blank"
-				href="https://sessionize.com/sveltesirens/"
+				href="/contact"
 			>
 				Become a Speaker
 			</a>
