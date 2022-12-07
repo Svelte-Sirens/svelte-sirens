@@ -11,6 +11,7 @@ export const load: PageServerLoad = ({ params }) => {
 
 	return {
 		title: event.title,
-		embed: event.embed
+		embed: event.embed,
+		speakers: event.speakers
 	};
 };
