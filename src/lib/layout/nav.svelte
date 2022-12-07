@@ -30,7 +30,7 @@
 		<li>
 			<a
 				class:active={$page.url.pathname == '/'}
-				data-sveltekit-prefetch
+				data-sveltekit-preload-code
 				href="/"
 				on:click={handleNavClose}>Home</a
 			>
@@ -38,33 +38,23 @@
 		<li>
 			<a
 				class:active={$page.url.pathname.startsWith('/about')}
-				data-sveltekit-prefetch
+				data-sveltekit-preload-code
 				href="/about"
 				on:click={handleNavClose}>About</a
 			>
 		</li>
 		<li>
 			<a
-				class:active={$page.url.pathname.startsWith('/upcoming')}
-				data-sveltekit-prefetch
-				href="/upcoming"
-				on:click={handleNavClose}>Upcoming</a
+				class:active={$page.url.pathname.startsWith('/events')}
+				data-sveltekit-preload-code
+				href="/events"
+				on:click={handleNavClose}>Events</a
 			>
-		</li>
-		<li>
-			<a
-				class:active={$page.url.pathname.startsWith('/latest')}
-				data-sveltekit-prefetch
-				href="/latest"
-				on:click={handleNavClose}
-			>
-				Latest
-			</a>
 		</li>
 		<li>
 			<a
 				class:active={$page.url.pathname.startsWith('/speakers')}
-				data-sveltekit-prefetch
+				data-sveltekit-preload-code
 				href="/speakers"
 				on:click={handleNavClose}
 			>

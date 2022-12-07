@@ -66,7 +66,7 @@
 			<a href="/speakers/steph-dietz">Steph Dietz</a>
 			is a dev rel at Vercel for Svelte and wants to be more involved with the Svelte community.
 			 The 3 of us organize all of the
-			<a href="/upcoming">Events</a>, help out in the
+			<a href="/events">Events</a>, help out in the
 			<a rel="noopener noreferrer" target="_blank" href="https://discord.gg/4TVdc4RRps">Discord</a>,
 			and support all of the women and non-binary people in the Svelte community. Please reach out
 			to any of us directly or email
