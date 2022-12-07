@@ -56,7 +56,7 @@
 		<Latest events={data.latestEvents} />
 	</div>
 
-	<a href="/latest">View all of our past events</a>
+	<a href="/events">View all of our past events</a>
 </article>
 
 <style lang="scss">

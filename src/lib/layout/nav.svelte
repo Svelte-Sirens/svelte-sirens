@@ -45,21 +45,11 @@
 		</li>
 		<li>
 			<a
-				class:active={$page.url.pathname.startsWith('/upcoming')}
+				class:active={$page.url.pathname.startsWith('/events')}
 				data-sveltekit-prefetch
-				href="/upcoming"
-				on:click={handleNavClose}>Upcoming</a
+				href="/events"
+				on:click={handleNavClose}>Events</a
 			>
-		</li>
-		<li>
-			<a
-				class:active={$page.url.pathname.startsWith('/latest')}
-				data-sveltekit-prefetch
-				href="/latest"
-				on:click={handleNavClose}
-			>
-				Latest
-			</a>
 		</li>
 		<li>
 			<a
