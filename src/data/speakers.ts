@@ -207,6 +207,6 @@ export const speakers = typeSpeakers({
 		slug: 'chris-simmons',
 		handle: '@endigodesign',
 		handleUrl: 'https://twitter.com/endigodesign',
-		picture: '/images/speakers/chris-simmons.png'
+		picture: '/images/speakers/chris-simmons.jpg'
 	}
 });
