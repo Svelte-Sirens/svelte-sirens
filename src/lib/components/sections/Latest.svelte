@@ -52,7 +52,7 @@
 				{/if}
 				<section class="event event-details">
 					<h2>
-						<a data-sveltekit-prefetch href={`/events/${slug}`}>
+						<a data-sveltekit-preload-code href={`/events/${slug}`}>
 							{title}
 						</a>
 					</h2>
