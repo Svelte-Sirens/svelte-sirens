@@ -204,5 +204,13 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=2OISk5-EHek',
 		speakers: [speakers['kev-a-k']],
 		date: 1669822200000,
+	},
+	{
+		slug: 'skeleton-ui',
+		title: 'Skeleton - A fully featured UI Toolkit',
+		embed: 'https://www.youtube.com/embed/2OnJYCXJPK4',
+		eventUrl: 'https://www.youtube.com/watch?v=2OnJYCXJPK4',
+		speakers: [speakers['chris-simmons']],
+		date: 1671127200000
 	}
 ];

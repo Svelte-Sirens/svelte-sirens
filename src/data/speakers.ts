@@ -200,5 +200,13 @@ export const speakers = typeSpeakers({
 		handle: '@a_warnes',
 		handleUrl: 'https://twitter.com/a_warnes',
 		picture: '/images/speakers/awarnes.jpeg'
+	},
+
+	'chris-simmons': {
+		name: 'Chris Simmons',
+		slug: 'chris-simmons',
+		handle: '@endigodesign',
+		handleUrl: 'https://twitter.com/endigodesign',
+		picture: '/images/speakers/chris-simmons.png'
 	}
 });
