@@ -42,10 +42,10 @@
 </article>
 
 <article class="grid lists">
-	<h3>Upcoming Speakers</h3>
+	<h3>Upcoming Events</h3>
 
 	<div class="grid events">
-		<Upcoming speakers={data.upcomingSpeakers} />
+		<Upcoming events={data.upcomingEvents} />
 	</div>
 </article>
 
@@ -55,6 +55,8 @@
 	<div class="grid events">
 		<Latest events={data.latestEvents} />
 	</div>
+
+	<a href="/latest">View all of our past events</a>
 </article>
 
 <style lang="scss">

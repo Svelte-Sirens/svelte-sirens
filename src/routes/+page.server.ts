@@ -4,11 +4,10 @@ import { events } from '$data/events';
 
 export const load: PageServerLoad = () => {
 	const upcomingEvents = getUpcoming(events);
-	const upcomingSpeakers = upcomingEvents.flatMap((event) => event.speakers);
 	const latestEvents = getLatest(events);
 
 	return {
-		latestEvents,
-		upcomingSpeakers
+		latestEvents: latestEvents.slice(0, 4),
+		upcomingEvents,
 	};
 };

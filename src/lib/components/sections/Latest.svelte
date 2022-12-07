@@ -1,91 +1,165 @@
 <script lang="ts">
-	import type { Event, Speaker } from '$data/data.d';
-	import { dateSort } from '$data/utils/time';
+	import type { Event } from '$data/data';
 
 	export let events: Event[];
 
-	interface Item {
-		url: string;
-		title: string;
-		people: Speaker[];
-		date: number;
-	}
+	const dateFormat: Intl.DateTimeFormatOptions = {
+		weekday: 'long',
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
 
-	let items: Item[];
-
-	$: items = dateSort(
-		events.slice(0,3).map(event => ({ title: event.title, url: `/latest/${event.slug}`, people: event.speakers, date: event.date }))
-	);
+	const timeFormat: Intl.DateTimeFormatOptions = {
+		hour: '2-digit',
+		minute: '2-digit',
+		timeZone: 'UTC'
+	};
 </script>
 
-<section>
-	{#each items as { title, url, people }}
-		{#each people as guest}
-			<a href={url} class="glass">
-				<article class="grid">
-					<h3>{title}</h3>
-					<figure>
-						<img src={guest.picture} alt={title} />
-						<figcaption>{guest.name}</figcaption>
-					</figure>
-				</article>
-			</a>
+<section class="grid">
+	<ul>
+		{#each events as { speakers, guests, title, date, eventUrl, slug }}
+			<article class="glass">
+				{#if guests}
+					{#each guests as { picture, name, handle, handleUrl, slug }}
+						<li class="event">
+							<img src={picture} alt={name} class="speaker" />
+							<p class="speaker-name">
+								<a href="/speakers/{slug}">{name}</a>
+							</p>
+							<div class="lg">
+								<a href={handleUrl} rel="noopener noreferrer" target="_blank">
+									<span>{handle}</span>
+								</a>
+							</div>
+						</li>
+					{/each}
+				{:else}
+					{#each speakers as { picture, name, handleUrl, handle, slug }}
+						<li class="event">
+							<img src={picture} alt={name} class="speaker" />
+							<p class="speaker-name">
+								<a href="/speakers/{slug}">{name}</a>
+							</p>
+							<div class="lg">
+								<a href={handleUrl} rel="noopener noreferrer" target="_blank">
+									<span>{handle}</span>
+								</a>
+							</div>
+						</li>
+					{/each}
+				{/if}
+				<section class="event event-details">
+					<h2>
+						<a data-sveltekit-prefetch href={`/latest/${slug}`}>
+							{title}
+						</a>
+					</h2>
+					<div class="base">
+						<time datetime={new Date(date).toISOString()}>
+							<span>{new Date(date).toLocaleDateString('en-US', dateFormat)}</span>
+
+							<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
+						</time>
+					</div>
+
+					{#if eventUrl}
+						<em class="lg"><a href={eventUrl}>YouTube Replay</a></em>
+					{/if}
+
+					<div class="base">
+						Hosted on
+						<a
+							href="https://www.youtube.com/SvelteSociety"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Svelte Society YouTube
+						</a>
+						and
+						<a rel="noopener noreferrer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+							Svelte Discord
+						</a> to chat with the community.
+					</div>
+				</section>
+			</article>
 		{/each}
-	{/each}
+	</ul>
 </section>
 
 <style lang="scss">
 	section {
-		margin: 0 auto;
+		padding: 12px 0px;
+	}
+
+	ul {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: var(--size-8);
+		gap: var(--size-6);
 	}
+
 	.glass {
-		width: 30ch;
-		padding: var(--size-4);
-		margin: var(--size-2);
 		border-bottom: none;
-		transition: var(--transition-colors);
-		flex-shrink: 0;
-		border: 1px solid transparent;
-
-		&:hover {
-			border: 1px solid var(--aqua);
-		}
+		padding: var(--size-6) var(--size-4);
+		max-width: 48ch;
+		transition: var(--transition-transform);
+		font-family: var(--font-body);
+		gap: var(--size-2) var(--size-6);
+		text-shadow: none;
 	}
 
-	article {
-		display: grid;
-		justify-items: center;
-		align-items: space-between;
-		gap: var(--size-4);
-		height: 100%;
-		align-content: space-between;
+	h2 {
+		margin-top: var(--size-4);
+		font-family: var(--font-body);
+		font-size: var(--font-size-fluid-1);
 	}
 
-	img {
-		border-radius: 100%;
-		width: 250px;
-		height: 250px;
-	}
-
-	figure {
+	time {
 		display: grid;
 		gap: var(--size-2);
 	}
 
-	@media (min-width: 800px) {
-		section {
-			flex-wrap: nowrap;
-			padding: var(--size-8) var(--size-8) var(--size-4) var(--size-4);
-			justify-content: start;
+	.speaker-name {
+		display: flex;
+		gap: var(--size-2);
+	}
+
+	.lg {
+		display: flex;
+		font-size: var(--font-size-2);
+	}
+
+	.base {
+		font-size: var(--font-size-1);
+		font-weight: var(--font-weight-4);
+	}
+
+	.event {
+		text-align: left;
+		display: grid;
+		grid-template-columns: minmax(200px, 1fr);
+		gap: var(--size-4);
+		justify-content: center;
+		justify-items: center;
+	}
+
+	.event-details {
+		justify-items: start;
+		& a {
+			text-shadow: var(--shadow-text);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.glass {
+			display: flex;
+			align-items: flex-start;
 		}
 
-		.glass {
-			margin: 0;
-			width: 30ch;
+		h2 {
+			margin-top: 0;
 		}
 	}
 </style>
