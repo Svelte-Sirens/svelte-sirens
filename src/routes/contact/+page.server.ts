@@ -1,6 +1,6 @@
 import { WEBHOOK_URL } from '$env/static/private';
-import { invalid } from '@sveltejs/kit';
 import type { Actions } from './$types';
+import { fail } from '@sveltejs/kit';
 import { z } from 'zod';
 
 export const prerender = false;
@@ -43,7 +43,7 @@ export const actions: Actions = {
 		const result = schema.safeParse(rawData);
 
 		if (result.success == false)
-			return invalid(400, {
+			return fail(400, {
 				success: false,
 				errors: result.error.flatten().fieldErrors,
 				data: rawData
