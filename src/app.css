@@ -1,0 +1,7 @@
+@import './app.theme.css';
+/*place global styles here */
+html,
+body,
+#svelte {
+	@apply h-full overflow-hidden;
+}

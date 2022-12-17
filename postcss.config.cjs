@@ -1,20 +1,21 @@
+const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const postcssJitProps = require('postcss-jit-props');
-const OpenProps = require('open-props');
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
 const config = {
 	plugins: [
+		//Some plugins, like tailwindcss/nesting, need to run before Tailwind,
+		tailwindcss(),
+		//But others, like autoprefixer, need to run after,
 		autoprefixer(),
-		postcssJitProps(OpenProps),
-
 		!dev &&
 			cssnano({
 				preset: 'default'
-			})
+			}),
+		autoprefixer
 	]
 };
 

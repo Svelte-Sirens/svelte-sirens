@@ -1,23 +1,23 @@
 <script>
-	import Nav from './nav.svelte';
-
+	import Nav from './Nav.svelte';
+	import { AppBar } from '@skeletonlabs/skeleton';
 	let scrollY;
 </script>
 
 <svelte:window bind:scrollY />
 
-<header class:scrolled={scrollY > 0}>
-	<section>
+<AppBar>
+	<div class:scrolled={scrollY > 0} slot="lead">
 		<a href="/">
 			<img src="/images/favicon.png" alt="logo" class="logo" />
 			<span>Svelte Sirens</span>
 		</a>
-		<a href="https://crisisrelief.un.org/ukraine-crisis">
-			<img class="flag" src="/images/stopwar.png" alt="stop war - Ukranian flag" />
-		</a>
-	</section>
-	<Nav />
-</header>
+	</div>
+
+	<svelte:fragment slot="trail">
+		<Nav classes="flex gap-8 items-center" />
+	</svelte:fragment>
+</AppBar>
 
 <style lang="scss">
 	a {

@@ -1,17 +1,29 @@
 <script>
+	import '@skeletonlabs/skeleton/styles/all.css';
+	import '../app.css';
 	import '$styles/styles.scss';
-
-	import Head from '$layout/head.svelte';
-	import Header from '$layout/header.svelte';
+	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
+	import Head from '$components/Head.svelte';
+	import Header from './Header.svelte';
 	import Bubbles from '$components/bubbles/Bubbles.svelte';
 </script>
 
 <Head />
-<Header />
-<main class="grid">
+<AppShell>
+	<svelte:fragment slot="header">
+		<Header />
+	</svelte:fragment>
+	<!-- <svelte:fragment slot="lead">
+		<strong class="text-xl uppercase">Skeleton</strong>
+	</svelte:fragment>
+
+	<svelte:fragment slot="trail">
+		<LightSwitch />
+	</svelte:fragment> -->
+	<!-- <Header /> -->
 	<slot />
-</main>
-<Bubbles />
+	<Bubbles />
+</AppShell>
 
 <style lang="scss">
 	main {
