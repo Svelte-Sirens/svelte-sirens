@@ -58,7 +58,7 @@
 
 	<a href="/events">View all of our past events</a>
 </article>
-
+<!-- 
 <style lang="scss">
 	.hero {
 		align-content: flex-start;
@@ -128,7 +128,7 @@
 		&* + * {
 			margin-top: var(--size-10);
 		}
-	}
+	} 
 
 	@media (min-width: 1024px) {
 		.hero {
@@ -160,3 +160,4 @@
 		}
 	}
 </style>
+-->

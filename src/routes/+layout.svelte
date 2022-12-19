@@ -2,7 +2,7 @@
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.css';
 	import '$styles/styles.scss';
-	import { AppShell, AppBar, LightSwitch } from '@skeletonlabs/skeleton';
+	import { AppShell } from '@skeletonlabs/skeleton';
 	import Head from '$components/Head.svelte';
 	import Header from './Header.svelte';
 	import Bubbles from '$components/bubbles/Bubbles.svelte';

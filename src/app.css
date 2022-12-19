@@ -1,7 +1,43 @@
 @import './app.theme.css';
 /*place global styles here */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text&display=swap');
+
 html,
 body,
 #svelte {
-	@apply h-full overflow-hidden;
+	@apply h-full overflow-hidden min-h-screen;
+}
+
+body {
+	@apply min-h-screen
+  cursor-auto
+  font-sans 
+
+  bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
+  from-accent-300
+  to-primary-200
+
+  dark:bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
+  dark:from-accent-800 dark:to-primary-700;
+}
+
+/* #svelte {
+	@apply grid grid-rows-[auto_1fr] max-w-7xl mx-auto;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-heading font-bold dark:text-accent-200;
+}
+
+h1 {
+	@apply text-6xl;
+}
+
+h2 {
+	@apply text-4xl;
 }

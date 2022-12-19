@@ -8,8 +8,8 @@
 
 <AppBar>
 	<div class:scrolled={scrollY > 0} slot="lead">
-		<a href="/">
-			<img src="/images/favicon.png" alt="logo" class="logo" />
+		<a href="/" class="flex gap-2 items-center">
+			<img src="/images/favicon.png" alt="logo" class="w-12" />
 			<span>Svelte Sirens</span>
 		</a>
 	</div>
@@ -19,8 +19,8 @@
 	</svelte:fragment>
 </AppBar>
 
-<style lang="scss">
-	a {
+<style lang="postcss">
+	/* a {
 		display: flex;
 		border-bottom: none;
 		align-items: center;
@@ -38,7 +38,6 @@
 	header {
 		position: sticky;
 		top: 0;
-		/* Just above bubbles */
 		z-index: 100;
 		margin-bottom: var(--size-8);
 		display: flex;
@@ -95,5 +94,5 @@
 			font-weight: 700;
 			font-size: var(--font-size-2);
 		}
-	}
+	} */
 </style>

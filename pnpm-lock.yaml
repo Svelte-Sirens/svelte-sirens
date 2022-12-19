@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@netlify/plugin-lighthouse': ^4.0.3
-  '@skeletonlabs/skeleton': ^0.80.8
+  '@skeletonlabs/skeleton': ^0.80.9
   '@sveltejs/adapter-netlify': 1.0.0
   '@sveltejs/kit': 1.0.0
   autoprefixer: ^10.4.13
@@ -20,13 +20,14 @@ specifiers:
   svelte-local-storage-store: ^0.3.2
   svelte-preprocess: ^4.10.7
   tailwindcss: ^3.2.4
+  tailwindcss-fluid-type: ^2.0.3
   typescript: ^4.9.4
   vite: ^4.0.1
   zod: ^3.20.2
 
 devDependencies:
   '@netlify/plugin-lighthouse': 4.0.3
-  '@skeletonlabs/skeleton': 0.80.8
+  '@skeletonlabs/skeleton': 0.80.9
   '@sveltejs/adapter-netlify': 1.0.0_@sveltejs+kit@1.0.0
   '@sveltejs/kit': 1.0.0_svelte@3.55.0+vite@4.0.1
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -44,6 +45,7 @@ devDependencies:
   svelte-local-storage-store: 0.3.2_svelte@3.55.0
   svelte-preprocess: 4.10.7_g62xocelfbi2han4ky7bmbexiy
   tailwindcss: 3.2.4_postcss@8.4.20
+  tailwindcss-fluid-type: 2.0.3_tailwindcss@3.2.4
   typescript: 4.9.4
   vite: 4.0.1_sass@1.57.0
   zod: 3.20.2
@@ -395,8 +397,8 @@ packages:
       tslib: 1.14.1
     dev: true
 
-  /@skeletonlabs/skeleton/0.80.8:
-    resolution: {integrity: sha512-Itye/3LVB3xwHBHqVxnMWycAua0oB1CdV4MHEazPtk1r8d07W23Yvg4ow1ubnc0EIxSOG5Ecyz54ez+H3j7clg==}
+  /@skeletonlabs/skeleton/0.80.9:
+    resolution: {integrity: sha512-zDKkPWeD1kXujaEf2h7qE4lNPQvMuGkedpxheWqy7MwJJFfd96AjrV9UIa60owbiH5EQsJB27Kyh2qYY4YeCBQ==}
     dev: true
 
   /@sveltejs/adapter-netlify/1.0.0_@sveltejs+kit@1.0.0:
@@ -3220,6 +3222,14 @@ packages:
       csso: 4.2.0
       picocolors: 1.0.0
       stable: 0.1.8
+    dev: true
+
+  /tailwindcss-fluid-type/2.0.3_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-PE1yz2R+wMyB9updGxU3Ru/NzN2ZelRzEbkdR1F4Q3jlmma8MGnEfKG2Qkpzbmo49QYLUD/cFIUF23MmC6OMTA==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4_postcss@8.4.20
     dev: true
 
   /tailwindcss/3.2.4_postcss@8.4.20:

@@ -1,6 +1,6 @@
 <script>
-	import { page } from '$app/stores';
 	import BubbleToggle from './BubbleToggle.svelte';
+	import Links from './Links.svelte';
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 
 	let checked = false;
@@ -30,40 +30,7 @@
 </div>
 
 <nav class:checked class={classes}>
-	<a
-		class:active={$page.url.pathname == '/'}
-		data-sveltekit-preload-code
-		href="/"
-		on:click={handleNavClose}>Home</a
-	>
-	<a
-		class:active={$page.url.pathname.startsWith('/about')}
-		data-sveltekit-preload-code
-		href="/about"
-		on:click={handleNavClose}>About</a
-	>
-	<a
-		class:active={$page.url.pathname.startsWith('/events')}
-		data-sveltekit-preload-code
-		href="/events"
-		on:click={handleNavClose}>Events</a
-	>
-	<a
-		class:active={$page.url.pathname.startsWith('/speakers')}
-		data-sveltekit-preload-code
-		href="/speakers"
-		on:click={handleNavClose}
-	>
-		Speakers
-	</a>
-	<a
-		class:active={$page.url.pathname.startsWith('/bubble')}
-		data-sveltekit-reload
-		href="/bubble-pop"
-		on:click={handleNavClose}
-	>
-		Game
-	</a>
+	<Links {handleNavClose} />
 	<LightSwitch />
 	<BubbleToggle />
 </nav>
@@ -75,7 +42,6 @@
 	nav:not(.checked) {
 		display: none;
 	}
-	/* 
 
 	.checked {
 		z-index: 99;
@@ -113,11 +79,10 @@
 		text-decoration: none;
 		color: var(--white);
 		border-bottom: none;
-
-		&.active {
-			color: var(--blue);
-			background: repeat url('/images/underline.svg') center;
-		}
+	}
+	a.active {
+		color: var(--blue);
+		background: repeat url('/images/underline.svg') center;
 	}
 
 	a:hover:not(.active) {
@@ -129,20 +94,20 @@
 		nav:not(.checked) {
 			display: flex;
 		}
-		// nav {
-		// 	position: absolute;
-		// 	left: 50%;
-		// 	transform: translate(-50%, 0);
-		// 	align-items: center;
-		// 	height: auto;
-		// 	box-shadow: none;
-		// 	background-color: transparent;
-		// }
+		nav {
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0);
+			align-items: center;
+			height: auto;
+			box-shadow: none;
+			background-color: transparent;
+		}
 		ul {
 			display: flex;
 		}
 		.hamburger-wrapper {
 			display: none;
 		}
-	} */
+	}
 </style>
