@@ -1,9 +1,14 @@
 <script>
+	import { dev } from '$app/environment';
+	import { bubblesToggle } from '$lib/stores';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
 	let checked = true;
+	// BUBBLES OFF BY DEFAULT IN DEV
+	if (dev) {
+		checked = false;
+	}
 	function toggleBubbles() {
 		checked = !checked;
-
 		const bubbles = document.getElementById('bubbles');
 		if (!checked) {
 			bubbles.style.display = 'none';
