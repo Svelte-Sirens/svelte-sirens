@@ -1998,11 +1998,6 @@ packages:
     resolution: {integrity: sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=}
     dev: true
 
-  /merge2/1.4.1:
-    resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
-    engines: {node: '>= 8'}
-    dev: true
-
   /metaviewport-parser/0.2.0:
     resolution: {integrity: sha512-qL5NtY18LGs7lvZCkj3ep2H4Pes9rIiSLZRUyfDdvVw7pWFA0eLwmqaIxApD74RGvUrNEtk9e5Wt1rT+VlCvGw==}
     dev: true
