@@ -6,7 +6,7 @@
 
 <svelte:window bind:scrollY />
 
-<AppBar>
+<AppBar background="transparent">
 	<div class:scrolled={scrollY > 0} slot="lead">
 		<a href="/" class="flex gap-2 items-center">
 			<img src="/images/favicon.png" alt="logo" class="w-12" />
@@ -15,7 +15,7 @@
 	</div>
 
 	<svelte:fragment slot="trail">
-		<Nav classes="flex gap-8 items-center" />
+		<Nav />
 	</svelte:fragment>
 </AppBar>
 

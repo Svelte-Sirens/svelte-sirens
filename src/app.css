@@ -14,11 +14,12 @@ body {
   font-sans 
 
   bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
-  from-accent-300
-  to-primary-200
+  from-accent-200
+  to-primary-100
+
 
   dark:bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
-  dark:from-accent-800 dark:to-primary-700;
+  dark:from-[#213253] dark:to-accent-700;
 }
 
 /* #svelte {
@@ -40,4 +41,8 @@ h1 {
 
 h2 {
 	@apply text-4xl;
+}
+
+a {
+	@apply font-heading font-bold flex border-b-0 items-center text-accent-700 dark:text-white hover:text-primary-900 dark:hover:text-primary-100;
 }

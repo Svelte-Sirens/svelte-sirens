@@ -1,10 +1,9 @@
 <script>
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
-	import { LightSwitch } from '@skeletonlabs/skeleton';
+	import { LightSwitch, storeLightSwitch } from '@skeletonlabs/skeleton';
 
 	let checked = false;
-	let classes = '';
 
 	const handleKeydown = (e) => {
 		if (e.key === 'Escape') checked = false;
@@ -29,10 +28,21 @@
 	</label>
 </div>
 
-<nav class:checked class={classes}>
-	<Links {handleNavClose} />
-	<LightSwitch />
+<nav class:checked class="grid gap-2 lg:flex lg:gap-4">
+	<div class="grid gap-2 lg:absolute lg:flex lg:gap-8 lg:left-1/2 lg:-translate-x-1/2">
+		<Links {handleNavClose} />
+	</div>
 	<BubbleToggle />
+	<div class="grid gap-1 grid-rows-2 place-items-start lg:place-items-center">
+		<span>
+			{#if $storeLightSwitch}
+				Dark
+			{:else}
+				Light
+			{/if}
+		</span>
+		<LightSwitch />
+	</div>
 </nav>
 
 <style lang="postcss">
@@ -95,9 +105,6 @@
 			display: flex;
 		}
 		nav {
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0);
 			align-items: center;
 			height: auto;
 			box-shadow: none;

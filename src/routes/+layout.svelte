@@ -13,14 +13,6 @@
 	<svelte:fragment slot="header">
 		<Header />
 	</svelte:fragment>
-	<!-- <svelte:fragment slot="lead">
-		<strong class="text-xl uppercase">Skeleton</strong>
-	</svelte:fragment>
-
-	<svelte:fragment slot="trail">
-		<LightSwitch />
-	</svelte:fragment> -->
-	<!-- <Header /> -->
 	<slot />
 	<Bubbles />
 </AppShell>
