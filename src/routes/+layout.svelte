@@ -13,7 +13,9 @@
 	<svelte:fragment slot="header">
 		<Header />
 	</svelte:fragment>
-	<slot />
+	<div class="max-w-7xl mx-auto">
+		<slot />
+	</div>
 	<Bubbles />
 </AppShell>
 

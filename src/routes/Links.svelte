@@ -3,7 +3,6 @@
 	import { storeLightSwitch } from '@skeletonlabs/skeleton';
 	import Waves from './Waves.svelte';
 	export let handleNavClose;
-	console.log($storeLightSwitch && $page.url.pathname === '/');
 </script>
 
 <a
@@ -47,11 +46,14 @@
 </a>
 
 <style lang="postcss">
+	a {
+		@apply font-heading font-bold hover:underline;
+	}
 	a.active {
-		@apply text-primary-900;
+		@apply text-primary-900 underline after:w-full after:bg-primary-400;
 	}
 
 	.dark {
-		@apply text-primary-100;
+		@apply text-primary-100 underline after:w-full after:bg-primary-400;
 	}
 </style>

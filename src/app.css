@@ -43,6 +43,12 @@ h2 {
 	@apply text-4xl;
 }
 
-a {
-	@apply font-heading font-bold flex border-b-0 items-center text-accent-700 dark:text-white hover:text-primary-900 dark:hover:text-primary-100;
+/* all links, overwrite skeleton */
+a:not(.unstyled):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(.card):not(
+		.list-nav a
+	),
+a,
+a.app-bar {
+	@apply text-accent-700 dark:text-white hover:text-primary-900 decoration-primary-400 dark:hover:text-primary-100 border-b-0 border-transparent transition-all inline-block decoration-wavy leading-6;
+	text-underline-offset: 4px;
 }

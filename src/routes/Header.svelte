@@ -10,7 +10,7 @@
 	<div class:scrolled={scrollY > 0} slot="lead">
 		<a href="/" class="flex gap-2 items-center">
 			<img src="/images/favicon.png" alt="logo" class="w-12" />
-			<span>Svelte Sirens</span>
+			<span class="font-heading font-bold">Svelte Sirens</span>
 		</a>
 	</div>
 

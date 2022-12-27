@@ -1,19 +1,33 @@
 <script>
+	import { slide } from 'svelte/transition';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
 	import { LightSwitch, storeLightSwitch } from '@skeletonlabs/skeleton';
 
 	let checked = false;
+	let innerWidth;
 
 	const handleKeydown = (e) => {
 		if (e.key === 'Escape') checked = false;
 	};
 
 	const handleNavClose = () => (checked = false);
+
+	function fadeSlide(node, options) {
+		const slideTrans = slide(node, options);
+		return {
+			duration: options.duration,
+			css: (t) => `
+				${slideTrans.css(t)}
+				opacity: ${t};
+			`
+		};
+	}
 </script>
 
-<svelte:window on:keydown={handleKeydown} />
+<svelte:window on:keydown={handleKeydown} bind:innerWidth />
 
+<!-- Checkbox for mobile nav -->
 <input
 	class="hidden"
 	type="checkbox"
@@ -22,99 +36,57 @@
 	on:click={() => (checked = !checked)}
 />
 
-<div class="hamburger-wrapper">
+<div class="absolute z-50 right-4 top-6 lg:hidden">
 	<label for="nav-check">
 		<img src="/images/hamburger.svg" alt="nav menu" class="hamburger" width="50px" height="50px" />
 	</label>
 </div>
+<!-- End checkbox -->
 
-<nav class:checked class="grid gap-2 lg:flex lg:gap-4">
-	<div class="grid gap-2 lg:absolute lg:flex lg:gap-8 lg:left-1/2 lg:-translate-x-1/2">
-		<Links {handleNavClose} />
-	</div>
-	<BubbleToggle />
-	<div class="grid gap-1 grid-rows-2 place-items-start lg:place-items-center">
-		<span>
-			{#if $storeLightSwitch}
-				Dark
-			{:else}
-				Light
-			{/if}
-		</span>
-		<LightSwitch />
-	</div>
-</nav>
+<!-- Mobile Nav -->
+{#if checked && innerWidth < 1024}
+	<nav
+		transition:fadeSlide={{ duration: 300 }}
+		class:checked
+		class="grid gap-2 bg-accent-100 dark:bg-primary-900 "
+	>
+		<div class="grid gap-2 ">
+			<Links {handleNavClose} />
+		</div>
+		<BubbleToggle />
+		<div class="grid gap-1 grid-rows-2 place-items-start">
+			<span>
+				{#if $storeLightSwitch}
+					Dark
+				{:else}
+					Light
+				{/if}
+			</span>
+			<LightSwitch />
+		</div>
+	</nav>
+	<!-- Large window Nav -->
+{:else if innerWidth > 1024}
+	<nav class="flex gap-4 bg-transparent dark:bg-transparent">
+		<div class="absolute h-12 flex items-center gap-8 left-1/2 -translate-x-1/2">
+			<Links {handleNavClose} />
+		</div>
+		<BubbleToggle />
+		<div class="grid gap-1 grid-rows-2 place-items-center">
+			<span>
+				{#if $storeLightSwitch}
+					Dark
+				{:else}
+					Light
+				{/if}
+			</span>
+			<LightSwitch />
+		</div>
+	</nav>
+{/if}
 
 <style lang="postcss">
-	.hamburger-wrapper {
-		@apply absolute z-50 right-4 top-6 lg:hidden;
-	}
-	nav:not(.checked) {
-		display: none;
-	}
-
 	.checked {
-		z-index: 99;
-		position: fixed;
-		top: 0;
-		right: 0;
-		box-shadow: var(--shadow-3);
-		padding: 2rem 4rem 2rem 2rem;
-		background-color: var(--teal);
-		border-radius: 0 0 0 1rem;
-	}
-	#nav-check:checked ~ nav {
-		animation: slide 0.3s linear;
-	}
-	@keyframes slide {
-		from {
-			opacity: 0;
-			right: -200px;
-		}
-		to {
-			opacity: 1;
-			right: 0;
-		}
-	}
-	ul {
-		display: grid;
-		justify-content: center;
-		gap: var(--size-4);
-		font-size: var(--font-size-2);
-		font-family: var(--font-heading);
-		font-weight: 700;
-	}
-
-	a {
-		text-decoration: none;
-		color: var(--white);
-		border-bottom: none;
-	}
-	a.active {
-		color: var(--blue);
-		background: repeat url('/images/underline.svg') center;
-	}
-
-	a:hover:not(.active) {
-		color: var(--blue);
-		border-bottom: 1px solid var(--blue);
-	}
-
-	@media (min-width: 1024px) {
-		nav:not(.checked) {
-			display: flex;
-		}
-		nav {
-			align-items: center;
-			height: auto;
-			box-shadow: none;
-			background-color: transparent;
-		}
-		ul {
-			display: flex;
-		}
-		.hamburger-wrapper {
-			display: none;
-		}
+		@apply grid fixed top-0 right-0 shadow-lg p-8 pr-16 rounded-bl-xl;
 	}
 </style>
