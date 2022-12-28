@@ -17,7 +17,7 @@
 	};
 </script>
 
-<section class="grid">
+<section class="base-grid">
 	<ul>
 		{#each events as { speakers, guests, title, date, eventUrl }}
 			<article class="glass">

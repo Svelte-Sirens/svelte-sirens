@@ -17,8 +17,8 @@
 	};
 </script>
 
-<section class="grid">
-	<ul>
+<section>
+	<ul class="base-flex">
 		{#each events as { speakers, guests, title, date, eventUrl, slug }}
 			<article class="glass">
 				{#if guests}
@@ -38,7 +38,7 @@
 				{:else}
 					{#each speakers as { picture, name, handleUrl, handle, slug }}
 						<li class="event">
-							<img src={picture} alt={name} class="speaker" />
+							<img src={picture} alt={name} class="w-48" />
 							<p class="speaker-name">
 								<a href="/speakers/{slug}">{name}</a>
 							</p>
@@ -53,7 +53,7 @@
 				<section class="event event-details">
 					<h2>
 						<a data-sveltekit-preload-code href={`/events/${slug}`}>
-							{title}
+							<h4>{title}</h4>
 						</a>
 					</h2>
 					<div class="base">
@@ -67,28 +67,27 @@
 					{#if eventUrl}
 						<em class="lg"><a href={eventUrl}>YouTube Replay</a></em>
 					{/if}
-
-					<div class="base">
-						Hosted on
-						<a
-							href="https://www.youtube.com/SvelteSociety"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Svelte Society YouTube
-						</a>
-						and
-						<a rel="noopener noreferrer" target="_blank" href="https://discord.gg/4TVdc4RRps">
-							Svelte Discord
-						</a> to chat with the community.
-					</div>
 				</section>
 			</article>
 		{/each}
 	</ul>
 </section>
 
-<style lang="scss">
+<!-- <div class="base">
+  Hosted on
+  <a
+    href="https://www.youtube.com/SvelteSociety"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Svelte Society YouTube
+  </a>
+  and
+  <a rel="noopener noreferrer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+    Svelte Discord
+  </a> to chat with the community.
+</div> -->
+<!-- <style lang="scss">
 	section {
 		padding: 12px 0px;
 	}
@@ -162,4 +161,4 @@
 			margin-top: 0;
 		}
 	}
-</style>
+</style> -->

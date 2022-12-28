@@ -18,18 +18,3 @@
 	</div>
 	<Bubbles />
 </AppShell>
-
-<style lang="scss">
-	main {
-		overflow-x: hidden;
-		height: 100%;
-		width: 100%;
-		color: var(--white);
-		position: relative;
-		z-index: var(--layer-2);
-		align-content: flex-start;
-		text-align: center;
-		max-width: var(--max-width);
-		margin: 0 auto var(--size-8);
-	}
-</style>

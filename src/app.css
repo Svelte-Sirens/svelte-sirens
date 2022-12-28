@@ -12,19 +12,17 @@ body {
 	@apply min-h-screen
   cursor-auto
   font-sans 
+  text-surface-900
+  dark:text-primary-50
 
   bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
-  from-accent-200
+  from-secondary-200
   to-primary-100
 
 
   dark:bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
-  dark:from-[#213253] dark:to-accent-700;
+  dark:from-[#213253] dark:to-secondary-700;
 }
-
-/* #svelte {
-	@apply grid grid-rows-[auto_1fr] max-w-7xl mx-auto;
-} */
 
 h1,
 h2,
@@ -32,23 +30,82 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-heading font-bold dark:text-accent-200;
+	@apply font-heading font-bold 
+  text-primary-900
+  dark:text-surface-200 drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)];
 }
 
 h1 {
-	@apply text-6xl;
+	@apply mt-6 text-5xl text-center lg:text-6xl;
 }
 
 h2 {
-	@apply text-4xl;
+	@apply text-2xl lg:text-3xl;
+}
+
+h3 {
+	@apply text-xl lg:text-2xl;
+}
+
+h4 {
+	@apply text-base lg:text-lg font-sans;
 }
 
 /* all links, overwrite skeleton */
 a:not(.unstyled):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(.card):not(
 		.list-nav a
 	),
-a,
 a.app-bar {
-	@apply text-accent-700 dark:text-white hover:text-primary-900 decoration-primary-400 dark:hover:text-primary-100 border-b-0 border-transparent transition-all inline-block decoration-wavy leading-6;
+	@apply text-secondary-700 dark:text-primary-200 hover:text-primary-900 no-underline dark:hover:text-primary-100 border-b-0 border-transparent transition-all inline-block font-bold
+  after:content-[''] after:block after:h-[1px] after:m-auto after:w-0 after:bg-transparent after:transition-all after:duration-500 after:ease-in-out
+  hover:after:bg-primary-400 hover:after:w-full hover:after:transition-all;
 	text-underline-offset: 4px;
+}
+
+button,
+a.btn-primary,
+a.btn-secondary,
+a.btn-primary:visited,
+a.btn-secondary:visited {
+	@apply m-0 px-8 py-4 rounded-md font-semibold cursor-pointer transition-all shadow-lg hover:shadow-sm text-base after:content-none border-1 border-transparent hover:border-primary-400;
+}
+
+.btn-primary {
+	@apply bg-primary-200 dark:bg-primary-200 text-surface-900 dark:text-surface-900  hover:text-surface-900 hover:dark:text-surface-900;
+}
+
+.btn-secondary {
+	@apply bg-surface-900 dark:bg-surface-900 text-surface-200 dark:text-surface-200 hover:text-surface-200 hover:dark:text-surface-200;
+}
+
+.base-grid {
+	@apply grid grid-cols-[minmax(0,_1fr)] gap-4;
+}
+
+.base-flex {
+	@apply flex gap-4 flex-none flex-wrap;
+}
+
+.card-glass > * {
+	@apply pt-6 px-4;
+}
+
+.card-glass footer {
+	@apply drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)];
+}
+
+.card-glass img {
+	@apply w-[75px] h-[75px] object-cover rounded-full border-2 border-primary-200;
+}
+
+.card-footer {
+	@apply self-end p-4 flex justify-start items-center space-x-4 border-t-1 border-primary-400 mt-6;
+}
+
+.glass .event {
+	@apply max-w-[300px] grid gap-2;
+}
+
+time {
+	@apply text-inherit dark:text-inherit;
 }

@@ -3,15 +3,16 @@
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
 	import { LightSwitch, storeLightSwitch } from '@skeletonlabs/skeleton';
+	import { clickOutside } from '$lib/utils/clickOutside';
 
 	let checked = false;
 	let innerWidth;
 
 	const handleKeydown = (e) => {
-		if (e.key === 'Escape') checked = false;
+		if (e.key === 'Escape') checked = !checked;
 	};
 
-	const handleNavClose = () => (checked = false);
+	const toggleNav = () => (checked = !checked);
 
 	function fadeSlide(node, options) {
 		const slideTrans = slide(node, options);
@@ -28,13 +29,7 @@
 <svelte:window on:keydown={handleKeydown} bind:innerWidth />
 
 <!-- Checkbox for mobile nav -->
-<input
-	class="hidden"
-	type="checkbox"
-	id="nav-check"
-	bind:checked
-	on:click={() => (checked = !checked)}
-/>
+<input class="hidden" type="checkbox" id="nav-check" bind:checked on:click={toggleNav} />
 
 <div class="absolute z-50 right-4 top-6 lg:hidden">
 	<label for="nav-check">
@@ -46,12 +41,14 @@
 <!-- Mobile Nav -->
 {#if checked && innerWidth < 1024}
 	<nav
+		use:clickOutside
+		on:outclick={toggleNav}
 		transition:fadeSlide={{ duration: 300 }}
 		class:checked
-		class="grid gap-2 bg-accent-100 dark:bg-primary-900 "
+		class="grid gap-2 bg-secondary-100 dark:bg-primary-900 "
 	>
 		<div class="grid gap-2 ">
-			<Links {handleNavClose} />
+			<Links {toggleNav} />
 		</div>
 		<BubbleToggle />
 		<div class="grid gap-1 grid-rows-2 place-items-start">
@@ -69,7 +66,7 @@
 {:else if innerWidth > 1024}
 	<nav class="flex gap-4 bg-transparent dark:bg-transparent">
 		<div class="absolute h-12 flex items-center gap-8 left-1/2 -translate-x-1/2">
-			<Links {handleNavClose} />
+			<Links {toggleNav} />
 		</div>
 		<BubbleToggle />
 		<div class="grid gap-1 grid-rows-2 place-items-center">

@@ -1,21 +1,25 @@
 <script lang="ts">
-	import Upcoming from '$components/sections/Upcoming.svelte';
-	import Latest from '$components/sections/Latest.svelte';
+	import Events from '$components/Events.svelte';
+	import { GradientHeading } from '@skeletonlabs/skeleton';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
-<article class="grid hero">
-	<img src="images/favicon.png" alt="logo" class="float-in siren" />
+<section class="grid gap-4 lg:gap-16 lg:flex place-items-center text-center lg:text-left">
+	<img src="images/favicon.png" alt="logo" class="max-w-[400px]" />
+	<section class="max-w-xl grid gap-6">
+		<GradientHeading
+			tag="h1"
+			from="from-primary-500 dark:from-primary-200"
+			to="to-secondary-700 dark:to-secondary-500"
+			class="text-left">Svelte Sirens</GradientHeading
+		>
+		<h2 class="text-lg">A Svelte Society for women, non-binary people, & allies</h2>
 
-	<section class="grid hero-text">
-		<h1>Svelte Sirens</h1>
-		<h2>A Svelte Society for women, non-binary people, & allies</h2>
-
-		<div class="btns">
+		<div class="grid lg:flex w-full gap-4 justify-center lg:justify-start">
 			<a
-				class="btn-primary"
+				class="btn btn-primary"
 				rel="noopener noreferrer"
 				target="_blank"
 				href="https://discord.gg/4TVdc4RRps"
@@ -24,7 +28,7 @@
 			</a>
 			<a
 				data-sveltekit-preload-code
-				class="btn-secondary"
+				class="btn btn-secondary"
 				rel="noopener noreferrer"
 				target="_blank"
 				href="/contact"
@@ -33,33 +37,39 @@
 			</a>
 		</div>
 
-		<div class="calendar">
-			<a rel="external" href="/calendar" class="calendar-link">
-				<img src="/images/calendar.svg" alt="" class="cal-img" /> Add Events to Google Calendar
-			</a>
-		</div>
+		<a
+			rel="external"
+			href="/calendar"
+			class="w-max p-0 btn font-bold text-primary-600 transition-colors dark:text-primary-200 border-b-1 border-transparent hover:border-primary-400 hover:text-primary-400 hover:dark:text-primary-100"
+		>
+			<img src="/images/calendar.svg" alt="" class="w-[36px]" />
+			<span>Add Events to Google Calendar</span>
+		</a>
 	</section>
-</article>
+</section>
 
-<article class="grid lists">
-	<h3>Upcoming Events</h3>
+{#if data.upcomingEvents.length}
+	<article class="base-grid lists">
+		<h3 class="text-center">Upcoming Events</h3>
 
-	<div class="grid events">
-		<Upcoming events={data.upcomingEvents} />
-	</div>
-</article>
+		<div class="base-grid events">
+			<Events events={data.upcomingEvents} />
+		</div>
+	</article>
+{/if}
 
-<article class="grid lists">
-	<h3>Latest Events</h3>
+<article class="base-grid lists">
+	<h3 class="text-center">Latest Events</h3>
 
-	<div class="grid events">
-		<Latest events={data.latestEvents} />
+	<div class="base-grid events">
+		<Events events={data.latestEvents} />
 	</div>
 
 	<a href="/events">View all of our past events</a>
 </article>
 <!-- 
 <style lang="scss">
+
 	.hero {
 		align-content: flex-start;
 		justify-content: center;
