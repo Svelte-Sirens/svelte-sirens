@@ -20,10 +20,10 @@
 		bubblesElement = document.getElementById('bubbles');
 		checkBubbles();
 		// BUBBLES OFF BY DEFAULT IN DEV
-		// if (dev) {
-		// 	bubbles.set(!get(bubbles));
-		// 	bubblesElement.style.display = 'none';
-		// }
+		if (dev) {
+			bubbles.set(!get(bubbles));
+			bubblesElement.style.display = 'none';
+		}
 	});
 
 	function toggleBubbles() {
