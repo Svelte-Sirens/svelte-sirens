@@ -37,9 +37,9 @@ export const speakers = typeSpeakers({
 	'dani-sandoval': {
 		name: 'Dani Sandoval',
 		slug: 'dani-sandoval',
-		handle: '@d3sandoval',
-		handleUrl: 'https://twitter.com/d3sandoval',
-		picture: '/images/speakers/d3sandoval.jpg',
+		handle: '@Dreamin_Dani',
+		handleUrl: 'https://twitter.com/Dreamin_Dani',
+		picture: '/images/speakers/dani-sandoval.jpg',
 		biography:
 			"Since graduating from University of Washington with a degree in Human Centered Design and Engineering, Dani has helped build a resilient product development process at Discuss.io, trained Fortune 500 product teams at VMware Pivotal Labs, and am grown a team as the Director of Design at Chipper Cash. Keep an eye out on Dani's Twitter for an announcement of their next adventure!"
 	},
