@@ -39,7 +39,7 @@
 	{/each}
 </section>
 
-<style lang="scss">
+<style lang="postcss">
 	.video-wrapper {
 		position: relative;
 		padding-bottom: 56.25%;
