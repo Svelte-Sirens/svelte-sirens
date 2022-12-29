@@ -25,7 +25,6 @@
     "postcss-load-config": "^4.0.1",
     "prettier": "^2.8.1",
     "prettier-plugin-svelte": "^2.9.0",
-    "sass": "^1.57.0",
     "svelte": "^3.55.0",
     "svelte-local-storage-store": "^0.3.2",
     "svelte-preprocess": "^4.10.7",

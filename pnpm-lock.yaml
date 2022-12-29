@@ -15,7 +15,6 @@ specifiers:
   postcss-load-config: ^4.0.1
   prettier: ^2.8.1
   prettier-plugin-svelte: ^2.9.0
-  sass: ^1.57.0
   svelte: ^3.55.0
   svelte-local-storage-store: ^0.3.2
   svelte-preprocess: ^4.10.7
@@ -44,14 +43,13 @@ devDependencies:
   postcss-load-config: 4.0.1_postcss@8.4.20
   prettier: 2.8.1
   prettier-plugin-svelte: 2.9.0_ajxj753sv7dbwexjherrch25ta
-  sass: 1.57.1
   svelte: 3.55.0
   svelte-local-storage-store: 0.3.2_svelte@3.55.0
-  svelte-preprocess: 4.10.7_tnndubilh5oonjnlrc3mxe2fxi
+  svelte-preprocess: 4.10.7_4pbnl6cqae4gmabfifuvcfaifu
   tailwindcss: 3.2.4_postcss@8.4.20
   tailwindcss-fluid-type: 2.0.3_tailwindcss@3.2.4
   typescript: 4.9.4
-  vite: 4.0.3_sass@1.57.1
+  vite: 4.0.3
   zod: 3.20.2
 
 packages:
@@ -439,7 +437,7 @@ packages:
       svelte: 3.55.0
       tiny-glob: 0.2.9
       undici: 5.14.0
-      vite: 4.0.3_sass@1.57.1
+      vite: 4.0.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -457,7 +455,7 @@ packages:
       magic-string: 0.27.0
       svelte: 3.55.0
       svelte-hmr: 0.15.1_svelte@3.55.0
-      vite: 4.0.3_sass@1.57.1
+      vite: 4.0.3
       vitefu: 0.2.4_vite@4.0.3
     transitivePeerDependencies:
       - supports-color
@@ -1709,10 +1707,6 @@ packages:
     resolution: {integrity: sha512-W7+sO6/yhxy83L0G7xR8YAc5Z5QFtYEXXRV6EaE8tuYBZJnA3gVgp3q7X7muhLZVodeb9UfvjSbwt9VJwjIYAg==}
     dev: true
 
-  /immutable/4.2.1:
-    resolution: {integrity: sha512-7WYV7Q5BTs0nlQm7tl92rDYYoyELLKHoDMBKhrxEoiV4mrfVdRz8hzPiYOzH7yWjzoVEamxRuAqhxL2PLRwZYQ==}
-    dev: true
-
   /import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
     engines: {node: '>=6'}
@@ -2937,16 +2931,6 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /sass/1.57.1:
-    resolution: {integrity: sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==}
-    engines: {node: '>=12.0.0'}
-    hasBin: true
-    dependencies:
-      chokidar: 3.5.3
-      immutable: 4.2.1
-      source-map-js: 1.0.2
-    dev: true
-
   /semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
     hasBin: true
@@ -3155,7 +3139,7 @@ packages:
       svelte: 3.55.0
     dev: true
 
-  /svelte-preprocess/4.10.7_tnndubilh5oonjnlrc3mxe2fxi:
+  /svelte-preprocess/4.10.7_4pbnl6cqae4gmabfifuvcfaifu:
     resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -3202,7 +3186,6 @@ packages:
       magic-string: 0.25.9
       postcss: 8.4.20
       postcss-load-config: 4.0.1_postcss@8.4.20
-      sass: 1.57.1
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.55.0
@@ -3433,7 +3416,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite/4.0.3_sass@1.57.1:
+  /vite/4.0.3:
     resolution: {integrity: sha512-HvuNv1RdE7deIfQb8mPk51UKjqptO/4RXZ5yXSAvurd5xOckwS/gg8h9Tky3uSbnjYTgUm0hVCet1cyhKd73ZA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3462,7 +3445,6 @@ packages:
       postcss: 8.4.20
       resolve: 1.22.1
       rollup: 3.9.0
-      sass: 1.57.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -3475,7 +3457,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.0.3_sass@1.57.1
+      vite: 4.0.3
     dev: true
 
   /webidl-conversions/3.0.1:
