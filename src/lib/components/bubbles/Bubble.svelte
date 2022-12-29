@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-<style lang="scss">
+<style lang="postcss">
 	.positioner {
 		--bubble-size: calc(200px * var(--scale));
 
@@ -57,22 +57,22 @@
 
 		bottom: calc(var(--bubble-size) * -2);
 		left: var(--offset);
+	}
 
-		.positioner-inner {
-			animation: wobble 2s ease-in-out alternate infinite;
-			animation-delay: inherit;
-		}
+	.positioner-inner {
+		animation: wobble 2s ease-in-out alternate infinite;
+		animation-delay: inherit;
+	}
 
-		.bubble {
-			width: var(--bubble-size);
-			height: var(--bubble-size);
+	.bubble {
+		width: var(--bubble-size);
+		height: var(--bubble-size);
 
-			border-radius: 100%;
-			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0px 5px 15px 2px rgba(255, 255, 255, 1);
+		border-radius: 100%;
+		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0px 5px 15px 2px rgba(255, 255, 255, 1);
 
-			backdrop-filter: blur(1px);
-			filter: blur(2px);
-		}
+		backdrop-filter: blur(1px);
+		filter: blur(2px);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
