@@ -100,18 +100,6 @@
 
 	[type='text'],
 	[type='email'],
-	[type='url'],
-	[type='password'],
-	[type='number'],
-	[type='date'],
-	[type='datetime-local'],
-	[type='month'],
-	[type='search'],
-	[type='tel'],
-	[type='time'],
-	[type='week'],
-	[type='file'],
-	[multiple],
 	textarea {
 		@apply bg-surface-200 text-surface-900 dark:text-surface-900 w-full min-h-[40px] p-2 rounded-sm border-1 border-transparent focus:border-primary-400 font-sans font-thin;
 		background-image: none !important;
