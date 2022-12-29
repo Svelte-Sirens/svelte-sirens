@@ -34,8 +34,5 @@
     "vite": "^4.0.1",
     "zod": "^3.20.2"
   },
-  "type": "module",
-  "dependencies": {
-    "svelte-sirens": "link:"
-  }
+  "type": "module"
 }
