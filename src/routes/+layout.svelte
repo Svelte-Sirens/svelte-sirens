@@ -1,7 +1,6 @@
 <script>
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.css';
-	import '$styles/styles.scss';
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import Head from '$components/Head.svelte';
 	import Header from './Header.svelte';
