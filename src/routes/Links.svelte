@@ -35,6 +35,15 @@
 	Speakers
 </a>
 <a
+	class:dark={$storeLightSwitch ? $page.url.pathname.startsWith('/contact') : ''}
+	class:active={$storeLightSwitch ? '' : $page.url.pathname.startsWith('/contact')}
+	data-sveltekit-preload-code
+	href="/contact"
+	on:click={toggleNav}
+>
+	Contact
+</a>
+<a
 	class:dark={$storeLightSwitch ? $page.url.pathname.startsWith('/bubble') : ''}
 	class:active={$storeLightSwitch ? '' : $page.url.pathname.startsWith('/bubble')}
 	data-sveltekit-reload
@@ -47,6 +56,7 @@
 <style lang="postcss">
 	a {
 		@apply font-heading font-bold hover:underline decoration-wavy decoration-primary-400 after:content-none;
+		text-underline-offset: 0.25rem;
 	}
 	a.active {
 		@apply text-primary-900 underline after:w-full after:bg-primary-400;

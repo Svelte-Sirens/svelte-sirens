@@ -23,6 +23,7 @@ export interface Event {
 	embed: string;
 	eventUrl: string;
 	speakers?: Speaker[];
+	thumbnail?: string;
 	guests?: Guest[];
 }
 

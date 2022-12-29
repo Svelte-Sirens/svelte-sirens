@@ -11,10 +11,11 @@ export const speakers = typeSpeakers({
 		handleUrl: 'https://twitter.com/LaceyPevey',
 		picture: 'https://www.falconriskservices.com/hubfs/Lacey%20Pevey%20Headshot%20(2)-1.jpg',
 		biography: `Lacey joined Falcon Risk Services as Head of Technology and Operations. She has over 20 years of insurance experience and has held a variety of positions in the industry including Chief Underwriting Officer of Financial Institutions at AIG, and her most recent position, VP of Underwriting Analytics at Friss. Lacey received her Bachelor in Science from Tulane University, as well as her MBA from Columbia University. She is a CFA charterholder and holds several additional certifications.
-    <br/><br/>
-      During her free time, Lacey enjoys reading, gardening, and spending time with her two underwriters in training, who are aged 2 and 6.
-    <br/><br/>
-      Fun Fact: Lacey enjoys coffee so much that she owns her own coffee roasting business in her hometown Shreveport, Louisiana, where she relocated from NYC a few years ago.`
+    <br> <br>
+    During her free time, Lacey enjoys reading, gardening, and spending time with her two underwriters in training, who are aged 2 and 6.
+    <br> <br>
+    Fun Fact: Lacey enjoys coffee so much that she owns her own coffee roasting business in her hometown Shreveport, Louisiana, where she relocated from NYC a few years ago.
+     `
 	},
 	'kev-a-k': {
 		name: 'Kevin A. K.',
@@ -101,7 +102,7 @@ export const speakers = typeSpeakers({
 		handleUrl: 'https://twitter.com/BrittneyPostma',
 		picture: '/images/speakers/brittney.jpg',
 		biography:
-			'I am a self-taught developer and mom of three. I work for Netlify as a Developer Experience Engineer which basically that I create a lot of content. I am the co-founder of the Svelte Sirens. I also co-host the Svelte Radio, Remotely Interesting, and Purrfect.Dev podcasts. I work closely with CodingCat.Dev to create content on and around the Jamstack. I love helping people in the community and empowering people with the learn, build, and teach philosophy to make their dreams happen.'
+			"I am a self-taught developer and mom of three. I am a passionate community builder and the founder of the Svelte Sirens. I create content around Jamstack topics, speak and emcee conferences, and stay involved in several Discord communities. I co-host the Svelte Radio and the CodingCat.dev podcast. I also work with CodingCat.dev to create tutorials and courses. I love helping people in the community and empowering those that don't have a voice to find their place in the tech industry."
 	},
 
 	// 'amelia-wattenberger': {

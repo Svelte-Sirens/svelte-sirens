@@ -4,7 +4,7 @@
 	import { bubblesToggle } from '$lib/stores';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
 
-	let checked;
+	let checked = false;
 	let bubbles;
 	// BUBBLES OFF BY DEFAULT IN DEV
 	onMount(() => {

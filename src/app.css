@@ -24,6 +24,14 @@ body {
   dark:from-[#213253] dark:to-secondary-700;
 }
 
+main {
+	@apply max-w-7xl mx-auto;
+}
+
+main > * + * {
+	@apply mt-10;
+}
+
 h1,
 h2,
 h3,
@@ -32,11 +40,11 @@ h5,
 h6 {
 	@apply font-heading font-bold 
   text-primary-900
-  dark:text-surface-200 drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)];
+  dark:text-surface-200 dark:drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)];
 }
 
 h1 {
-	@apply mt-6 text-5xl text-center lg:text-6xl;
+	@apply mt-10 text-5xl text-center lg:text-6xl;
 }
 
 h2 {
@@ -48,7 +56,11 @@ h3 {
 }
 
 h4 {
-	@apply text-base lg:text-lg font-sans;
+	@apply text-base lg:text-lg font-sans drop-shadow-none dark:drop-shadow-none;
+}
+
+p {
+	@apply text-lg;
 }
 
 /* all links, overwrite skeleton */
@@ -56,10 +68,7 @@ a:not(.unstyled):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(.c
 		.list-nav a
 	),
 a.app-bar {
-	@apply text-secondary-700 dark:text-primary-200 hover:text-primary-900 no-underline dark:hover:text-primary-100 border-b-0 border-transparent transition-all inline-block font-bold
-  after:content-[''] after:block after:h-[1px] after:m-auto after:w-0 after:bg-transparent after:transition-all after:duration-500 after:ease-in-out
-  hover:after:bg-primary-400 hover:after:w-full hover:after:transition-all;
-	text-underline-offset: 4px;
+	@apply text-secondary-700 dark:text-primary-200 hover:text-primary-900 no-underline dark:hover:text-primary-100 border-b-0 border-transparent transition-all font-bold;
 }
 
 button,
@@ -86,26 +95,26 @@ a.btn-secondary:visited {
 	@apply flex gap-4 flex-none flex-wrap;
 }
 
-.card-glass > * {
-	@apply pt-6 px-4;
-}
-
-.card-glass footer {
-	@apply drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)];
-}
-
-.card-glass img {
-	@apply w-[75px] h-[75px] object-cover rounded-full border-2 border-primary-200;
-}
-
-.card-footer {
-	@apply self-end p-4 flex justify-start items-center space-x-4 border-t-1 border-primary-400 mt-6;
-}
-
-.glass .event {
-	@apply max-w-[300px] grid gap-2;
-}
-
 time {
 	@apply text-inherit dark:text-inherit;
+}
+
+.speaker-card {
+	@apply bg-surface-50/10 w-max;
+}
+
+.speaker-card img {
+	@apply max-h-64 w-64 object-cover;
+}
+
+.speaker-card > .speaker-wrapper {
+	@apply object-cover max-w-xs text-center pb-2;
+}
+
+.speaker-card .name {
+	@apply mt-2 text-lg;
+}
+
+.speaker-card .handle {
+	@apply text-base;
 }

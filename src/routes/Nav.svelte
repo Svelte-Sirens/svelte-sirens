@@ -63,7 +63,7 @@
 		</div>
 	</nav>
 	<!-- Large window Nav -->
-{:else if innerWidth > 1024}
+{:else if innerWidth >= 1024}
 	<nav class="flex gap-4 bg-transparent dark:bg-transparent">
 		<div class="absolute h-12 flex items-center gap-8 left-1/2 -translate-x-1/2">
 			<Links {toggleNav} />

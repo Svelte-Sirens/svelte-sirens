@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-<section class="max-w-sm text-center mx-auto">
+<section class="max-w-md text-center mx-auto">
 	<h1>Events</h1>
 	<p>
 		This is the list of all our upcoming and past talks, streams, and events! Events are hosted on
@@ -21,25 +21,19 @@
 </section>
 
 {#if data.upcomingEvents.length}
-	<section class="mt-6">
+	<section>
 		<h2 class="text-center">Upcoming Events</h2>
-		<Events events={data.upcomingEvents} />
+		<Events upcoming events={data.upcomingEvents} />
 	</section>
 {/if}
 
-<section class="mt-6">
+<section>
 	<h2 class="text-center">Latest Events</h2>
 	<Events events={data.latestEvents} />
 </section>
 
-<style lang="scss">
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-	}
-
-	.title {
-		margin-bottom: 12px;
+<style lang="postcss">
+	h2 {
+		@apply mb-4;
 	}
 </style>

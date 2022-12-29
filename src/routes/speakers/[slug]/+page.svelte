@@ -3,43 +3,23 @@
 	export let data: PageData;
 </script>
 
-<article class="glass">
+<article class="max-w-lg mx-auto grid gap-6">
 	<h1>{data.speaker.name}</h1>
-	<img src={data.speaker.picture} alt={data.speaker.name} class="speaker" />
-	<a href={data.speaker.handleUrl} rel="noopener noreferrer" target="_blank">
-		<span>{data.speaker.handle}</span>
-	</a>
-
-	{#if data.biography}
-		<p>
+	<figure class="card card-glass">
+		<img src={data.speaker.picture} alt={data.speaker.name} />
+		<figcaption class="text-center py-2">
+			<span class="font-bold">{data.speaker.name} - </span>
+			<a href={data.speaker.handleUrl} rel="noopener noreferrer" target="_blank">
+				<span>{data.speaker.handle}</span>
+			</a>
+		</figcaption>
+	</figure>
+	<section class="grid gap-2">
+		{#if data.biography}
 			<!-- TODO sanitise -->
-			{@html data.speaker.biography}
-		</p>
-	{/if}
+			<p>
+				{@html data.speaker.biography}
+			</p>
+		{/if}
+	</section>
 </article>
-
-<style>
-	article {
-		padding: var(--size-8);
-		margin: 0 auto;
-		max-width: 60ch;
-		display: grid;
-		gap: var(--size-6);
-		grid-template-columns: minmax(0, 1fr);
-		place-items: center;
-		text-align: left;
-	}
-
-	img {
-		width: 100%;
-		height: auto;
-	}
-
-	a {
-		font-size: var(--font-size-fluid-2);
-	}
-
-	p {
-		font-size: var(--font-size-fluid-1);
-	}
-</style>

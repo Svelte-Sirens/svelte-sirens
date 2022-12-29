@@ -5,10 +5,11 @@
 </script>
 
 <section>
-	<h1>{data.title}</h1>
+	<h1 class="text-3xl mb-6">{data.title}</h1>
 
-	<div class="video-wrapper">
+	<div class="video-wrapper w-[80vw] xl:w-[1024px]">
 		<iframe
+			width="100%"
 			src={data.embed}
 			title="YouTube video player"
 			frameborder="0"
@@ -18,59 +19,37 @@
 	</div>
 </section>
 
-<section>
-	<h2>Speakers</h2>
+<section class="grid gap-4 place-items-center">
+	<h2 class="text-2xl">Guest</h2>
 
-	<div class="speakers">
-		{#each data.speakers as { picture, name, handleUrl, handle, slug }}
-			<div class="speaker-container">
+	{#each data.speakers as { picture, name, handleUrl, handle, slug }}
+		<div class="speaker-card">
+			<div class="speaker-wrapper card card-glass">
 				<img src={picture} alt={name} class="speaker" />
 
-				<p class="speaker-name">
+				<h3 class="name">
 					<a href={`/speakers/${slug}`}>{name}</a>
-				</p>
+				</h3>
 
-				<div class="lg">
-					<a href={handleUrl} rel="noopener noreferrer" target="_blank">
-						<span>{handle}</span>
-					</a>
-				</div>
+				<a href={handleUrl} rel="noopener noreferrer" target="_blank" class="handle">
+					{handle}
+				</a>
 			</div>
-		{/each}
-	</div>
+		</div>
+	{/each}
 </section>
 
 <style lang="scss">
-	section {
-		display: grid;
-		gap: var(--size-4);
-		grid-template-columns: minmax(0, 1fr);
-		h1 {
-			font-size: var(--font-size-fluid-2);
-			margin-bottom: var(--size-6);
-		}
-		.video-wrapper {
-			position: relative;
-			padding-bottom: 56.25%;
-			height: 0;
-		}
-		iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
+	.video-wrapper {
+		position: relative;
+		padding-bottom: 56.25%;
+		height: 0;
 	}
-
-	.speakers {
-		display: flex;
-		margin: 0 auto;
-
-		.speaker-container {
-			display: flex;
-			flex-direction: column;
-			gap: 8px;
-		}
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 </style>

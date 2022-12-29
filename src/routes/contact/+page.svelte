@@ -6,13 +6,11 @@
 </script>
 
 <section>
-	<h1 style="margin-bottom: 16px; margin-top: 0px;">
-		Submit A Talk
-	</h1>
+	<h1>Submit A Talk</h1>
 
 	<form method="POST" use:enhance>
 		<label>
-			Name *
+			<span>Name *</span>
 
 			<input
 				class:error={form?.errors?.name}
@@ -29,7 +27,7 @@
 		</label>
 
 		<label>
-			Email *
+			<span>Email *</span>
 
 			<input
 				class:error={form?.errors?.email}
@@ -46,7 +44,7 @@
 		</label>
 
 		<label>
-			Discord
+			<span>Discord</span>
 
 			<input
 				class:error={form?.errors?.discord}
@@ -62,7 +60,7 @@
 		</label>
 
 		<label>
-			Message *
+			<span>Message *</span>
 
 			<textarea
 				class:error={form?.errors?.idea}
@@ -80,14 +78,12 @@
 		<button class="btn-primary">Submit!</button>
 
 		{#if form?.success}
-			<p class="success-text">
-				Success! Your talk has been submitted
-			</p>
+			<p class="success-text">Success! Your talk has been submitted</p>
 		{/if}
 	</form>
 </section>
 
-<style>
+<!-- <style>
 	section {
 		position: relative;
 		z-index: 2;
@@ -95,7 +91,7 @@
 		display: grid;
 		justify-self: center;
 		justify-content: center;
-		
+
 		max-width: 80ch;
 		padding: var(--size-5);
 
@@ -107,11 +103,11 @@
 	.error-text {
 		position: relative;
 		z-index: -1;
-		
+
 		padding: 2px 5px 1px 5px;
-		
+
 		color: var(--red);
-		background: #f5f5f5BB;
+		background: #f5f5f5bb;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 
@@ -148,12 +144,12 @@
 		width: 100%;
 		min-height: 40px;
 		padding: var(--size-2);
-		
+
 		background: var(--white);
 		color: var(--black);
 		border-radius: var(--radius-conditional-2);
 		border: var(--size-1) solid transparent;
-		
+
 		font-family: var(--font-body);
 		font-weight: var(--font-weight-1);
 	}
@@ -184,4 +180,4 @@
 		justify-self: center;
 		margin-top: 16px;
 	}
-</style>
+</style> -->
