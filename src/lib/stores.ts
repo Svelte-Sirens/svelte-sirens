@@ -1,3 +1,4 @@
-import { writable } from 'svelte-local-storage-store';
+import type { Writable } from 'svelte/store';
+import { localStorageStore } from '@skeletonlabs/skeleton';
 
-export const bubblesToggle = writable('bubblesToggle', 'on');
+export const bubbles: Writable<boolean> = localStorageStore('bubbles', true);

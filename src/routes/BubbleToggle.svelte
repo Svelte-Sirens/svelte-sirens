@@ -1,40 +1,44 @@
 <script>
 	import { dev } from '$app/environment';
 	import { onMount } from 'svelte';
-	import { bubblesToggle } from '$lib/stores';
+	import { get } from 'svelte/store';
+	import { bubbles } from '$lib/stores';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
+	let bubblesElement;
+	let toggle;
 
-	let checked = false;
-	let bubbles;
-	// BUBBLES OFF BY DEFAULT IN DEV
+	function checkBubbles() {
+		if (!get(bubbles)) {
+			toggle = false;
+			bubblesElement.style.display = 'none';
+		} else {
+			toggle = true;
+			bubblesElement.style.display = 'block';
+		}
+	}
 	onMount(() => {
-		bubbles = document.getElementById('bubbles');
-		if (dev) {
-			checked = false;
-			bubbles.style.display = 'none';
-			bubblesToggle.set('off');
-		} else checked = true;
+		bubblesElement = document.getElementById('bubbles');
+		checkBubbles();
+		// BUBBLES OFF BY DEFAULT IN DEV
+		// if (dev) {
+		// 	bubbles.set(!get(bubbles));
+		// 	bubblesElement.style.display = 'none';
+		// }
 	});
 
 	function toggleBubbles() {
-		checked = !checked;
-		if (!checked) {
-			bubbles.style.display = 'none';
-			bubblesToggle.set('off');
-		} else {
-			bubbles.style.display = 'block';
-			bubblesToggle.set('on');
-		}
+		bubbles.set(!get(bubbles));
+		checkBubbles();
 	}
 </script>
 
 <div class="grid gap-1 grid-rows-2 place-items-start lg:place-items-center">
 	<span>
-		{#if checked}
+		{#if $bubbles}
 			Bubbles
 		{:else}
 			No Bubbles
 		{/if}
 	</span>
-	<SlideToggle size="sm" bind:checked on:click={toggleBubbles} />
+	<SlideToggle size="sm" bind:checked={toggle} on:click={toggleBubbles} />
 </div>
