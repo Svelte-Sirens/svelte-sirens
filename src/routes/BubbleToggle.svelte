@@ -1,5 +1,4 @@
 <script>
-	import { dev } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
 	import { bubbles } from '$lib/stores';
@@ -19,11 +18,6 @@
 	onMount(() => {
 		bubblesElement = document.getElementById('bubbles');
 		checkBubbles();
-		// BUBBLES OFF BY DEFAULT IN DEV
-		if (dev) {
-			bubbles.set(!get(bubbles));
-			bubblesElement.style.display = 'none';
-		}
 	});
 
 	function toggleBubbles() {
@@ -32,7 +26,7 @@
 	}
 </script>
 
-<div class="grid gap-1 grid-rows-2 place-items-start lg:place-items-center">
+<div class="grid gap-1 grid-rows-2 place-items-start min-w-[82px] lg:place-items-center">
 	<span>
 		{#if $bubbles}
 			Bubbles
