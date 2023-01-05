@@ -1,11 +1,21 @@
 <script>
-	export let img, name, speaker, handle;
+	export let img,
+		name,
+		speaker,
+		handle,
+		speakerPage = false;
 </script>
 
 <div class="speaker-card">
 	<img src={img} alt={name} />
 	<div class="speaker-wrapper card card-glass">
-		<h3 class="name"><a href={`/speakers/${speaker}`}>{name}</a></h3>
+		<h3 class="name">
+			{#if !speakerPage}
+				<a href={`/speakers/${speaker}`}>{name}</a>
+			{:else}
+				{name}
+			{/if}
+		</h3>
 		<a href={`https://twitter.com/${handle}`} class="handle">{handle}</a>
 	</div>
 </div>

@@ -9,6 +9,8 @@
 </p>
 <section class="w-[80vw] flex flex-wrap gap-6 lg:gap-10 justify-center">
 	{#each Object.entries(speakers) as [slug, { handle, name, picture }]}
-		<a href={`/speakers/${slug}`}> <SpeakerCard img={picture} {name} speaker={name} {handle} /></a>
+		<a href="/speakers/{slug}" class="grid glass">
+			<SpeakerCard speakerPage img={picture} {name} speaker={name} {handle} />
+		</a>
 	{/each}
 </section>
