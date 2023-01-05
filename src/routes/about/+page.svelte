@@ -1,4 +1,5 @@
 <script>
+	import SpeakerCard from '$components/SpeakerCard.svelte';
 	import { Divider } from '@skeletonlabs/skeleton';
 
 	const founders = [
@@ -23,7 +24,7 @@
 	];
 </script>
 
-<article>
+<article class="base-grid">
 	<h1>About Svelte Sirens</h1>
 	<img src="/images/favicon.png" alt="logo" class="float-in siren" />
 	<p>
@@ -49,8 +50,8 @@
 		Join the community
 	</a>
 </article>
-<Divider borderColor="primary-100" margin="mt-10" />
-<article class="founders">
+<Divider borderColor="primary-100" />
+<article class="base-grid">
 	<h2>Founders</h2>
 	<section class="glass grid content">
 		<p>
@@ -79,21 +80,15 @@
 			in our community. Welcome!
 		</p>
 	</section>
-	<section class="flex flex-wrap justify-around gap-4">
+	<section class="flex flex-wrap justify-around gap-20 items-start">
 		{#each founders as { name, handle, img, slug: speaker }}
-			<div class="speaker-card">
-				<div class="speaker-wrapper card card-glass">
-					<img src={img} alt={name} />
-					<h3 class="name"><a href={`/speakers/${speaker}`}>{name}</a></h3>
-					<a href={`https://twitter.com/${handle}`} class="handle">{handle}</a>
-				</div>
-			</div>
+			<SpeakerCard {img} {name} {speaker} {handle} />
 		{/each}
 	</section>
 </article>
 
 <style lang="postcss">
 	article {
-		@apply px-4 lg:p-0 max-w-2xl grid gap-4 place-items-center;
+		@apply px-4 lg:p-0 max-w-2xl place-items-center;
 	}
 </style>

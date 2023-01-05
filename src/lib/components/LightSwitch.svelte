@@ -32,11 +32,7 @@
 	// Sets the color scheme based on the cookie or OS preference in
 	// the <head> of the document.
 	function init() {
-		console.log({ $storeLightSwitch });
-
 		if (!['dark', 'light'].includes(Cookie.get('theme'))) {
-			console.log('defaulted to: ' + $storePrefersDarkScheme ? 'dark' : 'light');
-
 			Cookie.set('theme', $storePrefersDarkScheme ? 'dark' : 'light');
 			$storeLightSwitch = $storePrefersDarkScheme;
 		}
@@ -74,8 +70,6 @@
 		// Init theme
 		init();
 	});
-
-	$: console.log({ $storeLightSwitch });
 </script>
 
 <!-- prettier-ignore -->

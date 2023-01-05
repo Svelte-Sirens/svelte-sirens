@@ -4,10 +4,10 @@
 	export let data: PageData;
 </script>
 
-<section>
+<section class="p-4 lg:p-0">
 	<h1 class="text-3xl mb-6">{data.title}</h1>
 
-	<div class="video-wrapper w-[80vw] xl:w-[1024px]">
+	<div class="video-wrapper w-[80vw] xl:w-[1024px] mx-auto">
 		<iframe
 			width="100%"
 			src={data.embed}

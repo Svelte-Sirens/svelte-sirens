@@ -25,11 +25,11 @@ body {
 }
 
 main {
-	@apply max-w-7xl mx-auto;
+	@apply max-w-7xl mx-auto grid gap-10 lg:gap-20 p-4 xl:p-0;
 }
 
-main > * + * {
-	@apply mt-10;
+main > section {
+	@apply grid grid-cols-[minmax(0,_1fr)] gap-6 lg:gap-12;
 }
 
 h1,
@@ -44,15 +44,15 @@ h6 {
 }
 
 h1 {
-	@apply mt-10 text-5xl text-center lg:text-6xl;
+	@apply mt-10 text-4xl text-center lg:text-6xl;
 }
 
 h2 {
-	@apply text-2xl lg:text-3xl;
+	@apply text-3xl lg:text-3xl;
 }
 
 h3 {
-	@apply text-xl lg:text-2xl;
+	@apply text-2xl lg:text-4xl;
 }
 
 h4 {
@@ -63,20 +63,26 @@ p {
 	@apply text-lg;
 }
 
+img {
+	@apply max-w-full h-auto;
+}
+
 /* all links, overwrite skeleton */
 a:not(.unstyled):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(.card):not(
 		.list-nav a
 	),
 a.app-bar {
 	@apply text-secondary-700 dark:text-primary-200 hover:text-primary-900 no-underline dark:hover:text-primary-100 border-b-0 border-transparent transition-all font-bold;
+	word-wrap: break-word;
 }
 
 button,
+.btn,
 a.btn-primary,
 a.btn-secondary,
 a.btn-primary:visited,
 a.btn-secondary:visited {
-	@apply m-0 px-8 py-4 rounded-md font-semibold cursor-pointer transition-all shadow-lg hover:shadow-sm text-base after:content-none border-1 border-transparent hover:border-primary-400;
+	@apply m-0 px-8 py-4 rounded-md font-semibold cursor-pointer transition-all shadow-lg hover:shadow-sm text-base after:content-none border-1 border-transparent hover:border-primary-400 whitespace-normal;
 }
 
 .btn-primary {
@@ -88,7 +94,7 @@ a.btn-secondary:visited {
 }
 
 .base-grid {
-	@apply grid grid-cols-[minmax(0,_1fr)] gap-4;
+	@apply grid grid-cols-[minmax(0,_1fr)] gap-6 lg:gap-12;
 }
 
 .base-flex {
@@ -97,24 +103,4 @@ a.btn-secondary:visited {
 
 time {
 	@apply text-inherit dark:text-inherit;
-}
-
-.speaker-card {
-	@apply bg-surface-50/10 w-max;
-}
-
-.speaker-card img {
-	@apply max-h-64 w-64 object-cover;
-}
-
-.speaker-card > .speaker-wrapper {
-	@apply object-cover max-w-xs text-center pb-2;
-}
-
-.speaker-card .name {
-	@apply mt-2 text-lg;
-}
-
-.speaker-card .handle {
-	@apply text-base;
 }

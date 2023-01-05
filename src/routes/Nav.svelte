@@ -1,5 +1,4 @@
 <script>
-	import { slide } from 'svelte/transition';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
 	import { storeLightSwitch } from '$stores';
@@ -14,17 +13,6 @@
 	};
 
 	const toggleNav = () => (checked = !checked);
-
-	function fadeSlide(node, options) {
-		const slideTrans = slide(node, options);
-		return {
-			duration: options.duration,
-			css: (t) => `
-				${slideTrans.css(t)}
-				opacity: ${t};
-			`
-		};
-	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} bind:innerWidth />
@@ -40,15 +28,14 @@
 <!-- End checkbox -->
 
 <!-- Mobile Nav -->
-{#if checked && innerWidth < 1024}
+{#if innerWidth < 1024}
 	<nav
 		use:clickOutside
 		on:outclick={toggleNav}
-		transition:fadeSlide={{ duration: 300 }}
+		class="grid gap-2 bg-secondary-100 dark:bg-primary-900 absolute right-0 -top-[500px] rounded-bl-xl p-8 pr-16 transform transition-transform ease-out"
 		class:checked
-		class="grid gap-2 bg-secondary-100 dark:bg-primary-900 "
 	>
-		<div class="grid gap-2 ">
+		<div class="grid gap-2">
 			<Links {toggleNav} />
 		</div>
 		<BubbleToggle />
@@ -85,6 +72,6 @@
 
 <style lang="postcss">
 	.checked {
-		@apply grid fixed top-0 right-0 shadow-lg p-8 pr-16 rounded-bl-xl;
+		@apply translate-y-[500px];
 	}
 </style>

@@ -19,14 +19,21 @@
 	};
 </script>
 
-<ul class:limit class="px-4 lg:p-0 flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+<ul
+	class:limit
+	class="px-4 lg:p-0 flex flex-wrap justify-center gap-8 max-w-6xl mx-auto rounded-xl"
+>
 	{#each events as { speakers, guests, title, date, thumbnail, eventUrl, slug }}
 		<li
-			class="bg-surface-50/10 min-w-fit transform transition-transform hover:scale-[100.05%] shadow-xl hover:shadow-sm"
+			class="bg-surface-50/10 min-w-fit transform transition-transform hover:scale-[100.05%] shadow-xl hover:shadow-sm rounded-xl"
 		>
 			<div class="card card-glass grid content-between h-full grid-rows-[1fr_auto]">
-				<a data-sveltekit-preload-code href={`/events/${slug}`} class="unstyled grid">
-					<img src={thumbnail} alt={title} class="w-full object-cover max-w-xs" />
+				<a
+					data-sveltekit-preload-code
+					href={`/events/${slug}`}
+					class="unstyled grid grid-rows-[auto_1fr]"
+				>
+					<img src={thumbnail} alt={title} class="w-full object-cover max-w-xs rounded-t-xl" />
 					{#if upcoming}
 						<h4 class="px-4 py-2 max-w-xs">{title}</h4>
 						<time class="px-4 pb-4" datetime={new Date(date).toISOString()}>
@@ -34,34 +41,30 @@
 							<span>{new Date(date).toLocaleTimeString('en-GB', timeFormat)} GMT </span>
 						</time>
 					{:else}
-						<h4 class="max-w-xs grid p-4 self-end">{title}</h4>
+						<h4 class="max-w-xs grid px-4 py-2">{title}</h4>
 					{/if}
 				</a>
 				{#if guests}
 					<footer>
 						{#each guests as { picture, name, handle, handleUrl, slug }}
-							<div>
-								<img src={picture} alt={name} class="speaker" />
-								<div class="grid">
-									<a href="/speakers/{slug}">{name}</a>
-									<a href={handleUrl} rel="noopener noreferrer" target="_blank">
-										<span>{handle}</span>
-									</a>
-								</div>
+							<img src={picture} alt={name} class="speaker" />
+							<div class="grid">
+								<a href="/speakers/{slug}">{name}</a>
+								<a href={handleUrl} rel="noopener noreferrer" target="_blank">
+									<span>{handle}</span>
+								</a>
 							</div>
 						{/each}
 					</footer>
 				{:else}
 					<footer>
 						{#each speakers as { picture, name, handleUrl, handle, slug }}
-							<div>
-								<img src={picture} alt={name} class="speaker" />
-								<div class="grid">
-									<a href="/speakers/{slug}">{name}</a>
-									<a href={handleUrl} rel="noopener noreferrer" target="_blank">
-										<span>{handle}</span>
-									</a>
-								</div>
+							<img src={picture} alt={name} class="speaker" />
+							<div class="grid">
+								<a href="/speakers/{slug}">{name}</a>
+								<a href={handleUrl} rel="noopener noreferrer" target="_blank">
+									<span>{handle}</span>
+								</a>
 							</div>
 						{/each}
 					</footer>
@@ -72,19 +75,14 @@
 </ul>
 
 <style lang="postcss">
+	footer {
+		@apply dark:drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)] border-t-1 border-primary-400 flex gap-4 p-4;
+	}
 	.limit {
-		@apply lg:flex-nowrap lg:overflow-x-auto lg:justify-start;
+		@apply justify-center max-w-2xl;
 	}
 
-	.card-glass footer {
-		@apply dark:drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)] border-t-1 border-primary-400;
-	}
-
-	.card-glass footer > div {
-		@apply flex gap-4 p-4;
-	}
-
-	.card-glass .speaker {
+	.speaker {
 		@apply w-[50px] h-[50px] object-cover rounded-full border-2 border-primary-200;
 	}
 </style>
