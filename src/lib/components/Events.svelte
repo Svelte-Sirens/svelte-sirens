@@ -78,6 +78,7 @@
 	footer {
 		@apply dark:drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)] border-t-1 border-primary-400 flex gap-4 p-4;
 	}
+
 	.limit {
 		@apply justify-center max-w-2xl;
 	}

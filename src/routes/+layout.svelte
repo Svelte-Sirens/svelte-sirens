@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount, onDestroy } from 'svelte';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '../app.css';
@@ -6,14 +6,21 @@
 	import Head from '$components/Head.svelte';
 	import Header from './Header.svelte';
 	import Bubbles from '$components/bubbles/Bubbles.svelte';
-	let main;
+	let main: HTMLElement | null;
 	let yScroll;
+
+	function scrollHandler(e: any): void {
+		yScroll = e.target.scrollTop;
+		console.log(yScroll);
+	}
 
 	onMount(() => {
 		main = document.getElementById('page');
-		main.addEventListener('scroll', (e) => {
-			yScroll = e.target.scrollTop;
-		});
+		main?.addEventListener('scroll', scrollHandler);
+	});
+
+	onDestroy(() => {
+		main?.removeEventListener('scroll', scrollHandler);
 	});
 </script>
 
