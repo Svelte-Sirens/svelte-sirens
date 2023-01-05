@@ -19,7 +19,7 @@
 		document.documentElement.dataset.theme = newTheme;
 		document.documentElement.classList.remove(oldTheme);
 		document.documentElement.classList.add(newTheme);
-	
+
 		Cookie.set('theme', newTheme);
 	}
 
@@ -32,10 +32,10 @@
 	// Sets the color scheme based on the cookie or OS preference in
 	// the <head> of the document.
 	function init() {
-		console.log({$storeLightSwitch})
+		console.log({ $storeLightSwitch });
 
 		if (!['dark', 'light'].includes(Cookie.get('theme'))) {
-			console.log('defaulted to: ' + $storePrefersDarkScheme ? 'dark' : 'light')
+			console.log('defaulted to: ' + $storePrefersDarkScheme ? 'dark' : 'light');
 
 			Cookie.set('theme', $storePrefersDarkScheme ? 'dark' : 'light');
 			$storeLightSwitch = $storePrefersDarkScheme;
@@ -51,7 +51,7 @@
 		// Set the Store Value
 		storeLightSwitch.set(($storeLightSwitch = !$storeLightSwitch));
 		// Apply to <html> Element
-			update();
+		update();
 		/** @event {{ event }} click - Fires when the component is clicked.  */
 		dispatch('click', event);
 	}
@@ -75,7 +75,7 @@
 		init();
 	});
 
-	$: console.log({ $storeLightSwitch })
+	$: console.log({ $storeLightSwitch });
 </script>
 
 <!-- prettier-ignore -->
