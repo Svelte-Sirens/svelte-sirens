@@ -14,8 +14,8 @@
 
 {#each links as { href, name }}
 	<a
-		class:dark={$storeLightSwitch ? $page.url.pathname == href : ''}
-		class:active={$storeLightSwitch ? '' : $page.url.pathname.startsWith(href)}
+		class:dark={$storeLightSwitch}
+		class:active={$page.url.pathname.startsWith(href)}
 		data-sveltekit-preload-code
 		{href}
 		on:click={toggleNav}>{name}</a
@@ -27,8 +27,9 @@
 		@apply font-heading font-bold hover:underline decoration-wavy decoration-primary-400 after:content-none;
 		text-underline-offset: 0.25rem;
 	}
-	a.active {
-		@apply text-primary-900 underline after:w-full after:bg-primary-400;
+
+	.active {
+		@apply underline after:w-full after:bg-primary-400;
 	}
 
 	.dark {
