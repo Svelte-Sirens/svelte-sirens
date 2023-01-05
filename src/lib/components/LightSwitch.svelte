@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { SlideToggle } from '@skeletonlabs/skeleton';
 	import { storeLightSwitch, storePrefersDarkScheme } from '$stores';
 	import { createEventDispatcher, beforeUpdate } from 'svelte';
+	import { SlideToggle } from '@skeletonlabs/skeleton';
+	import Cookie from 'js-cookie';
+
 	// Event Handler
 	const dispatch = createEventDispatcher();
 	// Stores
@@ -10,41 +12,46 @@
 	type OnKeyDownEvent = KeyboardEvent & { currentTarget: EventTarget & HTMLDivElement };
 
 	// Toggles a 'dark' class on the <html> element
-	function setElemHtmlClass(): void {
-		const elemHtmlClassList = document.documentElement.classList;
-		// Update HTML element class
-		$storeLightSwitch ? elemHtmlClassList.add('dark') : elemHtmlClassList.remove('dark');
+	function update(): void {
+		const newTheme = $storeLightSwitch ? 'dark' : 'light';
+		const oldTheme = $storeLightSwitch ? 'light' : 'dark';
+
+		document.documentElement.dataset.theme = newTheme;
+		document.documentElement.classList.remove(oldTheme);
+		document.documentElement.classList.add(newTheme);
+	
+		Cookie.set('theme', newTheme);
 	}
 
 	// Set the users system prefers for light/dark mode
 	function setPrefersDarkScheme(): void {
 		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		storePrefersDarkScheme.set(prefersDark);
-		// If $storeLightSwitch not set, match the OS preference
-		if ($storeLightSwitch === undefined) {
-			$storeLightSwitch = $storePrefersDarkScheme;
-		}
 	}
 
-	// Sets the color scheme based on localStorage or OS preference in
+	// Sets the color scheme based on the cookie or OS preference in
 	// the <head> of the document.
-	function setColorScheme() {
-		if (
-			localStorage.getItem('storeLightSwitch') === 'true' ||
-			(!('storeLightSwitch' in localStorage) &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
+	function init() {
+		console.log({$storeLightSwitch})
+
+		if (!['dark', 'light'].includes(Cookie.get('theme'))) {
+			console.log('defaulted to: ' + $storePrefersDarkScheme ? 'dark' : 'light')
+
+			Cookie.set('theme', $storePrefersDarkScheme ? 'dark' : 'light');
+			$storeLightSwitch = $storePrefersDarkScheme;
 		}
+
+		$storeLightSwitch = Cookie.get('theme') == 'dark';
+
+		update();
 	}
+
 	// On Click Handler
 	function onClick(event: OnClickEvent): void {
 		// Set the Store Value
 		storeLightSwitch.set(($storeLightSwitch = !$storeLightSwitch));
 		// Apply to <html> Element
-		setElemHtmlClass();
+			update();
 		/** @event {{ event }} click - Fires when the component is clicked.  */
 		dispatch('click', event);
 	}
@@ -61,15 +68,16 @@
 
 	// Lifecycle
 	beforeUpdate(() => {
-		setColorScheme();
 		// Determine OS Preference
 		setPrefersDarkScheme();
+
+		// Init theme
+		init();
 	});
+
+	$: console.log({ $storeLightSwitch })
 </script>
 
-<svelte:head>
-	{@html `<script>${setColorScheme.toString()} setColorScheme();</script>`}
-</svelte:head>
 <!-- prettier-ignore -->
 <SlideToggle
 size="sm"

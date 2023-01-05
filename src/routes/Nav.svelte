@@ -2,7 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
-	import { storeLightSwitch } from '@skeletonlabs/skeleton';
+	import { storeLightSwitch } from '$stores';
 	import LightSwitch from '$components/LightSwitch.svelte';
 	import { clickOutside } from '$lib/utils/clickOutside';
 
