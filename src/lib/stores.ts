@@ -7,4 +7,7 @@ export const bubbles: Writable<boolean> = localStorageStore('bubbles', true);
 export const storePrefersDarkScheme = writable<boolean>(false);
 
 // User Selected Mode - TRUE: dark | FALSE: light | undefined: use system preference
-export const storeLightSwitch = writable<boolean | undefined>(undefined);
+export const storeLightSwitch = localStorageStore<boolean | undefined>(
+	'storeLightSwitch',
+	undefined
+);

@@ -1,7 +1,6 @@
 <script>
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
-	import { storeLightSwitch } from '$stores';
 	import LightSwitch from '$components/LightSwitch.svelte';
 	import { clickOutside } from '$lib/utils/clickOutside';
 
@@ -40,33 +39,19 @@
 		</div>
 		<BubbleToggle />
 		<div class="grid gap-1 grid-rows-2 place-items-start">
-			<span>
-				{#if $storeLightSwitch}
-					Dark
-				{:else}
-					Light
-				{/if}
-			</span>
 			<LightSwitch />
 		</div>
 	</nav>
 	<!-- Large window Nav -->
 {:else if innerWidth >= 1024}
 	<nav class="flex gap-4 bg-transparent dark:bg-transparent">
+		<div class="grid gap-1 grid-rows-2 place-items-center">
+			<LightSwitch />
+		</div>
 		<div class="absolute h-12 flex items-center gap-8 left-1/2 -translate-x-1/2">
 			<Links {toggleNav} />
 		</div>
 		<BubbleToggle />
-		<div class="grid gap-1 grid-rows-2 place-items-center">
-			<span>
-				{#if $storeLightSwitch}
-					Dark
-				{:else}
-					Light
-				{/if}
-			</span>
-			<LightSwitch />
-		</div>
 	</nav>
 {/if}
 

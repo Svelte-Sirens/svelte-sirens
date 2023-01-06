@@ -11,16 +11,16 @@
 	type OnClickEvent = MouseEvent & { currentTarget: EventTarget & HTMLDivElement };
 	type OnKeyDownEvent = KeyboardEvent & { currentTarget: EventTarget & HTMLDivElement };
 
+	// check the store for dark or light mode
+	$: checkTheme = () => ($storeLightSwitch ? 'dark' : 'light');
+
 	// Toggles a 'dark' class on the <html> element
 	function update(): void {
-		const newTheme = $storeLightSwitch ? 'dark' : 'light';
-		const oldTheme = $storeLightSwitch ? 'light' : 'dark';
+		document.documentElement.dataset.theme = checkTheme();
+		if (checkTheme() === 'light') document.documentElement.classList.remove('dark');
+		else document.documentElement.classList.add(checkTheme());
 
-		document.documentElement.dataset.theme = newTheme;
-		document.documentElement.classList.remove(oldTheme);
-		document.documentElement.classList.add(newTheme);
-
-		Cookie.set('theme', newTheme);
+		Cookie.set('theme', checkTheme());
 	}
 
 	// Set the users system prefers for light/dark mode
@@ -87,6 +87,9 @@ size="sm"
 	aria-checked={$storeLightSwitch}
 	title="Toggle {$storeLightSwitch ? 'Light' : 'Dark'} Mode"
 	tabindex="0"
+  class="relative top-4 right-2"
 >
-
+<span class="absolute -top-[26px] left-1/4 transform -translate-x-1/4 text-xs">
+  {checkTheme().toUpperCase()}
+</span>
 </SlideToggle>

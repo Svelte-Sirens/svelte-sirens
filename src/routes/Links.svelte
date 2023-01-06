@@ -15,11 +15,13 @@
 {#each links as { href, name }}
 	<a
 		class:dark={$storeLightSwitch}
-		class:active={$page.url.pathname.startsWith(href)}
+		class:active={$page.url.pathname === href}
 		data-sveltekit-preload-code
 		{href}
-		on:click={toggleNav}>{name}</a
+		on:click={toggleNav}
 	>
+		{name}
+	</a>
 {/each}
 
 <style lang="postcss">
@@ -33,6 +35,6 @@
 	}
 
 	.dark {
-		@apply text-primary-100 underline after:w-full after:bg-primary-400;
+		@apply text-primary-100 after:w-full after:bg-primary-400;
 	}
 </style>

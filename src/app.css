@@ -25,11 +25,11 @@ body {
 }
 
 main {
-	@apply max-w-7xl mx-auto grid gap-10 lg:gap-20 p-4 xl:p-0;
+	@apply max-w-7xl mx-auto grid gap-10 lg:gap-20 p-4 xl:p-0 mb-6;
 }
 
 main > section {
-	@apply grid grid-cols-[minmax(0,_1fr)] gap-6 lg:gap-12;
+	@apply grid grid-cols-[minmax(0,_1fr)] gap-6 lg:gap-8;
 }
 
 h1,
