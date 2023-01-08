@@ -1,6 +1,7 @@
 <script>
 	import SpeakerCard from '$components/SpeakerCard.svelte';
 	import { Divider } from '@skeletonlabs/skeleton';
+	import Siren from '$components/Siren.svelte';
 
 	const founders = [
 		{
@@ -26,7 +27,7 @@
 
 <article class="base-grid">
 	<h1>About Svelte Sirens</h1>
-	<img src="/images/favicon.png" alt="logo" class="float-in siren" />
+	<Siren classes="max-w-[400px] w-full" />
 	<p>
 		The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 		people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone who

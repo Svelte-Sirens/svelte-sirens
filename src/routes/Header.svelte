@@ -24,6 +24,6 @@
 
 <style>
 	.scrolled {
-		@apply shadow-lg;
+		@apply shadow-lg transition-shadow;
 	}
 </style>
