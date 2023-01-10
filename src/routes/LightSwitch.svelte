@@ -3,6 +3,7 @@
 	import { createEventDispatcher, beforeUpdate } from 'svelte';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
 	import Cookie from 'js-cookie';
+	import ToggleLabel from './ToggleLabel.svelte';
 
 	// Event Handler
 	const dispatch = createEventDispatcher();
@@ -87,7 +88,5 @@ size="sm"
 	tabindex="0"
   class="relative top-4 right-2"
 >
-<span class="absolute -top-[26px] left-1/4 transform -translate-x-1/4 text-xs">
-  {checkTheme().toUpperCase()}
-</span>
+<ToggleLabel label={checkTheme().toUpperCase()} />
 </SlideToggle>

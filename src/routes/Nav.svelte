@@ -1,7 +1,7 @@
 <script>
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
-	import LightSwitch from '$components/LightSwitch.svelte';
+	import LightSwitch from './LightSwitch.svelte';
 	import { clickOutside } from '$lib/utils/clickOutside';
 
 	let checked = false;
