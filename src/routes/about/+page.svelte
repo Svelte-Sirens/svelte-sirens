@@ -82,8 +82,8 @@
 		</p>
 	</section>
 	<section class="flex flex-wrap justify-around gap-20 items-start">
-		{#each founders as { name, handle, img, slug: speaker }}
-			<SpeakerCard {img} {name} {speaker} {handle} />
+		{#each founders as { name, handle, img, slug }}
+			<SpeakerCard {img} {name} {slug} {handle} />
 		{/each}
 	</section>
 </article>
