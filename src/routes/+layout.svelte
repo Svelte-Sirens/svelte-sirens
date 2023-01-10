@@ -1,29 +1,34 @@
-<script>
-	import '$styles/styles.scss';
-
-	import Head from '$layout/head.svelte';
-	import Header from '$layout/header.svelte';
+<script lang="ts">
+	import { onMount, onDestroy } from 'svelte';
+	import '@skeletonlabs/skeleton/styles/all.css';
+	import '../app.css';
+	import { AppShell } from '@skeletonlabs/skeleton';
+	import Head from '$components/Head.svelte';
+	import Header from './Header.svelte';
 	import Bubbles from '$components/bubbles/Bubbles.svelte';
+	let main: HTMLElement | null;
+	let yScroll;
+
+	function scrollHandler(e: any): void {
+		yScroll = e.target.scrollTop;
+		console.log(yScroll);
+	}
+
+	onMount(() => {
+		main = document.getElementById('page');
+		main?.addEventListener('scroll', scrollHandler);
+	});
+
+	onDestroy(() => {
+		main?.removeEventListener('scroll', scrollHandler);
+	});
 </script>
 
 <Head />
-<Header />
-<main class="grid">
+<AppShell>
+	<svelte:fragment slot="header">
+		<Header {yScroll} />
+	</svelte:fragment>
 	<slot />
-</main>
-<Bubbles />
-
-<style lang="scss">
-	main {
-		overflow-x: hidden;
-		height: 100%;
-		width: 100%;
-		color: var(--white);
-		position: relative;
-		z-index: var(--layer-2);
-		align-content: flex-start;
-		text-align: center;
-		max-width: var(--max-width);
-		margin: 0 auto var(--size-8);
-	}
-</style>
+	<Bubbles />
+</AppShell>

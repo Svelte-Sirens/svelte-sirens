@@ -5,14 +5,12 @@
 	export let form: ActionData;
 </script>
 
-<section>
-	<h1 style="margin-bottom: 16px; margin-top: 0px;">
-		Submit A Talk
-	</h1>
+<section class="block">
+	<h1 class="mb-10">Submit A Talk</h1>
 
 	<form method="POST" use:enhance>
 		<label>
-			Name *
+			<span>Name *</span>
 
 			<input
 				class:error={form?.errors?.name}
@@ -29,7 +27,7 @@
 		</label>
 
 		<label>
-			Email *
+			<span>Email *</span>
 
 			<input
 				class:error={form?.errors?.email}
@@ -46,7 +44,7 @@
 		</label>
 
 		<label>
-			Discord
+			<span>Discord</span>
 
 			<input
 				class:error={form?.errors?.discord}
@@ -62,7 +60,7 @@
 		</label>
 
 		<label>
-			Message *
+			<span>Message *</span>
 
 			<textarea
 				class:error={form?.errors?.idea}
@@ -80,87 +78,38 @@
 		<button class="btn-primary">Submit!</button>
 
 		{#if form?.success}
-			<p class="success-text">
-				Success! Your talk has been submitted
-			</p>
+			<p class="success-text">Success! Your talk has been submitted</p>
 		{/if}
 	</form>
 </section>
 
-<style>
-	section {
-		position: relative;
-		z-index: 2;
-
-		display: grid;
-		justify-self: center;
-		justify-content: center;
-		
-		max-width: 80ch;
-		padding: var(--size-5);
-
-		background: var(--color-bg);
-		border: var(--border-size-1) solid var(--light-teal);
-		border-radius: var(--radius-conditional-3);
+<style lang="postcss">
+	form {
+		@apply relative z-20 grid gap-4 self-center bg-primary-50/10 border-1 p-4 lg:px-12 lg:py-8 border-primary-400 rounded-lg;
 	}
 
 	.error-text {
-		position: relative;
-		z-index: -1;
-		
-		padding: 2px 5px 1px 5px;
-		
-		color: var(--red);
-		background: #f5f5f5BB;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
-
-		text-align: left;
-		font-size: var(--font-size-1);
-		font-weight: 400;
-
-		transform: translate(1px, -5px);
+		@apply relative -z-10 pt-[2px] px-[5px] pb-[1px] text-error-400 bg-primary-50 rounded-bl-md rounded-br-md text-left text-xs font-normal transform translate-x-[1px] -translate-y-[-5px];
 	}
 
 	.success-text {
-		margin-top: 16px;
-	}
-
-	@media (min-width: 1024px) {
-		section {
-			padding: var(--size-10);
-		}
-	}
-
-	form {
-		display: grid;
-		gap: var(--size-2);
+		@apply mt-4;
 	}
 
 	label {
-		display: grid;
-		justify-items: start;
-		gap: 2px;
+		@apply grid font-bold justify-items-start gap-[2px];
 	}
 
-	input,
+	[type='text'],
+	[type='email'],
 	textarea {
-		width: 100%;
-		min-height: 40px;
-		padding: var(--size-2);
-		
-		background: var(--white);
-		color: var(--black);
-		border-radius: var(--radius-conditional-2);
-		border: var(--size-1) solid transparent;
-		
-		font-family: var(--font-body);
-		font-weight: var(--font-weight-1);
+		@apply bg-surface-200 text-surface-900 dark:text-surface-900 w-full min-h-[40px] p-2 rounded-lg border-1 border-transparent focus:border-primary-400 font-sans font-thin;
+		background-image: none !important;
 	}
 
 	input.error,
 	textarea.error {
-		border-color: var(--red);
+		@apply border-error-400;
 	}
 
 	textarea {
@@ -169,19 +118,10 @@
 
 	input::placeholder,
 	textarea::placeholder {
-		color: #4b5150;
-		outline: none;
-		font-weight: 400;
-	}
-
-	input:focus,
-	textarea:focus {
-		outline: none;
-		border-color: var(--light-teal);
+		@apply outline-none text-surface-400 font-normal;
 	}
 
 	button {
-		justify-self: center;
 		margin-top: 16px;
 	}
 </style>

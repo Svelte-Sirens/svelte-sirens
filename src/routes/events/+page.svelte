@@ -1,34 +1,39 @@
 <script lang="ts">
-	import Latest from '$components/sections/Latest.svelte';
-	import Upcoming from '$components/sections/Upcoming.svelte';
+	import Events from '$components/Events.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
-<section class="title">
+<section class="max-w-md text-center mx-auto">
 	<h1>Events</h1>
-	<p>This is the list of all our upcoming and past talks, streams, and events!</p>
+	<p>
+		This is the list of all our upcoming and past talks, streams, and events! Events are hosted on
+		the
+		<a href="https://www.youtube.com/SvelteSociety" target="_blank" rel="noopener noreferrer">
+			Svelte Society YouTube
+		</a>
+		and
+		<a rel="noopener noreferrer" target="_blank" href="https://discord.gg/4TVdc4RRps">
+			Svelte Discord
+		</a> to chat with the community.
+	</p>
 </section>
+
+{#if data.upcomingEvents.length}
+	<section>
+		<h2 class="text-center">Upcoming Events</h2>
+		<Events upcoming events={data.upcomingEvents} />
+	</section>
+{/if}
 
 <section>
-	<h2>Upcoming Events</h2>
-	<Upcoming events={data.upcomingEvents} />
+	<h2 class="text-center">Latest Events</h2>
+	<Events events={data.latestEvents} />
 </section>
 
-<section>
-	<h2>Latest Events</h2>
-	<Latest events={data.latestEvents} />
-</section>
-
-<style lang="scss">
-    section {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .title {
-        margin-bottom: 12px;
-    }
+<style lang="postcss">
+	h2 {
+		@apply mb-4;
+	}
 </style>

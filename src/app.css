@@ -1,0 +1,123 @@
+@import './app.theme.css';
+/*place global styles here */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text&display=swap');
+
+html,
+body,
+#svelte {
+	@apply h-full overflow-hidden min-h-screen;
+}
+
+body {
+	@apply min-h-screen
+  cursor-auto
+  font-sans 
+  text-surface-900
+  dark:text-primary-50
+
+  bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
+  from-secondary-200
+  to-primary-100
+
+
+  dark:bg-[radial-gradient(222.14%_100%_at_50.03%_100%,_var(--tw-gradient-stops))] 
+  dark:from-[#213253] dark:to-secondary-700;
+}
+
+main {
+	@apply max-w-7xl mx-auto grid gap-10 lg:gap-20 p-4 xl:p-0 mb-6;
+}
+
+main > section {
+	@apply grid grid-cols-[minmax(0,_1fr)] gap-6 lg:gap-8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-heading font-bold 
+  text-primary-900
+  dark:text-surface-200 dark:drop-shadow-[2px_2px_2px_rgba(15,_23,_42,_0.7)];
+}
+
+h1 {
+	@apply mt-10 text-4xl text-center lg:text-6xl;
+}
+
+h2 {
+	@apply text-3xl lg:text-3xl;
+}
+
+h3 {
+	@apply text-2xl lg:text-4xl;
+}
+
+h4 {
+	@apply text-base lg:text-lg font-sans drop-shadow-none dark:drop-shadow-none;
+}
+
+p {
+	@apply text-lg;
+}
+
+img {
+	@apply max-w-full h-auto;
+}
+
+/* all links, overwrite skeleton */
+a:not(.unstyled):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(.card):not(
+		.list-nav a
+	),
+a.app-bar {
+	@apply text-secondary-700 dark:text-primary-200 hover:text-primary-900 no-underline dark:hover:text-primary-100 border-b-0 border-transparent transition-all font-bold;
+	word-wrap: break-word;
+}
+
+button,
+.btn,
+a.btn-primary,
+a.btn-secondary,
+a.btn-primary:visited,
+a.btn-secondary:visited {
+	@apply m-0 px-8 py-4 rounded-md font-semibold cursor-pointer transition-all shadow-lg hover:shadow-sm text-base after:content-none border-1 border-transparent hover:border-primary-400 whitespace-normal;
+}
+
+.btn-primary {
+	@apply bg-primary-200 dark:bg-primary-200 text-surface-900 dark:text-surface-900  hover:text-surface-900 hover:dark:text-surface-900;
+}
+
+.btn-secondary {
+	@apply bg-surface-900 dark:bg-surface-900 text-surface-200 dark:text-surface-200 hover:text-surface-200 hover:dark:text-surface-200;
+}
+
+.base-grid {
+	@apply grid grid-cols-[minmax(0,_1fr)] gap-6 lg:gap-12;
+}
+
+.base-flex {
+	@apply flex gap-4 flex-none flex-wrap;
+}
+
+time {
+	@apply text-inherit dark:text-inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+	.positioner {
+		animation: none;
+	}
+}
