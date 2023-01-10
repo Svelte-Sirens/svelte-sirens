@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Event } from '$data/data';
+	import CardFooter from '$components/CardFooter.svelte';
 
 	export let events: Event[];
 	export let limit = false;
@@ -47,25 +48,13 @@
 				{#if guests}
 					<footer>
 						{#each guests as { picture, name, handle, handleUrl, slug }}
-							<img src={picture} alt={name} class="speaker" />
-							<div class="grid">
-								<a href="/speakers/{slug}">{name}</a>
-								<a href={handleUrl} rel="noopener noreferrer" target="_blank">
-									<span>{handle}</span>
-								</a>
-							</div>
+							<CardFooter {picture} {name} {slug} {handleUrl} {handle} />
 						{/each}
 					</footer>
 				{:else}
 					<footer>
 						{#each speakers as { picture, name, handleUrl, handle, slug }}
-							<img src={picture} alt={name} class="speaker" />
-							<div class="grid">
-								<a href="/speakers/{slug}">{name}</a>
-								<a href={handleUrl} rel="noopener noreferrer" target="_blank">
-									<span>{handle}</span>
-								</a>
-							</div>
+							<CardFooter {picture} {name} {slug} {handleUrl} {handle} />
 						{/each}
 					</footer>
 				{/if}
@@ -81,9 +70,5 @@
 
 	.limit {
 		@apply justify-center max-w-2xl;
-	}
-
-	.speaker {
-		@apply w-[50px] h-[50px] object-cover rounded-full border-2 border-primary-200;
 	}
 </style>

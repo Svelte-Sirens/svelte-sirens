@@ -70,8 +70,6 @@
 		// Init theme
 		init();
 	});
-
-	$: console.log($storeLightSwitch);
 </script>
 
 <!-- prettier-ignore -->

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import SpeakerCard from '$components/SpeakerCard.svelte';
 
 	export let data: PageData;
 </script>
@@ -22,20 +23,8 @@
 <section class="grid gap-4 place-items-center">
 	<h2 class="text-2xl">Guest</h2>
 
-	{#each data.speakers as { picture, name, handleUrl, handle, slug }}
-		<div class="speaker-card">
-			<div class="speaker-wrapper card card-glass">
-				<img src={picture} alt={name} class="speaker" />
-
-				<h3 class="name">
-					<a href={`/speakers/${slug}`}>{name}</a>
-				</h3>
-
-				<a href={handleUrl} rel="noopener noreferrer" target="_blank" class="handle">
-					{handle}
-				</a>
-			</div>
-		</div>
+	{#each data.speakers as { picture, name, handle, slug }}
+		<SpeakerCard img={picture} {name} {handle} speaker={slug} />
 	{/each}
 </section>
 

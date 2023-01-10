@@ -11,7 +11,6 @@
 
 	function scrollHandler(e: any): void {
 		yScroll = e.target.scrollTop;
-		console.log(yScroll);
 	}
 
 	onMount(() => {

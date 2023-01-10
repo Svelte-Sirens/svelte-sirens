@@ -1,22 +1,22 @@
 <script>
 	export let img,
 		name,
-		speaker,
+		slug = null,
 		handle,
 		speakerPage = false;
 </script>
 
-<div class="speaker-card">
-	<img src={img} alt={name} />
-	<div class="speaker-wrapper card card-glass">
-		<h3 class="name">
+<div class="speaker-card" class:speakerPage>
+	<div class="card card-glass h-full">
+		<img src={img} alt={name} />
+		<div class="speaker-wrapper">
 			{#if !speakerPage}
-				<a href={`/speakers/${speaker}`}>{name}</a>
-			{:else}
-				{name}
+				<h3 class="name">
+					<a href={`/speakers/${slug}`}>{name}</a>
+				</h3>
 			{/if}
-		</h3>
-		<a href={`https://twitter.com/${handle}`} class="handle">{handle}</a>
+			<a href={`https://twitter.com/${handle}`} class="handle">{handle}</a>
+		</div>
 	</div>
 </div>
 
@@ -25,12 +25,22 @@
 		@apply bg-surface-50/10 w-max rounded-xl min-w-[280px]  transform transition-transform hover:scale-[100.05%] shadow-xl;
 	}
 
+	.speakerPage {
+		@apply w-full h-full;
+	}
+	.speakerPage img {
+		@apply max-h-full;
+	}
+	.speakerPage .speaker-wrapper {
+		@apply max-w-full relative top-2;
+	}
+
 	img {
 		@apply max-h-64 w-full object-cover rounded-t-xl;
 	}
 
 	.speaker-wrapper {
-		@apply max-w-xs text-center p-2 pb-4 rounded-t-xl grid gap-2;
+		@apply max-w-xs text-center p-2 pb-4 grid gap-2;
 	}
 
 	.name {
@@ -38,6 +48,6 @@
 	}
 
 	.handle {
-		@apply text-base;
+		@apply text-base text-center border-none;
 	}
 </style>
