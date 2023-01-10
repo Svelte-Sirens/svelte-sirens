@@ -31,14 +31,16 @@
 	<nav
 		use:clickOutside
 		on:outclick={toggleNav}
-		class="grid gap-2 bg-secondary-100 dark:bg-primary-900 absolute right-0 -top-[500px] rounded-bl-xl p-8 pr-16 transform transition-transform ease-out"
+		class="grid gap-2 bg-secondary-300 dark:bg-primary-900 absolute right-0 -top-[500px] rounded-bl-xl p-8 pr-16 transform transition-transform ease-out"
 		class:checked
 	>
 		<div class="grid gap-2">
 			<Links {toggleNav} />
 		</div>
-		<BubbleToggle />
-		<div class="grid gap-1 grid-rows-2 place-items-start">
+		<div class="toggle">
+			<BubbleToggle />
+		</div>
+		<div class="toggle">
 			<LightSwitch />
 		</div>
 	</nav>
@@ -58,5 +60,9 @@
 <style lang="postcss">
 	.checked {
 		@apply translate-y-[500px];
+	}
+
+	.toggle {
+		@apply grid gap-1 grid-rows-2 relative top-3 left-3  lg:place-items-center;
 	}
 </style>

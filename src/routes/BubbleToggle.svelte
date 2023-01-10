@@ -26,7 +26,7 @@
 	}
 </script>
 
-<div class="grid gap-1 grid-rows-2 place-items-start  lg:place-items-center">
+
 	<SlideToggle
 		size="sm"
 		bind:checked={toggle}
@@ -43,4 +43,3 @@
 			</span>
 		{/if}
 	</SlideToggle>
-</div>

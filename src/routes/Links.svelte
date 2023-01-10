@@ -26,7 +26,7 @@
 
 <style lang="postcss">
 	a {
-		@apply font-heading font-bold hover:underline decoration-wavy decoration-primary-400 after:content-none;
+		@apply font-heading font-bold hover:underline decoration-wavy decoration-primary-700 after:content-none;
 		text-underline-offset: 0.25rem;
 	}
 
@@ -35,6 +35,6 @@
 	}
 
 	.dark {
-		@apply text-primary-100 after:w-full after:bg-primary-400;
+		@apply text-primary-100 decoration-primary-400 after:w-full after:bg-primary-400;
 	}
 </style>
