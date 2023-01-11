@@ -24,10 +24,14 @@
 </script>
 
 <Head />
-<AppShell>
-	<svelte:fragment slot="header">
-		<Header {yScroll} />
-	</svelte:fragment>
-	<slot />
-	<Bubbles />
-</AppShell>
+<!-- <AppShell>
+	<svelte:fragment slot="header"> -->
+<Header {yScroll} />
+<!-- </svelte:fragment> -->
+<main id="page" class="h-full overflow-y-auto w-full pb-48">
+	<div class="grid gap-10 lg:gap-20 p-4 xl:p-0 mb-6 max-w-7xl mx-auto">
+		<slot />
+	</div>
+</main>
+<Bubbles />
+<!-- </AppShell> -->

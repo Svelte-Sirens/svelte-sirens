@@ -1,6 +1,6 @@
 <script>
 	export let label;
-	export let long;
+	export let long = null;
 </script>
 
 <span

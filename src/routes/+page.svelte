@@ -6,7 +6,9 @@
 	export let data: PageData;
 </script>
 
-<section class="grid gap-4 lg:gap-16 lg:flex lg:my-36 place-items-center text-center lg:text-left">
+<section
+	class="mx-auto grid gap-4 lg:gap-16 lg:flex lg:my-36 place-items-center text-center lg:text-left"
+>
 	<Siren classes="max-w-[400px] w-full motion-safe:animate-float" />
 	<div class="max-w-xl grid gap-6 place-items-center lg:place-items-start">
 		<GradientHeading

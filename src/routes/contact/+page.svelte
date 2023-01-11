@@ -5,7 +5,7 @@
 	export let form: ActionData;
 </script>
 
-<section class="block">
+<section class="block max-w-5xl mx-auto">
 	<h1 class="mb-10">Submit A Talk</h1>
 
 	<form method="POST" use:enhance>
