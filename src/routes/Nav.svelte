@@ -1,5 +1,5 @@
 <script>
-	import { slide } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
 	import LightSwitch from './LightSwitch.svelte';
@@ -33,7 +33,7 @@
 		<nav
 			use:clickOutside
 			on:outclick={toggleNav}
-			transition:slide={{ duration: 300 }}
+			transition:fly={{ y: '-500', duration: 500 }}
 			class="grid gap-2 bg-secondary-300 dark:bg-primary-900 fixed overflow-y-auto min-h-[368px] right-0 top-0 rounded-bl-xl p-8 pr-16 transform transition-transform ease-out z-40"
 		>
 			<div class="grid gap-2">
