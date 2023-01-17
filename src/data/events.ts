@@ -87,7 +87,7 @@ export const events: Event[] = [
 	{
 		slug: 'all-about-adapters-deploying-in-sveltekit',
 		title: 'All about Adapters - Deploying in SvelteKit',
-		embed: 'https://www.youtube.com/embed/SUrFDhhsJN',
+		embed: 'https://www.youtube.com/embed/SUrFDhhsJNo',
 		eventUrl: 'https://www.youtube.com/watch?v=SUrFDhhsJNo',
 		thumbnail: 'https://img.youtube.com/vi/SUrFDhhsJNo/maxresdefault.jpg',
 		speakers: [speakers['steph-dietz']],
