@@ -1,17 +1,19 @@
 <script>
+	import { fly } from 'svelte/transition';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import Links from './Links.svelte';
 	import LightSwitch from './LightSwitch.svelte';
 	import { clickOutside } from '$lib/utils/clickOutside';
-
-	let checked = false;
+	$: checked = false;
 	let innerWidth;
 
 	const handleKeydown = (e) => {
 		if (e.key === 'Escape') checked = !checked;
 	};
 
-	const toggleNav = () => (checked = !checked);
+	const toggleNav = () => {
+		checked = !checked;
+	};
 </script>
 
 <svelte:window on:keydown={handleKeydown} bind:innerWidth />
@@ -25,25 +27,26 @@
 	</label>
 </div>
 <!-- End checkbox -->
-
 <!-- Mobile Nav -->
 {#if innerWidth < 1024}
-	<nav
-		use:clickOutside
-		on:outclick={toggleNav}
-		class="grid gap-2 bg-secondary-300 dark:bg-primary-900 absolute right-0 -top-[500px] rounded-bl-xl p-8 pr-16 transform transition-transform ease-out"
-		class:checked
-	>
-		<div class="grid gap-2">
-			<Links {toggleNav} />
-		</div>
-		<div class="toggle">
-			<BubbleToggle />
-		</div>
-		<div class="toggle">
-			<LightSwitch />
-		</div>
-	</nav>
+	{#if checked}
+		<nav
+			use:clickOutside
+			on:outclick={toggleNav}
+			transition:fly={{ y: '-500', duration: 500 }}
+			class="grid gap-2 bg-secondary-300 dark:bg-primary-900 fixed overflow-y-auto min-h-[368px] right-0 top-0 rounded-bl-xl p-8 pr-16 transform transition-transform ease-out z-40"
+		>
+			<div class="grid gap-2">
+				<Links {toggleNav} />
+			</div>
+			<div class="toggle">
+				<BubbleToggle />
+			</div>
+			<div class="toggle">
+				<LightSwitch />
+			</div>
+		</nav>
+	{/if}
 	<!-- Large window Nav -->
 {:else if innerWidth >= 1024}
 	<nav class="flex gap-4 bg-transparent dark:bg-transparent">
