@@ -3,6 +3,16 @@ import { speakers } from './speakers';
 
 export const events: Event[] = [
 	{
+		slug: 'appwrite-svetle',
+		title: 'Appwrite + Svelte',
+		date: new Date('2023-02-17T13:00:00.000Z').getTime(),
+		id: 'VGxitFBHcJ8',
+		embed: 'https://www.youtube.com/embed/VGxitFBHcJ8',
+		eventUrl: 'https://www.youtube.com/watch?v=VGxitFBHcJ8',
+		thumbnail: 'https://img.youtube.com/vi/VGxitFBHcJ8/maxresdefault.jpg',
+		speakers: [speakers['brittney-postma']]
+	},
+	{
 		slug: 'learn-svelte',
 		title: 'Learn Svelte',
 		date: new Date('2022-10-19T13:00:00.000Z').getTime(),
