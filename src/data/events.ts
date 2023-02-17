@@ -10,7 +10,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/VGxitFBHcJ8',
 		eventUrl: 'https://www.youtube.com/watch?v=VGxitFBHcJ8',
 		thumbnail: 'https://img.youtube.com/vi/VGxitFBHcJ8/maxresdefault.jpg',
-		speakers: [speakers['brittney-postma']]
+		speakers: [speakers['alex-patterson']]
 	},
 	{
 		slug: 'learn-svelte',
