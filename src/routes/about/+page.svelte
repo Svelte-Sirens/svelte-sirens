@@ -25,7 +25,7 @@
 	];
 </script>
 
-<article class="base-grid">
+<section class="base-grid">
 	<h1>About Svelte Sirens</h1>
 	<Siren classes="max-w-[400px] w-full" />
 	<p>
@@ -50,9 +50,9 @@
 	>
 		Join the community
 	</a>
-</article>
+</section>
 <Divider borderColor="primary-100" />
-<article class="base-grid">
+<section class="base-grid">
 	<h2>Founders</h2>
 	<section class="glass grid content">
 		<p>
@@ -86,10 +86,10 @@
 			<SpeakerCard {img} {name} {slug} {handle} />
 		{/each}
 	</section>
-</article>
+</section>
 
 <style lang="postcss">
-	article {
-		@apply px-4 lg:p-0 max-w-2xl place-items-center;
+	section {
+		@apply px-4 lg:p-0 max-w-2xl mx-auto place-items-center;
 	}
 </style>
