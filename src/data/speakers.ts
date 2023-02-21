@@ -7,8 +7,8 @@ export const speakers = typeSpeakers({
 	'alex-patterson': {
 		name: 'Alex Patterson',
 		slug: 'alex-patterson',
-		handle: '@LaceyPevey',
-		handleUrl: 'https://twitter.com/LaceyPevey',
+		handle: '@codercatdev',
+		handleUrl: 'https://twitter.com/codercatdev',
 		picture:
 			'https://media.codingcat.dev/image/upload/fl_attachment:alex_patterson_headshot_1/main-codingcatdev-photo/headshots/alex_headshot_1.jpg',
 		biography: `I’m the founder of CodingCatDev, where we create “Purrfect Web Tutorials” to teach the world how to turn their development dreams into reality. I am a professional full stack developer, and I am passionate about mentoring new developers and helping the community that has allowed me to live my development dreams. I firmly believe that anyone can learn to be a developer. The CodingCatDev team is here to help!
