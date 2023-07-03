@@ -3,6 +3,16 @@ import { speakers } from './speakers';
 
 export const events: Event[] = [
 	{
+		slug: 'design-systems-lessons-learned',
+		title: 'Design Systems: Lessons Learned',
+		date: new Date('2023-07-18T14:00:00.000Z').getTime(),
+		id: 'YHZaiIGSqsE',
+		embed: 'https://www.youtube.com/embed/v=YHZaiIGSqsE',
+		eventUrl: 'https://www.youtube.com/watch?v=YHZaiIGSqsE',
+		thumbnail: 'https://img.youtube.com/vi/YHZaiIGSqsE/maxresdefault.jpg',
+		speakers: [speakers['eric-liu']]
+	},
+	{
 		slug: 'appwrite-svetle',
 		title: 'Appwrite + Svelte',
 		date: new Date('2023-02-17T13:00:00.000Z').getTime(),

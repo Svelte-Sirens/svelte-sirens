@@ -199,7 +199,9 @@ export const speakers = typeSpeakers({
 		slug: 'eric-liu',
 		handle: '@ericliuus',
 		handleUrl: 'https://twitter.com/ericliuus',
-		picture: '/images/speakers/eric-liu.jpg'
+		picture: '/images/speakers/eric-liu.jpg',
+		biography:
+			'Eric is currently a User Experience Engineer at Render and previously worked for IBM. He is the creator of Carbon Components Svelte and the Sveld Docgen library.'
 	},
 	'fred-k-schott': {
 		name: 'Fred K Schott',
