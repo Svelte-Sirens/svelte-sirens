@@ -3,17 +3,27 @@ import { speakers } from './speakers';
 
 export const events: Event[] = [
 	{
+		slug: 'medusajs-sveltekit-ecommerce-stack',
+		title: 'MedusaJS & SvelteKit: E-Commerce Stack',
+		date: new Date('2023-08-03T18:00:00.000Z').getTime(),
+		id: 'rVVHxows9dY',
+		embed: 'https://www.youtube.com/embed/rVVHxows9dY',
+		eventUrl: 'https://www.youtube.com/watch?v=rVVHxows9dY',
+		thumbnail: 'https://img.youtube.com/vi/rVVHxows9dY/maxresdefault.jpg',
+		speakers: [speakers['lacey-pevey']]
+	},
+	{
 		slug: 'design-systems-lessons-learned',
 		title: 'Design Systems: Lessons Learned',
 		date: new Date('2023-07-18T19:00:00.000Z').getTime(),
 		id: 'YHZaiIGSqsE',
-		embed: 'https://www.youtube.com/embed/v=YHZaiIGSqsE',
+		embed: 'https://www.youtube.com/embed/YHZaiIGSqsE',
 		eventUrl: 'https://www.youtube.com/watch?v=YHZaiIGSqsE',
 		thumbnail: 'https://img.youtube.com/vi/YHZaiIGSqsE/maxresdefault.jpg',
 		speakers: [speakers['eric-liu']]
 	},
 	{
-		slug: 'appwrite-svetle',
+		slug: 'appwrite-svelte',
 		title: 'Appwrite + Svelte',
 		date: new Date('2023-02-17T13:00:00.000Z').getTime(),
 		id: 'VGxitFBHcJ8',
