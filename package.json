@@ -29,6 +29,7 @@
     "prettier-plugin-svelte": "^2.10.1",
     "svelte": "^4.0.2",
     "svelte-local-storage-store": "^0.5.0",
+    "svelte-preprocess": "^5.0.4",
     "tailwindcss": "^3.3.2",
     "tailwindcss-fluid-type": "^2.0.3",
     "typescript": "^5.1.6",

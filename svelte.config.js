@@ -1,4 +1,4 @@
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-netlify';
 import path from 'path';
 
@@ -26,7 +26,11 @@ const config = {
 		}
 	},
 
-	preprocess: [vitePreprocess()]
+	preprocess: [
+		preprocess({
+			postcss: true
+		})
+	]
 
 	// vitePlugin: {
 	//   experimental: {
