@@ -3,7 +3,6 @@
 	import { createEventDispatcher, beforeUpdate } from 'svelte';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
 	import Cookie from 'js-cookie';
-	import ToggleLabel from './ToggleLabel.svelte';
 
 	// Event Handler
 	const dispatch = createEventDispatcher();
@@ -75,9 +74,9 @@
 
 <!-- prettier-ignore -->
 <SlideToggle
-name="light switch"
-size="sm"
-  bind:checked={$storeLightSwitch}
+	name="light switch"
+	size="sm"
+	bind:checked={$storeLightSwitch}
 	on:click={onClick}
 	on:keydown={onKeyDown}
 	on:keyup
@@ -87,7 +86,9 @@ size="sm"
 	aria-checked={$storeLightSwitch}
 	title="Toggle {$storeLightSwitch ? 'Light' : 'Dark'} Mode"
 	tabindex="0"
-  class="relative top-4 right-2"
->
-<ToggleLabel label={checkTheme().toUpperCase()} />
+	class="relative top-4 right-2"
+	>
+	<p class="text-xs text-slate-700 dark:text-slate-200 absolute top-[-24px] left-1">
+		{$storeLightSwitch ? 'DARK' : 'LIGHT'}
+	</p>
 </SlideToggle>

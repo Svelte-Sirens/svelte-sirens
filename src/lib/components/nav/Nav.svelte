@@ -1,19 +1,21 @@
-<script>
-	import { fly } from 'svelte/transition';
-	import BubbleToggle from './BubbleToggle.svelte';
-	import Links from './Links.svelte';
-	import LightSwitch from './LightSwitch.svelte';
+<script lang="ts">
 	import { clickOutside } from '$lib/utils/clickOutside';
+	import BubbleToggle from './BubbleToggle.svelte';
+	import LightSwitch from './LightSwitch.svelte';
+	import { fly } from 'svelte/transition';
+	import Links from './Links.svelte';
+
 	$: checked = false;
-	let innerWidth;
 
-	const handleKeydown = (e) => {
+	let innerWidth: number;
+
+	function handleKeydown(e: KeyboardEvent) {
 		if (e.key === 'Escape') checked = !checked;
-	};
+	}
 
-	const toggleNav = () => {
+	function toggleNav() {
 		checked = !checked;
-	};
+	}
 </script>
 
 <svelte:window on:keydown={handleKeydown} bind:innerWidth />

@@ -1,7 +1,7 @@
-import { writable, type Writable } from 'svelte/store';
 import { localStorageStore } from '@skeletonlabs/skeleton';
+import { writable } from 'svelte/store';
 
-export const bubbles: Writable<boolean> = localStorageStore('bubbles', true);
+export const bubbles = localStorageStore('bubbles', true);
 
 // OS Prefers Dark Scheme - TRUE: dark | FALSE: light
 export const storePrefersDarkScheme = writable<boolean>(false);
