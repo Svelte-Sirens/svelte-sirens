@@ -3,7 +3,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import Head from '$components/Head.svelte';
 	import Header from './Header.svelte';
-	import '../app.css';
+	import '../app.postcss';
 
 	let main: HTMLElement | null;
 	let yScroll;

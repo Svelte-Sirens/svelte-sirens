@@ -10,13 +10,7 @@
 >
 	<Siren classes="max-w-[400px] w-full motion-safe:animate-float" />
 	<div class="max-w-xl grid gap-6 place-items-center lg:place-items-start">
-		<h1 class="lg:text-left h1">
-			<span
-				class="box-decoration-clone text-transparent bg-clip-text bg-gradient-to-br from-primary-500 dark:from-primary-200 to-secondary-700 dark:to-secondary-500"
-			>
-				Svelte Sirens
-			</span>
-		</h1>
+		<h1 class="lg:text-left gradient-text">Svelte Sirens</h1>
 
 		<h2 class="text-lg">A Svelte Society for women, non-binary people, & allies</h2>
 
@@ -65,3 +59,11 @@
 
 	<a href="/events" class="text-center">View all of our past events</a>
 </section>
+
+<style>
+	.gradient-text {
+		@apply bg-clip-text text-transparent box-decoration-clone bg-gradient-to-r from-primary-500 dark:from-primary-200 to-secondary-700 dark:to-secondary-500;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+</style>

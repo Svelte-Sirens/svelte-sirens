@@ -87,15 +87,15 @@ export const sirensTheme: CustomThemeConfig = {
 		'--color-error-800': '127 15 71', // #7f0f47
 		'--color-error-900': '104 12 58', // #680c3a
 		// surface | #64748b
-		'--color-surface-50': '232 234 238', // #e8eaee
-		'--color-surface-100': '224 227 232', // #e0e3e8
-		'--color-surface-200': '216 220 226', // #d8dce2
-		'--color-surface-300': '193 199 209', // #c1c7d1
-		'--color-surface-400': '147 158 174', // #939eae
-		'--color-surface-500': '100 116 139', // #64748b
-		'--color-surface-600': '90 104 125', // #5a687d
-		'--color-surface-700': '75 87 104', // #4b5768
-		'--color-surface-800': '60 70 83', // #3c4653
-		'--color-surface-900': '49 57 68' // #313944
+		'--color-surface-50': '248 250 252',
+		'--color-surface-100': '241 245 249',
+		'--color-surface-200': '226 232 240',
+		'--color-surface-300': '203 213 225',
+		'--color-surface-400': '148 163 184',
+		'--color-surface-500': '100 116 139',
+		'--color-surface-600': '71 85 105',
+		'--color-surface-700': '51 65 85',
+		'--color-surface-800': '30 41 59',
+		'--color-surface-900': '15 23 42'
 	}
 };

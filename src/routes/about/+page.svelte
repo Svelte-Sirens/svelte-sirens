@@ -1,6 +1,5 @@
 <script>
 	import SpeakerCard from '$components/SpeakerCard.svelte';
-	import { Divider } from '@skeletonlabs/skeleton';
 	import Siren from '$components/Siren.svelte';
 
 	const founders = [
@@ -51,7 +50,9 @@
 		Join the community
 	</a>
 </section>
-<Divider borderColor="primary-100" />
+
+<hr />
+
 <section class="base-grid">
 	<h2>Founders</h2>
 	<section class="glass grid content">
