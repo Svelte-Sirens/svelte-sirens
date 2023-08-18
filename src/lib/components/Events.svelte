@@ -26,7 +26,7 @@
 >
 	{#each events as { speakers, guests, title, date, thumbnail, eventUrl, slug }}
 		<li
-			class="bg-surface-50/10 min-w-fit transform transition-transform hover:scale-[100.05%] shadow-xl hover:shadow-sm rounded-xl"
+			class="bg-surface-50/10 min-w-fit transform transition-transform hover:scale-[100.05%] shadow-xl hover:shadow-sm rounded-xl overflow-clip"
 		>
 			<div class="card card-glass grid content-between h-full grid-rows-[1fr_auto]">
 				<a
@@ -34,7 +34,8 @@
 					href={`/events/${slug}`}
 					class="unstyled grid grid-rows-[auto_1fr]"
 				>
-					<img src={thumbnail} alt={title} class="w-full object-cover max-w-xs rounded-t-xl" />
+					<img src={thumbnail} alt={title} class="w-full object-cover max-w-xs" />
+
 					{#if upcoming}
 						<h4 class="px-4 py-2 max-w-xs">{title}</h4>
 						<time class="px-4 pb-4" datetime={new Date(date).toISOString()}>

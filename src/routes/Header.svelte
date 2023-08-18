@@ -1,10 +1,13 @@
-<script>
-	import Nav from './Nav.svelte';
+<script lang="ts">
 	import { AppBar } from '@skeletonlabs/skeleton';
-	export let yScroll;
+	import Nav from '$components/nav/Nav.svelte';
+
+	let scrollY: number;
 </script>
 
-<div class:scrolled={yScroll > 0}>
+<svelte:window bind:scrollY />
+
+<div class:scrolled={scrollY > 0}>
 	<AppBar background="transparent" shadow="shadow-none">
 		<div slot="lead">
 			<a

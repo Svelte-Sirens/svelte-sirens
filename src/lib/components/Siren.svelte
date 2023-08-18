@@ -1,8 +1,9 @@
 <script lang="ts">
+	import Siren from '$lib/images/siren.svg';
+
 	export let classes: string;
 	export let width: number = 512;
 	export let height: number = 512;
-	import Siren from '$lib/images/siren.svg';
 </script>
 
 <img
