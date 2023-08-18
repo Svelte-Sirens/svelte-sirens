@@ -1,6 +1,10 @@
-@import './app.theme.css';
 /*place global styles here */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
 
 html,
 body,
