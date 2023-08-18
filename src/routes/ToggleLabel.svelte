@@ -1,6 +1,6 @@
-<script>
-	export let label;
-	export let long = null;
+<script lang="ts">
+	export let label: string;
+	export let long = false;
 </script>
 
 <span

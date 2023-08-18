@@ -1,7 +1,9 @@
 <script>
 	import { page } from '$app/stores';
-	import { storeLightSwitch } from '@skeletonlabs/skeleton';
+	import { storeLightSwitch } from '$lib/stores';
+
 	export let toggleNav;
+
 	let links = [
 		{ href: `/`, name: `Home` },
 		{ href: `/about`, name: `About` },

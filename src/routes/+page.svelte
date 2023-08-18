@@ -1,8 +1,7 @@
 <script lang="ts">
 	import Events from '$components/Events.svelte';
-	import { GradientHeading } from '@skeletonlabs/skeleton';
-	import type { PageData } from './$types';
 	import Siren from '$components/Siren.svelte';
+	import type { PageData } from './$types';
 	export let data: PageData;
 </script>
 
@@ -11,12 +10,14 @@
 >
 	<Siren classes="max-w-[400px] w-full motion-safe:animate-float" />
 	<div class="max-w-xl grid gap-6 place-items-center lg:place-items-start">
-		<GradientHeading
-			tag="h1"
-			from="from-primary-500 dark:from-primary-200"
-			to="to-secondary-700 dark:to-secondary-500"
-			class="lg:text-left">Svelte Sirens</GradientHeading
-		>
+		<h1 class="lg:text-left h1">
+			<span
+				class="box-decoration-clone text-transparent bg-clip-text bg-gradient-to-br from-primary-500 dark:from-primary-200 to-secondary-700 dark:to-secondary-500"
+			>
+				Svelte Sirens
+			</span>
+		</h1>
+
 		<h2 class="text-lg">A Svelte Society for women, non-binary people, & allies</h2>
 
 		<div class="grid lg:flex w-full gap-4 justify-center lg:justify-start">

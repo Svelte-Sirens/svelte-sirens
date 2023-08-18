@@ -75,6 +75,7 @@
 
 <!-- prettier-ignore -->
 <SlideToggle
+name="light switch"
 size="sm"
   bind:checked={$storeLightSwitch}
 	on:click={onClick}
