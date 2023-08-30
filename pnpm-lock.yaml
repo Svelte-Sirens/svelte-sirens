@@ -9,11 +9,11 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.0.0
   '@skeletonlabs/skeleton':
-    specifier: 2.0.0-rc.1
-    version: 2.0.0-rc.1(svelte@4.2.0)
+    specifier: 2.0.0
+    version: 2.0.0(svelte@4.2.0)
   '@skeletonlabs/tw-plugin':
-    specifier: ^0.0.0
-    version: 0.0.0(tailwindcss@3.3.3)
+    specifier: ^0.1.0
+    version: 0.1.0(tailwindcss@3.3.3)
   '@sveltejs/adapter-netlify':
     specifier: 2.0.8
     version: 2.0.8(@sveltejs/kit@1.22.6)
@@ -495,8 +495,8 @@ packages:
       tslib: 1.14.1
     dev: true
 
-  /@skeletonlabs/skeleton@2.0.0-rc.1(svelte@4.2.0):
-    resolution: {integrity: sha512-UzszIVtQDW4fPPdto3sdF/XnfNujdHCjJsdebdlLlnIq9IGDUwX/Hkf5Bsh2Dcof+BOzIR0yRcr5teqJu09YjA==}
+  /@skeletonlabs/skeleton@2.0.0(svelte@4.2.0):
+    resolution: {integrity: sha512-8SaDK3kEUU57cSb/5a984EbINgnOPzShlkwPkduAhqc71SEqhRvx+RlLEpe1174NAYi00oi//LguIAYuVrSfBA==}
     peerDependencies:
       svelte: ^3.56.0 || ^4.0.0
     dependencies:
@@ -504,8 +504,8 @@ packages:
       svelte: 4.2.0
     dev: true
 
-  /@skeletonlabs/tw-plugin@0.0.0(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-wu9F29xFFIpOAzZOkVKdjHPrn4idXixOVm5JhODupf/i0sPp0gdJ8okj0cPPAE12TIwQCbCXxLJxmHY4is9CXA==}
+  /@skeletonlabs/tw-plugin@0.1.0(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-ufnm4FS+s/khuho4yJ/uqfW91u2YXnH3E5N541MtX9XjmoimQzYIcxWyTIuX9AM/brIPP6M6l0et3nRx17CRoQ==}
     peerDependencies:
       tailwindcss: '>=3.0.0'
     dependencies:
