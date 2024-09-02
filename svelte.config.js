@@ -1,5 +1,5 @@
 import { sveltePreprocess } from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-cloudflare';
 import path from 'path';
 
 /** @type {import('@sveltejs/kit').Config} */
