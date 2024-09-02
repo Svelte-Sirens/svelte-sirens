@@ -1,3 +1,4 @@
+import { validateTurnstile } from '$lib/utils/turnstile';
 import { WEBHOOK_URL } from '$env/static/private';
 import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
@@ -26,7 +27,10 @@ const schema = z.object({
 	email: z
 		.string({ required_error: 'Email is a required field' })
 		.email({ message: 'Please give a valid email' })
-		.trim()
+		.trim(),
+	'cf-turnstile-response': z
+		.string({ required_error: 'Please solve the captcha' })
+		.min(1, 'Please solve the captcha')
 });
 
 export const actions: Actions = {
@@ -34,6 +38,7 @@ export const actions: Actions = {
 		const formData = await request.formData();
 
 		const rawData: Record<string, any> = {
+			'cf-turnstile-response': formData.get('cf-turnstile-response'),
 			discord: formData.get('discord'),
 			email: formData.get('email'),
 			name: formData.get('name'),
@@ -50,6 +55,18 @@ export const actions: Actions = {
 			});
 
 		const { data } = result;
+
+		const turnstileResult = await validateTurnstile(data['cf-turnstile-response']);
+
+		if (!turnstileResult.success) {
+			return fail(400, {
+				success: false,
+				data: rawData,
+				errors: {
+					'cf-turnstile-response': ['Please re-try the captcha']
+				}
+			});
+		}
 
 		await fetch(WEBHOOK_URL, {
 			method: 'POST',

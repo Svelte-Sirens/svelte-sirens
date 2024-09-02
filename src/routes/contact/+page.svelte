@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+	import { storeLightSwitch } from '$lib/stores';
+	import { Turnstile } from 'svelte-turnstile';
 	import type { ActionData } from './$types';
 	import { enhance } from '$app/forms';
 
@@ -74,6 +77,12 @@
 				<p class="error-text">{form?.errors?.idea[0]}</p>
 			{/if}
 		</label>
+
+		<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} theme={$storeLightSwitch ? 'dark' : 'light'} />
+
+		{#if form?.errors?.['cf-turnstile-response']}
+			<p class="error-text">{form?.errors?.['cf-turnstile-response'][0]}</p>
+		{/if}
 
 		<button class="btn-primary">Submit!</button>
 
