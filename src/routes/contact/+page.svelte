@@ -11,13 +11,19 @@
 <section class="block max-w-5xl mx-auto">
 	<h1 class="mb-10">Submit A Talk</h1>
 
-	<form method="POST" use:enhance>
+	<form
+		method="POST"
+		use:enhance={() => {
+			return async ({ update }) => {
+				await update({ reset: false });
+			};
+		}}
+	>
 		<label>
 			<span>Name *</span>
 
 			<input
 				class:error={form?.errors?.name}
-				value={form?.data?.name || ''}
 				required
 				name="name"
 				type="text"
@@ -34,7 +40,6 @@
 
 			<input
 				class:error={form?.errors?.email}
-				value={form?.data?.email || ''}
 				required
 				name="email"
 				type="email"
@@ -51,7 +56,6 @@
 
 			<input
 				class:error={form?.errors?.discord}
-				value={form?.data?.discord || ''}
 				name="discord"
 				type="text"
 				placeholder="Example#0000"
@@ -67,7 +71,6 @@
 
 			<textarea
 				class:error={form?.errors?.idea}
-				value={form?.data?.idea || ''}
 				name="idea"
 				required
 				placeholder="Tell us your ideas!"
