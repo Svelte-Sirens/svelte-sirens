@@ -81,7 +81,11 @@
 			{/if}
 		</label>
 
-		<Turnstile siteKey={PUBLIC_TURNSTILE_SITE_KEY} theme={$storeLightSwitch ? 'dark' : 'light'} />
+		<Turnstile
+			siteKey={PUBLIC_TURNSTILE_SITE_KEY}
+			theme={$storeLightSwitch ? 'dark' : 'light'}
+			size="flexible"
+		/>
 
 		{#if form?.errors?.['cf-turnstile-response']}
 			<p class="error-text">{form?.errors?.['cf-turnstile-response'][0]}</p>
