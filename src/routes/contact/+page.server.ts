@@ -1,3 +1,4 @@
+import { validateTurnstile } from '$lib/utils/turnstile';
 import { WEBHOOK_URL } from '$env/static/private';
 import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
@@ -9,47 +10,54 @@ const schema = z.object({
 	discord: z
 		.string()
 		.trim()
-		.min(1, { message: 'Discord is a required field' })
-		.max(100, { message: 'Discord must be less than 100 characters' })
+		.min(1, 'Discord is a required field')
+		.max(100, 'Discord must be less than 100 characters')
 		.optional()
 		.default('Not Submitted'),
 	name: z
 		.string({ required_error: 'Name is a required field' })
-		.min(1, { message: 'Name is a required field' })
-		.max(100, { message: 'Name must be less than 100 characters' })
+		.min(1, 'Name is a required field')
+		.max(100, 'Name must be less than 100 characters')
 		.trim(),
 	idea: z
 		.string({ required_error: 'Idea is a required field' })
-		.min(1, { message: 'Idea is a required field' })
-		.max(1200, { message: 'Idea must be less than 1200 characters' })
+		.min(1, 'Idea is a required field')
+		.max(1200, 'Idea must be less than 1200 characters')
 		.trim(),
 	email: z
 		.string({ required_error: 'Email is a required field' })
-		.email({ message: 'Please give a valid email' })
-		.trim()
+		.email('Please give a valid email')
+		.trim(),
+	'cf-turnstile-response': z
+		.string({ required_error: 'Please solve the captcha' })
+		.min(1, 'Please solve the captcha')
 });
+
+type FormErrors = z.inferFlattenedErrors<typeof schema>['fieldErrors'];
 
 export const actions: Actions = {
 	default: async ({ request }) => {
-		const formData = await request.formData();
+		const result = schema.safeParse(Object.fromEntries(await request.formData()));
 
-		const rawData: Record<string, any> = {
-			discord: formData.get('discord'),
-			email: formData.get('email'),
-			name: formData.get('name'),
-			idea: formData.get('idea')
-		};
-
-		const result = schema.safeParse(rawData);
-
-		if (result.success == false)
+		if (result.success == false) {
 			return fail(400, {
 				success: false,
-				errors: result.error.flatten().fieldErrors,
-				data: rawData
+				errors: result.error.flatten().fieldErrors as FormErrors
 			});
+		}
 
 		const { data } = result;
+
+		const turnstileResult = await validateTurnstile(data['cf-turnstile-response']);
+
+		if (!turnstileResult.success) {
+			return fail(400, {
+				success: false,
+				errors: {
+					'cf-turnstile-response': ['Please re-try the captcha']
+				} as FormErrors
+			});
+		}
 
 		await fetch(WEBHOOK_URL, {
 			method: 'POST',
@@ -72,8 +80,7 @@ export const actions: Actions = {
 		});
 
 		return {
-			success: true,
-			data: {} as Record<string, any>
+			success: true
 		};
 	}
 };

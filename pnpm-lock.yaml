@@ -65,6 +65,9 @@ devDependencies:
   svelte-preprocess:
     specifier: ^6.0.2
     version: 6.0.2(postcss-load-config@6.0.1)(postcss@8.4.44)(svelte@4.2.19)(typescript@5.5.4)
+  svelte-turnstile:
+    specifier: ^0.8.0
+    version: 0.8.0(svelte@4.2.19)
   tailwindcss:
     specifier: ^3.4.10
     version: 3.4.10
@@ -3309,6 +3312,15 @@ packages:
       typescript: 5.5.4
     dev: true
 
+  /svelte-turnstile@0.8.0(svelte@4.2.19):
+    resolution: {integrity: sha512-7sr8NoAW7P9MRjHjCkj22tV/UozPNUlWT9dw1KX/fR+xNSOhP56qSASUUgxLCgPZ0wZSl+I6ZebZ3v47B6/LaA==}
+    peerDependencies:
+      svelte: ^3.58.0 || ^4.0.0
+    dependencies:
+      svelte: 4.2.19
+      turnstile-types: 1.2.2
+    dev: true
+
   /svelte@4.2.19:
     resolution: {integrity: sha512-IY1rnGr6izd10B0A8LqsBfmlT5OILVuZ7XsI0vdGPEvuonFV7NYEUK4dAkm9Zg2q0Um92kYjTpS1CAP3Nh/KWw==}
     engines: {node: '>=16'}
@@ -3457,6 +3469,10 @@ packages:
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
+    dev: true
+
+  /turnstile-types@1.2.2:
+    resolution: {integrity: sha512-FlsojSOGe7OxdC5UXVXVyNV3zdWTSaC6tG6cLPWeTSkcBuCzPP+0xUwc1l090ISDcfDEt398GLbXopcGZesY/A==}
     dev: true
 
   /type-is@1.6.18:
