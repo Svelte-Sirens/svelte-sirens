@@ -25,7 +25,7 @@
 	</AppBar>
 </div>
 
-<style>
+<style lang="postcss">
 	.scrolled {
 		@apply shadow-lg transition-shadow;
 	}

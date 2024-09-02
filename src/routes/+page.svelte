@@ -60,7 +60,7 @@
 	<a href="/events" class="text-center">View all of our past events</a>
 </section>
 
-<style>
+<style lang="postcss">
 	.gradient-text {
 		@apply bg-clip-text text-transparent box-decoration-clone bg-gradient-to-r from-primary-500 dark:from-primary-200 to-secondary-700 dark:to-secondary-500;
 		-webkit-background-clip: text;

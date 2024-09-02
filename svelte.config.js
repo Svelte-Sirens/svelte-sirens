@@ -1,4 +1,4 @@
-import preprocess from 'svelte-preprocess';
+import { sveltePreprocess } from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-netlify';
 import path from 'path';
 
@@ -27,21 +27,14 @@ const config = {
 	},
 
 	preprocess: [
-		preprocess({
+		sveltePreprocess({
 			postcss: true
 		})
-	]
+	],
 
-	// vitePlugin: {
-	//   experimental: {
-	//     inspector: {
-	//       toggleKeyCombo: 'shift',
-	//       holdMode: false,
-	//       showToggleButton: 'always',
-	//       toggleButtonPos: 'bottom-right',
-	//     }
-	//   }
-	// },
+	vitePlugin: {
+		inspector: {}
+	}
 };
 
 export default config;

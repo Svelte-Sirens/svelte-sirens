@@ -20,7 +20,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.speaker-card {
 		@apply bg-surface-50/10 w-max rounded-xl min-w-[280px]  transform transition-transform hover:scale-[100.05%] shadow-xl;
 	}
