@@ -7,8 +7,6 @@ interface TokenValidateResponse {
 	cdata: string;
 }
 
-console.log(TURNSTILE_SECRET_KEY);
-
 export async function validateTurnstile(token: string) {
 	const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
 		method: 'POST',
