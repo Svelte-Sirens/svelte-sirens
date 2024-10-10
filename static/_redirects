@@ -1,6 +1,0 @@
-# Redirects from what the browser requests to what we serve
-/calendar          https://calendar.google.com/calendar/u/3?cid=c3ZlbHRlc2lyZW5zQGdtYWlsLmNvbQ
-/bubble-pop        https://bubble-pop-svelte.netlify.app/
-/upcoming          /events
-/latest            /events
-/latest/*          /events/:splat
