@@ -1,0 +1,7 @@
+ignoredBuiltDependencies:
+  - svelte-preprocess
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - workerd
