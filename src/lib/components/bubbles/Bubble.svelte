@@ -39,7 +39,9 @@
 <div class="positioner">
 	<div class="positioner-inner">
 		{#if !popped}
-			<div class="bubble" on:click={pop} transition:popTransition|local />
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<div class="bubble" on:click={pop} transition:popTransition|local></div>
 		{/if}
 	</div>
 </div>
@@ -69,7 +71,9 @@
 		height: var(--bubble-size);
 
 		border-radius: 100%;
-		box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0px 5px 15px 2px rgba(255, 255, 255, 1);
+		box-shadow:
+			0 10px 15px rgba(0, 0, 0, 0.2),
+			inset 0px 5px 15px 2px rgba(255, 255, 255, 1);
 
 		backdrop-filter: blur(1px);
 		filter: blur(2px);

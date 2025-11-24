@@ -61,9 +61,9 @@
 {/if}
 
 <style lang="postcss">
-	.checked {
+	/*.checked {
 		@apply translate-y-[500px];
-	}
+	}*/
 
 	.toggle {
 		@apply grid gap-1 grid-rows-2 relative top-3 left-3  lg:place-items-center;

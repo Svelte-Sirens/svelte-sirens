@@ -15,22 +15,17 @@ const schema = z.object({
 		.optional()
 		.default('Not Submitted'),
 	name: z
-		.string({ required_error: 'Name is a required field' })
+		.string()
 		.min(1, 'Name is a required field')
 		.max(100, 'Name must be less than 100 characters')
 		.trim(),
 	idea: z
-		.string({ required_error: 'Idea is a required field' })
+		.string()
 		.min(1, 'Idea is a required field')
 		.max(1200, 'Idea must be less than 1200 characters')
 		.trim(),
-	email: z
-		.string({ required_error: 'Email is a required field' })
-		.email('Please give a valid email')
-		.trim(),
-	'cf-turnstile-response': z
-		.string({ required_error: 'Please solve the captcha' })
-		.min(1, 'Please solve the captcha')
+	email: z.email('Please give a valid email').trim(),
+	'cf-turnstile-response': z.string().min(1, 'Please solve the captcha')
 });
 
 type FormErrors = z.inferFlattenedErrors<typeof schema>['fieldErrors'];

@@ -74,7 +74,7 @@
 				name="idea"
 				required
 				placeholder="Tell us your ideas!"
-			/>
+			></textarea>
 
 			{#if form?.errors?.idea}
 				<p class="error-text">{form?.errors?.idea[0]}</p>
