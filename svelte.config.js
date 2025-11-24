@@ -1,4 +1,4 @@
-import { sveltePreprocess } from 'svelte-preprocess';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-cloudflare';
 import path from 'path';
 
@@ -21,16 +21,18 @@ const config = {
 			checkOrigin: import.meta?.env?.MODE == 'dev'
 		},
 
-		prerender: {
-			crawl: true
+		experimental: {
+			remoteFunctions: true
 		}
 	},
 
-	preprocess: [
-		sveltePreprocess({
-			postcss: true
-		})
-	],
+	compilerOptions: {
+		experimental: {
+			async: true
+		}
+	},
+
+	preprocess: vitePreprocess(),
 
 	vitePlugin: {
 		inspector: {}

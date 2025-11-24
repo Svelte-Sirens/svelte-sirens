@@ -1,8 +1,16 @@
 <script lang="ts">
-	import { SlideToggle } from '@skeletonlabs/skeleton';
-	import { bubbles } from '$lib/stores';
+	import { bubbles } from '$components/bubbles/Bubbles.svelte';
+	import { Switch } from '@skeletonlabs/skeleton-svelte';
 </script>
 
-<SlideToggle size="sm" name="Toggle Bubbles" bind:checked={$bubbles} class="relative top-4 right-2">
-	<p class="text-xs text-slate-700 dark:text-slate-200 absolute top-[-24px] left-[-8px]">BUBBLES</p>
-</SlideToggle>
+<Switch
+	name="Toggle Bubbles"
+	checked={bubbles.current}
+	onCheckedChange={(event) => (bubbles.current = event.checked)}
+>
+	<Switch.Label class="text-secondary-700 dark:text-primary-200">Bubbles</Switch.Label>
+	<Switch.Control>
+		<Switch.Thumb />
+	</Switch.Control>
+	<Switch.HiddenInput />
+</Switch>

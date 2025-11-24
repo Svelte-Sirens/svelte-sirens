@@ -1,6 +1,6 @@
 <script>
 	import SpeakerCard from '$components/SpeakerCard.svelte';
-	import Siren from '$components/Siren.svelte';
+	import Siren from '$lib/images/Siren.svelte';
 
 	const founders = [
 		{
@@ -24,9 +24,10 @@
 	];
 </script>
 
-<section class="base-grid">
+<section>
 	<h1>About Svelte Sirens</h1>
-	<Siren classes="max-w-[400px] w-full" />
+	<Siren class="max-w-[400px] mx-auto" />
+
 	<p>
 		The Svelte Sirens are a Svelte Society that focuses on supporting the women and non-binary
 		people in the <a href="https://svelte.dev/">Svelte</a> community. However, we welcome anyone who
@@ -41,8 +42,9 @@
 		of the best ways to be an ally is to educate yourself on the basics of gender identity, expression,
 		and inequality, so that you can better support others.
 	</p>
+
 	<a
-		class="btn btn-primary"
+		class="btn preset-filled"
 		rel="noopener noreferrer"
 		target="_blank"
 		href="https://discord.gg/4TVdc4RRps"
@@ -51,11 +53,9 @@
 	</a>
 </section>
 
-<hr />
-
-<section class="base-grid">
+<section>
 	<h2>Founders</h2>
-	<section class="glass grid content">
+	<div class="glass grid content">
 		<p>
 			The original idea for the Svelte Sirens came from
 			<a rel="noopener noreferrer" target="_blank" href="https://www.swyx.io/">
@@ -81,16 +81,24 @@
 			</a>
 			in our community. Welcome!
 		</p>
-	</section>
-	<section class="flex flex-wrap justify-around gap-20 items-start">
+	</div>
+
+	<div class="flex flex-wrap justify-around gap-20 items-start">
 		{#each founders as { name, handle, img, slug }}
 			<SpeakerCard {img} {name} {slug} {handle} />
 		{/each}
-	</section>
+	</div>
 </section>
 
-<style lang="postcss">
+<style>
 	section {
-		@apply px-4 lg:p-0 max-w-2xl mx-auto place-items-center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: calc(var(--spacing) * 8);
+
+		max-width: var(--container-2xl);
+		text-align: center;
+		margin: 0 auto;
 	}
 </style>

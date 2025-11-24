@@ -46,7 +46,9 @@
 	</div>
 </div>
 
-<style lang="postcss">
+<style>
+	@reference '$lib/app.css';
+
 	.positioner {
 		--bubble-size: calc(200px * var(--scale));
 
