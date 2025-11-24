@@ -10,7 +10,7 @@
 
 <p>It looks like this page doesn't exist.</p>
 
-<h2>{$page.status}: {$page.error.message}</h2>
+<h2>{$page.status}: {$page.error?.message}</h2>
 
 <style>
 	h1 {
