@@ -1,7 +1,7 @@
-<script>
-	import { page } from '$app/stores';
+<script lang="ts">
+	import { page } from '$app/state';
 
-	const capitalize = (str, lower = false) =>
+	const capitalize = (str: string, lower = false) =>
 		(lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
 			match.toUpperCase(),
 		);
@@ -9,12 +9,17 @@
 	const img = 'https://www.sveltesirens.dev/og.png';
 	const desc = 'Svelte Sirens is a Svelte Society for women, non-binary people, & allies.';
 
-	$: title =
-		$page.url.pathname === '/' || $page.url.pathname.includes('//prerender/')
-			? 'Svelte Sirens'
-			: `${capitalize(
-					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' '),
-				)} | Svelte Sirens`;
+	const title = $derived.by(() => {
+		if (page.url.pathname === '/' || page.url.pathname.includes('//prerender/')) {
+			return 'Svelte Sirens';
+		}
+
+		const name = capitalize(
+			page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' '),
+		);
+
+		return `${name} | Svelte Sirens`;
+	});
 </script>
 
 <svelte:head>
@@ -23,7 +28,7 @@
 
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={`https://www.sveltesirens.dev${$page.url.pathname}`} />
+	<meta property="og:url" content="https://www.sveltesirens.dev{page.url.pathname}" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
 	<meta property="og:image" content={img} />

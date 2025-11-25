@@ -1,9 +1,13 @@
 <script lang="ts">
-	export let img: string;
-	export let name: string;
-	export let slug: string | null = null;
-	export let handle: string;
-	export let speakerPage = false;
+	interface Props {
+		img: string;
+		name: string;
+		slug?: string | null;
+		handle: string;
+		speakerPage?: boolean;
+	}
+
+	const { img, name, slug = null, handle, speakerPage = false }: Props = $props();
 </script>
 
 <div class="speaker-card" class:speakerPage>

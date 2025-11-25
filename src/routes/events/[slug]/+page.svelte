@@ -1,8 +1,7 @@
 <script lang="ts">
 	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
-	import type { PageData } from './$types';
 
-	export let data: PageData;
+	const { data } = $props();
 </script>
 
 <section class="p-4 lg:p-0">
@@ -29,13 +28,12 @@
 </section>
 
 <style>
-	@reference '$lib/app.css';
-
 	.video-wrapper {
 		position: relative;
 		padding-bottom: 56.25%;
 		height: 0;
 	}
+
 	iframe {
 		position: absolute;
 		top: 0;

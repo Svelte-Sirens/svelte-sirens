@@ -1,8 +1,7 @@
 <script lang="ts">
 	import Events from '$lib/components/Events.svelte';
-	import type { PageData } from './$types';
 
-	export let data: PageData;
+	const { data } = $props();
 </script>
 
 <section class="mx-auto max-w-md text-center">

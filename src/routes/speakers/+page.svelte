@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
 	import { speakers } from '$data/speakers';
 </script>

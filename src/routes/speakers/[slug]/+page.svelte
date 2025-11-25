@@ -1,9 +1,8 @@
 <script lang="ts">
 	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
-	import type { PageData } from './$types';
-	export let data: PageData;
 
-	const { picture, handle, name, biography } = data.speaker;
+	const { data } = $props();
+	const { picture, handle, name, biography } = $derived(data.speaker);
 </script>
 
 <article class="mx-auto grid max-w-lg gap-6">
@@ -13,9 +12,7 @@
 		<SpeakerCard speakerPage img={picture} {name} {handle} />
 		{#if data.biography}
 			<!-- TODO sanitise -->
-			<p>
-				{@html biography}
-			</p>
+			<p>{@html biography}</p>
 		{/if}
 	</section>
 </article>

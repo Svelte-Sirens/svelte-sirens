@@ -2,9 +2,13 @@
 	import CardFooter from '$lib/components/CardFooter.svelte';
 	import type { Event } from '$data/data';
 
-	export let events: Event[];
-	export let limit = false;
-	export let upcoming = false;
+	interface Props {
+		events: Event[];
+		limit?: boolean;
+		upcoming?: boolean;
+	}
+
+	let { events, limit = false, upcoming = false }: Props = $props();
 
 	const dateFormat: Intl.DateTimeFormatOptions = {
 		weekday: 'long',

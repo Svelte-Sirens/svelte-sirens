@@ -1,16 +1,18 @@
 import type { PageServerLoad } from './$types';
 import { speakers } from '$data/speakers';
-import { marked } from 'marked';
 import { error } from '@sveltejs/kit';
-import type { Speaker } from '$data/data';
+import { marked } from 'marked';
+
+function isSpeakerKey(key: string): key is keyof typeof speakers {
+	return key in speakers;
+}
 
 export const load: PageServerLoad = ({ params }) => {
-	const speaker = speakers[params.slug] as Speaker | undefined;
-
-	if (!speaker) throw error(404, `Speaker ${params.slug} not found`);
+	const speaker = isSpeakerKey(params.slug) ? speakers[params.slug] : null;
+	if (!speaker) throw error(404, `Speaker "${params.slug}" not found`);
 
 	return {
 		speaker,
-		biography: speaker.biography ? marked(speaker.biography) : undefined,
+		biography: speaker.biography ? marked(speaker.biography) : null,
 	};
 };

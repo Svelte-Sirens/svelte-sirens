@@ -5,6 +5,8 @@
 	import Head from '$lib/components/Head.svelte';
 	import { theme } from '$lib/theme.svelte';
 
+	let { children } = $props();
+
 	theme.watch();
 </script>
 
@@ -14,6 +16,6 @@
 <main class="w-full pb-48">
 	<Nav />
 	<div class="mx-auto mb-6 grid max-w-7xl gap-10 p-4 lg:gap-20 xl:p-0">
-		<slot />
+		{@render children()}
 	</div>
 </main>

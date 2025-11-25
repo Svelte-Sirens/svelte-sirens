@@ -1,8 +1,7 @@
-import type { PageServerLoad } from './$types';
 import { events } from '$data/events';
 import { error } from '@sveltejs/kit';
 
-export const load: PageServerLoad = ({ params }) => {
+export function load({ params }) {
 	const event = events.find((event) => event.slug == params.slug);
 
 	if (!event) {
@@ -14,4 +13,4 @@ export const load: PageServerLoad = ({ params }) => {
 		embed: event.embed,
 		speakers: event.speakers,
 	};
-};
+}
