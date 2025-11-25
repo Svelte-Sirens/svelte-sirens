@@ -14,9 +14,9 @@
 			return 'Svelte Sirens';
 		}
 
-		const name = capitalize(
-			page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' '),
-		);
+		const name = page.error
+			? `Error ${page.status}`
+			: capitalize(page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' '));
 
 		return `${name} | Svelte Sirens`;
 	});

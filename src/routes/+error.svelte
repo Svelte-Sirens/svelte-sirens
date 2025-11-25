@@ -2,15 +2,11 @@
 	import { page } from '$app/state';
 </script>
 
-<svelte:head>
-	<title>Error | {page.status}</title>
-</svelte:head>
-
-<h1>Uh oh, something went wrong!</h1>
-
-<p>It looks like this page doesn't exist.</p>
-
-<h2>{page.status}: {page.error?.message || 'Unknown error'}</h2>
+<div class="mx-auto text-center">
+	<h1>{page.status}: {page.error?.message || 'Unknown error'}</h1>
+	<p>It looks like this page doesn't exist.</p>
+	<a href="/" class="btn preset-filled mt-4">Go Home</a>
+</div>
 
 <style>
 	h1 {
