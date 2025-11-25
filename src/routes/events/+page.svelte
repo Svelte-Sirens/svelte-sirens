@@ -32,8 +32,8 @@
 	<Events events={data.latestEvents} />
 </section>
 
-<style lang="postcss">
+<style>
 	h2 {
-		@apply mb-4;
+		margin-bottom: calc(var(--spacing) * 4);
 	}
 </style>

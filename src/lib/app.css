@@ -1,0 +1,139 @@
+/*place global styles here */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text&display=swap')
+layer(base);
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import './theme.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+	--animate-float: float 8s ease-in-out infinite;
+
+	--font-sans: Red Hat Text, sans-serif;
+	--font-heading: Cinzel Decorative, sans-serif;
+
+	@keyframes float {
+		0%,
+		100% {
+			transform: translatey(20px);
+		}
+		50% {
+			transform: translatey(-20px);
+		}
+	}
+}
+
+@utility font-sans {
+	font-family: var(--font-sans);
+}
+
+@utility font-heading {
+	font-family: var(--font-heading);
+}
+
+@utility animate-float {
+	animation: var(--animate-float);
+}
+
+@layer base {
+	button:not(:disabled),
+	[role='button']:not(:disabled) {
+		cursor: pointer;
+	}
+}
+
+@layer utilities {
+	.text-gradient {
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		color: transparent;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+
+		background-image: linear-gradient(to right, rgb(6, 182, 212), rgb(15, 138, 125));
+	}
+}
+
+body {
+	min-height: 100dvh;
+
+	background-image: radial-gradient(
+		222.14% 100% at 50.03% 100%,
+		rgb(196 237 233),
+		rgb(205 240 246)
+	);
+
+	@variant dark {
+		background-image: radial-gradient(222.14% 100% at 50.03% 100%, #213253, rgb(15, 138, 125));
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-bold text-primary-900 dark:text-surface-200 dark:drop-shadow-[2px_2px_2px_rgba(15,23,42,0.7)];
+	font-family: var(--font-heading);
+}
+
+h1 {
+	@apply mt-10 text-4xl lg:text-6xl;
+	text-align: center;
+}
+
+h2 {
+	@apply text-3xl lg:text-3xl;
+}
+
+h3 {
+	@apply text-2xl lg:text-4xl;
+}
+
+h4 {
+	@apply text-base lg:text-lg drop-shadow-none dark:drop-shadow-none;
+	font-family: var(--font-sans);
+}
+
+p {
+	@apply text-lg;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+	.positioner {
+		animation: none;
+	}
+}
+
+.select,
+.input,
+.textarea,
+.ig-input,
+.ig-select {
+	background-color: var(--color-surface-200);
+	color: var(--color-surface-900);
+}

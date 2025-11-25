@@ -1,71 +1,89 @@
 <script lang="ts">
-	import { clickOutside } from '$lib/utils/clickOutside';
+	import { AppBar, Popover, Portal } from '@skeletonlabs/skeleton-svelte';
+	import { scrollY, innerWidth } from 'svelte/reactivity/window';
+	import Hamburger from '$lib/images/Hamburger.svelte';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import LightSwitch from './LightSwitch.svelte';
-	import { fly } from 'svelte/transition';
-	import Links from './Links.svelte';
+	import { page } from '$app/state';
 
-	$: checked = false;
+	const desktop = $derived(innerWidth.current ? innerWidth.current > 1024 : false);
+	const scrolled = $derived(scrollY.current ? scrollY.current > 0 : false);
 
-	let innerWidth: number;
-
-	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'Escape') checked = !checked;
-	}
-
-	function toggleNav() {
-		checked = !checked;
-	}
+	const LINKS = [
+		{ href: `/`, name: `Home` },
+		{ href: `/about`, name: `About` },
+		{ href: `/events`, name: `Events` },
+		{ href: `/speakers`, name: `Speakers` },
+		{ href: `/contact`, name: `Contact` },
+		{ href: `/bubble-pop`, name: `Game` }
+	];
 </script>
 
-<svelte:window on:keydown={handleKeydown} bind:innerWidth />
-
-<!-- Checkbox for mobile nav -->
-<input class="hidden" type="checkbox" id="nav-check" bind:checked on:click={toggleNav} />
-
-<div class="absolute z-50 right-4 top-6 lg:hidden">
-	<label for="nav-check">
-		<img src="/images/hamburger.svg" alt="nav menu" class="hamburger" width="50px" height="50px" />
-	</label>
-</div>
-<!-- End checkbox -->
-<!-- Mobile Nav -->
-{#if innerWidth < 1024}
-	{#if checked}
-		<nav
-			use:clickOutside
-			on:outclick={toggleNav}
-			transition:fly={{ y: '-500', duration: 500 }}
-			class="grid gap-2 bg-secondary-300 dark:bg-primary-900 fixed overflow-y-auto min-h-[368px] right-0 top-0 rounded-bl-xl p-8 pr-16 transform transition-transform ease-out z-40"
+{#snippet links()}
+	{#each LINKS as { href, name }}
+		<a
+			{href}
+			data-sveltekit-preload-code
+			class={[
+				'font-heading font-bold decoration-wavy hover:underline!',
+				'decoration-primary-700 dark:decoration-primary-400',
+				'text-primary-700 dark:text-primary-200',
+				page.url.pathname === href && 'underline!'
+			]}
 		>
-			<div class="grid gap-2">
-				<Links {toggleNav} />
-			</div>
-			<div class="toggle">
+			{name}
+		</a>
+	{/each}
+{/snippet}
+
+<AppBar
+	class={[
+		scrolled && 'shadow-lg transition-shadow',
+		'sticky top-0 z-30 bg-transparent backdrop-blur-lg'
+	]}
+>
+	<AppBar.Toolbar class="flex items-center justify-between">
+		<AppBar.Lead>
+			<a
+				href="/"
+				class="flex gap-2 items-center decoration-wavy decoration-primary-400 hover:underline after:content-none"
+			>
+				<img src="/images/favicon.png" alt="logo" class="w-12" />
+				<span class="hidden sm:block font-heading font-bold">Svelte Sirens</span>
+			</a>
+		</AppBar.Lead>
+
+		{#if desktop}
+			<AppBar.Headline class="flex gap-4">
+				{@render links()}
+			</AppBar.Headline>
+		{/if}
+
+		<AppBar.Trail class="">
+			{#if desktop}
 				<BubbleToggle />
-			</div>
-			<div class="toggle">
 				<LightSwitch />
-			</div>
-		</nav>
-	{/if}
-	<!-- Large window Nav -->
-{:else if innerWidth >= 1024}
-	<nav class="flex gap-4 bg-transparent dark:bg-transparent">
-		<div class="absolute flex items-center gap-8 left-1/2 -translate-x-1/2">
-			<Links {toggleNav} />
-		</div>
-		<LightSwitch />
-		<BubbleToggle />
-	</nav>
-{/if}
-
-<style lang="postcss">
-	/*.checked {
-		@apply translate-y-[500px];
-	}*/
-
-	.toggle {
-		@apply grid gap-1 grid-rows-2 relative top-3 left-3  lg:place-items-center;
-	}
-</style>
+			{:else}
+				<Popover>
+					<Popover.Trigger class="btn p-0">
+						<Hamburger />
+					</Popover.Trigger>
+					<Portal>
+						<Popover.Positioner>
+							<Popover.Content
+								class={[
+									'card p-4 bg-secondary-300 dark:bg-primary-900 shadow-xl',
+									'flex flex-col items-end text-right gap-4 z-50'
+								]}
+							>
+								{@render links()}
+								<LightSwitch />
+								<BubbleToggle />
+							</Popover.Content>
+						</Popover.Positioner>
+					</Portal>
+				</Popover>
+			{/if}
+		</AppBar.Trail>
+	</AppBar.Toolbar>
+</AppBar>

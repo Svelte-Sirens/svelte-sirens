@@ -28,7 +28,9 @@
 	{/each}
 </section>
 
-<style lang="postcss">
+<style>
+	@reference '$lib/app.css';
+
 	.video-wrapper {
 		position: relative;
 		padding-bottom: 56.25%;
