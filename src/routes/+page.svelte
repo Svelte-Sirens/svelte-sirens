@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Events from '$lib/components/Events.svelte';
+	import Calendar from '$lib/images/Calendar.svelte';
 	import Siren from '$lib/images/Siren.svelte';
 
 	const { data } = $props();
@@ -41,7 +42,7 @@
 			href="/calendar"
 			class="text-primary-600 dark:text-primary-200 flex items-center gap-2 p-0 font-bold whitespace-normal transition-colors"
 		>
-			<img src="/images/calendar.svg" alt="" class="w-9" />
+			<Calendar />
 			<span>Add Events to Google Calendar</span>
 		</a>
 	</div>
