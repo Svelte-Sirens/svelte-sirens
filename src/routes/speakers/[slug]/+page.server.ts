@@ -11,6 +11,6 @@ export const load: PageServerLoad = ({ params }) => {
 
 	return {
 		speaker,
-		biography: speaker.biography ? marked(speaker.biography) : undefined
+		biography: speaker.biography ? marked(speaker.biography) : undefined,
 	};
 };

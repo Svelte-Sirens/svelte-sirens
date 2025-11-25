@@ -10,7 +10,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/rVVHxows9dY',
 		eventUrl: 'https://www.youtube.com/watch?v=rVVHxows9dY',
 		thumbnail: 'https://img.youtube.com/vi/rVVHxows9dY/maxresdefault.jpg',
-		speakers: [speakers['lacey-pevey']]
+		speakers: [speakers['lacey-pevey']],
 	},
 	{
 		slug: 'design-systems-lessons-learned',
@@ -20,7 +20,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/YHZaiIGSqsE',
 		eventUrl: 'https://www.youtube.com/watch?v=YHZaiIGSqsE',
 		thumbnail: 'https://img.youtube.com/vi/YHZaiIGSqsE/maxresdefault.jpg',
-		speakers: [speakers['eric-liu']]
+		speakers: [speakers['eric-liu']],
 	},
 	{
 		slug: 'appwrite-svelte',
@@ -30,7 +30,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/VGxitFBHcJ8',
 		eventUrl: 'https://www.youtube.com/watch?v=VGxitFBHcJ8',
 		thumbnail: 'https://img.youtube.com/vi/VGxitFBHcJ8/maxresdefault.jpg',
-		speakers: [speakers['alex-patterson']]
+		speakers: [speakers['alex-patterson']],
 	},
 	{
 		slug: 'learn-svelte',
@@ -40,7 +40,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/RusJPhEe_xs',
 		eventUrl: 'https://www.youtube.com/watch?v=RusJPhEe_xs',
 		thumbnail: 'https://img.youtube.com/vi/RusJPhEe_xs/maxresdefault.jpg',
-		speakers: [speakers['brittney-postma']]
+		speakers: [speakers['brittney-postma']],
 	},
 	{
 		slug: 'sveltekit-for-enterprise',
@@ -49,7 +49,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/_0ijqV0DmNQ',
 		eventUrl: 'https://www.youtube.com/watch?v=_0ijqV0DmNQ',
 		thumbnail: 'https://img.youtube.com/vi/_0ijqV0DmNQ/maxresdefault.jpg',
-		speakers: [speakers['lacey-pevey']]
+		speakers: [speakers['lacey-pevey']],
 	},
 	{
 		slug: 'upgrading-sveltekit',
@@ -58,7 +58,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/vzeZskhjoeQ',
 		eventUrl: 'https://www.youtube.com/watch?v=vzeZskhjoeQ',
 		thumbnail: 'https://img.youtube.com/vi/vzeZskhjoeQ/maxresdefault.jpg',
-		speakers: [speakers['kev-a-k']]
+		speakers: [speakers['kev-a-k']],
 	},
 	{
 		slug: 'storyblok-with-sveltekit',
@@ -67,7 +67,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/xXHFRzqUxoE',
 		eventUrl: 'https://www.youtube.com/watch?v=xXHFRzqUxoE',
 		thumbnail: 'https://img.youtube.com/vi/xXHFRzqUxoE/maxresdefault.jpg',
-		speakers: [speakers['josefine-schaefer']]
+		speakers: [speakers['josefine-schaefer']],
 	},
 	{
 		slug: 'testing-in-svelte',
@@ -76,7 +76,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/-GKRH0KQ_j0',
 		eventUrl: 'https://www.youtube.com/watch?v=-GKRH0KQ_j0',
 		thumbnail: 'https://img.youtube.com/vi/-GKRH0KQ_j0/maxresdefault.jpg',
-		speakers: [speakers['jess-sachs']]
+		speakers: [speakers['jess-sachs']],
 	},
 	{
 		slug: 'the-story-behind-the-unofficial-svelte-newsletter',
@@ -85,7 +85,7 @@ export const events: Event[] = [
 		embed: 'https://www.youtube.com/embed/aK0xXm3hPxk',
 		eventUrl: 'https://www.youtube.com/watch?v=aK0xXm3hPxk',
 		thumbnail: 'https://img.youtube.com/vi/aK0xXm3hPxk/maxresdefault.jpg',
-		speakers: [speakers['dani-sandoval']]
+		speakers: [speakers['dani-sandoval']],
 	},
 	{
 		slug: 'sveltekit-sanityio-a-match-made-in-heaven',
@@ -94,7 +94,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=j0_1hfiEVWA',
 		thumbnail: 'https://img.youtube.com/vi/j0_1hfiEVWA/maxresdefault.jpg',
 		speakers: [speakers['jacob-stordahl']],
-		date: 1652461200000
+		date: 1652461200000,
 	},
 	{
 		slug: 'building-advanced-landing-pages',
@@ -103,7 +103,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=D8oo5dwXMQ4',
 		thumbnail: 'https://img.youtube.com/vi/D8oo5dwXMQ4/maxresdefault.jpg',
 		speakers: [speakers['amy-dutton']],
-		date: 1650042000000
+		date: 1650042000000,
 	},
 	{
 		slug: 'build-in-3d-with-svelte',
@@ -112,7 +112,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=7PJ_28fgLp8',
 		thumbnail: 'https://img.youtube.com/vi/7PJ_28fgLp8/maxresdefault.jpg',
 		speakers: [speakers['scott-tolinski']],
-		date: 1646337600000
+		date: 1646337600000,
 	},
 	{
 		slug: 'all-about-adapters-deploying-in-sveltekit',
@@ -121,7 +121,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=SUrFDhhsJNo',
 		thumbnail: 'https://img.youtube.com/vi/SUrFDhhsJNo/maxresdefault.jpg',
 		speakers: [speakers['steph-dietz']],
-		date: 1642528800000
+		date: 1642528800000,
 	},
 	{
 		slug: 'routes-for-svelte-with-routify',
@@ -130,7 +130,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=epVRgjhjI7M',
 		thumbnail: 'https://img.youtube.com/vi/epVRgjhjI7M/maxresdefault.jpg',
 		speakers: [speakers['ghost']],
-		date: 1639764000000
+		date: 1639764000000,
 	},
 	{
 		slug: 'building-design-systems-in-sveltekit',
@@ -139,7 +139,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=3bjVQJwF6O8',
 		thumbnail: 'https://img.youtube.com/vi/3bjVQJwF6O8/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
-		date: 1638208800000
+		date: 1638208800000,
 	},
 	{
 		slug: 'storybook-with-sveltekit',
@@ -148,7 +148,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=Kc1ULlfyUcw',
 		thumbnail: 'https://img.youtube.com/vi/Kc1ULlfyUcw/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
-		date: 1641535200000
+		date: 1641535200000,
 	},
 	{
 		slug: 'faunadb',
@@ -158,7 +158,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/zaoLZc76uZM/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['shadid-haque']],
-		date: 1642608000000
+		date: 1642608000000,
 	},
 	{
 		slug: 'backlight',
@@ -168,7 +168,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/S9BxYHBwYvo/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['m4dz']],
-		date: 1643990400000
+		date: 1643990400000,
 	},
 	{
 		slug: 'planetscale',
@@ -178,7 +178,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/iFhDwmI6OL0/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['jamesqquick']],
-		date: 1645027200000
+		date: 1645027200000,
 	},
 	{
 		slug: 'headless-wordpress-with-sveltekit',
@@ -188,7 +188,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/3DbRHeEll3A/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['kellen-mace']],
-		date: 1647442800000
+		date: 1647442800000,
 	},
 	{
 		slug: 'sveltekit-on-cloudflare',
@@ -198,7 +198,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/rZaHTFjggCU/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['luke-edwards']],
-		date: 1648652400000
+		date: 1648652400000,
 	},
 	{
 		slug: 'empowering-your-images-with-cloudinary',
@@ -208,7 +208,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/DGi7FtBr2DE/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['tamas-piros']],
-		date: 1652454000000
+		date: 1652454000000,
 	},
 	{
 		slug: 'slicing-up-your-svelte-site-with-prismic',
@@ -218,7 +218,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/FUbHwwMALkk/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['sam-littlefair']],
-		date: 1653062400000
+		date: 1653062400000,
 	},
 	{
 		slug: 'rendering-your-svelte-app-on-render',
@@ -228,7 +228,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/SnV_hMLVyqs/maxresdefault.jpg',
 		speakers: [speakers['brittney-postma']],
 		guests: [speakers['eric-liu']],
-		date: 1653411600000
+		date: 1653411600000,
 	},
 	{
 		slug: 'astro',
@@ -238,7 +238,7 @@ export const events: Event[] = [
 		thumbnail: 'https://img.youtube.com/vi/iYKKg-50Gm4/maxresdefault.jpg',
 		speakers: [speakers['ghost']],
 		guests: [speakers['fred-k-schott']],
-		date: 1660676400000
+		date: 1660676400000,
 	},
 	{
 		slug: 'threlte',
@@ -247,7 +247,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=dnclxsoRO_E',
 		thumbnail: 'https://img.youtube.com/vi/dnclxsoRO_E/maxresdefault.jpg',
 		speakers: [speakers['alex-warnes']],
-		date: 1668456000000
+		date: 1668456000000,
 	},
 	{
 		slug: 'sveltekit-form-actions',
@@ -256,7 +256,7 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=2OISk5-EHek',
 		thumbnail: 'https://img.youtube.com/vi/2OISk5-EHek/maxresdefault.jpg',
 		speakers: [speakers['kev-a-k']],
-		date: 1669822200000
+		date: 1669822200000,
 	},
 	{
 		slug: 'skeleton-ui',
@@ -265,6 +265,6 @@ export const events: Event[] = [
 		eventUrl: 'https://www.youtube.com/watch?v=2OnJYCXJPK4',
 		thumbnail: 'https://img.youtube.com/vi/2OnJYCXJPK4/maxresdefault.jpg',
 		speakers: [speakers['chris-simmons']],
-		date: 1671127200000
-	}
+		date: 1671127200000,
+	},
 ];

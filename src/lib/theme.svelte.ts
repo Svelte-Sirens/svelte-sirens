@@ -7,7 +7,7 @@ type SetTheme = 'system' | 'dark' | 'light';
 
 class Theme {
 	#theme = $state<SetTheme>(
-		browser ? (document.documentElement.classList.contains('dark') ? 'dark' : 'light') : 'dark'
+		browser ? (document.documentElement.classList.contains('dark') ? 'dark' : 'light') : 'dark',
 	);
 
 	get theme() {
@@ -19,7 +19,7 @@ class Theme {
 	}
 
 	public readonly runningTheme = $derived(
-		this.#theme === 'system' ? (systemTheme.current ? 'dark' : 'light') : this.#theme
+		this.#theme === 'system' ? (systemTheme.current ? 'dark' : 'light') : this.#theme,
 	);
 
 	watch() {

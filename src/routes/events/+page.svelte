@@ -5,11 +5,11 @@
 	export let data: PageData;
 </script>
 
-<section class="max-w-md text-center mx-auto">
+<section class="mx-auto max-w-md text-center">
 	<h1>Events</h1>
 	<p>
-		This is the list of all our upcoming and past talks, streams, and events! Events are hosted on
-		the
+		This is the list of all our upcoming and past talks, streams, and events! Events are hosted
+		on the
 		<a href="https://www.youtube.com/SvelteSociety" target="_blank" rel="noopener noreferrer">
 			Svelte Society YouTube
 		</a>

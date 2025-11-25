@@ -2,7 +2,7 @@
 	export let picture, name, handle, handleUrl, slug;
 </script>
 
-<img src={picture} alt={name || ''} class="object-cover rounded-full border-2 border-primary-200" />
+<img src={picture} alt={name || ''} class="border-primary-200 rounded-full border-2 object-cover" />
 
 <div class="flex flex-col items-start">
 	<a href="/speakers/{slug}">{name}</a>

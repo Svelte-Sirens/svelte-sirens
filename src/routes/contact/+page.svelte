@@ -14,12 +14,12 @@
 	{/if}
 {/snippet}
 
-<section class="max-w-5xl mx-auto">
+<section class="mx-auto max-w-5xl">
 	<h1 class="mb-10">Submit A Talk</h1>
 
 	<form
 		{...contact}
-		class="card preset-outlined-primary-200-800 bg-primary-50/10 p-4 lg:px-12 lg:py-8 flex flex-col gap-4"
+		class="card preset-outlined-primary-200-800 bg-primary-50/10 flex flex-col gap-4 p-4 lg:px-12 lg:py-8"
 	>
 		<label class="label">
 			<span class="label-text">Name *</span>
@@ -29,13 +29,21 @@
 
 		<label class="label">
 			<span class="label-text">Email *</span>
-			<input class="input" placeholder="hello@example.com" {...contact.fields.email.as('email')} />
+			<input
+				class="input"
+				placeholder="hello@example.com"
+				{...contact.fields.email.as('email')}
+			/>
 			{@render issues(contact.fields.email.issues())}
 		</label>
 
 		<label class="label">
 			<span class="label-text">Discord</span>
-			<input class="input" placeholder="Example#0000" {...contact.fields.discord.as('text')} />
+			<input
+				class="input"
+				placeholder="Example#0000"
+				{...contact.fields.discord.as('text')}
+			/>
 			{@render issues(contact.fields.discord.issues())}
 		</label>
 

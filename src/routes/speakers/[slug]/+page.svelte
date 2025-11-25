@@ -6,10 +6,10 @@
 	const { picture, handle, name, biography } = data.speaker;
 </script>
 
-<article class="max-w-lg mx-auto grid gap-6">
+<article class="mx-auto grid max-w-lg gap-6">
 	<h1>{name}</h1>
 
-	<section class="grid gap-2 justify-items-center">
+	<section class="grid justify-items-center gap-2">
 		<SpeakerCard speakerPage img={picture} {name} {handle} />
 		{#if data.biography}
 			<!-- TODO sanitise -->

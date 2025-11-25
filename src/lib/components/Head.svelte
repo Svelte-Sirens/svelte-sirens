@@ -3,7 +3,7 @@
 
 	const capitalize = (str, lower = false) =>
 		(lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
-			match.toUpperCase()
+			match.toUpperCase(),
 		);
 
 	const img = 'https://www.sveltesirens.dev/og.png';
@@ -13,8 +13,8 @@
 		$page.url.pathname === '/' || $page.url.pathname.includes('//prerender/')
 			? 'Svelte Sirens'
 			: `${capitalize(
-					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' ')
-			  )} | Svelte Sirens`;
+					$page.url.pathname.substring(1).replace('s/', ' | ').replace(/-/g, ' '),
+				)} | Svelte Sirens`;
 </script>
 
 <svelte:head>

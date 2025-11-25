@@ -24,32 +24,32 @@
 	@reference '$lib/app.css';
 
 	.speaker-card {
-		@apply bg-surface-50/10 w-max rounded-xl min-w-[280px]  transform transition-transform hover:scale-[100.05%] shadow-xl;
+		@apply bg-surface-50/10 w-max min-w-[280px] transform rounded-xl shadow-xl transition-transform hover:scale-[100.05%];
 	}
 
 	.speakerPage {
-		@apply w-full h-full;
+		@apply h-full w-full;
 	}
 	.speakerPage img {
 		@apply max-h-full;
 	}
 	.speakerPage .speaker-wrapper {
-		@apply max-w-full relative top-2;
+		@apply relative top-2 max-w-full;
 	}
 
 	img {
-		@apply max-h-64 w-full object-cover rounded-t-xl;
+		@apply max-h-64 w-full rounded-t-xl object-cover;
 	}
 
 	.speaker-wrapper {
-		@apply max-w-xs text-center p-2 pb-4 grid gap-2;
+		@apply grid max-w-xs gap-2 p-2 pb-4 text-center;
 	}
 
 	.name {
-		@apply mt-2 text-lg px-2 whitespace-normal;
+		@apply mt-2 px-2 text-lg whitespace-normal;
 	}
 
 	.handle {
-		@apply text-base text-center border-none;
+		@apply border-none text-center text-base;
 	}
 </style>

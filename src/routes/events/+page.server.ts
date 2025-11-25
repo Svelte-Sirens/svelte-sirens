@@ -8,6 +8,6 @@ export const load: PageServerLoad = () => {
 
 	return {
 		latestEvents,
-		upcomingEvents
+		upcomingEvents,
 	};
 };

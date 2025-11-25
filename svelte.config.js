@@ -14,29 +14,29 @@ const config = {
 			$utils: path.resolve('./src/lib/utils'),
 			$styles: path.resolve('./src/lib/styles'),
 			$stores: path.resolve('./src/lib/stores'),
-			$data: './src/data'
+			$data: './src/data',
 		},
 
 		csrf: {
-			checkOrigin: import.meta?.env?.MODE == 'dev'
+			checkOrigin: import.meta?.env?.MODE == 'dev',
 		},
 
 		experimental: {
-			remoteFunctions: true
-		}
+			remoteFunctions: true,
+		},
 	},
 
 	compilerOptions: {
 		experimental: {
-			async: true
-		}
+			async: true,
+		},
 	},
 
 	preprocess: vitePreprocess(),
 
 	vitePlugin: {
-		inspector: {}
-	}
+		inspector: {},
+	},
 };
 
 export default config;

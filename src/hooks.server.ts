@@ -16,6 +16,6 @@ export const handle: Handle = ({ event, resolve }) => {
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {
 			return html.replaceAll('%theme%', theme);
-		}
+		},
 	});
 };

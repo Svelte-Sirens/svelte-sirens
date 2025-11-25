@@ -9,10 +9,10 @@
 		<AppBar.Lead>
 			<a
 				href="/"
-				class="flex gap-2 items-center decoration-wavy decoration-primary-400 hover:underline after:content-none"
+				class="decoration-primary-400 flex items-center gap-2 decoration-wavy after:content-none hover:underline"
 			>
 				<img src="/images/favicon.png" alt="logo" class="w-12" />
-				<span class="hidden sm:block font-heading font-bold">Svelte Sirens</span>
+				<span class="font-heading hidden font-bold sm:block">Svelte Sirens</span>
 			</a>
 		</AppBar.Lead>
 

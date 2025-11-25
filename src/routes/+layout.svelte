@@ -13,7 +13,7 @@
 
 <main class="w-full pb-48">
 	<Nav />
-	<div class="grid gap-10 lg:gap-20 p-4 xl:p-0 mb-6 max-w-7xl mx-auto">
+	<div class="mx-auto mb-6 grid max-w-7xl gap-10 p-4 lg:gap-20 xl:p-0">
 		<slot />
 	</div>
 </main>

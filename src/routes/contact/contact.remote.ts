@@ -9,20 +9,24 @@ const schema = v.object({
 		v.string(),
 		v.trim(),
 		v.minLength(1, 'Name should be at least 1 character long'),
-		v.maxLength(100, 'Name should be at most 100 characters long')
+		v.maxLength(100, 'Name should be at most 100 characters long'),
 	),
 	email: v.pipe(v.string(), v.trim(), v.email('Enter a valid email address')),
 	discord: v.optional(
-		v.pipe(v.string(), v.trim(), v.maxLength(100, 'Discord should be at most 100 characters long')),
-		'<none provided>' // default not working?
+		v.pipe(
+			v.string(),
+			v.trim(),
+			v.maxLength(100, 'Discord should be at most 100 characters long'),
+		),
+		'<none provided>', // default not working?
 	),
 	idea: v.pipe(
 		v.string(),
 		v.trim(),
 		v.minLength(1, 'Idea should be at least 1 character long'),
-		v.maxLength(1200, 'Idea should be at most 1200 characters long')
+		v.maxLength(1200, 'Idea should be at most 1200 characters long'),
 	),
-	turnstile: v.pipe(v.string(), v.minLength(1, 'Please solve the captcha'))
+	turnstile: v.pipe(v.string(), v.minLength(1, 'Please solve the captcha')),
 });
 
 export const contact = form(schema, async (data, issue) => {
@@ -45,11 +49,14 @@ export const contact = form(schema, async (data, issue) => {
 						{ name: 'Email', value: data.email },
 						{ name: 'Name', value: data.name },
 						{ name: 'Talk Idea', value: data.idea },
-						{ name: 'Discord', value: data.discord.length ? data.discord : '<none provided>' }
-					]
-				}
-			]
-		})
+						{
+							name: 'Discord',
+							value: data.discord.length ? data.discord : '<none provided>',
+						},
+					],
+				},
+			],
+		}),
 	});
 
 	return { success: true };

@@ -1,7 +1,7 @@
 ignoredBuiltDependencies:
-  - svelte-preprocess
+    - svelte-preprocess
 
 onlyBuiltDependencies:
-  - esbuild
-  - sharp
-  - workerd
+    - esbuild
+    - sharp
+    - workerd

@@ -8,6 +8,6 @@ export const load: PageServerLoad = () => {
 
 	return {
 		latestEvents: latestEvents.slice(0, 4),
-		upcomingEvents
+		upcomingEvents,
 	};
 };

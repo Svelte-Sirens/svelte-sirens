@@ -16,6 +16,6 @@ export const clickOutside: Action<HTMLElement, unknown, Attributes> = (node) => 
 	return {
 		destroy() {
 			document.removeEventListener('click', handleClick, true);
-		}
+		},
 	};
 };

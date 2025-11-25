@@ -6,9 +6,9 @@
 </script>
 
 <section class="p-4 lg:p-0">
-	<h1 class="text-3xl mb-6">{data.title}</h1>
+	<h1 class="mb-6 text-3xl">{data.title}</h1>
 
-	<div class="video-wrapper w-[80vw] xl:w-[1200px] mx-auto">
+	<div class="video-wrapper mx-auto w-[80vw] xl:w-[1200px]">
 		<iframe
 			width="100%"
 			src={data.embed}
@@ -20,7 +20,7 @@
 	</div>
 </section>
 
-<section class="grid gap-4 place-items-center">
+<section class="grid place-items-center gap-4">
 	<h2 class="text-2xl">Guest</h2>
 
 	{#each data.speakers as { picture, name, handle, slug }}

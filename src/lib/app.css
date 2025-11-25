@@ -81,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-bold text-primary-900 dark:text-surface-200 dark:drop-shadow-[2px_2px_2px_rgba(15,23,42,0.7)];
+	@apply text-primary-900 dark:text-surface-200 font-bold dark:drop-shadow-[2px_2px_2px_rgba(15,23,42,0.7)];
 	font-family: var(--font-heading);
 }
 
@@ -99,7 +99,7 @@ h3 {
 }
 
 h4 {
-	@apply text-base lg:text-lg drop-shadow-none dark:drop-shadow-none;
+	@apply text-base drop-shadow-none lg:text-lg dark:drop-shadow-none;
 	font-family: var(--font-sans);
 }
 
