@@ -4,6 +4,7 @@
 	import Hamburger from '$lib/images/Hamburger.svelte';
 	import BubbleToggle from './BubbleToggle.svelte';
 	import LightSwitch from './LightSwitch.svelte';
+	import Siren from '$lib/images/Siren.svelte';
 	import { page } from '$app/state';
 
 	const desktop = $derived(innerWidth.current ? innerWidth.current > 1024 : false);
@@ -48,7 +49,7 @@
 				href="/"
 				class="decoration-primary-400 flex items-center gap-2 decoration-wavy after:content-none hover:underline"
 			>
-				<img src="/images/favicon.png" alt="logo" class="w-12" />
+				<Siren class="w-12" />
 				<span class="font-heading hidden font-bold sm:block">Svelte Sirens</span>
 			</a>
 		</AppBar.Lead>
