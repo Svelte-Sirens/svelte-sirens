@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '$lib/app.css';
-	import Bubbles from '$components/bubbles/Bubbles.svelte';
+	import Bubbles from '$lib/components/bubbles/Bubbles.svelte';
 	import Nav from '$lib/components/nav/Nav.svelte';
-	import Head from '$components/Head.svelte';
+	import Head from '$lib/components/Head.svelte';
 	import { theme } from '$lib/theme.svelte';
 
 	theme.watch();

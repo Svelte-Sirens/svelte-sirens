@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Events from '$components/Events.svelte';
+	import Events from '$lib/components/Events.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Events from '$components/Events.svelte';
+	import Events from '$lib/components/Events.svelte';
 	import Siren from '$lib/images/Siren.svelte';
 
 	const { data } = $props();

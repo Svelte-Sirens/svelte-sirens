@@ -1,6 +1,6 @@
 <script lang="ts">
+	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
 	import type { PageData } from './$types';
-	import SpeakerCard from '$components/SpeakerCard.svelte';
 
 	export let data: PageData;
 </script>

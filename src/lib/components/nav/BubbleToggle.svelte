@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { bubbles } from '$components/bubbles/Bubbles.svelte';
+	import { bubbles } from '$lib/components/bubbles/Bubbles.svelte';
 	import { Switch } from '@skeletonlabs/skeleton-svelte';
 </script>
 

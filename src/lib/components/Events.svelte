@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardFooter from '$components/CardFooter.svelte';
+	import CardFooter from '$lib/components/CardFooter.svelte';
 	import type { Event } from '$data/data';
 
 	export let events: Event[];

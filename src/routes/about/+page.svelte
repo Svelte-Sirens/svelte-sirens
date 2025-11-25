@@ -1,5 +1,5 @@
 <script>
-	import SpeakerCard from '$components/SpeakerCard.svelte';
+	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
 	import Siren from '$lib/images/Siren.svelte';
 
 	const founders = [

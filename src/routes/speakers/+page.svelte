@@ -1,6 +1,6 @@
 <script>
+	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
 	import { speakers } from '$data/speakers';
-	import SpeakerCard from '$components/SpeakerCard.svelte';
 </script>
 
 <section>
