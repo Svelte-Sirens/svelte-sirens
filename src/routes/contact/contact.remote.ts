@@ -1,4 +1,4 @@
-import { validateTurnstile } from '$lib/utils/turnstile';
+import { validateTurnstile } from '$lib/server/turnstile';
 import { WEBHOOK_URL } from '$env/static/private';
 import { invalid } from '@sveltejs/kit';
 import { form } from '$app/server';

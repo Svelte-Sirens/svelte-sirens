@@ -4,9 +4,12 @@
 	export const bubbles = new PersistedState('bubbles', true);
 </script>
 
-<script>
-	import { random } from '$lib/utils/random';
+<script lang="ts">
 	import Bubble from './Bubble.svelte';
+
+	function random(min: number, max: number) {
+		return Math.floor(Math.random() * (max - min + 1) + min);
+	}
 </script>
 
 {#if bubbles.current}
