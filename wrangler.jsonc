@@ -8,7 +8,10 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare",
 	},
-	"vars": {
-		"NODE_VERSION": "24.11.1",
-	},
+	"routes": [
+		{
+			"custom_domain": true,
+			"pattern": "sveltesirens.dev",
+		},
+	],
 }
