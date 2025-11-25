@@ -1,6 +1,7 @@
-/*place global styles here */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text&display=swap')
-layer(base);
+@import '@fontsource/cinzel-decorative/400.css';
+@import '@fontsource/cinzel-decorative/700.css';
+@import '@fontsource-variable/red-hat-text/wght.css';
+@import '@fontsource-variable/red-hat-text/wght-italic.css';
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';

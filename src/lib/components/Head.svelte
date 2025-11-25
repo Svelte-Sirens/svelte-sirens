@@ -42,11 +42,5 @@
 	<meta name="twitter:image:alt" content="Svelte Sirens" />
 	<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 	<link rel="icon" type="image/png" href="/images/favicon.png" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Red+Hat+Text:wght@300;400;500;700&display=swap"
-		rel="stylesheet"
-	/>
 	<title>{title}</title>
 </svelte:head>

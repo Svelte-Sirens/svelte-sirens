@@ -12,6 +12,8 @@
 		"check": "svelte-check"
 	},
 	"devDependencies": {
+		"@fontsource-variable/red-hat-text": "^5.2.8",
+		"@fontsource/cinzel-decorative": "^5.2.8",
 		"@lucide/svelte": "^0.554.0",
 		"@skeletonlabs/skeleton": "^4.5.3",
 		"@skeletonlabs/skeleton-svelte": "^4.5.3",

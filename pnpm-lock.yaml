@@ -8,6 +8,12 @@ importers:
 
   .:
     devDependencies:
+      '@fontsource-variable/red-hat-text':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/cinzel-decorative':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@lucide/svelte':
         specifier: ^0.554.0
         version: 0.554.0(svelte@5.44.0)
@@ -437,6 +443,12 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@fontsource-variable/red-hat-text@5.2.8':
+    resolution: {integrity: sha512-v0MGnXpADm1gTffdFJiFbEqddl0oCBbQaSviF9srUDvj01WVBljHjyC38EeyFsWSciY00vkye8et7MS+4QphEQ==}
+
+  '@fontsource/cinzel-decorative@5.2.8':
+    resolution: {integrity: sha512-BtrvcprcCd0DyAcIXZRohfMyh+n/MwNvmhmAZ0kXDe9T1w2XSOodb3RNoD1uHm3TlGw7fjTU0YepgAQbPW0sFw==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1809,6 +1821,10 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@fontsource-variable/red-hat-text@5.2.8': {}
+
+  '@fontsource/cinzel-decorative@5.2.8': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
