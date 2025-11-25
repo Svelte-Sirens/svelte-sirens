@@ -20,7 +20,7 @@ const schema = v.object({
 		),
 		'<none provided>', // default not working?
 	),
-	idea: v.pipe(
+	message: v.pipe(
 		v.string(),
 		v.trim(),
 		v.minLength(1, 'Idea should be at least 1 character long'),
@@ -48,7 +48,7 @@ export const contact = form(schema, async (data, issue) => {
 					fields: [
 						{ name: 'Email', value: data.email },
 						{ name: 'Name', value: data.name },
-						{ name: 'Talk Idea', value: data.idea },
+						{ name: 'Message', value: data.message },
 						{
 							name: 'Discord',
 							value: data.discord.length ? data.discord : '<none provided>',

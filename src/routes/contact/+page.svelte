@@ -15,11 +15,11 @@
 {/snippet}
 
 <section class="mx-auto max-w-5xl">
-	<h1 class="mb-10">Submit A Talk</h1>
+	<h1 class="mb-10">Contact</h1>
 
 	<form
 		{...contact}
-		class="card preset-outlined-primary-200-800 bg-primary-50/10 flex flex-col gap-4 p-4 lg:px-12 lg:py-8"
+		class="card preset-outlined-primary-200-800 bg-primary-50/10 flex flex-col gap-4 px-5 py-4 md:min-w-96"
 	>
 		<label class="label">
 			<span class="label-text">Name *</span>
@@ -36,7 +36,6 @@
 			/>
 			{@render issues(contact.fields.email.issues())}
 		</label>
-
 		<label class="label">
 			<span class="label-text">Discord</span>
 			<input
@@ -52,9 +51,10 @@
 			<textarea
 				class="textarea"
 				placeholder="Tell us your ideas!"
-				{...contact.fields.idea.as('text')}
+				rows={4}
+				{...contact.fields.message.as('text')}
 			></textarea>
-			{@render issues(contact.fields.idea.issues())}
+			{@render issues(contact.fields.message.issues())}
 		</label>
 
 		<Turnstile
