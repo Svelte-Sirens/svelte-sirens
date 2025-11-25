@@ -4,15 +4,13 @@ import { join } from 'node:path';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	preprocess: vitePreprocess(),
+
 	kit: {
 		adapter: adapter(),
 
 		alias: {
 			$data: join(import.meta.dirname, './src/data'),
-		},
-
-		csrf: {
-			checkOrigin: import.meta?.env?.MODE == 'dev',
 		},
 
 		experimental: {
@@ -25,8 +23,6 @@ const config = {
 			async: true,
 		},
 	},
-
-	preprocess: vitePreprocess(),
 
 	vitePlugin: {
 		inspector: {},
