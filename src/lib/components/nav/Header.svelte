@@ -4,7 +4,7 @@
 	import Nav from './Nav.svelte';
 </script>
 
-<div class={{ 'shadow-lg transition-shadow': scrollY.current > 0 }}>
+<div class={{ 'shadow-lg transition-shadow': scrollY.current ? scrollY.current > 0 : false }}>
 	<AppBar class="bg-transparent">
 		<AppBar.Lead>
 			<a
