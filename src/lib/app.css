@@ -137,4 +137,16 @@ img {
 .ig-select {
 	background-color: var(--color-surface-200);
 	color: var(--color-surface-900);
+	padding-inline: calc(var(--spacing) * 3);
+	padding-block: calc(var(--spacing) * 2);
+	font-size: calc(0.875rem * var(--text-scaling));
+
+	&::placeholder {
+		color: var(--color-surface-500);
+		font-weight: var(--font-weight-light);
+	}
+}
+
+.label-text {
+	font-weight: bold;
 }
