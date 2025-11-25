@@ -8,7 +8,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "prettier --check .",
-		"format": "prettier --write src",
+		"format": "prettier --write .",
 		"check": "svelte-check"
 	},
 	"devDependencies": {
@@ -23,6 +23,7 @@
 		"marked": "^17.0.1",
 		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
+		"prettier-plugin-tailwindcss": "^0.7.1",
 		"runed": "^0.36.0",
 		"svelte": "^5.44.0",
 		"svelte-check": "^4.3.4",
