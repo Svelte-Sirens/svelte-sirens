@@ -23,7 +23,7 @@
 	<h2 class="text-2xl">Guest</h2>
 
 	{#each data.speakers as { picture, name, handle, slug }}
-		<SpeakerCard img={picture} {name} {handle} {slug} />
+		<SpeakerCard {picture} {name} {handle} {slug} />
 	{/each}
 </section>
 

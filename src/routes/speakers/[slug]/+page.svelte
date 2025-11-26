@@ -9,7 +9,7 @@
 	<h1>{name}</h1>
 
 	<section class="grid justify-items-center gap-2">
-		<SpeakerCard speakerPage img={picture} {name} {handle} />
+		<SpeakerCard speakerPage {picture} {name} {handle} />
 		{#if data.biography}
 			<!-- TODO sanitise -->
 			<p>{@html biography}</p>

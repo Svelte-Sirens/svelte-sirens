@@ -1,10 +1,12 @@
+import type { Picture } from './assets/assets';
+
 export interface Speaker {
 	name: string;
 	slug: string;
 	handle: string;
 	biography?: string;
 	handleUrl: string;
-	picture: string;
+	picture: Picture;
 }
 export interface Guest {
 	name: string;
@@ -12,7 +14,7 @@ export interface Guest {
 	handle: string;
 	biography?: string;
 	handleUrl: string;
-	picture: string;
+	picture: Picture;
 }
 
 export interface Event {
@@ -23,7 +25,7 @@ export interface Event {
 	embed: string;
 	eventUrl: string;
 	speakers?: Speaker[];
-	thumbnail?: string;
+	thumbnail: Picture;
 	guests?: Guest[];
 }
 
