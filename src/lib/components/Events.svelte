@@ -38,9 +38,10 @@
 				<a
 					data-sveltekit-preload-code
 					href="/events/{slug}"
-					class=" grid grid-rows-[auto_1fr]"
+					class="grid grid-rows-[auto_1fr]"
 				>
-					<img src={thumbnail} alt={title} class="w-full max-w-xs object-cover" />
+					<enhanced:img src={thumbnail} alt={title} class="w-full max-w-xs object-cover"
+					></enhanced:img>
 
 					{#if upcoming}
 						<h4 class="max-w-xs px-4 py-2">{title}</h4>

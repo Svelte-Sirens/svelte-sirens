@@ -11,7 +11,7 @@
 	<section class="mx-auto flex max-w-[80vw] flex-wrap justify-center gap-6 lg:gap-10">
 		{#each Object.entries(speakers) as [slug, { handle, name, picture }]}
 			<a href="/speakers/{slug}" class="glass grid">
-				<SpeakerCard img={picture} {name} {slug} {handle} />
+				<SpeakerCard {picture} {name} {slug} {handle} />
 			</a>
 		{/each}
 	</section>

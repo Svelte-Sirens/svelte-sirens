@@ -1,6 +1,8 @@
 <script lang="ts">
+	import type { Picture } from '$data/assets/assets';
+
 	interface Props {
-		picture: string;
+		picture: Picture;
 		name: string;
 		handle: string;
 		handleUrl: string;
@@ -10,7 +12,11 @@
 	let { picture, name, handle, handleUrl, slug }: Props = $props();
 </script>
 
-<img src={picture} alt={name || ''} class="border-primary-200 rounded-full border-2 object-cover" />
+<enhanced:img
+	src={picture}
+	alt={name}
+	class="border-primary-200 h-[50px] w-[50px] rounded-full border-2 object-cover"
+></enhanced:img>
 
 <div class="flex flex-col items-start">
 	<a href="/speakers/{slug}">{name}</a>
@@ -18,10 +24,3 @@
 		<span>{handle}</span>
 	</a>
 </div>
-
-<style>
-	img {
-		width: 50px;
-		height: 50px;
-	}
-</style>

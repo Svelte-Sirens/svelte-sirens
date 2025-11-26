@@ -2,26 +2,7 @@
 	import SpeakerCard from '$lib/components/SpeakerCard.svelte';
 	import Siren from '$lib/images/Siren.svelte';
 
-	const founders = [
-		{
-			name: 'Brittney Postma',
-			handle: '@brittneypostma',
-			slug: 'brittney-postma',
-			img: '/images/speakers/brittney.jpg',
-		},
-		{
-			name: 'Willow AKA Ghost',
-			handle: '@onlyspaceghost',
-			slug: 'ghost',
-			img: '/images/speakers/ghost.jpg',
-		},
-		{
-			name: 'Steph Dietz',
-			handle: '@steph_dietz_',
-			slug: 'steph-dietz',
-			img: '/images/speakers/steph.jpg',
-		},
-	];
+	const { data } = $props();
 </script>
 
 <section>
@@ -86,8 +67,8 @@
 	</div>
 
 	<div class="flex flex-wrap items-start justify-around gap-20">
-		{#each founders as { name, handle, img, slug }}
-			<SpeakerCard {img} {name} {slug} {handle} />
+		{#each data.founders as { name, handle, picture, slug }}
+			<SpeakerCard {picture} {name} {slug} {handle} />
 		{/each}
 	</div>
 </section>
